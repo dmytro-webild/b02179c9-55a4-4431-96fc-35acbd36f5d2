@@ -245,7 +245,7 @@ const HeroBoardFrame = ({
 
               {/* Video Play Badge overlay button */}
               <motion.a
-                href="#contact-dark-form-card"
+                href="#video-cinematografico"
                 initial={reduce ? false : { opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ ...spring, delay: introDelay + 0.7 }}

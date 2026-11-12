@@ -1,4 +1,5 @@
 import HeroBoardFrame from "@/components/sections/hero/HeroBoardFrame";
+import CinematicVideoSection from "@/components/sections/video/CinematicVideoSection";
 import AboutStatementIconRow from "@/components/sections/about/AboutStatementIconRow";
 import GalleryTiltCards from "@/components/sections/gallery/GalleryTiltCards";
 import MetricsTrayCounters from "@/components/sections/metrics/MetricsTrayCounters";
@@ -56,6 +57,10 @@ export default function HomePage() {
             }
           ]}
         />
+      </div>
+
+      <div id="video-cinematografico" data-webild-section="CinematicVideoSection" data-webild-section-id="CinematicVideoSection-1" data-section="video-cinematografico">
+        <CinematicVideoSection />
       </div>
 
       <div id="about" data-webild-section="AboutStatementIconRow" data-webild-section-id="AboutStatementIconRow-1" data-section="about" data-tone="card">
