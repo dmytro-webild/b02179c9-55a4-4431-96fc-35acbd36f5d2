@@ -20,7 +20,7 @@ export default function HomePage() {
 
       <div id="home" data-webild-section="HeroBoardFrame" data-webild-section-id="HeroBoardFrame-1" data-section="home">
         <HeroBoardFrame
-          className="bg-transparent"
+          className="bg-white"
           tag="EDUCACIÓN EN LÍNEA"
           title="La educación es el camino"
           highlightText="no el destino."
