@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import useMenuDialog from "@/components/kit/useMenuDialog";
 
@@ -68,8 +69,8 @@ const NavbarFloatingPill = ({
         <div className="flex items-center justify-between gap-4 xl:gap-8">
           
           {/* Logo oficial a color */}
-          <a
-            href="#home"
+          <Link
+            to="/"
             aria-label={brand}
             className="flex shrink-0 items-center transition-opacity hover:opacity-90"
           >
@@ -91,34 +92,73 @@ const NavbarFloatingPill = ({
                 </span>
               </div>
             )}
-          </a>
+          </Link>
 
           {/* Menú horizontal en azul oscuro para escritorio */}
-          <div className="hidden min-w-0 flex-1 items-center justify-center gap-4 xl:gap-6 2xl:gap-8 xl:flex px-2">
-            {navItems.map((item, i) => (
-              <a
-                key={`${i}-${item.name}`}
-                href={item.href}
-                className="relative group shrink-0 whitespace-nowrap py-1 font-['Montserrat'] text-[15px] 2xl:text-[16px] font-semibold text-[#0F2755] transition-colors duration-200 hover:text-[#1B3A7A]"
-              >
-                <span>{item.name}</span>
-                <span className="absolute inset-x-0 -bottom-0.5 h-[2.5px] scale-x-0 bg-[#F4B400] transition-transform duration-300 ease-out group-hover:scale-x-100 rounded-full" />
-              </a>
-            ))}
+          <div className="hidden min-w-0 flex-1 items-center justify-center gap-3 xl:gap-5 2xl:gap-7 xl:flex px-2">
+            {navItems.map((item, i) => {
+              if (item.href.startsWith("/")) {
+                return (
+                  <NavLink
+                    key={`${i}-${item.name}`}
+                    to={item.href}
+                    end={item.href === "/"}
+                    className={({ isActive }) =>
+                      `relative group shrink-0 whitespace-nowrap py-1 font-['Montserrat'] text-[14px] 2xl:text-[15px] font-semibold transition-colors duration-200 ${
+                        isActive ? "text-[#1B3A7A]" : "text-[#0F2755] hover:text-[#1B3A7A]"
+                      }`
+                    }
+                  >
+                    {({ isActive }) => (
+                      <>
+                        <span>{item.name}</span>
+                        <span
+                          className={`absolute inset-x-0 -bottom-0.5 h-[2.5px] bg-[#F4B400] transition-transform duration-300 ease-out rounded-full ${
+                            isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                          }`}
+                        />
+                      </>
+                    )}
+                  </NavLink>
+                );
+              }
+              return (
+                <a
+                  key={`${i}-${item.name}`}
+                  href={item.href}
+                  className="relative group shrink-0 whitespace-nowrap py-1 font-['Montserrat'] text-[14px] 2xl:text-[15px] font-semibold text-[#0F2755] transition-colors duration-200 hover:text-[#1B3A7A]"
+                >
+                  <span>{item.name}</span>
+                  <span className="absolute inset-x-0 -bottom-0.5 h-[2.5px] scale-x-0 bg-[#F4B400] transition-transform duration-300 ease-out group-hover:scale-x-100 rounded-full" />
+                </a>
+              );
+            })}
           </div>
 
           {/* Botón dorado y menú hamburguesa en móvil */}
           <div className="flex shrink-0 items-center gap-3 xl:gap-4">
             {cta && (
-              <a
-                href={cta.href}
-                className="hidden sm:inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B400] px-5 py-2.5 sm:px-6 sm:py-3 font-['Montserrat'] font-bold text-xs sm:text-sm text-[#0F2755] shadow-[0_4px_14px_rgba(244,180,0,0.35)] transition-all duration-300 hover:bg-[#e0a400] hover:scale-105 hover:shadow-[0_6px_20px_rgba(244,180,0,0.45)] whitespace-nowrap"
-              >
-                <span>{cta.text}</span>
-                <svg className="size-3.5 stroke-[3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                </svg>
-              </a>
+              cta.href.startsWith("/") ? (
+                <Link
+                  to={cta.href}
+                  className="hidden sm:inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B400] px-5 py-2.5 sm:px-6 sm:py-3 font-['Montserrat'] font-bold text-xs sm:text-sm text-[#0F2755] shadow-[0_4px_14px_rgba(244,180,0,0.35)] transition-all duration-300 hover:bg-[#e0a400] hover:scale-105 hover:shadow-[0_6px_20px_rgba(244,180,0,0.45)] whitespace-nowrap"
+                >
+                  <span>{cta.text}</span>
+                  <svg className="size-3.5 stroke-[3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </Link>
+              ) : (
+                <a
+                  href={cta.href}
+                  className="hidden sm:inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B400] px-5 py-2.5 sm:px-6 sm:py-3 font-['Montserrat'] font-bold text-xs sm:text-sm text-[#0F2755] shadow-[0_4px_14px_rgba(244,180,0,0.35)] transition-all duration-300 hover:bg-[#e0a400] hover:scale-105 hover:shadow-[0_6px_20px_rgba(244,180,0,0.45)] whitespace-nowrap"
+                >
+                  <span>{cta.text}</span>
+                  <svg className="size-3.5 stroke-[3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </a>
+              )
             )}
 
             {/* Menú hamburguesa para móvil */}
@@ -172,36 +212,71 @@ const NavbarFloatingPill = ({
           >
             <div className="mx-auto flex max-h-[calc(100svh-5rem)] flex-col gap-4 overflow-y-auto px-6 py-6 w-full max-w-[1536px]">
               <div className="flex flex-col space-y-1">
-                {navItems.map((item, i) => (
-                  <motion.a
-                    key={`${i}-${item.name}`}
-                    href={item.href}
-                    onClick={() => setOpen(false)}
-                    initial={reduce ? false : { opacity: 0, x: -12 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ ...spring, delay: 0.04 + i * 0.04 }}
-                    className="flex items-center justify-between rounded-xl px-4 py-3 font-['Montserrat'] font-semibold text-base text-[#0F2755] hover:bg-slate-50 hover:text-[#1B3A7A] transition-colors"
-                  >
-                    <span>{item.name}</span>
-                    <svg className="size-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                    </svg>
-                  </motion.a>
-                ))}
+                {navItems.map((item, i) => {
+                  if (item.href.startsWith("/")) {
+                    return (
+                      <NavLink
+                        key={`${i}-${item.name}`}
+                        to={item.href}
+                        end={item.href === "/"}
+                        onClick={() => setOpen(false)}
+                        className={({ isActive }) =>
+                          `flex items-center justify-between rounded-xl px-4 py-3 font-['Montserrat'] font-semibold text-base transition-colors ${
+                            isActive ? "bg-slate-100 text-[#1B3A7A] font-bold" : "text-[#0F2755] hover:bg-slate-50 hover:text-[#1B3A7A]"
+                          }`
+                        }
+                      >
+                        <span>{item.name}</span>
+                        <svg className="size-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                        </svg>
+                      </NavLink>
+                    );
+                  }
+                  return (
+                    <motion.a
+                      key={`${i}-${item.name}`}
+                      href={item.href}
+                      onClick={() => setOpen(false)}
+                      initial={reduce ? false : { opacity: 0, x: -12 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ ...spring, delay: 0.04 + i * 0.04 }}
+                      className="flex items-center justify-between rounded-xl px-4 py-3 font-['Montserrat'] font-semibold text-base text-[#0F2755] hover:bg-slate-50 hover:text-[#1B3A7A] transition-colors"
+                    >
+                      <span>{item.name}</span>
+                      <svg className="size-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                      </svg>
+                    </motion.a>
+                  );
+                })}
               </div>
 
               {cta && (
                 <div className="pt-2 sm:hidden">
-                  <a
-                    href={cta.href}
-                    onClick={() => setOpen(false)}
-                    className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B400] px-6 py-3.5 font-['Montserrat'] font-bold text-sm text-[#0F2755] shadow-md hover:bg-[#e0a400] transition-colors"
-                  >
-                    <span>{cta.text}</span>
-                    <svg className="size-4 stroke-[3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                    </svg>
-                  </a>
+                  {cta.href.startsWith("/") ? (
+                    <Link
+                      to={cta.href}
+                      onClick={() => setOpen(false)}
+                      className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B400] px-6 py-3.5 font-['Montserrat'] font-bold text-sm text-[#0F2755] shadow-md hover:bg-[#e0a400] transition-colors"
+                    >
+                      <span>{cta.text}</span>
+                      <svg className="size-4 stroke-[3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                      </svg>
+                    </Link>
+                  ) : (
+                    <a
+                      href={cta.href}
+                      onClick={() => setOpen(false)}
+                      className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B400] px-6 py-3.5 font-['Montserrat'] font-bold text-sm text-[#0F2755] shadow-md hover:bg-[#e0a400] transition-colors"
+                    >
+                      <span>{cta.text}</span>
+                      <svg className="size-4 stroke-[3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                      </svg>
+                    </a>
+                  )}
                 </div>
               )}
             </div>
