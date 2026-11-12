@@ -50,7 +50,7 @@ const AboutStatementIconRow = ({ title, items, ariaLabel, className }: AboutStat
                   transition={{ type: "spring", bounce: 0.2, duration: 1, delay: (index % columns) * 0.1 }}
                   className={cn("flex min-w-0 items-start gap-4", count === 1 && "justify-center")}
                 >
-                  {item.icon && <Icon name={item.icon} aria-hidden="true" className="mt-0.5 size-6 shrink-0 text-foreground" strokeWidth={1.5} />}
+                  {item.icon && <Icon name={item.icon} aria-hidden="true" className="mt-0.5 size-6 shrink-0 text-[#1B3A7A]" strokeWidth={1.75} />}
                   <div className="flex min-w-0 flex-col gap-1">
                     <h3 className="text-[length:var(--text-body-lg)] leading-[1.4] tracking-[-0.01em] [overflow-wrap:anywhere]">{item.title}</h3>
                     {item.description && <p className="text-[length:var(--text-small)] leading-[1.5] text-muted-foreground [overflow-wrap:anywhere]">{item.description}</p>}

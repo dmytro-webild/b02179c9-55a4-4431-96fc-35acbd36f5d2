@@ -48,7 +48,7 @@ const FaqTrayAccordion = ({ tag, title, highlight, items, help, ariaLabel, class
             whileInView={{ opacity: 1, y: 0 }}
             viewport={HEADER_VIEW}
             transition={SPRING}
-            className="rounded-full bg-secondary px-3.5 py-1 text-[length:var(--text-label)] leading-[1.5] text-secondary-foreground whitespace-nowrap"
+            className="rounded-full bg-[#1B3A7A]/10 px-3.5 py-1 text-[length:var(--text-label)] leading-[1.5] text-[#1B3A7A] font-semibold whitespace-nowrap"
           >
             {tag}
           </motion.p>
@@ -76,7 +76,7 @@ const FaqTrayAccordion = ({ tag, title, highlight, items, help, ariaLabel, class
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={ITEM_VIEW}
                   transition={{ ...SPRING, delay: Math.min(index, 4) * 0.06 }}
-                  className="rounded-[var(--radius-image)] bg-card text-card-foreground"
+                  className="rounded-[var(--radius-image)] bg-card border border-[#1B3A7A]/12 shadow-sm text-card-foreground hover:border-[#1B3A7A]/30 transition-colors"
                 >
                   <h3>
                     <button
@@ -126,7 +126,7 @@ const FaqTrayAccordion = ({ tag, title, highlight, items, help, ariaLabel, class
               whileInView={{ opacity: 1, y: 0 }}
               viewport={ITEM_VIEW}
               transition={{ ...SPRING, delay: 0.1 }}
-              className="flex min-w-0 flex-col gap-6 self-start rounded-[var(--radius-image)] bg-card text-card-foreground p-[clamp(1.25rem,2.2vw,1.75rem)] lg:sticky lg:top-24 lg:order-1"
+              className="flex min-w-0 flex-col gap-6 self-start rounded-[var(--radius-image)] bg-card border border-[#1B3A7A]/12 shadow-sm text-card-foreground p-[clamp(1.25rem,2.2vw,1.75rem)] lg:sticky lg:top-24 lg:order-1"
             >
               <Media
                 src={help.imageSrc}

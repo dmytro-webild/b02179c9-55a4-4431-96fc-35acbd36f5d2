@@ -6,7 +6,7 @@ export default function Layout() {
   const logoUrl = "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794452037801-2036zpmm.png";
 
   return (
-    <div className="relative isolate min-h-svh flex flex-col bg-[#0F2755] text-white" data-button="chip" data-card="tray" data-pattern="none">
+    <div className="relative isolate min-h-svh flex flex-col bg-background text-foreground" data-button="chip" data-card="tray" data-pattern="none">
       <header data-webild-section="Header">
         <NavbarFloatingPill
           brand="ENLACES Educación"
