@@ -33,8 +33,6 @@ export default function HomePage() {
             text: "Conozca ENLACES",
             href: "#about"
           }}
-          imageSrc="https://img.b2bpic.net/free-photo/medium-shot-young-woman-working-laptop_23-2149258288.jpg"
-          imageAlt="Estudiante de ENLACES Educación en línea con computadora portátil"
           introDelay={0.1}
           features={[
             {
