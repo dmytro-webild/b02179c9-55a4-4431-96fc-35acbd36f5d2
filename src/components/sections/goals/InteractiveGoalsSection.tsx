@@ -40,7 +40,7 @@ const goalOptions: GoalOption[] = [
     programTitle: "Bachillerato General en Línea",
     categoryTag: "Nivel Medio Superior",
     description:
-      "Concluya sus estudios de preparatoria con un programa flexible diseñado para adultos y personas trabajadoras. Estudie desde cualquier dispositivo, a su propio ritmo y con el respaldo continuo de asesores académicos.",
+      "Concluye tus estudios de preparatoria con un programa flexible diseñado para adultos y personas trabajadoras. Estudia desde cualquier dispositivo, a tu propio ritmo y con el respaldo continuo de asesores académicos.",
     keyBenefits: [
       "Certificación Oficial con validez nacional",
       "Plataforma accesible las 24 horas",
@@ -62,10 +62,10 @@ const goalOptions: GoalOption[] = [
     programTitle: "Licenciaturas Ejecutivas",
     categoryTag: "Formación Universitaria",
     description:
-      "Obtenga su título universitario con programas estructurados para adaptarse a sus responsabilidades. Plan de estudios modular enfocado en la práctica profesional, liderazgo gerencial y herramientas actuales de negocios.",
+      "Obtén tu título universitario con programas estructurados para adaptarse a tus responsabilidades. Plan de estudios modular enfocado en la práctica profesional, liderazgo gerencial y herramientas actuales de negocios.",
     keyBenefits: [
       "Reconocimiento de Validez Oficial de Estudios (RVOE)",
-      "Horarios ejecutivos que no interfieren con su trabajo",
+      "Horarios ejecutivos que no interfieren con tu trabajo",
       "Cuerpo docente activo en el sector empresarial",
       "Evaluaciones por proyectos y casos reales"
     ],
@@ -84,7 +84,7 @@ const goalOptions: GoalOption[] = [
     programTitle: "Titulación por Experiencia Laboral",
     categoryTag: "Acreditación de Saberes",
     description:
-      "Transforme sus años de trabajo en un título universitario oficial. Evaluamos sus competencias laborales previas para que obtenga la titulación académica que le corresponde por su trayectoria profesional.",
+      "Transforma tus años de trabajo en un título universitario oficial. Evaluamos tus competencias laborales previas para que obtengas la titulación académica que te corresponde por tu trayectoria profesional.",
     keyBenefits: [
       "Sin necesidad de cursar materias tradicionales completas",
       "Proceso ágil de acreditación por conocimientos previos",
@@ -106,7 +106,7 @@ const goalOptions: GoalOption[] = [
     programTitle: "Maestrías y Posgrados de Alta Dirección",
     categoryTag: "Especialización y Posgrados",
     description:
-      "Alcance posiciones de alta dirección y liderazgo estratégico. Programas de posgrado y diplomados de especialización diseñados para fortalecer sus decisiones directivas en un entorno global cambiante.",
+      "Alcanza posiciones de alta dirección y liderazgo estratégico. Programas de posgrado y diplomados de especialización diseñados para fortalecer tus decisiones directivas en un entorno global cambiante.",
     keyBenefits: [
       "Enfoque en alta dirección, finanzas y estrategia corporativa",
       "Networking estratégico con profesionales de diversos sectores",
@@ -128,11 +128,11 @@ const goalOptions: GoalOption[] = [
     programTitle: "Programa de Inglés Profesional y Corporativo",
     categoryTag: "Capacitación en Idiomas",
     description:
-      "Domine el idioma inglés con enfoque en comunicación profesional, presentaciones ejecutivas y vocabulario de negocios. Avance a su ritmo con clases interactivas y dinámicas enfocadas en fluidez real.",
+      "Domina el idioma inglés con enfoque en comunicación profesional, presentaciones ejecutivas y vocabulario de negocios. Avanza a tu ritmo con clases interactivas y dinámicas enfocadas en fluidez real.",
     keyBenefits: [
       "Aulas virtuales interactivas con profesores calificados",
       "Enfoque en conversación y comunicación de negocios",
-      "Evaluación inicial para ubicar su nivel exacto",
+      "Evaluación inicial para ubicar tu nivel exacto",
       "Horarios convenientes para personas ocupadas"
     ],
     ctaText: "Conocer Programa de Inglés",
@@ -155,8 +155,8 @@ export interface InteractiveGoalsSectionProps {
 
 export default function InteractiveGoalsSection({
   badge = "Guía Interactiva",
-  title = "¿Cuál es su siguiente meta?",
-  subtitle = "Seleccione el objetivo académico que desea alcanzar y descubra la mejor alternativa diseñada para su crecimiento.",
+  title = "¿Cuál es tu siguiente meta?",
+  subtitle = "Selecciona el objetivo académico que deseas alcanzar y descubre la mejor alternativa diseñada para tu crecimiento.",
   options = goalOptions,
   className = ""
 }: InteractiveGoalsSectionProps) {
@@ -168,7 +168,7 @@ export default function InteractiveGoalsSection({
   return (
     <section
       className={`relative bg-white py-20 sm:py-28 text-[#0F2755] overflow-hidden border-t border-slate-100 ${className}`}
-      aria-label="¿Cuál es su siguiente meta?"
+      aria-label="¿Cuál es tu siguiente meta?"
     >
       {/* Decorative subtle background accents */}
       <div className="pointer-events-none absolute inset-0 opacity-40">

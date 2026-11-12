@@ -24,8 +24,8 @@ type ContactDarkFormCardProps = {
   className?: string;
 };
 
-const defaults = { name: "Name", email: "Email", company: "Company", message: "How can we help?" };
-const hints = { name: "Your name", email: "you@email.com", company: "Your company", message: "Tell us a little about what you need." };
+const defaults = { name: "Nombre completo", email: "Correo electrónico", company: "Programa de interés", message: "Mensaje o dudas" };
+const hints = { name: "Escribe tu nombre completo", email: "correo@ejemplo.com", company: "Ej. Bachillerato o Licenciatura", message: "Escribe tus preguntas sobre admisión, costos o validez..." };
 
 const spring = (delay = 0) => ({ type: "spring" as const, bounce: 0.2, duration: 1, delay });
 
@@ -61,8 +61,8 @@ const ContactDarkFormCard = ({
   formTitle,
   fields,
   placeholders,
-  submitText = "Send message",
-  successText = "Thank you, we will be in touch soon.",
+  submitText = "Enviar consulta",
+  successText = "Gracias. Un asesor académico te responderá a la brevedad.",
   onSubmit,
   imageSrc,
   imageAlt = "",
