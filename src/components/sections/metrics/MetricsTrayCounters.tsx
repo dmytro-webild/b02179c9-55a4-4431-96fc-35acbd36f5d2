@@ -1,4 +1,3 @@
-import { type CSSProperties } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import Icon, { type IconName } from "@/components/kit/Icon";
 import { clsx, type ClassValue } from "clsx";
@@ -8,92 +7,176 @@ import MakroTitle from "@/components/kit/MakroTitle";
 
 const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs));
 
-type Metric = { value: string; label: string };
+export type Metric = {
+  value?: string;
+  prefix?: string;
+  label: string;
+  description?: string;
+  icon?: IconName;
+};
 
-type MetricsTrayCountersProps = {
-  tag?: { text: string; icon?: IconName };
+export type MetricsTrayCountersProps = {
+  tag?: { text: string; icon?: IconName } | string;
   title?: string;
   description?: string;
-  items: Metric[];
+  items?: Metric[];
   ariaLabel?: string;
   className?: string;
 };
 
-const SPRING = { type: "spring", bounce: 0.2, duration: 1 } as const;
+const SPRING = { type: "spring", bounce: 0.15, duration: 0.8 } as const;
 
-const MetricsTrayCounters = ({ tag, title, description, items, ariaLabel, className }: MetricsTrayCountersProps) => {
+const DEFAULT_ITEMS: Metric[] = [
+  {
+    prefix: "Más de",
+    value: "12,000",
+    label: "Egresados",
+    description: "Estudiantes que han alcanzado sus metas de titulación con validez oficial.",
+    icon: "GraduationCap",
+  },
+  {
+    value: "99%",
+    label: "De aprobación",
+    description: "Índice de éxito en procesos de evaluación y acreditación institucional.",
+    icon: "Award",
+  },
+  {
+    label: "Educación flexible",
+    description: "Modelos de estudio adaptados a tu ritmo, horarios y compromisos personales.",
+    icon: "Clock",
+  },
+  {
+    label: "Acompañamiento académico",
+    description: "Asesoría personalizada y seguimiento docente continuo durante toda tu carrera.",
+    icon: "UserCheck",
+  },
+];
+
+const MetricsTrayCounters = ({
+  tag = { text: "Indicadores Institucionales", icon: "Award" },
+  title = "Respaldados por la excelencia y validación oficial",
+  description = "Datos institucionales autorizados que reflejan nuestro compromiso con la educación de calidad.",
+  items = DEFAULT_ITEMS,
+  ariaLabel,
+  className,
+}: MetricsTrayCountersProps) => {
   const reduce = useReducedMotion();
-  const count = items.length;
-  const columns = count <= 4 ? count : count % 3 === 0 ? 3 : 4;
-  const chars = Math.max(3, ...items.map((item) => item.value.length));
+  const tagObj = typeof tag === "string" ? { text: tag, icon: "Award" as IconName } : tag;
+  const activeItems = items && items.length > 0 ? items : DEFAULT_ITEMS;
 
   return (
-    <section aria-label={ariaLabel ?? title ?? "Key figures"} className={cn("relative bg-background py-[var(--section-space)] text-foreground", className)}>
-      <div className="mx-auto flex w-[var(--container)] flex-col gap-[clamp(2.5rem,5vw,4rem)]">
-        {(tag || title || description) && (
-          <div className="flex flex-col items-center gap-5 text-center">
-            {tag && (
+    <section
+      aria-label={ariaLabel ?? title ?? "Indicadores institucionales"}
+      className={cn("relative bg-white py-20 sm:py-28 text-slate-900 overflow-hidden", className)}
+    >
+      {/* Subtle background glow decorative element */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 size-[600px] rounded-full bg-gradient-to-br from-amber-100/30 via-blue-50/20 to-transparent blur-3xl opacity-60"
+      />
+
+      <div className="relative mx-auto flex max-w-7xl px-4 sm:px-6 lg:px-8 flex-col gap-12 sm:gap-16">
+        {(tagObj || title || description) && (
+          <div className="flex flex-col items-center gap-4 text-center max-w-3xl mx-auto">
+            {tagObj && (
               <motion.div
-                initial={reduce ? false : { opacity: 0, y: 24 }}
+                initial={reduce ? false : { opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "0px 0px -8% 0px" }}
+                viewport={{ once: true, margin: "0px 0px -10% 0px" }}
                 transition={SPRING}
-                className="flex items-center gap-2 rounded-full bg-[#1B3A7A]/10 py-1 pl-2.5 pr-3.5 text-[#1B3A7A] font-semibold"
+                className="inline-flex items-center gap-2 rounded-full bg-amber-50/90 border border-[#D4AF37]/40 px-4 py-1.5 text-xs sm:text-sm font-semibold text-[#B8860B] shadow-2xs"
               >
-                <Icon name={tag.icon ?? "chart-no-axes-column"} aria-hidden="true" className="size-4 shrink-0 text-[#1B3A7A]" strokeWidth={1.75} />
-                <p className="whitespace-nowrap text-[length:var(--text-label)] leading-[1.5]">{tag.text}</p>
+                <Icon name={tagObj.icon ?? "Award"} aria-hidden="true" className="size-4 shrink-0 text-[#D4AF37]" strokeWidth={2} />
+                <span className="whitespace-nowrap">{tagObj.text}</span>
               </motion.div>
             )}
+
             {title && (
-              <MakroTitle text={title} className="max-w-[14em] text-[length:var(--text-h1)] leading-[1.2] tracking-[-0.04em]" />
+              <MakroTitle
+                text={title}
+                className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#1B3A7A] font-heading leading-tight"
+              />
             )}
+
             {description && (
               <motion.p
-                initial={reduce ? false : { opacity: 0, y: 72 }}
+                initial={reduce ? false : { opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "0px 0px -8% 0px" }}
-                transition={SPRING}
-                className="max-w-[36em] text-balance text-[length:var(--text-body-lg)] leading-[1.5] text-muted-foreground [overflow-wrap:anywhere]"
+                viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+                transition={{ ...SPRING, delay: 0.1 }}
+                className="text-base sm:text-lg text-slate-600 leading-relaxed text-balance"
               >
                 {description}
               </motion.p>
             )}
           </div>
         )}
-        <ul
-          style={{ "--cols": columns, "--chars": chars } as CSSProperties}
-          className={cn(
-            "grid gap-[clamp(0.75rem,1.2vw,1rem)] lg:grid-cols-[repeat(var(--cols),minmax(0,1fr))]",
-            count > 1 && "grid-cols-2",
-          )}
-        >
-          {items.map((item, index) => (
-            <motion.li
-              key={index}
-              initial={reduce ? false : { opacity: 0, y: 48 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "0px 0px -8% 0px" }}
-              transition={{ ...SPRING, delay: (index % columns) * 0.1 }}
-              className={cn(
-                "relative isolate flex min-w-0 flex-col justify-between gap-[clamp(2rem,5vw,4rem)] overflow-hidden rounded-[var(--radius-card)] p-[clamp(1.25rem,2.5vw,2rem)] [container-type:inline-size]",
-                index % 4 === 1 ? "bg-accent text-accent-foreground" : index % 4 === 2 ? "bg-deep text-deep-foreground" : "bg-card text-card-foreground",
-                count > 1 && count % 2 === 1 && index === count - 1 && "col-span-2 lg:col-span-1",
-              )}
-            >
-              {index % 4 === 2 && (
-                <div aria-hidden="true" className="pointer-events-none absolute -right-[30%] -top-[40%] -z-1 aspect-square w-[120%] rounded-full bg-[radial-gradient(closest-side,color-mix(in_srgb,var(--accent)_28%,transparent),transparent)]" />
-              )}
-              <MakroCounter
-                value={item.value}
-                className={cn(
-                  "whitespace-nowrap text-[length:min(var(--text-h1)*1.15,calc(100cqi/var(--chars)/0.62))] leading-none tracking-[-0.04em] tabular-nums",
-                  index % 4 === 2 && "text-accent",
+
+        {/* Indicators Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          {activeItems.map((item, index) => {
+            const hasNumericValue = Boolean(item.value && /\d/.test(item.value));
+
+            return (
+              <motion.div
+                key={index}
+                initial={reduce ? false : { opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+                transition={{ ...SPRING, delay: index * 0.1 }}
+                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl bg-white p-6 sm:p-8 border border-slate-200/80 shadow-2xs hover:shadow-md hover:border-[#D4AF37]/50 transition-all duration-300"
+              >
+                {/* Gold Top Accent Line */}
+                <div aria-hidden="true" className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#D4AF37] opacity-80 group-hover:opacity-100 transition-opacity" />
+
+                <div>
+                  {/* Card Header Row with Gold Icon Badge */}
+                  <div className="flex items-center justify-between gap-3 mb-6">
+                    <div className="flex size-11 items-center justify-center rounded-xl bg-amber-50 text-[#B8860B] border border-amber-200/70 shadow-2xs group-hover:scale-105 transition-transform">
+                      <Icon name={item.icon ?? (hasNumericValue ? "Award" : "CheckCircle2")} className="size-5 text-[#B8860B]" strokeWidth={2} />
+                    </div>
+                    <span className="inline-flex items-center text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#B8860B] bg-amber-50/80 px-2.5 py-1 rounded-full border border-amber-200/60">
+                      Institucional
+                    </span>
+                  </div>
+
+                  {/* Number or Feature Title */}
+                  {hasNumericValue ? (
+                    <div className="flex flex-col mb-2">
+                      {item.prefix && (
+                        <span className="text-xs sm:text-sm font-bold text-[#1B3A7A]/80 tracking-wide uppercase mb-1">
+                          {item.prefix}
+                        </span>
+                      )}
+                      <div className="flex items-baseline text-[#1B3A7A]">
+                        <MakroCounter
+                          value={item.value}
+                          className="text-4xl sm:text-5xl font-extrabold tracking-tight text-[#1B3A7A] font-heading tabular-nums"
+                        />
+                      </div>
+                      <h3 className="text-lg font-bold text-slate-800 mt-2 leading-snug">
+                        {item.label}
+                      </h3>
+                    </div>
+                  ) : (
+                    <div className="flex flex-col mb-2">
+                      <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#1B3A7A] font-heading leading-tight">
+                        {item.label}
+                      </h3>
+                    </div>
+                  )}
+                </div>
+
+                {/* Description */}
+                {item.description && (
+                  <p className="mt-4 pt-4 border-t border-slate-100 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    {item.description}
+                  </p>
                 )}
-              />
-              <p className={cn("text-[length:var(--text-body)] leading-[1.5] [overflow-wrap:anywhere]", index % 4 === 1 ? "text-accent-foreground/75" : index % 4 === 2 ? "text-deep-foreground/70" : "text-muted-foreground")}>{item.label}</p>
-            </motion.li>
-          ))}
-        </ul>
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
