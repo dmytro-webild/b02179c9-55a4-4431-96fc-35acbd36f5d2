@@ -118,7 +118,7 @@ export default function CinematicVideoSection({
       <div className="pointer-events-none absolute top-0 left-0 right-0 h-12 sm:h-24 md:h-36 bg-gradient-to-b from-white via-white/40 to-transparent z-10" />
 
       {/* Discrete floating controls in the bottom corner */}
-      <div className="absolute bottom-3 right-3 sm:bottom-6 sm:right-6 z-20 pointer-events-auto flex items-center gap-1.5 sm:gap-2 rounded-full bg-black/40 backdrop-blur-md p-1 sm:p-1.5 border border-white/20 shadow-lg text-white transition-opacity duration-300 hover:bg-black/60">
+      <div className="absolute bottom-3 left-3 sm:bottom-6 sm:left-6 z-20 pointer-events-auto flex items-center gap-1.5 sm:gap-2 rounded-full bg-black/40 backdrop-blur-md p-1 sm:p-1.5 border border-white/20 shadow-lg text-white transition-opacity duration-300 hover:bg-black/60">
         {/* Play / Pause Toggle */}
         <button
           type="button"
