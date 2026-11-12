@@ -180,23 +180,34 @@ export default function HomePage() {
         <div id="metrics-tray-counters" data-webild-section="MetricsTrayCounters" data-webild-section-id="MetricsTrayCounters-1" data-section="metrics-tray-counters">
           <MetricsTrayCounters
             tag={{
-              text: "Experiencia ENLACES",
+              text: "Indicadores Institucionales",
               icon: "Award"
             }}
-            title="Respaldados por resultados y compromiso docente"
-            description="Años de acompañamiento formal a estudiantes de todo México para alcanzar sus metas académicas."
+            title="Respaldados por la excelencia y validación oficial"
+            description="Información institucional verificada que refleja el compromiso de ENLACES con nuestros estudiantes."
             items={[
               {
-                value: "10,000+",
-                label: "Egresados con validez oficial"
+                prefix: "Más de",
+                value: "12,000",
+                label: "Egresados",
+                description: "Estudiantes que han alcanzado sus metas de titulación con validez oficial.",
+                icon: "GraduationCap"
               },
               {
-                value: "95%",
-                label: "Índice de satisfacción estudiantil"
+                value: "99%",
+                label: "De aprobación",
+                description: "Índice de éxito en procesos de evaluación y acreditación institucional.",
+                icon: "Award"
               },
               {
-                value: "20+",
-                label: "Años de trayectoria académica"
+                label: "Educación flexible",
+                description: "Modelos de estudio adaptados a tu ritmo, horarios y compromisos personales.",
+                icon: "Clock"
+              },
+              {
+                label: "Acompañamiento académico",
+                description: "Asesoría personalizada y seguimiento docente continuo durante toda tu carrera.",
+                icon: "UserCheck"
               }
             ]}
           />
@@ -215,12 +226,12 @@ export default function HomePage() {
                 imageSrc: "https://img.b2bpic.net/free-photo/close-up-portrait-business-woman-smiling-camera-after-drinking-cup-coffee-sitting-desk-business-office-late-night_482257-5183.jpg",
                 stats: [
                   {
-                    label: "Índice de satisfacción",
-                    value: "95%"
+                    label: "Índice de aprobación",
+                    value: "99%"
                   },
                   {
                     label: "Egresados",
-                    value: "10,000+"
+                    value: "12,000+"
                   }
                 ]
               },
@@ -232,12 +243,12 @@ export default function HomePage() {
                 imageSrc: "https://img.b2bpic.net/free-photo/smiling-businessman-speaking-phone_23-2147787724.jpg",
                 stats: [
                   {
-                    label: "Años de trayectoria",
-                    value: "20+"
+                    label: "Egresados",
+                    value: "12,000+"
                   },
                   {
-                    label: "Modalidad flexible",
-                    value: "100%"
+                    label: "Modalidad",
+                    value: "Flexible"
                   }
                 ]
               },
@@ -249,8 +260,8 @@ export default function HomePage() {
                 imageSrc: "https://img.b2bpic.net/free-photo/medium-shot-female-executive-studying-report-black-folder_1098-20730.jpg",
                 stats: [
                   {
-                    label: "Atención personalizada",
-                    value: "Continua"
+                    label: "Acompañamiento",
+                    value: "Docente"
                   },
                   {
                     label: "Validez oficial",
