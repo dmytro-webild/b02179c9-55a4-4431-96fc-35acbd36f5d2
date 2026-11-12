@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState, useCallback } from "react";
-import { motion, useScroll, useTransform, useSpring, useReducedMotion } from "motion/react";
 
 interface CinematicVideoSectionProps {
   videoSrc?: string;
@@ -8,14 +7,13 @@ interface CinematicVideoSectionProps {
   className?: string;
 }
 
-// Reliable default high-quality educational/cinematic MP4 background video
-const DEFAULT_VIDEO_SRC = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4";
-const DEFAULT_POSTER_SRC = "https://img.b2bpic.net/free-photo/medium-shot-young-woman-working-laptop_23-2149258288.jpg";
+const DEFAULT_VIDEO_SRC =
+  "https://res.cloudinary.com/r58dzn6z/video/upload/v1794457523/gemini_generated_video_ab0b3b50.mp4";
 
 export default function CinematicVideoSection({
   videoSrc = DEFAULT_VIDEO_SRC,
-  posterSrc = DEFAULT_POSTER_SRC,
-  ariaLabel = "Experiencia cinematográfica institucional ENLACES",
+  posterSrc,
+  ariaLabel = "Sección cinematográfica ENLACES",
   className = "",
 }: CinematicVideoSectionProps) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -23,67 +21,12 @@ export default function CinematicVideoSection({
 
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
-  const [userInteracted, setUserInteracted] = useState(false);
-  const [progress, setProgress] = useState(0);
-  const [isFullscreen, setIsFullscreen] = useState(false);
-
-  const reduceMotion = useReducedMotion();
-
-  // Scroll progress for fluid immersive scroll transformation
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  });
-
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 90,
-    damping: 28,
-    restDelta: 0.001,
-  });
-
-  // Scale: 0.84 -> 1.0 (fullscreen) -> 0.85
-  const scale = useTransform(
-    smoothProgress,
-    [0, 0.28, 0.38, 0.62, 0.72, 1],
-    reduceMotion ? [1, 1, 1, 1, 1, 1] : [0.84, 0.94, 1.0, 1.0, 0.92, 0.85]
-  );
-
-  // Opacity: 0.25 -> 1.0 -> 0.25
-  const opacity = useTransform(
-    smoothProgress,
-    [0, 0.2, 0.35, 0.65, 0.8, 1],
-    [0.25, 0.85, 1.0, 1.0, 0.85, 0.25]
-  );
-
-  // Border radius: 28px -> 0px -> 28px
-  const borderRadius = useTransform(
-    smoothProgress,
-    [0, 0.28, 0.38, 0.62, 0.72, 1],
-    reduceMotion
-      ? ["0px", "0px", "0px", "0px", "0px", "0px"]
-      : ["28px", "16px", "0px", "0px", "16px", "28px"]
-  );
-
-  // 3D Perspective Rotation X: 6deg -> 0deg -> -6deg
-  const rotateX = useTransform(
-    smoothProgress,
-    [0, 0.28, 0.38, 0.62, 0.72, 1],
-    reduceMotion ? [0, 0, 0, 0, 0, 0] : [6, 2, 0, 0, -2, -6]
-  );
-
-  // Ambient Glow / Shadow Opacity
-  const shadowOpacity = useTransform(
-    smoothProgress,
-    [0, 0.25, 0.38, 0.62, 0.75, 1],
-    [0.6, 0.2, 0, 0, 0.2, 0.6]
-  );
 
   // Play / Pause handler
   const togglePlay = useCallback(() => {
     const video = videoRef.current;
     if (!video) return;
 
-    setUserInteracted(true);
     if (video.paused) {
       video.play().then(() => setIsPlaying(true)).catch(() => {});
     } else {
@@ -102,38 +45,7 @@ export default function CinematicVideoSection({
     setIsMuted(nextMuted);
   }, []);
 
-  // Toggle Fullscreen
-  const toggleFullscreen = useCallback(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    if (!document.fullscreenElement) {
-      container.requestFullscreen?.().then(() => setIsFullscreen(true)).catch(() => {});
-    } else {
-      document.exitFullscreen?.().then(() => setIsFullscreen(false)).catch(() => {});
-    }
-  }, []);
-
-  // Time update for scrubbing / progress indicator
-  const handleTimeUpdate = useCallback(() => {
-    const video = videoRef.current;
-    if (!video || !video.duration) return;
-    setProgress((video.currentTime / video.duration) * 100);
-  }, []);
-
-  // Scrubbing progress
-  const handleSeek = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    const video = videoRef.current;
-    if (!video || !video.duration) return;
-
-    const rect = e.currentTarget.getBoundingClientRect();
-    const clickX = e.clientX - rect.left;
-    const newPercent = Math.max(0, Math.min(1, clickX / rect.width));
-    video.currentTime = newPercent * video.duration;
-    setProgress(newPercent * 100);
-  }, []);
-
-  // Scroll-based auto play/pause observer
+  // Scroll-based auto play on intersect / pause on exit
   useEffect(() => {
     const video = videoRef.current;
     const container = containerRef.current;
@@ -146,19 +58,17 @@ export default function CinematicVideoSection({
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            if (!userInteracted || isPlaying) {
-              video
-                .play()
-                .then(() => setIsPlaying(true))
-                .catch(() => setIsPlaying(false));
-            }
+            video
+              .play()
+              .then(() => setIsPlaying(true))
+              .catch(() => setIsPlaying(false));
           } else {
             video.pause();
             setIsPlaying(false);
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.25 }
     );
 
     observer.observe(container);
@@ -166,9 +76,9 @@ export default function CinematicVideoSection({
     return () => {
       observer.disconnect();
     };
-  }, [userInteracted, isPlaying]);
+  }, []);
 
-  // Sync state on raw video events
+  // Sync isPlaying state with native video play/pause events
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
@@ -186,149 +96,71 @@ export default function CinematicVideoSection({
   }, []);
 
   return (
-    <div
+    <section
       ref={containerRef}
       aria-label={ariaLabel}
-      className={`relative w-full h-[220vh] sm:h-[250vh] bg-gradient-to-b from-white via-[#040814] via-50% to-white ${className}`}
+      className={`relative w-[100vw] h-[100svh] min-h-[100svh] max-w-full overflow-hidden bg-black p-0 m-0 border-0 ${className}`}
     >
-      {/* Ambient background blur highlights for 3D depth */}
-      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[600px] sm:size-[900px] rounded-full bg-[#1B3A7A]/25 blur-[120px]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[300px] sm:size-[500px] rounded-full bg-[#F4B400]/15 blur-[90px]" />
-      </div>
+      {/* HTML5 Native Video element configured full viewport, cover, muted, loop, playsinline */}
+      <video
+        ref={videoRef}
+        src={videoSrc}
+        poster={posterSrc}
+        autoPlay
+        muted={isMuted}
+        loop
+        playsInline
+        onClick={togglePlay}
+        className="absolute inset-0 w-full h-full object-cover block border-0 p-0 m-0 outline-none cursor-pointer"
+      />
 
-      {/* Sticky viewport stage housing the expanding video */}
-      <div className="sticky top-0 z-10 flex h-[100svh] w-full items-center justify-center overflow-hidden px-2 sm:px-4 md:px-6">
-        
-        {/* Progressive motion video wrapper with scale, depth, and border-radius */}
-        <motion.div
-          style={{
-            scale,
-            opacity,
-            borderRadius,
-            rotateX,
-            perspective: "1200px",
-            transformStyle: "preserve-3d",
-            willChange: "transform, opacity, border-radius",
-          }}
-          className="relative w-full h-full max-w-[100vw] max-h-[100svh] overflow-hidden bg-black shadow-2xl transition-shadow duration-300 group"
+      {/* Smooth transition gradient from white hero section above */}
+      <div className="pointer-events-none absolute top-0 left-0 right-0 h-28 sm:h-36 bg-gradient-to-b from-white via-white/40 to-transparent z-10" />
+
+      {/* Discrete floating controls in the bottom corner */}
+      <div className="absolute bottom-6 right-6 z-20 pointer-events-auto flex items-center gap-2 rounded-full bg-black/40 backdrop-blur-md p-1.5 border border-white/20 shadow-lg text-white transition-opacity duration-300 hover:bg-black/60">
+        {/* Play / Pause Toggle */}
+        <button
+          type="button"
+          onClick={togglePlay}
+          aria-label={isPlaying ? "Pausar" : "Reproducir"}
+          title={isPlaying ? "Pausar video" : "Reproducir video"}
+          className="flex size-9 items-center justify-center rounded-full bg-white/10 hover:bg-[#F4B400] hover:text-[#0F2755] transition-colors focus:outline-none"
         >
-          {/* Depth Glow Border Effect when floating */}
-          <motion.div
-            style={{ opacity: shadowOpacity }}
-            className="pointer-events-none absolute -inset-1 rounded-[inherit] bg-gradient-to-r from-[#1B3A7A] via-[#F4B400]/40 to-[#0F2755] blur-md z-0"
-          />
+          {isPlaying ? (
+            <svg className="size-4 fill-current" viewBox="0 0 24 24">
+              <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+            </svg>
+          ) : (
+            <svg className="size-4 fill-current ml-0.5" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          )}
+        </button>
 
-          {/* HTML5 Native Video */}
-          <video
-            ref={videoRef}
-            src={videoSrc}
-            poster={posterSrc}
-            playsInline
-            autoPlay
-            muted={isMuted}
-            loop
-            onTimeUpdate={handleTimeUpdate}
-            onClick={togglePlay}
-            className="relative z-10 w-full h-full object-cover block border-0 p-0 m-0 outline-none cursor-pointer"
-          />
-
-          {/* Subtle Top & Bottom Gradient Overlay for readability */}
-          <div className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-t from-black/80 via-transparent to-black/30" />
-
-          {/* Discrete Floating Overlay Controls */}
-          <div className="absolute inset-x-0 bottom-0 z-30 p-4 sm:p-6 md:p-8 pointer-events-none flex flex-col gap-3">
-            
-            {/* Subtle Progress Bar */}
-            <div
-              onClick={handleSeek}
-              className="pointer-events-auto h-1.5 w-full bg-white/20 hover:h-2.5 rounded-full overflow-hidden cursor-pointer transition-all duration-200 group relative"
-              title="Buscar en el video"
-            >
-              <div
-                className="h-full bg-[#F4B400] transition-all duration-100 ease-linear rounded-full"
-                style={{ width: `${progress}%` }}
-              />
-            </div>
-
-            {/* Control Buttons & Experience Indicator */}
-            <div className="flex items-center justify-between w-full">
-              
-              {/* Experience badge */}
-              <div className="pointer-events-auto flex items-center gap-2.5 rounded-full bg-black/60 backdrop-blur-md px-3.5 py-1.5 border border-white/15 text-xs font-['Montserrat'] font-bold text-white shadow-lg">
-                <span className={`size-2 rounded-full ${isPlaying ? "bg-emerald-400 animate-pulse" : "bg-amber-400"}`} />
-                <span className="tracking-wide">{isPlaying ? "Experiencia Audiovisual ENLACES" : "Pausado"}</span>
-              </div>
-
-              {/* Discrete Controls Pill */}
-              <div className="pointer-events-auto flex items-center gap-2 sm:gap-3 rounded-full bg-black/65 backdrop-blur-xl px-4 py-2 border border-white/20 text-white shadow-2xl">
-                
-                {/* Play / Pause Toggle */}
-                <button
-                  type="button"
-                  onClick={togglePlay}
-                  aria-label={isPlaying ? "Pausar video" : "Reproducir video"}
-                  title={isPlaying ? "Pausar video" : "Reproducir video"}
-                  className="flex size-9 items-center justify-center rounded-full bg-white/10 text-white hover:bg-[#F4B400] hover:text-[#0F2755] transition-all duration-200 focus:outline-none"
-                >
-                  {isPlaying ? (
-                    <svg className="size-4 fill-current" viewBox="0 0 24 24">
-                      <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
-                    </svg>
-                  ) : (
-                    <svg className="size-4 fill-current ml-0.5" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  )}
-                </button>
-
-                {/* Audio Mute / Unmute Toggle */}
-                <button
-                  type="button"
-                  onClick={toggleMute}
-                  aria-label={isMuted ? "Activar sonido" : "Silenciar sonido"}
-                  title={isMuted ? "Activar sonido" : "Silenciar sonido"}
-                  className={`flex size-9 items-center justify-center rounded-full transition-all duration-200 focus:outline-none ${
-                    isMuted
-                      ? "bg-white/10 text-white/80 hover:bg-white/20 hover:text-white"
-                      : "bg-[#F4B400] text-[#0F2755] shadow-md font-bold"
-                  }`}
-                >
-                  {isMuted ? (
-                    <svg className="size-4 fill-current" viewBox="0 0 24 24">
-                      <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73 4.27 3zM12 4L9.91 6.09 12 8.18V4z" />
-                    </svg>
-                  ) : (
-                    <svg className="size-4 fill-current" viewBox="0 0 24 24">
-                      <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
-                    </svg>
-                  )}
-                </button>
-
-                {/* Fullscreen Toggle */}
-                <button
-                  type="button"
-                  onClick={toggleFullscreen}
-                  aria-label={isFullscreen ? "Salir de pantalla completa" : "Pantalla completa"}
-                  title={isFullscreen ? "Salir de pantalla completa" : "Pantalla completa"}
-                  className="flex size-9 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-all duration-200 focus:outline-none"
-                >
-                  {isFullscreen ? (
-                    <svg className="size-4 fill-current" viewBox="0 0 24 24">
-                      <path d="M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z" />
-                    </svg>
-                  ) : (
-                    <svg className="size-4 fill-current" viewBox="0 0 24 24">
-                      <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" />
-                    </svg>
-                  )}
-                </button>
-
-              </div>
-            </div>
-          </div>
-        </motion.div>
+        {/* Audio Mute / Unmute Toggle */}
+        <button
+          type="button"
+          onClick={toggleMute}
+          aria-label={isMuted ? "Activar sonido" : "Silenciar"}
+          title={isMuted ? "Activar sonido" : "Silenciar sonido"}
+          className={`flex size-9 items-center justify-center rounded-full transition-colors focus:outline-none ${
+            isMuted
+              ? "bg-white/10 text-white hover:bg-white/25"
+              : "bg-[#F4B400] text-[#0F2755] font-bold"
+          }`}
+        >
+          {isMuted ? (
+            <svg className="size-4 fill-current" viewBox="0 0 24 24">
+              <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73 4.27 3zM12 4L9.91 6.09 12 8.18V4z" />
+            </svg>
+          ) : (
+            <svg className="size-4 fill-current" viewBox="0 0 24 24">
+              <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
+            </svg>
+          )}
+        </button>
       </div>
-    </div>
+    </section>
   );
 }
