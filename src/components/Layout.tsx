@@ -1,6 +1,15 @@
-import { Outlet } from "react-router-dom";
+import { useEffect } from "react";
+import { Outlet, useLocation } from "react-router-dom";
 import NavbarFloatingPill from "@/components/navbars/NavbarFloatingPill";
 import FooterTrayWordmark from "@/components/sections/footer/FooterTrayWordmark";
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
 
 export default function Layout() {
   const logoUrl = "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794452037801-2036zpmm.png";
@@ -8,6 +17,7 @@ export default function Layout() {
 
   return (
     <div className="relative isolate min-h-svh flex flex-col bg-background text-foreground" data-button="chip" data-card="tray" data-pattern="none">
+      <ScrollToTop />
       <header data-webild-section="Header">
         <NavbarFloatingPill
           brand="ENLACES Educación"
@@ -15,37 +25,45 @@ export default function Layout() {
           navItems={[
             {
               name: "Inicio",
-              href: "#home"
+              href: "/"
             },
             {
               name: "Nosotros",
-              href: "#about"
+              href: "/nosotros"
             },
             {
               name: "Oferta educativa",
-              href: "#oferta-educativa"
+              href: "/oferta-educativa"
             },
             {
               name: "Empresas y convenios",
-              href: "#empresas-convenios"
+              href: "/empresas-y-convenios"
             },
             {
               name: "Experiencia ENLACES",
-              href: "#experiencia-enlaces"
+              href: "/experiencia-enlaces"
+            },
+            {
+              name: "Servicios al alumno",
+              href: "/servicios-al-alumno"
+            },
+            {
+              name: "Grupo ENLACES",
+              href: "/grupo-enlaces"
             },
             {
               name: "Contacto",
-              href: "#contact-dark-form-card"
+              href: "/contacto"
             }
           ]}
           cta={{
             text: "Solicitar información",
-            href: "#contact-dark-form-card"
+            href: "/contacto"
           }}
           introDelay={0.2}
         />
       </header>
-      <main className="flex-grow" data-button="chip" data-card="tray" data-pattern="none">
+      <main className="flex-grow pt-16 lg:pt-20" data-button="chip" data-card="tray" data-pattern="none">
         <Outlet />
       </main>
       <footer data-webild-section="Footer" data-section="footer">
@@ -59,27 +77,27 @@ export default function Layout() {
               links: [
                 {
                   text: "Bachillerato General",
-                  href: "#oferta-educativa"
+                  href: "/oferta-educativa"
                 },
                 {
                   text: "Licenciaturas Ejecutivas",
-                  href: "#oferta-educativa"
+                  href: "/oferta-educativa"
                 },
                 {
                   text: "Titulación por Experiencia",
-                  href: "#oferta-educativa"
+                  href: "/oferta-educativa"
                 },
                 {
                   text: "Maestrías Especializadas",
-                  href: "#oferta-educativa"
+                  href: "/oferta-educativa"
                 },
                 {
                   text: "Diplomados con Validez",
-                  href: "#oferta-educativa"
+                  href: "/oferta-educativa"
                 },
                 {
                   text: "Programa de Inglés",
-                  href: "#oferta-educativa"
+                  href: "/oferta-educativa"
                 }
               ]
             },
@@ -88,19 +106,23 @@ export default function Layout() {
               links: [
                 {
                   text: "Sobre nosotros",
-                  href: "#about"
+                  href: "/nosotros"
                 },
                 {
                   text: "Empresas y convenios",
-                  href: "#empresas-convenios"
+                  href: "/empresas-y-convenios"
                 },
                 {
                   text: "Experiencia ENLACES",
-                  href: "#experiencia-enlaces"
+                  href: "/experiencia-enlaces"
                 },
                 {
-                  text: "Preguntas frecuentes",
-                  href: "#faq-tray-accordion-1"
+                  text: "Servicios al alumno",
+                  href: "/servicios-al-alumno"
+                },
+                {
+                  text: "Grupo ENLACES",
+                  href: "/grupo-enlaces"
                 }
               ]
             },
@@ -113,11 +135,11 @@ export default function Layout() {
                 },
                 {
                   text: "Solicitar información",
-                  href: "#contact-dark-form-card"
+                  href: "/contacto"
                 },
                 {
                   text: "Atención a aspirantes",
-                  href: "#contact-dark-form-card"
+                  href: "/contacto"
                 }
               ]
             },
@@ -126,15 +148,15 @@ export default function Layout() {
               links: [
                 {
                   text: "Aviso de privacidad",
-                  href: "#"
+                  href: "/contacto"
                 },
                 {
                   text: "Términos de servicio",
-                  href: "#"
+                  href: "/contacto"
                 },
                 {
                   text: "Validez oficial RVOE",
-                  href: "#faq-tray-accordion-1"
+                  href: "/nosotros"
                 }
               ]
             }

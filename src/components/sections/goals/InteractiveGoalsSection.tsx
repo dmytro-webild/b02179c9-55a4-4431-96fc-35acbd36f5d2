@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence, useReducedMotion } from "motion/react";
 import { MotionMedia } from "@/components/kit/Media";
 import {
@@ -48,7 +49,7 @@ const goalOptions: GoalOption[] = [
       "Acompañamiento docente durante todo el plan"
     ],
     ctaText: "Conocer Bachillerato",
-    ctaHref: "#contact-dark-form-card",
+    ctaHref: "/contacto",
     imageSrc:
       "https://img.b2bpic.net/free-photo/graduation-high-school-university-concept_185193-110147.jpg?_wi=2",
     imageAlt: "Estudiantes de Bachillerato General con certificado",
@@ -70,7 +71,7 @@ const goalOptions: GoalOption[] = [
       "Evaluaciones por proyectos y casos reales"
     ],
     ctaText: "Conocer Licenciaturas",
-    ctaHref: "#contact-dark-form-card",
+    ctaHref: "/contacto",
     imageSrc:
       "https://img.b2bpic.net/free-photo/front-view-floating-books-connected-by-ladders-education-day_23-2149241039.jpg?_wi=2",
     imageAlt: "Formación universitaria e impulso académico",
@@ -92,7 +93,7 @@ const goalOptions: GoalOption[] = [
       "Ideal para lograr ascensos y mejoras salariales"
     ],
     ctaText: "Conocer Titulación por Experiencia",
-    ctaHref: "#contact-dark-form-card",
+    ctaHref: "/contacto",
     imageSrc:
       "https://img.b2bpic.net/free-photo/businessman-using-digital-tablet-writing-clipboard-with-pen-gray-desk_23-2148052592.jpg?_wi=2",
     imageAlt: "Acreditación profesional por experiencia laboral",
@@ -114,7 +115,7 @@ const goalOptions: GoalOption[] = [
       "Metodología práctica orientada a la toma de decisiones"
     ],
     ctaText: "Conocer Posgrados",
-    ctaHref: "#contact-dark-form-card",
+    ctaHref: "/contacto",
     imageSrc:
       "https://img.b2bpic.net/free-photo/factory-investors-review-documentation-mockup-notebook_482257-123446.jpg?_wi=2",
     imageAlt: "Posgrados y especializaciones de liderazgo",
@@ -136,7 +137,7 @@ const goalOptions: GoalOption[] = [
       "Horarios convenientes para personas ocupadas"
     ],
     ctaText: "Conocer Programa de Inglés",
-    ctaHref: "#contact-dark-form-card",
+    ctaHref: "/contacto",
     imageSrc:
       "https://img.b2bpic.net/free-photo/smiley-people-book-club-side-view_23-2150059042.jpg?_wi=2",
     imageAlt: "Clases interactivas de inglés profesional",
@@ -323,13 +324,23 @@ export default function InteractiveGoalsSection({
 
                     {/* Bottom CTA Button */}
                     <div className="pt-2">
-                      <a
-                        href={activeOption.ctaHref}
-                        className="group inline-flex items-center justify-center gap-3 rounded-xl bg-[#0F2755] px-7 py-3.5 text-sm font-bold text-white shadow-md transition-all duration-300 hover:bg-[#1B3A7A] hover:shadow-xl hover:gap-4 active:scale-95"
-                      >
-                        <span>{activeOption.ctaText}</span>
-                        <ArrowRight className="size-4 text-[#F4B400] transition-transform duration-300 group-hover:translate-x-1" />
-                      </a>
+                      {activeOption.ctaHref.startsWith("/") ? (
+                        <Link
+                          to={activeOption.ctaHref}
+                          className="group inline-flex items-center justify-center gap-3 rounded-xl bg-[#0F2755] px-7 py-3.5 text-sm font-bold text-white shadow-md transition-all duration-300 hover:bg-[#1B3A7A] hover:shadow-xl hover:gap-4 active:scale-95"
+                        >
+                          <span>{activeOption.ctaText}</span>
+                          <ArrowRight className="size-4 text-[#F4B400] transition-transform duration-300 group-hover:translate-x-1" />
+                        </Link>
+                      ) : (
+                        <a
+                          href={activeOption.ctaHref}
+                          className="group inline-flex items-center justify-center gap-3 rounded-xl bg-[#0F2755] px-7 py-3.5 text-sm font-bold text-white shadow-md transition-all duration-300 hover:bg-[#1B3A7A] hover:shadow-xl hover:gap-4 active:scale-95"
+                        >
+                          <span>{activeOption.ctaText}</span>
+                          <ArrowRight className="size-4 text-[#F4B400] transition-transform duration-300 group-hover:translate-x-1" />
+                        </a>
+                      )}
                     </div>
                   </div>
 

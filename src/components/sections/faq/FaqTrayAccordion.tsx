@@ -1,4 +1,5 @@
 import { useId, useState } from "react";
+import { Link } from "react-router-dom";
 import { Plus } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { clsx, type ClassValue } from "clsx";
@@ -144,9 +145,15 @@ const FaqTrayAccordion = ({ tag, title, highlight, items, help, ariaLabel, class
                   {help.title}
                 </h3>
                 {help.description && <p className="mt-3 text-[length:var(--text-body)] leading-[1.6] text-muted-foreground">{help.description}</p>}
-                <a href={help.cta.href} className="btn-primary mt-6">
-                  {help.cta.text}
-                </a>
+                {help.cta.href.startsWith("/") ? (
+                  <Link to={help.cta.href} className="btn-primary mt-6">
+                    {help.cta.text}
+                  </Link>
+                ) : (
+                  <a href={help.cta.href} className="btn-primary mt-6">
+                    {help.cta.text}
+                  </a>
+                )}
               </div>
             </motion.div>
           )}

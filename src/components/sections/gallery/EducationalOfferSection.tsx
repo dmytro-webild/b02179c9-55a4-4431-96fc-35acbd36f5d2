@@ -32,7 +32,7 @@ const defaultPrograms: ProgramItem[] = [
     tag: "Acreditación Ágil",
     highlightLabel: "Destacado • Experiencia Profesional",
     description: "Acredita formalmente tus conocimientos y trayectoria profesional acumulada mediante evaluación directa de competencias laborales.",
-    href: "#contact-dark-form-card",
+    href: "/contacto",
     imageSrc: "https://img.b2bpic.net/free-photo/businessman-using-digital-tablet-writing-clipboard-with-pen-gray-desk_23-2148052592.jpg?_wi=1",
     imageAlt: "Titulación y acreditación por experiencia laboral",
     isFeatured: true
@@ -43,7 +43,7 @@ const defaultPrograms: ProgramItem[] = [
     tag: "Nivel Medio Superior",
     highlightLabel: "Validez Oficial SEP",
     description: "Concluye la preparatoria con horarios totalmente adaptables a tu jornada de trabajo actual sin descuidar tus actividades.",
-    href: "#contact-dark-form-card",
+    href: "/contacto",
     imageSrc: "https://img.b2bpic.net/free-photo/graduation-high-school-university-concept_185193-110147.jpg?_wi=1",
     imageAlt: "Estudiantes de Bachillerato General",
     isFeatured: true
@@ -54,7 +54,7 @@ const defaultPrograms: ProgramItem[] = [
     tag: "Licenciatura",
     highlightLabel: "RVOE Garantizado",
     description: "Obtén tu título profesional universitario con clases modulares y flexibilidad horaria adaptada para adultos en activo.",
-    href: "#contact-dark-form-card",
+    href: "/contacto",
     imageSrc: "https://img.b2bpic.net/free-photo/front-view-floating-books-connected-by-ladders-education-day_23-2149241039.jpg?_wi=1",
     imageAlt: "Licenciaturas ejecutivas con reconocimiento oficial"
   },
@@ -64,7 +64,7 @@ const defaultPrograms: ProgramItem[] = [
     tag: "Posgrado Directivo",
     highlightLabel: "Liderazgo Corporativo",
     description: "Desarrolla competencias estratégicas de alta dirección orientadas a la gestión estratégica de negocios y proyectos.",
-    href: "#contact-dark-form-card",
+    href: "/contacto",
     imageSrc: "https://img.b2bpic.net/free-photo/factory-investors-review-documentation-mockup-notebook_482257-123446.jpg?_wi=1",
     imageAlt: "Maestrías y posgrados de alta dirección"
   },
@@ -74,7 +74,7 @@ const defaultPrograms: ProgramItem[] = [
     tag: "Especialización",
     highlightLabel: "Actualización Continua",
     description: "Especialización técnica intensiva con validez curricular diseñada para impulsar de inmediato tus metas profesionales.",
-    href: "#contact-dark-form-card",
+    href: "/contacto",
     imageSrc: "https://img.b2bpic.net/free-photo/young-students-studying-table_23-2147850725.jpg",
     imageAlt: "Diplomados y cursos de actualización profesional"
   },
@@ -84,7 +84,7 @@ const defaultPrograms: ProgramItem[] = [
     tag: "Idioma Global",
     highlightLabel: "Dominio Profesional",
     description: "Desarrolla fluidez conversacional e inglés corporativo de alto nivel con un plan enfocado al mundo laboral actual.",
-    href: "#contact-dark-form-card",
+    href: "/contacto",
     imageSrc: "https://img.b2bpic.net/free-photo/smiley-people-book-club-side-view_23-2150059042.jpg?_wi=1",
     imageAlt: "Programa de inglés profesional y corporativo"
   }
