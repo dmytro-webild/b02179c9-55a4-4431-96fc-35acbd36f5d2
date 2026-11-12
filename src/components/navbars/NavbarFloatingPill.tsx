@@ -62,13 +62,13 @@ const NavbarFloatingPill = ({
       className={`fixed inset-x-0 top-0 z-[60] transition-all duration-300 bg-white/95 backdrop-blur-md ${
         scrolled
           ? "border-b border-slate-200/90 shadow-[0_4px_20px_rgba(15,39,85,0.06)] py-2.5 sm:py-3"
-          : "border-b border-slate-200/60 py-3.5 sm:py-4"
+          : "border-b border-slate-200/60 py-3 sm:py-3.5"
       }`}
     >
-      <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 md:px-8 xl:px-12">
-        <div className="flex items-center justify-between gap-4 xl:gap-8">
+      <div className="mx-auto w-full max-w-[1600px] px-3 sm:px-5 xl:px-6 2xl:px-8">
+        <div className="flex items-center justify-between gap-2 xl:gap-4 2xl:gap-6">
           
-          {/* Logo oficial a color */}
+          {/* Logotipo que enlaza a la página de inicio (/) */}
           <Link
             to="/"
             aria-label={brand}
@@ -80,22 +80,22 @@ const NavbarFloatingPill = ({
                 alt={brand}
                 loading="eager"
                 decoding="async"
-                className="h-[2.85rem] sm:h-[3.25rem] xl:h-[3.5rem] w-auto max-w-[220px] sm:max-w-[280px] xl:max-w-[320px] object-contain"
+                className="h-[2.5rem] sm:h-[2.85rem] xl:h-[3.1rem] w-auto max-w-[180px] sm:max-w-[230px] xl:max-w-[260px] object-contain"
               />
             ) : (
               <div className="flex flex-col justify-center leading-none">
-                <span className="font-['Montserrat'] font-extrabold text-2xl sm:text-3xl tracking-tight text-[#0F2755]">
+                <span className="font-['Montserrat'] font-extrabold text-xl sm:text-2xl xl:text-3xl tracking-tight text-[#0F2755]">
                   ENLACES
                 </span>
-                <span className="text-[10px] sm:text-xs text-[#0F2755] font-bold tracking-wider uppercase mt-0.5">
+                <span className="text-[9px] sm:text-[10px] text-[#0F2755] font-bold tracking-wider uppercase mt-0.5">
                   Educación en línea
                 </span>
               </div>
             )}
           </Link>
 
-          {/* Menú horizontal en azul oscuro para escritorio */}
-          <div className="hidden min-w-0 flex-1 items-center justify-center gap-3 xl:gap-5 2xl:gap-7 xl:flex px-2">
+          {/* Menú principal exclusivamente de 7 opciones para escritorio */}
+          <div className="hidden min-w-0 flex-1 items-center justify-center gap-2 xl:gap-3.5 2xl:gap-5 xl:flex px-1">
             {navItems.map((item, i) => {
               if (item.href.startsWith("/")) {
                 return (
@@ -104,7 +104,7 @@ const NavbarFloatingPill = ({
                     to={item.href}
                     end={item.href === "/"}
                     className={({ isActive }) =>
-                      `relative group shrink-0 whitespace-nowrap py-1 font-['Montserrat'] text-[14px] 2xl:text-[15px] font-semibold transition-colors duration-200 ${
+                      `relative group shrink-0 whitespace-nowrap py-1 font-['Montserrat'] text-[13px] 2xl:text-[14px] font-semibold transition-colors duration-200 ${
                         isActive ? "text-[#1B3A7A]" : "text-[#0F2755] hover:text-[#1B3A7A]"
                       }`
                     }
@@ -126,7 +126,7 @@ const NavbarFloatingPill = ({
                 <a
                   key={`${i}-${item.name}`}
                   href={item.href}
-                  className="relative group shrink-0 whitespace-nowrap py-1 font-['Montserrat'] text-[14px] 2xl:text-[15px] font-semibold text-[#0F2755] transition-colors duration-200 hover:text-[#1B3A7A]"
+                  className="relative group shrink-0 whitespace-nowrap py-1 font-['Montserrat'] text-[13px] 2xl:text-[14px] font-semibold text-[#0F2755] transition-colors duration-200 hover:text-[#1B3A7A]"
                 >
                   <span>{item.name}</span>
                   <span className="absolute inset-x-0 -bottom-0.5 h-[2.5px] scale-x-0 bg-[#F4B400] transition-transform duration-300 ease-out group-hover:scale-x-100 rounded-full" />
@@ -135,13 +135,13 @@ const NavbarFloatingPill = ({
             })}
           </div>
 
-          {/* Botón dorado y menú hamburguesa en móvil */}
-          <div className="flex shrink-0 items-center gap-3 xl:gap-4">
+          {/* Botón Solicita información y menú hamburguesa en móvil */}
+          <div className="flex shrink-0 items-center gap-2 xl:gap-3">
             {cta && (
               cta.href.startsWith("/") ? (
                 <Link
                   to={cta.href}
-                  className="hidden sm:inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B400] px-5 py-2.5 sm:px-6 sm:py-3 font-['Montserrat'] font-bold text-xs sm:text-sm text-[#0F2755] shadow-[0_4px_14px_rgba(244,180,0,0.35)] transition-all duration-300 hover:bg-[#e0a400] hover:scale-105 hover:shadow-[0_6px_20px_rgba(244,180,0,0.45)] whitespace-nowrap"
+                  className="hidden sm:inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B400] px-4 py-2 sm:px-5 sm:py-2.5 font-['Montserrat'] font-bold text-xs xl:text-sm text-[#0F2755] shadow-[0_4px_14px_rgba(244,180,0,0.35)] transition-all duration-300 hover:bg-[#e0a400] hover:scale-105 hover:shadow-[0_6px_20px_rgba(244,180,0,0.45)] whitespace-nowrap"
                 >
                   <span>{cta.text}</span>
                   <svg className="size-3.5 stroke-[3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -151,7 +151,7 @@ const NavbarFloatingPill = ({
               ) : (
                 <a
                   href={cta.href}
-                  className="hidden sm:inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B400] px-5 py-2.5 sm:px-6 sm:py-3 font-['Montserrat'] font-bold text-xs sm:text-sm text-[#0F2755] shadow-[0_4px_14px_rgba(244,180,0,0.35)] transition-all duration-300 hover:bg-[#e0a400] hover:scale-105 hover:shadow-[0_6px_20px_rgba(244,180,0,0.45)] whitespace-nowrap"
+                  className="hidden sm:inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B400] px-4 py-2 sm:px-5 sm:py-2.5 font-['Montserrat'] font-bold text-xs xl:text-sm text-[#0F2755] shadow-[0_4px_14px_rgba(244,180,0,0.35)] transition-all duration-300 hover:bg-[#e0a400] hover:scale-105 hover:shadow-[0_6px_20px_rgba(244,180,0,0.45)] whitespace-nowrap"
                 >
                   <span>{cta.text}</span>
                   <svg className="size-3.5 stroke-[3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -167,7 +167,7 @@ const NavbarFloatingPill = ({
               onClick={() => setOpen((value) => !value)}
               aria-expanded={open}
               aria-label={open ? closeText : menuText}
-              className="relative flex size-[42px] items-center justify-center rounded-xl border border-slate-200 bg-slate-50 text-[#0F2755] transition-colors hover:bg-slate-100 xl:hidden"
+              className="relative flex size-[40px] items-center justify-center rounded-xl border border-slate-200 bg-slate-50 text-[#0F2755] transition-colors hover:bg-slate-100 xl:hidden"
             >
               <div aria-hidden="true" className="relative h-[10px] w-[20px]">
                 <motion.div
@@ -210,7 +210,7 @@ const NavbarFloatingPill = ({
             transition={reduce ? { duration: 0 } : variantSpring}
             className="overflow-hidden border-t border-slate-100 bg-white/98 backdrop-blur-xl xl:hidden shadow-xl"
           >
-            <div className="mx-auto flex max-h-[calc(100svh-5rem)] flex-col gap-4 overflow-y-auto px-6 py-6 w-full max-w-[1536px]">
+            <div className="mx-auto flex max-h-[calc(100svh-5rem)] flex-col gap-4 overflow-y-auto px-6 py-6 w-full max-w-[1600px]">
               <div className="flex flex-col space-y-1">
                 {navItems.map((item, i) => {
                   if (item.href.startsWith("/")) {

@@ -24,10 +24,6 @@ export default function Layout() {
           logoSrc={headerLogoUrl}
           navItems={[
             {
-              name: "Inicio",
-              href: "/"
-            },
-            {
               name: "Nosotros",
               href: "/nosotros"
             },
@@ -44,12 +40,12 @@ export default function Layout() {
               href: "/experiencia-enlaces"
             },
             {
-              name: "Servicios al alumno",
-              href: "/servicios-al-alumno"
+              name: "Testimonios y egresados",
+              href: "/testimonios-y-egresados"
             },
             {
-              name: "Grupo ENLACES",
-              href: "/grupo-enlaces"
+              name: "Sistema Operativo ENLACES",
+              href: "/sistema-operativo-enlaces"
             },
             {
               name: "Contacto",
@@ -57,7 +53,7 @@ export default function Layout() {
             }
           ]}
           cta={{
-            text: "Solicitar información",
+            text: "Solicita información",
             href: "/contacto"
           }}
           introDelay={0.2}
@@ -117,12 +113,12 @@ export default function Layout() {
                   href: "/experiencia-enlaces"
                 },
                 {
-                  text: "Servicios al alumno",
-                  href: "/servicios-al-alumno"
+                  text: "Testimonios y egresados",
+                  href: "/testimonios-y-egresados"
                 },
                 {
-                  text: "Grupo ENLACES",
-                  href: "/grupo-enlaces"
+                  text: "Sistema Operativo ENLACES",
+                  href: "/sistema-operativo-enlaces"
                 }
               ]
             },
@@ -134,7 +130,7 @@ export default function Layout() {
                   href: "mailto:informes@enlaces.edu.mx"
                 },
                 {
-                  text: "Solicitar información",
+                  text: "Solicita información",
                   href: "/contacto"
                 },
                 {

@@ -25,7 +25,7 @@ const portalSections = [
     icon: (
       <svg className="size-6 text-[#F4B400]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" />
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 01-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 01-6.824-2.998 12.078 12.078 0 01-6.824 2.998 12.078 12.078 0 01.665-6.479L12 14z" />
       </svg>
     ),
   },
@@ -43,7 +43,7 @@ const portalSections = [
   {
     title: "Experiencia ENLACES",
     tag: "Comunidad",
-    description: "Historias de éxito de egresados, indicadores de calidad y excelencia docente.",
+    description: "Indicadores de calidad, trayectoria educativa y excelencia docente.",
     href: "/experiencia-enlaces",
     icon: (
       <svg className="size-6 text-[#F4B400]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
@@ -52,24 +52,35 @@ const portalSections = [
     ),
   },
   {
-    title: "Servicios al Alumno",
-    tag: "Soporte",
-    description: "Orientación en trámites, campus virtual 24/7 y preguntas frecuentes.",
-    href: "/servicios-al-alumno",
+    title: "Testimonios y Egresados",
+    tag: "Casos de Éxito",
+    description: "Descubre las experiencias reales de graduados que impulsaron su carrera con nosotros.",
+    href: "/testimonios-y-egresados",
     icon: (
       <svg className="size-6 text-[#F4B400]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
       </svg>
     ),
   },
   {
-    title: "Grupo ENLACES",
-    tag: "Consolidación",
-    description: "Nuestra red educativa nacional, valores institucionales e innovación.",
-    href: "/grupo-enlaces",
+    title: "Sistema Operativo ENLACES",
+    tag: "Tecnología",
+    description: "Nuestro campus virtual 24/7, metodología asincrónica y acompañamiento continuo.",
+    href: "/sistema-operativo-enlaces",
     icon: (
       <svg className="size-6 text-[#F4B400]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 002 2h1.5a2.5 2.5 0 002.5-2.5V7a2 2 0 00-2-2h-1.5A2.5 2.5 0 0113 2.5V2.055M18.89 12.355a9 9 0 10-15.78 0" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+    ),
+  },
+  {
+    title: "Contacto",
+    tag: "Atención",
+    description: "Resuelve tus dudas sobre admisión, requisitos y atención a aspirantes.",
+    href: "/contacto",
+    icon: (
+      <svg className="size-6 text-[#F4B400]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
       </svg>
     ),
   },
