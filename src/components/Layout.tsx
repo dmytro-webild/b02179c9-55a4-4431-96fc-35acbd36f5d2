@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import NavbarFloatingPill from "@/components/navbars/NavbarFloatingPill";
 import FooterTrayWordmark from "@/components/sections/footer/FooterTrayWordmark";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -161,6 +162,7 @@ export default function Layout() {
           topText="Volver arriba"
         />
       </footer>
+      <WhatsAppButton />
     </div>
   );
 }
