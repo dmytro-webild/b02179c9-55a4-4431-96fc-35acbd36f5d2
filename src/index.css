@@ -111,6 +111,10 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   * {
     border-color: var(--color-border);
     outline-color: color-mix(in srgb, var(--color-ring) 30%, transparent);
@@ -158,24 +162,26 @@
     --b-arrow: 1.125rem;
     --b-gap: 1rem;
     --b-end: 1.5rem;
-    --b-ease: cubic-bezier(0.44, 0, 0.56, 1);
+    --b-ease: cubic-bezier(0.22, 1, 0.36, 1);
     min-height: var(--b-h);
     padding: var(--b-in) var(--b-end) var(--b-in) calc(var(--b-in) + var(--b-chip) + var(--b-gap));
     border-radius: var(--b-r);
     overflow: hidden;
     font-family: var(--font-body);
     font-size: var(--text-body);
-    font-weight: 400;
+    font-weight: 500;
     line-height: 1.5;
     letter-spacing: var(--label-tracking);
     text-transform: var(--label-case);
     white-space: nowrap;
     cursor: pointer;
+    will-change: transform;
     transition:
       color 0.3s var(--b-ease),
       padding 0.4s var(--b-ease),
       background-color var(--dur-fast) var(--ease-out),
-      transform var(--dur-fast) var(--ease-out);
+      transform 0.25s var(--b-ease),
+      box-shadow 0.3s var(--b-ease);
   }
 
   .btn-sm {
@@ -233,6 +239,7 @@
   .btn-secondary:hover {
     padding-left: var(--b-end);
     padding-right: calc(var(--b-in) + var(--b-chip) + var(--b-gap));
+    transform: translateY(-2px);
   }
 
   .btn-primary:hover::before,
@@ -247,7 +254,7 @@
 
   .btn-primary:active,
   .btn-secondary:active {
-    transform: scale(0.97);
+    transform: translateY(0) scale(0.97);
   }
 
   .btn-primary {

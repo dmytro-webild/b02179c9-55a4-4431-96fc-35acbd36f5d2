@@ -135,10 +135,10 @@ const HeroBoardFrame = ({
                 {primaryButton && (
                   <a
                     href={primaryButton.href}
-                    className="inline-flex items-center justify-center gap-2.5 rounded-full bg-[#F4B400] px-7 py-3.5 sm:px-8 sm:py-4 text-sm sm:text-base font-extrabold text-[#0F2755] shadow-[0_10px_25px_rgba(244,180,0,0.35)] transition-all duration-300 hover:bg-amber-300 hover:scale-[1.03] hover:shadow-[0_14px_30px_rgba(244,180,0,0.45)]"
+                    className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-[#F4B400] px-7 py-3.5 sm:px-8 sm:py-4 text-sm sm:text-base font-extrabold text-[#0F2755] shadow-[0_10px_25px_rgba(244,180,0,0.35)] transition-all duration-300 hover:bg-amber-300 hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(244,180,0,0.45)] active:translate-y-0 active:scale-95 cursor-pointer"
                   >
                     <span>{primaryButton.text}</span>
-                    <svg className="size-4 stroke-[3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="size-4 stroke-[3] group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                     </svg>
                   </a>
@@ -146,10 +146,10 @@ const HeroBoardFrame = ({
                 {secondaryButton && (
                   <a
                     href={secondaryButton.href}
-                    className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#0F2755] bg-transparent px-6 py-3.5 sm:px-7 sm:py-3.5 text-sm sm:text-base font-bold text-[#0F2755] transition-all duration-300 hover:bg-[#0F2755] hover:text-white hover:scale-[1.03]"
+                    className="group inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#0F2755] bg-transparent px-6 py-3.5 sm:px-7 sm:py-3.5 text-sm sm:text-base font-bold text-[#0F2755] transition-all duration-300 hover:bg-[#0F2755] hover:text-white hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:scale-95 cursor-pointer"
                   >
                     <span>{secondaryButton.text}</span>
-                    <svg className="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                    <svg className="size-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                     </svg>
                   </a>
