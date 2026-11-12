@@ -57,19 +57,27 @@ export default function Layout() {
               title: "Oferta educativa",
               links: [
                 {
-                  text: "Bachillerato flexible",
+                  text: "Bachillerato General",
                   href: "#oferta-educativa"
                 },
                 {
-                  text: "Licenciaturas ejecutivas",
+                  text: "Licenciaturas Ejecutivas",
                   href: "#oferta-educativa"
                 },
                 {
-                  text: "Posgrados y maestrías",
+                  text: "Titulación por Experiencia",
                   href: "#oferta-educativa"
                 },
                 {
-                  text: "Acreditación laboral",
+                  text: "Maestrías Especializadas",
+                  href: "#oferta-educativa"
+                },
+                {
+                  text: "Diplomados con Validez",
+                  href: "#oferta-educativa"
+                },
+                {
+                  text: "Programa de Inglés",
                   href: "#oferta-educativa"
                 }
               ]
