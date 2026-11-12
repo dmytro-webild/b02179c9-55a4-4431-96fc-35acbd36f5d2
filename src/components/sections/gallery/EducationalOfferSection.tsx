@@ -33,7 +33,7 @@ const defaultPrograms: ProgramItem[] = [
     highlightLabel: "Destacado • Experiencia Profesional",
     description: "Acredite formalmente sus conocimientos y trayectoria profesional acumulada mediante evaluación directa de competencias laborales.",
     href: "#contact-dark-form-card",
-    imageSrc: "https://img.b2bpic.net/free-photo/businessman-using-digital-tablet-writing-clipboard-with-pen-gray-desk_23-2148052592.jpg",
+    imageSrc: "https://img.b2bpic.net/free-photo/businessman-using-digital-tablet-writing-clipboard-with-pen-gray-desk_23-2148052592.jpg?_wi=1",
     imageAlt: "Titulación y acreditación por experiencia laboral",
     isFeatured: true
   },
@@ -44,7 +44,7 @@ const defaultPrograms: ProgramItem[] = [
     highlightLabel: "Validez Oficial SEP",
     description: "Concluya la preparatoria con horarios totalmente adaptables a su jornada de trabajo actual sin descuidar sus actividades.",
     href: "#contact-dark-form-card",
-    imageSrc: "https://img.b2bpic.net/free-photo/graduation-high-school-university-concept_185193-110147.jpg",
+    imageSrc: "https://img.b2bpic.net/free-photo/graduation-high-school-university-concept_185193-110147.jpg?_wi=1",
     imageAlt: "Estudiantes de Bachillerato General",
     isFeatured: true
   },
@@ -55,7 +55,7 @@ const defaultPrograms: ProgramItem[] = [
     highlightLabel: "RVOE Garantizado",
     description: "Obtenga su título profesional universitario con clases modulares y flexibilidad horaria adaptada para adultos en activo.",
     href: "#contact-dark-form-card",
-    imageSrc: "https://img.b2bpic.net/free-photo/front-view-floating-books-connected-by-ladders-education-day_23-2149241039.jpg",
+    imageSrc: "https://img.b2bpic.net/free-photo/front-view-floating-books-connected-by-ladders-education-day_23-2149241039.jpg?_wi=1",
     imageAlt: "Licenciaturas ejecutivas con reconocimiento oficial"
   },
   {
@@ -65,7 +65,7 @@ const defaultPrograms: ProgramItem[] = [
     highlightLabel: "Liderazgo Corporativo",
     description: "Desarrolle competencias estratégicas de alta dirección orientadas a la gestión estratégica de negocios y proyectos.",
     href: "#contact-dark-form-card",
-    imageSrc: "https://img.b2bpic.net/free-photo/factory-investors-review-documentation-mockup-notebook_482257-123446.jpg",
+    imageSrc: "https://img.b2bpic.net/free-photo/factory-investors-review-documentation-mockup-notebook_482257-123446.jpg?_wi=1",
     imageAlt: "Maestrías y posgrados de alta dirección"
   },
   {
@@ -85,7 +85,7 @@ const defaultPrograms: ProgramItem[] = [
     highlightLabel: "Dominio Profesional",
     description: "Desarrolle fluidez conversacional e inglés corporativo de alto nivel con un plan enfocado al mundo laboral actual.",
     href: "#contact-dark-form-card",
-    imageSrc: "https://img.b2bpic.net/free-photo/smiley-people-book-club-side-view_23-2150059042.jpg",
+    imageSrc: "https://img.b2bpic.net/free-photo/smiley-people-book-club-side-view_23-2150059042.jpg?_wi=1",
     imageAlt: "Programa de inglés profesional y corporativo"
   }
 ];
