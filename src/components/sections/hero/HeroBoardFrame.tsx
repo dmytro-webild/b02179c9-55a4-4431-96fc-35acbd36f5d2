@@ -55,11 +55,15 @@ const FeatureIcon = ({ name }: { name: FeatureItem["icon"] }) => {
   );
 };
 
+const ENLACES_WHEEL_SRC = "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794456185254-3zlenx22.png";
+
 const HeroBoardFrame = ({
   tag = "EDUCACIÓN EN LÍNEA",
   description,
   primaryButton,
   secondaryButton,
+  imageSrc = ENLACES_WHEEL_SRC,
+  imageAlt = "Rueda institucional ENLACES",
   features = [],
   introDelay = 0,
   ariaLabel,
@@ -90,83 +94,100 @@ const HeroBoardFrame = ({
       </div>
 
       <div className="relative mx-auto w-[var(--container)]">
-        <div className="max-w-4xl flex flex-col items-start text-left z-10">
-          {tag && (
-            <motion.div
-              {...appear(20, 0)}
-              className="inline-flex items-center gap-2 rounded-full border border-[#1B3A7A]/20 bg-[#1B3A7A]/5 px-4 py-1.5 text-xs font-bold tracking-wider text-[#1B3A7A]"
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          {/* Left Column - Text composition intact */}
+          <div className="lg:col-span-7 xl:col-span-7 flex flex-col items-start text-left z-10 max-w-3xl lg:max-w-none">
+            {tag && (
+              <motion.div
+                {...appear(20, 0)}
+                className="inline-flex items-center gap-2 rounded-full border border-[#1B3A7A]/20 bg-[#1B3A7A]/5 px-4 py-1.5 text-xs font-bold tracking-wider text-[#1B3A7A]"
+              >
+                <span className="size-2 rounded-full bg-[#F4B400] animate-pulse" />
+                <span className="uppercase">{tag}</span>
+              </motion.div>
+            )}
+
+            {/* Exact Phrase Required by User */}
+            <motion.h1
+              {...appear(28, 0.1)}
+              className="mt-6 font-['Montserrat'] font-extrabold italic text-4xl sm:text-5xl md:text-6xl lg:text-[3.5rem] xl:text-[4.25rem] leading-[1.08] tracking-tight text-[#0F2755]"
             >
-              <span className="size-2 rounded-full bg-[#F4B400] animate-pulse" />
-              <span className="uppercase">{tag}</span>
-            </motion.div>
-          )}
+              <span className="block text-[#0F2755]">La educación</span>
+              <span className="block text-[#0F2755]">es el camino,</span>
+              <span className="block text-[#F4B400] drop-shadow-[0_2px_15px_rgba(244,180,0,0.3)]">no el destino.</span>
+            </motion.h1>
 
-          {/* Exact Phrase Required by User */}
-          <motion.h1
-            {...appear(28, 0.1)}
-            className="mt-6 font-['Montserrat'] font-extrabold italic text-4xl sm:text-6xl md:text-6xl lg:text-[4rem] xl:text-[4.65rem] leading-[1.08] tracking-tight text-[#0F2755]"
-          >
-            <span className="block text-[#0F2755]">La educación</span>
-            <span className="block text-[#0F2755]">es el camino,</span>
-            <span className="block text-[#F4B400] drop-shadow-[0_2px_15px_rgba(244,180,0,0.3)]">no el destino.</span>
-          </motion.h1>
+            {description && (
+              <motion.p
+                {...appear(32, 0.25)}
+                className="mt-6 max-w-2xl font-['Inter'] text-base sm:text-lg leading-relaxed text-slate-600 font-normal"
+              >
+                {description}
+              </motion.p>
+            )}
 
-          {description && (
-            <motion.p
-              {...appear(32, 0.25)}
-              className="mt-6 max-w-2xl font-['Inter'] text-base sm:text-lg leading-relaxed text-slate-600 font-normal"
-            >
-              {description}
-            </motion.p>
-          )}
+            {/* Action Buttons */}
+            {(primaryButton || secondaryButton) && (
+              <motion.div {...appear(36, 0.38)} className="mt-8 flex flex-wrap items-center gap-4">
+                {primaryButton && (
+                  <a
+                    href={primaryButton.href}
+                    className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-[#F4B400] px-7 py-3.5 sm:px-8 sm:py-4 text-sm sm:text-base font-extrabold text-[#0F2755] shadow-[0_10px_25px_rgba(244,180,0,0.35)] transition-all duration-300 hover:bg-amber-300 hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(244,180,0,0.45)] active:translate-y-0 active:scale-95 cursor-pointer"
+                  >
+                    <span>{primaryButton.text}</span>
+                    <svg className="size-4 stroke-[3] group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                    </svg>
+                  </a>
+                )}
+                {secondaryButton && (
+                  <a
+                    href={secondaryButton.href}
+                    className="group inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#0F2755] bg-transparent px-6 py-3.5 sm:px-7 sm:py-3.5 text-sm sm:text-base font-bold text-[#0F2755] transition-all duration-300 hover:bg-[#0F2755] hover:text-white hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:scale-95 cursor-pointer"
+                  >
+                    <span>{secondaryButton.text}</span>
+                    <svg className="size-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                    </svg>
+                  </a>
+                )}
+              </motion.div>
+            )}
 
-          {/* Action Buttons */}
-          {(primaryButton || secondaryButton) && (
-            <motion.div {...appear(36, 0.38)} className="mt-8 flex flex-wrap items-center gap-4">
-              {primaryButton && (
-                <a
-                  href={primaryButton.href}
-                  className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-[#F4B400] px-7 py-3.5 sm:px-8 sm:py-4 text-sm sm:text-base font-extrabold text-[#0F2755] shadow-[0_10px_25px_rgba(244,180,0,0.35)] transition-all duration-300 hover:bg-amber-300 hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(244,180,0,0.45)] active:translate-y-0 active:scale-95 cursor-pointer"
-                >
-                  <span>{primaryButton.text}</span>
-                  <svg className="size-4 stroke-[3] group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                  </svg>
-                </a>
-              )}
-              {secondaryButton && (
-                <a
-                  href={secondaryButton.href}
-                  className="group inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#0F2755] bg-transparent px-6 py-3.5 sm:px-7 sm:py-3.5 text-sm sm:text-base font-bold text-[#0F2755] transition-all duration-300 hover:bg-[#0F2755] hover:text-white hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:scale-95 cursor-pointer"
-                >
-                  <span>{secondaryButton.text}</span>
-                  <svg className="size-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                  </svg>
-                </a>
-              )}
-            </motion.div>
-          )}
-
-          {/* Features strip integrated softly below left content */}
-          {features.length > 0 && (
-            <motion.div
-              {...appear(30, 0.5)}
-              className="mt-10 sm:mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-slate-200/80 pt-6 w-full"
-            >
-              {features.map((feat, idx) => (
-                <div key={idx} className="flex flex-col gap-1">
-                  <div className="flex items-center gap-2">
-                    <div className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-[#1B3A7A]/10">
-                      <FeatureIcon name={feat.icon} />
+            {/* Features strip integrated softly below left content */}
+            {features.length > 0 && (
+              <motion.div
+                {...appear(30, 0.5)}
+                className="mt-10 sm:mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-slate-200/80 pt-6 w-full"
+              >
+                {features.map((feat, idx) => (
+                  <div key={idx} className="flex flex-col gap-1">
+                    <div className="flex items-center gap-2">
+                      <div className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-[#1B3A7A]/10">
+                        <FeatureIcon name={feat.icon} />
+                      </div>
+                      <h3 className="font-['Montserrat'] font-bold text-xs sm:text-sm text-[#0F2755]">{feat.title}</h3>
                     </div>
-                    <h3 className="font-['Montserrat'] font-bold text-xs sm:text-sm text-[#0F2755]">{feat.title}</h3>
+                    <p className="font-['Inter'] text-[11px] sm:text-xs text-slate-500 leading-tight pl-9">{feat.subtitle}</p>
                   </div>
-                  <p className="font-['Inter'] text-[11px] sm:text-xs text-slate-500 leading-tight pl-9">{feat.subtitle}</p>
-                </div>
-              ))}
+                ))}
+              </motion.div>
+            )}
+          </div>
+
+          {/* Right Column - Institutional Wheel Watermark */}
+          <div className="lg:col-span-5 xl:col-span-5 flex items-center justify-center lg:justify-end mt-8 lg:mt-0">
+            <motion.div
+              {...appear(40, 0.3)}
+              className="relative flex items-center justify-center pointer-events-none select-none"
+            >
+              <img
+                src={imageSrc}
+                alt={imageAlt}
+                className="w-[280px] sm:w-[380px] md:w-[440px] lg:w-[480px] xl:w-[520px] h-auto aspect-square object-contain mix-blend-multiply opacity-[0.18]"
+              />
             </motion.div>
-          )}
+          </div>
         </div>
       </div>
     </section>
