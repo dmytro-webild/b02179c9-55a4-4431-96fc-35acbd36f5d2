@@ -1,6 +1,7 @@
 import HeroBoardFrame from "@/components/sections/hero/HeroBoardFrame";
 import CinematicVideoSection from "@/components/sections/video/CinematicVideoSection";
 import EducationalOfferSection from "@/components/sections/gallery/EducationalOfferSection";
+import InteractiveGoalsSection from "@/components/sections/goals/InteractiveGoalsSection";
 import AboutStatementIconRow from "@/components/sections/about/AboutStatementIconRow";
 import MetricsTrayCounters from "@/components/sections/metrics/MetricsTrayCounters";
 import TestimonialSpotlightCarousel from "@/components/sections/testimonial/TestimonialSpotlightCarousel";
@@ -71,6 +72,10 @@ export default function HomePage() {
           description="Descubra nuestros programas académicos con modalidades flexibles diseñados para acelerar su crecimiento profesional con validez oficial."
           linkLabel="Solicitar información"
         />
+      </div>
+
+      <div id="siguiente-meta" data-webild-section="InteractiveGoalsSection" data-webild-section-id="InteractiveGoalsSection-1" data-section="siguiente-meta">
+        <InteractiveGoalsSection />
       </div>
 
       <div id="about" data-webild-section="AboutStatementIconRow" data-webild-section-id="AboutStatementIconRow-1" data-section="about" data-tone="card">
