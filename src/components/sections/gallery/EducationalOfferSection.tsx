@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import { motion, useReducedMotion } from "motion/react";
 import { MotionMedia } from "@/components/kit/Media";
 
@@ -32,7 +33,7 @@ const defaultPrograms: ProgramItem[] = [
     tag: "Acreditación Ágil",
     highlightLabel: "Destacado • Experiencia Profesional",
     description: "Acredita formalmente tus conocimientos y trayectoria profesional acumulada mediante evaluación directa de competencias laborales.",
-    href: "/contacto",
+    href: "/oferta-educativa/titulacion-por-experiencia-laboral",
     imageSrc: "https://img.b2bpic.net/free-photo/businessman-using-digital-tablet-writing-clipboard-with-pen-gray-desk_23-2148052592.jpg?_wi=1",
     imageAlt: "Titulación y acreditación por experiencia laboral",
     isFeatured: true
@@ -43,7 +44,7 @@ const defaultPrograms: ProgramItem[] = [
     tag: "Nivel Medio Superior",
     highlightLabel: "Validez Oficial SEP",
     description: "Concluye la preparatoria con horarios totalmente adaptables a tu jornada de trabajo actual sin descuidar tus actividades.",
-    href: "/contacto",
+    href: "/oferta-educativa/bachillerato",
     imageSrc: "https://img.b2bpic.net/free-photo/graduation-high-school-university-concept_185193-110147.jpg?_wi=1",
     imageAlt: "Estudiantes de Bachillerato General",
     isFeatured: true
@@ -54,7 +55,7 @@ const defaultPrograms: ProgramItem[] = [
     tag: "Licenciatura",
     highlightLabel: "RVOE Garantizado",
     description: "Obtén tu título profesional universitario con clases modulares y flexibilidad horaria adaptada para adultos en activo.",
-    href: "/contacto",
+    href: "/oferta-educativa/licenciaturas",
     imageSrc: "https://img.b2bpic.net/free-photo/front-view-floating-books-connected-by-ladders-education-day_23-2149241039.jpg?_wi=1",
     imageAlt: "Licenciaturas ejecutivas con reconocimiento oficial"
   },
@@ -64,7 +65,7 @@ const defaultPrograms: ProgramItem[] = [
     tag: "Posgrado Directivo",
     highlightLabel: "Liderazgo Corporativo",
     description: "Desarrolla competencias estratégicas de alta dirección orientadas a la gestión estratégica de negocios y proyectos.",
-    href: "/contacto",
+    href: "/oferta-educativa/maestrias",
     imageSrc: "https://img.b2bpic.net/free-photo/factory-investors-review-documentation-mockup-notebook_482257-123446.jpg?_wi=1",
     imageAlt: "Maestrías y posgrados de alta dirección"
   },
@@ -74,7 +75,7 @@ const defaultPrograms: ProgramItem[] = [
     tag: "Especialización",
     highlightLabel: "Actualización Continua",
     description: "Especialización técnica intensiva con validez curricular diseñada para impulsar de inmediato tus metas profesionales.",
-    href: "/contacto",
+    href: "/oferta-educativa/diplomados",
     imageSrc: "https://img.b2bpic.net/free-photo/young-students-studying-table_23-2147850725.jpg",
     imageAlt: "Diplomados y cursos de actualización profesional"
   },
@@ -84,7 +85,7 @@ const defaultPrograms: ProgramItem[] = [
     tag: "Idioma Global",
     highlightLabel: "Dominio Profesional",
     description: "Desarrolla fluidez conversacional e inglés corporativo de alto nivel con un plan enfocado al mundo laboral actual.",
-    href: "/contacto",
+    href: "/oferta-educativa/ingles",
     imageSrc: "https://img.b2bpic.net/free-photo/smiley-people-book-club-side-view_23-2150059042.jpg?_wi=1",
     imageAlt: "Programa de inglés profesional y corporativo"
   }
@@ -207,8 +208,8 @@ export default function EducationalOfferSection({
                 >
                   {/* VARIANT 1: DESTACADO - Titulación por Experiencia Laboral */}
                   {variant === "titulacion" ? (
-                    <a
-                      href={program.href || "#contact-dark-form-card"}
+                    <Link
+                      to={program.href || "/contacto"}
                       className="group relative flex w-full flex-col justify-between overflow-hidden rounded-3xl bg-[#0F2755] p-6 sm:p-8 md:p-10 text-white shadow-xl border border-slate-200/20 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-[#0F2755]/25 hover:border-[#F4B400]"
                     >
                       {/* Full-bleed background photo with rich gradient overlay */}
@@ -264,11 +265,11 @@ export default function EducationalOfferSection({
                           </div>
                         </div>
                       </div>
-                    </a>
+                    </Link>
                   ) : variant === "bachillerato" ? (
                     /* VARIANT 2: DESTACADO - Bachillerato General */
-                    <a
-                      href={program.href || "#contact-dark-form-card"}
+                    <Link
+                      to={program.href || "/contacto"}
                       className="group relative flex w-full flex-col justify-between overflow-hidden rounded-3xl bg-white border-2 border-[#F4B400]/60 p-2.5 shadow-xl transition-all duration-500 hover:-translate-y-1.5 hover:border-[#F4B400] hover:shadow-2xl hover:shadow-[#1B3A7A]/10"
                     >
                       {/* Top photo hero container */}
@@ -324,11 +325,11 @@ export default function EducationalOfferSection({
                           </div>
                         </div>
                       </div>
-                    </a>
+                    </Link>
                   ) : (
                     /* VARIANT 3: STANDARD EDITORIAL CATEGORY CARDS (Licenciaturas, Maestrías, Diplomados, Inglés) */
-                    <a
-                      href={program.href || "#contact-dark-form-card"}
+                    <Link
+                      to={program.href || "/contacto"}
                       className="group relative flex w-full flex-col justify-between overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-2.5 shadow-sm transition-all duration-500 hover:-translate-y-1.5 hover:border-[#F4B400]/60 hover:shadow-xl hover:shadow-[#1B3A7A]/10"
                     >
                       {/* Top gold line accent on hover */}
@@ -383,7 +384,7 @@ export default function EducationalOfferSection({
                           </svg>
                         </div>
                       </div>
-                    </a>
+                    </Link>
                   )}
                 </motion.div>
               );

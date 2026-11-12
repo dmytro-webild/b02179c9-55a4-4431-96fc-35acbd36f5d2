@@ -73,27 +73,27 @@ export default function Layout() {
               links: [
                 {
                   text: "Bachillerato General",
-                  href: "/oferta-educativa"
+                  href: "/oferta-educativa/bachillerato"
                 },
                 {
                   text: "Licenciaturas Ejecutivas",
-                  href: "/oferta-educativa"
+                  href: "/oferta-educativa/licenciaturas"
                 },
                 {
                   text: "Titulación por Experiencia",
-                  href: "/oferta-educativa"
+                  href: "/oferta-educativa/titulacion-por-experiencia-laboral"
                 },
                 {
                   text: "Maestrías Especializadas",
-                  href: "/oferta-educativa"
+                  href: "/oferta-educativa/maestrias"
                 },
                 {
                   text: "Diplomados con Validez",
-                  href: "/oferta-educativa"
+                  href: "/oferta-educativa/diplomados"
                 },
                 {
                   text: "Programa de Inglés",
-                  href: "/oferta-educativa"
+                  href: "/oferta-educativa/ingles"
                 }
               ]
             },

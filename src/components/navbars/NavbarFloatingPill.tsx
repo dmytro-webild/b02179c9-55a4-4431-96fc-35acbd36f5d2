@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import useMenuDialog from "@/components/kit/useMenuDialog";
 
@@ -20,6 +20,51 @@ interface NavbarFloatingPillProps {
 const spring = { type: "spring", bounce: 0.2, duration: 1 } as const;
 const variantSpring = { type: "spring", bounce: 0, duration: 0.8 } as const;
 
+const ofertaCategories = [
+  {
+    title: "Bachillerato",
+    href: "/oferta-educativa/bachillerato",
+    tag: "Medio Superior",
+    description: "Concluye tu preparatoria con horarios adaptables a tu jornada de trabajo.",
+    badgeGold: "Validez Oficial SEP",
+  },
+  {
+    title: "Licenciaturas",
+    href: "/oferta-educativa/licenciaturas",
+    tag: "Nivel Superior",
+    description: "Carreras ejecutivas universitarias diseñadas para adultos en activo.",
+    badgeGold: "RVOE Garantizado",
+  },
+  {
+    title: "Titulación por Experiencia Laboral",
+    href: "/oferta-educativa/titulacion-por-experiencia-laboral",
+    tag: "Acreditación Ágil",
+    description: "Valida tu trayectoria profesional acumulada con título formal.",
+    badgeGold: "Acreditación Directa",
+  },
+  {
+    title: "Maestrías",
+    href: "/oferta-educativa/maestrias",
+    tag: "Posgrados",
+    description: "Desarrolla visión estratégica de alta dirección y liderazgo gerencial.",
+    badgeGold: "Posgrado Directivo",
+  },
+  {
+    title: "Diplomados",
+    href: "/oferta-educativa/diplomados",
+    tag: "Especialización",
+    description: "Actualización técnica intensiva de corta duración con validez curricular.",
+    badgeGold: "Validez Curricular",
+  },
+  {
+    title: "Inglés",
+    href: "/oferta-educativa/ingles",
+    tag: "Idioma Global",
+    description: "Programa de idioma conversacional y corporativo para profesionales.",
+    badgeGold: "Dominio Profesional",
+  },
+];
+
 const NavbarFloatingPill = ({
   brand,
   logoSrc,
@@ -31,10 +76,20 @@ const NavbarFloatingPill = ({
 }: NavbarFloatingPillProps) => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [megaMenuOpen, setMegaMenuOpen] = useState(false);
+  const [mobileOfertaExpanded, setMobileOfertaExpanded] = useState(false);
+  const megaTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const reduce = useReducedMotion();
   const panelRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
 
   useMenuDialog(open, panelRef, () => setOpen(false));
+
+  // Close megamenu on route change
+  useEffect(() => {
+    setMegaMenuOpen(false);
+    setOpen(false);
+  }, [location.pathname]);
 
   useEffect(() => {
     let frame = 0;
@@ -52,6 +107,17 @@ const NavbarFloatingPill = ({
       window.removeEventListener("scroll", onScroll);
     };
   }, []);
+
+  const handleMouseEnterMega = () => {
+    if (megaTimeoutRef.current) clearTimeout(megaTimeoutRef.current);
+    setMegaMenuOpen(true);
+  };
+
+  const handleMouseLeaveMega = () => {
+    megaTimeoutRef.current = setTimeout(() => {
+      setMegaMenuOpen(false);
+    }, 150);
+  };
 
   return (
     <motion.nav
@@ -94,9 +160,146 @@ const NavbarFloatingPill = ({
             )}
           </Link>
 
-          {/* Menú principal exclusivamente de 7 opciones para escritorio */}
+          {/* Menú principal exclusivamente para escritorio */}
           <div className="hidden min-w-0 flex-1 items-center justify-center gap-2 xl:gap-3.5 2xl:gap-5 xl:flex px-1">
             {navItems.map((item, i) => {
+              const isOferta = item.name.toLowerCase().includes("oferta");
+
+              if (isOferta) {
+                const isOfertaActive = location.pathname.startsWith("/oferta-educativa");
+                return (
+                  <div
+                    key={`${i}-${item.name}`}
+                    className="relative group shrink-0"
+                    onMouseEnter={handleMouseEnterMega}
+                    onMouseLeave={handleMouseLeaveMega}
+                  >
+                    <NavLink
+                      to={item.href}
+                      className={`relative inline-flex items-center gap-1.5 whitespace-nowrap py-1 font-['Montserrat'] text-[13px] 2xl:text-[14px] font-semibold transition-colors duration-200 ${
+                        isOfertaActive || megaMenuOpen ? "text-[#1B3A7A]" : "text-[#0F2755] hover:text-[#1B3A7A]"
+                      }`}
+                    >
+                      <span>{item.name}</span>
+                      <svg
+                        className={`size-3.5 text-[#0F2755] transition-transform duration-200 ${megaMenuOpen ? "rotate-180 text-[#F4B400]" : ""}`}
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                      </svg>
+                      <span
+                        className={`absolute inset-x-0 -bottom-0.5 h-[2.5px] bg-[#F4B400] transition-transform duration-300 ease-out rounded-full ${
+                          isOfertaActive || megaMenuOpen ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                        }`}
+                      />
+                    </NavLink>
+
+                    {/* MEGAMENÚ DESPLEGABLE ELEGANTE (Escritorio) */}
+                    <AnimatePresence>
+                      {megaMenuOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 12, scale: 0.98 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: 8, scale: 0.98 }}
+                          transition={{ duration: 0.22, ease: "easeOut" }}
+                          className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[880px] 2xl:w-[980px] rounded-3xl bg-white shadow-[0_25px_60px_rgba(15,39,85,0.18)] border border-slate-200/90 overflow-hidden z-50"
+                        >
+                          {/* Gold Accent Top Bar */}
+                          <div className="h-1.5 bg-gradient-to-r from-[#1B3A7A] via-[#F4B400] to-[#1B3A7A]" />
+
+                          <div className="p-6 xl:p-7">
+                            {/* Megamenu Top Header */}
+                            <div className="flex items-center justify-between pb-4 border-b border-slate-100 mb-5">
+                              <div>
+                                <span className="inline-flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-wider text-[#1B3A7A] bg-[#1B3A7A]/5 px-3 py-0.5 rounded-full border border-[#1B3A7A]/15">
+                                  <span className="size-1.5 rounded-full bg-[#F4B400]" />
+                                  Oferta Académica ENLACES
+                                </span>
+                                <h3 className="font-['Montserrat'] font-extrabold text-xl text-[#0F2755] mt-1">
+                                  Categorías y Áreas de Estudio
+                                </h3>
+                              </div>
+                              <Link
+                                to="/oferta-educativa"
+                                onClick={() => setMegaMenuOpen(false)}
+                                className="inline-flex items-center gap-2 rounded-full bg-[#F4B400] px-4 py-2 text-xs font-extrabold text-[#0F2755] shadow-sm hover:bg-amber-300 transition-all hover:scale-105"
+                              >
+                                <span>Ver portal general</span>
+                                <svg className="size-3.5 stroke-[3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                                </svg>
+                              </Link>
+                            </div>
+
+                            {/* 6 Grid Categories */}
+                            <div className="grid grid-cols-3 gap-4">
+                              {ofertaCategories.map((cat, idx) => (
+                                <Link
+                                  key={idx}
+                                  to={cat.href}
+                                  onClick={() => setMegaMenuOpen(false)}
+                                  className="group flex flex-col justify-between rounded-2xl border border-slate-200/70 bg-slate-50/40 p-4 transition-all duration-300 hover:border-[#F4B400] hover:bg-white hover:shadow-lg hover:-translate-y-0.5"
+                                >
+                                  <div>
+                                    <div className="flex items-center justify-between gap-2">
+                                      <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#0F2755] bg-[#F4B400] px-2 py-0.5 rounded-full shadow-2xs">
+                                        {cat.badgeGold}
+                                      </span>
+                                      <svg
+                                        className="size-4 text-slate-300 group-hover:text-[#F4B400] transition-colors"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                        strokeWidth="2.5"
+                                      >
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                      </svg>
+                                    </div>
+                                    <h4 className="mt-3 font-['Montserrat'] font-extrabold text-base text-[#0F2755] group-hover:text-[#1B3A7A] transition-colors leading-snug">
+                                      {cat.title}
+                                    </h4>
+                                    <p className="mt-1.5 font-['Inter'] text-xs text-slate-600 line-clamp-2 leading-relaxed">
+                                      {cat.description}
+                                    </p>
+                                  </div>
+
+                                  <div className="mt-4 pt-2 border-t border-slate-200/50 flex items-center justify-between text-[11px] font-bold text-[#1B3A7A] group-hover:text-[#F4B400]">
+                                    <span>Estructura de programas</span>
+                                    <span>→</span>
+                                  </div>
+                                </Link>
+                              ))}
+                            </div>
+
+                            {/* Megamenu Bottom Banner */}
+                            <div className="mt-5 p-3.5 rounded-2xl bg-[#0F2755] text-white flex items-center justify-between">
+                              <div className="flex items-center gap-3">
+                                <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-[#F4B400] text-[#0F2755] font-bold text-sm">
+                                  ✓
+                                </div>
+                                <p className="font-['Inter'] text-xs text-blue-100">
+                                  <strong className="text-white">Validez Oficial RVOE.</strong> Estructura adaptada para la futura incorporación de carreras y especializaciones.
+                                </p>
+                              </div>
+                              <Link
+                                to="/contacto"
+                                onClick={() => setMegaMenuOpen(false)}
+                                className="shrink-0 text-xs font-bold text-[#F4B400] hover:underline px-3 py-1"
+                              >
+                                Solicitar asesoría →
+                              </Link>
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              }
+
               if (item.href.startsWith("/")) {
                 return (
                   <NavLink
@@ -194,7 +397,7 @@ const NavbarFloatingPill = ({
         </div>
       </div>
 
-      {/* Menú desplegable para móvil */}
+      {/* Menú desplegable para móvil con navegación jerárquica */}
       <AnimatePresence initial={false}>
         {open && (
           <motion.div
@@ -213,6 +416,81 @@ const NavbarFloatingPill = ({
             <div className="mx-auto flex max-h-[calc(100svh-5rem)] flex-col gap-4 overflow-y-auto px-6 py-6 w-full max-w-[1600px]">
               <div className="flex flex-col space-y-1">
                 {navItems.map((item, i) => {
+                  const isOferta = item.name.toLowerCase().includes("oferta");
+
+                  // Navegación jerárquica desplegable para "Oferta educativa" en móvil
+                  if (isOferta) {
+                    return (
+                      <div key={`${i}-${item.name}`} className="flex flex-col">
+                        <button
+                          type="button"
+                          onClick={() => setMobileOfertaExpanded((prev) => !prev)}
+                          className={`flex items-center justify-between rounded-xl px-4 py-3 font-['Montserrat'] font-semibold text-base transition-colors ${
+                            mobileOfertaExpanded ? "bg-slate-100 text-[#1B3A7A] font-bold" : "text-[#0F2755] hover:bg-slate-50 hover:text-[#1B3A7A]"
+                          }`}
+                        >
+                          <span className="flex items-center gap-2">
+                            <span>{item.name}</span>
+                            <span className="text-[10px] bg-[#F4B400] text-[#0F2755] font-extrabold px-2 py-0.5 rounded-full uppercase">
+                              6 Áreas
+                            </span>
+                          </span>
+                          <svg
+                            className={`size-4 text-slate-500 transition-transform duration-200 ${mobileOfertaExpanded ? "rotate-180 text-[#F4B400]" : ""}`}
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            strokeWidth="2.5"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                          </svg>
+                        </button>
+
+                        <AnimatePresence>
+                          {mobileOfertaExpanded && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.25 }}
+                              className="overflow-hidden pl-4 my-1 border-l-2 border-[#F4B400] space-y-1 ml-4"
+                            >
+                              <NavLink
+                                to="/oferta-educativa"
+                                onClick={() => setOpen(false)}
+                                className={({ isActive }) =>
+                                  `flex items-center justify-between rounded-lg px-3 py-2 text-xs font-['Montserrat'] font-bold uppercase tracking-wider ${
+                                    isActive ? "text-[#1B3A7A] bg-amber-50" : "text-[#0F2755] hover:bg-slate-50"
+                                  }`
+                                }
+                              >
+                                <span>Ver portal general de oferta →</span>
+                              </NavLink>
+
+                              {ofertaCategories.map((cat, catIdx) => (
+                                <NavLink
+                                  key={catIdx}
+                                  to={cat.href}
+                                  onClick={() => setOpen(false)}
+                                  className={({ isActive }) =>
+                                    `flex items-center justify-between rounded-lg px-3 py-2.5 text-sm font-['Montserrat'] font-semibold transition-colors ${
+                                      isActive ? "bg-slate-100 text-[#1B3A7A] font-bold" : "text-[#0F2755] hover:bg-slate-50 hover:text-[#1B3A7A]"
+                                    }`
+                                  }
+                                >
+                                  <span>{cat.title}</span>
+                                  <span className="text-[10px] text-[#0F2755] font-extrabold bg-[#F4B400]/20 border border-[#F4B400]/40 px-2 py-0.5 rounded-md">
+                                    {cat.tag}
+                                  </span>
+                                </NavLink>
+                              ))}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    );
+                  }
+
                   if (item.href.startsWith("/")) {
                     return (
                       <NavLink
