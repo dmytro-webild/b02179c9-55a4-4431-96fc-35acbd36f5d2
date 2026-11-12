@@ -38,9 +38,9 @@ const MetricsTrayCounters = ({ tag, title, description, items, ariaLabel, classN
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "0px 0px -8% 0px" }}
                 transition={SPRING}
-                className="flex items-center gap-2 rounded-full bg-secondary py-1 pl-2.5 pr-3.5 text-secondary-foreground"
+                className="flex items-center gap-2 rounded-full bg-[#1B3A7A]/10 py-1 pl-2.5 pr-3.5 text-[#1B3A7A] font-semibold"
               >
-                <Icon name={tag.icon ?? "chart-no-axes-column"} aria-hidden="true" className="size-4 shrink-0" strokeWidth={1.75} />
+                <Icon name={tag.icon ?? "chart-no-axes-column"} aria-hidden="true" className="size-4 shrink-0 text-[#1B3A7A]" strokeWidth={1.75} />
                 <p className="whitespace-nowrap text-[length:var(--text-label)] leading-[1.5]">{tag.text}</p>
               </motion.div>
             )}

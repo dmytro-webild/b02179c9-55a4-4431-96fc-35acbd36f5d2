@@ -143,70 +143,70 @@ export default function HomePage() {
       </div>
 
       {/* Empresas y Convenios Section */}
-      <div id="empresas-convenios" className="relative bg-[#0F2755] py-[clamp(4rem,6vw,6rem)] text-white border-t border-amber-400/20">
+      <div id="empresas-convenios" className="relative bg-white py-[clamp(4rem,6vw,6rem)] text-[#0F2755] border-t border-slate-200">
         <div className="mx-auto w-[var(--container)]">
           <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
-            <span className="rounded-full border border-amber-400/30 bg-blue-950/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-amber-300">
+            <span className="rounded-full border border-[#1B3A7A]/20 bg-[#1B3A7A]/5 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#1B3A7A]">
               Alianzas Institucionales
             </span>
-            <h2 className="mt-4 font-['Montserrat'] font-extrabold text-2xl sm:text-4xl text-white">
+            <h2 className="mt-4 font-['Montserrat'] font-extrabold text-2xl sm:text-4xl text-[#0F2755]">
               Empresas y Convenios
             </h2>
-            <p className="mt-3 font-['Inter'] text-base text-blue-200/90 max-w-xl">
+            <p className="mt-3 font-['Inter'] text-base text-slate-600 max-w-xl">
               Establecemos alianzas estratégicas con empresas e instituciones para impulsar el desarrollo académico de sus colaboradores con planes preferenciales y acompañamiento personalizado.
             </p>
           </div>
 
           <div className="mt-10 sm:mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="rounded-2xl border border-amber-400/20 bg-[#1B3A7A]/80 p-6 backdrop-blur-md shadow-lg flex flex-col justify-between">
+            <div className="rounded-2xl border border-[#1B3A7A]/15 bg-white p-6 shadow-md hover:shadow-xl hover:border-[#1B3A7A]/30 transition-all duration-300 flex flex-col justify-between">
               <div>
-                <div className="flex size-12 items-center justify-center rounded-xl bg-blue-950/80 text-[#F4B400] mb-4 border border-amber-400/30">
+                <div className="flex size-12 items-center justify-center rounded-xl bg-[#0F2755] text-[#F4B400] mb-4 shadow-sm">
                   <svg className="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                   </svg>
                 </div>
-                <h3 className="font-['Montserrat'] font-bold text-lg text-white">Becas Corporativas</h3>
-                <p className="mt-2 font-['Inter'] text-sm text-blue-100/80 leading-relaxed">
+                <h3 className="font-['Montserrat'] font-bold text-lg text-[#0F2755]">Becas Corporativas</h3>
+                <p className="mt-2 font-['Inter'] text-sm text-slate-600 leading-relaxed">
                   Descuentos y tarifas preferenciales para el personal corporativo y sus familiares directos en todos nuestros niveles educativos.
                 </p>
               </div>
-              <a href="#contact-dark-form-card" className="mt-6 inline-flex items-center text-xs font-bold text-[#F4B400] hover:underline gap-1">
+              <a href="#contact-dark-form-card" className="mt-6 inline-flex items-center text-xs font-extrabold text-[#1B3A7A] hover:text-[#F4B400] transition-colors gap-1">
                 <span>Solicitar convenio</span>
                 <span>→</span>
               </a>
             </div>
 
-            <div className="rounded-2xl border border-amber-400/20 bg-[#1B3A7A]/80 p-6 backdrop-blur-md shadow-lg flex flex-col justify-between">
+            <div className="rounded-2xl border border-[#1B3A7A]/15 bg-white p-6 shadow-md hover:shadow-xl hover:border-[#1B3A7A]/30 transition-all duration-300 flex flex-col justify-between">
               <div>
-                <div className="flex size-12 items-center justify-center rounded-xl bg-blue-950/80 text-[#F4B400] mb-4 border border-amber-400/30">
+                <div className="flex size-12 items-center justify-center rounded-xl bg-[#0F2755] text-[#F4B400] mb-4 shadow-sm">
                   <svg className="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                   </svg>
                 </div>
-                <h3 className="font-['Montserrat'] font-bold text-lg text-white">Acreditación de Talentos</h3>
-                <p className="mt-2 font-['Inter'] text-sm text-blue-100/80 leading-relaxed">
+                <h3 className="font-['Montserrat'] font-bold text-lg text-[#0F2755]">Acreditación de Talentos</h3>
+                <p className="mt-2 font-['Inter'] text-sm text-slate-600 leading-relaxed">
                   Procesos ágiles de certificación y titulación para colaboradores con experiencia comprobada en el sector laboral.
                 </p>
               </div>
-              <a href="#contact-dark-form-card" className="mt-6 inline-flex items-center text-xs font-bold text-[#F4B400] hover:underline gap-1">
+              <a href="#contact-dark-form-card" className="mt-6 inline-flex items-center text-xs font-extrabold text-[#1B3A7A] hover:text-[#F4B400] transition-colors gap-1">
                 <span>Conocer acreditación</span>
                 <span>→</span>
               </a>
             </div>
 
-            <div className="rounded-2xl border border-amber-400/20 bg-[#1B3A7A]/80 p-6 backdrop-blur-md shadow-lg flex flex-col justify-between">
+            <div className="rounded-2xl border border-[#1B3A7A]/15 bg-white p-6 shadow-md hover:shadow-xl hover:border-[#1B3A7A]/30 transition-all duration-300 flex flex-col justify-between">
               <div>
-                <div className="flex size-12 items-center justify-center rounded-xl bg-blue-950/80 text-[#F4B400] mb-4 border border-amber-400/30">
+                <div className="flex size-12 items-center justify-center rounded-xl bg-[#0F2755] text-[#F4B400] mb-4 shadow-sm">
                   <svg className="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <h3 className="font-['Montserrat'] font-bold text-lg text-white">Flexibilidad Horaria</h3>
-                <p className="mt-2 font-['Inter'] text-sm text-blue-100/80 leading-relaxed">
+                <h3 className="font-['Montserrat'] font-bold text-lg text-[#0F2755]">Flexibilidad Horaria</h3>
+                <p className="mt-2 font-['Inter'] text-sm text-slate-600 leading-relaxed">
                   Modalidades 100% en línea o híbridas estructuradas para no interferir en la operación ni las metas del equipo de trabajo.
                 </p>
               </div>
-              <a href="#contact-dark-form-card" className="mt-6 inline-flex items-center text-xs font-bold text-[#F4B400] hover:underline gap-1">
+              <a href="#contact-dark-form-card" className="mt-6 inline-flex items-center text-xs font-extrabold text-[#1B3A7A] hover:text-[#F4B400] transition-colors gap-1">
                 <span>Consultar esquemas</span>
                 <span>→</span>
               </a>

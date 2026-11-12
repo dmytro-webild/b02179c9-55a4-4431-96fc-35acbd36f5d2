@@ -52,7 +52,7 @@ const FooterTrayWordmark = ({ brand, logoSrc, wordmark, columns = [], copyright,
 
   return (
     <footer aria-label={ariaLabel ?? `${brand} footer`} className={cn("relative bg-background pt-[calc(var(--section-space)/2)] text-foreground", className)}>
-      <div className="relative isolate mx-[var(--panel-inset)] mb-[var(--panel-inset)] overflow-hidden rounded-[var(--radius-card)] bg-card pt-[clamp(2.5rem,5vw,4.5rem)] text-card-foreground">
+      <div className="relative isolate mx-[var(--panel-inset)] mb-[var(--panel-inset)] overflow-hidden rounded-[var(--radius-card)] bg-[#0F2755] pt-[clamp(2.5rem,5vw,4.5rem)] text-white shadow-2xl border border-amber-400/20">
         <div className="mx-auto grid w-[var(--container)] grid-cols-1 gap-x-[var(--gap)] gap-y-[clamp(2.5rem,5vw,3.5rem)] lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
           <motion.a {...rise(0)} href="#" aria-label={brand} className="flex w-fit min-w-0 items-start">
             {logoSrc ? (
@@ -66,13 +66,13 @@ const FooterTrayWordmark = ({ brand, logoSrc, wordmark, columns = [], copyright,
             <nav aria-label="Footer" className="grid grid-cols-2 gap-x-[var(--gap)] gap-y-[2.5rem] sm:grid-cols-4">
               {shown.map((column, i) => (
                 <motion.div key={`${i}-${column.title}`} {...rise(0.1 + i * 0.08)} className="flex min-w-0 flex-col gap-[1rem]">
-                  <h3 className="text-[length:var(--text-label)] leading-[1.5] text-muted-foreground [overflow-wrap:anywhere]">{column.title}</h3>
+                  <h3 className="text-[length:var(--text-label)] leading-[1.5] text-[#F4B400] font-bold uppercase tracking-wider [overflow-wrap:anywhere]">{column.title}</h3>
                   <div className="flex flex-col gap-[0.5rem]">
                     {column.links.slice(0, 8).map((link, j) => (
                       <a
                         key={`${j}-${link.text}`}
                         href={link.href}
-                        className="w-fit text-[length:var(--text-body)] leading-[1.5] [overflow-wrap:anywhere] transition-opacity duration-300 hover:opacity-60"
+                        className="w-fit text-[length:var(--text-body)] leading-[1.5] text-blue-100/90 [overflow-wrap:anywhere] transition-all duration-300 hover:text-[#F4B400] hover:translate-x-0.5"
                       >
                         {link.text}
                       </a>
@@ -84,12 +84,12 @@ const FooterTrayWordmark = ({ brand, logoSrc, wordmark, columns = [], copyright,
           )}
         </div>
 
-        <div className="mx-auto mt-[clamp(3rem,6vw,5rem)] flex w-[var(--container)] flex-wrap items-center justify-between gap-x-[var(--gap)] gap-y-[0.75rem] border-t border-border pt-[1.25rem]">
-          {copyright && <p className="text-[length:var(--text-small)] leading-[1.5] text-muted-foreground">{copyright}</p>}
-          <a href="#" className="group flex items-center gap-[0.625rem] text-[length:var(--text-small)] leading-[1.5]">
+        <div className="mx-auto mt-[clamp(3rem,6vw,5rem)] flex w-[var(--container)] flex-wrap items-center justify-between gap-x-[var(--gap)] gap-y-[0.75rem] border-t border-blue-900/60 pt-[1.25rem]">
+          {copyright && <p className="text-[length:var(--text-small)] leading-[1.5] text-blue-200/80">{copyright}</p>}
+          <a href="#" className="group flex items-center gap-[0.625rem] text-[length:var(--text-small)] leading-[1.5] text-blue-200 hover:text-[#F4B400]">
             {topText}
-            <div className="flex size-[2rem] items-center justify-center rounded-[0.625rem] bg-background transition-colors duration-300 group-hover:bg-accent">
-              <svg aria-hidden="true" viewBox="0 0 24 24" className="size-[1rem]" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+            <div className="flex size-[2rem] items-center justify-center rounded-[0.625rem] bg-blue-900/60 text-[#F4B400] transition-colors duration-300 group-hover:bg-[#F4B400] group-hover:text-[#0F2755]">
+              <svg aria-hidden="true" viewBox="0 0 24 24" className="size-[1rem]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M12 20V4M5 11l7-7 7 7" />
               </svg>
             </div>

@@ -108,7 +108,7 @@ const GalleryTiltCards = ({ tag, title, description, items, linkLabel = "Read ca
                   <div className="flex flex-1 flex-col px-[clamp(0.75rem,1.4vw,1rem)] pb-[clamp(0.75rem,1.4vw,1rem)] pt-[clamp(1.25rem,2vw,1.5rem)]">
                     {(work.tag || work.date) && (
                       <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
-                        {work.tag && <p className="min-w-0 rounded-full bg-background px-4 py-1 text-[length:var(--text-small)] leading-[1.5] [overflow-wrap:anywhere]">{work.tag}</p>}
+                        {work.tag && <p className="min-w-0 rounded-full bg-[#1B3A7A]/10 text-[#1B3A7A] font-semibold px-4 py-1 text-[length:var(--text-small)] leading-[1.5] [overflow-wrap:anywhere]">{work.tag}</p>}
                         {work.date && <p className="whitespace-nowrap text-[length:var(--text-small)] leading-[1.5] text-muted-foreground">{work.date}</p>}
                       </div>
                     )}
@@ -127,11 +127,11 @@ const GalleryTiltCards = ({ tag, title, description, items, linkLabel = "Read ca
                 <WorkLi key={`${index}-${work.title}`} index={index} reduce={!!reduce}>
                   {(go) =>
                     work.href ? (
-                      <a href={work.href} className="group relative flex w-full flex-col rounded-[var(--radius-card)] bg-card p-2 text-card-foreground">
+                      <a href={work.href} className="group relative flex w-full flex-col rounded-[var(--radius-card)] bg-card border border-[#1B3A7A]/15 shadow-sm hover:shadow-xl hover:border-[#1B3A7A]/35 transition-all duration-300 p-2 text-card-foreground">
                         {body(go)}
                       </a>
                     ) : (
-                      <div className="flex w-full flex-col rounded-[var(--radius-card)] bg-card p-2 text-card-foreground">{body(go)}</div>
+                      <div className="flex w-full flex-col rounded-[var(--radius-card)] bg-card border border-[#1B3A7A]/15 shadow-sm p-2 text-card-foreground">{body(go)}</div>
                     )
                   }
                 </WorkLi>

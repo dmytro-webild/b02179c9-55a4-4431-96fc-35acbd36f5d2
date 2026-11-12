@@ -15,26 +15,26 @@
   --secondary-cta-text: #ffffff;
   --background-accent: #F4B400;
 
-  --background: #0F2755;
-  --foreground: #ffffff;
-  --card: #1B3A7A;
-  --card-foreground: #ffffff;
-  --popover: #1B3A7A;
-  --popover-foreground: #ffffff;
+  --background: #ffffff;
+  --foreground: #0F2755;
+  --card: #ffffff;
+  --card-foreground: #0F2755;
+  --popover: #ffffff;
+  --popover-foreground: #0F2755;
   --primary: #1B3A7A;
   --primary-foreground: #ffffff;
-  --secondary: #132d63;
-  --secondary-foreground: #ffffff;
-  --muted: #1B3A7A;
-  --muted-foreground: #B8C8E2;
+  --secondary: #F8FAFC;
+  --secondary-foreground: #1B3A7A;
+  --muted: #F1F5F9;
+  --muted-foreground: #475569;
   --accent: #F4B400;
   --accent-foreground: #0F2755;
   --deep: #0F2755;
   --deep-foreground: #ffffff;
   --destructive: #e5484d;
   --destructive-foreground: #ffffff;
-  --border: rgba(244, 180, 0, 0.25);
-  --input: rgba(255, 255, 255, 0.2);
+  --border: rgba(27, 58, 122, 0.12);
+  --input: rgba(15, 39, 85, 0.12);
   --ring: #F4B400;
 
   --font-heading: "Montserrat", sans-serif;
