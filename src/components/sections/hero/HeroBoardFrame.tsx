@@ -85,17 +85,10 @@ const HeroBoardFrame = ({
         className
       )}
     >
-      {/* Soft Ambient Background Elements Blended smoothly with White */}
-      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-10 right-0 size-[600px] rounded-full bg-radial from-[#1B3A7A]/10 via-[#F4B400]/5 to-transparent blur-3xl" />
-        <div className="absolute -bottom-20 left-10 size-[450px] rounded-full bg-radial from-blue-100/50 via-slate-50 to-transparent blur-2xl" />
-        {/* Technological Grid Pattern */}
-        <div className="absolute inset-0 bg-[radial-gradient(#1B3A7A_0.75px,transparent_0.75px)] [background-size:24px_24px] opacity-[0.06]" />
-      </div>
-
       <div className="relative mx-auto w-[var(--container)]">
+        {/* Main Hero Row: Text composition on left, Wheel watermark on right (vertically centered with main text block) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          {/* Left Column - Text composition intact */}
+          {/* Left Column - Main Text composition */}
           <div className="lg:col-span-7 xl:col-span-7 flex flex-col items-start text-left z-10 max-w-3xl lg:max-w-none">
             {tag && (
               <motion.div
@@ -153,29 +146,9 @@ const HeroBoardFrame = ({
                 )}
               </motion.div>
             )}
-
-            {/* Features strip integrated softly below left content */}
-            {features.length > 0 && (
-              <motion.div
-                {...appear(30, 0.5)}
-                className="mt-10 sm:mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-slate-200/80 pt-6 w-full"
-              >
-                {features.map((feat, idx) => (
-                  <div key={idx} className="flex flex-col gap-1">
-                    <div className="flex items-center gap-2">
-                      <div className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-[#1B3A7A]/10">
-                        <FeatureIcon name={feat.icon} />
-                      </div>
-                      <h3 className="font-['Montserrat'] font-bold text-xs sm:text-sm text-[#0F2755]">{feat.title}</h3>
-                    </div>
-                    <p className="font-['Inter'] text-[11px] sm:text-xs text-slate-500 leading-tight pl-9">{feat.subtitle}</p>
-                  </div>
-                ))}
-              </motion.div>
-            )}
           </div>
 
-          {/* Right Column - Institutional Wheel Watermark */}
+          {/* Right Column - Institutional Wheel Watermark (~20% larger, vertically centered with text block) */}
           <div className="lg:col-span-5 xl:col-span-5 flex items-center justify-center lg:justify-end mt-8 lg:mt-0">
             <motion.div
               {...appear(40, 0.3)}
@@ -184,11 +157,31 @@ const HeroBoardFrame = ({
               <img
                 src={imageSrc}
                 alt={imageAlt}
-                className="w-[280px] sm:w-[380px] md:w-[440px] lg:w-[480px] xl:w-[520px] h-auto aspect-square object-contain mix-blend-multiply opacity-[0.18]"
+                className="w-[335px] sm:w-[455px] md:w-[530px] lg:w-[575px] xl:w-[625px] h-auto aspect-square object-contain mix-blend-multiply opacity-[0.18]"
               />
             </motion.div>
           </div>
         </div>
+
+        {/* Features strip integrated below main block */}
+        {features.length > 0 && (
+          <motion.div
+            {...appear(30, 0.5)}
+            className="mt-10 sm:mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-slate-200/80 pt-6 w-full"
+          >
+            {features.map((feat, idx) => (
+              <div key={idx} className="flex flex-col gap-1">
+                <div className="flex items-center gap-2">
+                  <div className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-[#1B3A7A]/10">
+                    <FeatureIcon name={feat.icon} />
+                  </div>
+                  <h3 className="font-['Montserrat'] font-bold text-xs sm:text-sm text-[#0F2755]">{feat.title}</h3>
+                </div>
+                <p className="font-['Inter'] text-[11px] sm:text-xs text-slate-500 leading-tight pl-9">{feat.subtitle}</p>
+              </div>
+            ))}
+          </motion.div>
+        )}
       </div>
     </section>
   );
