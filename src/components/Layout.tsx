@@ -3,11 +3,14 @@ import NavbarFloatingPill from "@/components/navbars/NavbarFloatingPill";
 import FooterTrayWordmark from "@/components/sections/footer/FooterTrayWordmark";
 
 export default function Layout() {
+  const logoUrl = "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794452037801-2036zpmm.png";
+
   return (
-    <div className="relative isolate min-h-svh flex flex-col bg-background text-foreground" data-button="chip" data-card="tray" data-pattern="none">
+    <div className="relative isolate min-h-svh flex flex-col bg-[#0F2755] text-white" data-button="chip" data-card="tray" data-pattern="none">
       <header data-webild-section="Header">
         <NavbarFloatingPill
           brand="ENLACES Educación"
+          logoSrc={logoUrl}
           navItems={[
             {
               name: "Inicio",
@@ -18,23 +21,27 @@ export default function Layout() {
               href: "#about"
             },
             {
-              name: "Oferta Académica",
-              href: "#gallery-tilt-cards"
+              name: "Oferta educativa",
+              href: "#oferta-educativa"
             },
             {
-              name: "Trayectoria",
-              href: "#metrics-tray-counters"
+              name: "Empresas y convenios",
+              href: "#empresas-convenios"
             },
             {
-              name: "Preguntas Frecuentes",
-              href: "#faq-tray-accordion-1"
+              name: "Experiencia ENLACES",
+              href: "#experiencia-enlaces"
+            },
+            {
+              name: "Contacto",
+              href: "#contact-dark-form-card"
             }
           ]}
           cta={{
             text: "Solicitar información",
             href: "#contact-dark-form-card"
           }}
-          introDelay={1.2}
+          introDelay={0.2}
         />
       </header>
       <main className="flex-grow" data-button="chip" data-card="tray" data-pattern="none">
@@ -43,26 +50,27 @@ export default function Layout() {
       <footer data-webild-section="Footer" data-section="footer">
         <FooterTrayWordmark
           brand="ENLACES Educación"
-          wordmark="ENLACES Educación"
+          logoSrc={logoUrl}
+          wordmark="ENLACES EDUCACIÓN"
           columns={[
             {
-              title: "Oferta académica",
+              title: "Oferta educativa",
               links: [
                 {
                   text: "Bachillerato flexible",
-                  href: "#gallery-tilt-cards"
+                  href: "#oferta-educativa"
                 },
                 {
-                  text: "Licenciaturas",
-                  href: "#gallery-tilt-cards"
+                  text: "Licenciaturas ejecutivas",
+                  href: "#oferta-educativa"
                 },
                 {
-                  text: "Posgrados",
-                  href: "#gallery-tilt-cards"
+                  text: "Posgrados y maestrías",
+                  href: "#oferta-educativa"
                 },
                 {
-                  text: "Acreditación de experiencia",
-                  href: "#gallery-tilt-cards"
+                  text: "Acreditación laboral",
+                  href: "#oferta-educativa"
                 }
               ]
             },
@@ -70,16 +78,16 @@ export default function Layout() {
               title: "Institución",
               links: [
                 {
-                  text: "Nuestra filosofía",
+                  text: "Sobre nosotros",
                   href: "#about"
                 },
                 {
-                  text: "Resultados e indicadores",
-                  href: "#metrics-tray-counters"
+                  text: "Empresas y convenios",
+                  href: "#empresas-convenios"
                 },
                 {
-                  text: "Historias de éxito",
-                  href: "#customers"
+                  text: "Experiencia ENLACES",
+                  href: "#experiencia-enlaces"
                 },
                 {
                   text: "Preguntas frecuentes",
@@ -95,11 +103,11 @@ export default function Layout() {
                   href: "mailto:informes@enlaces.edu.mx"
                 },
                 {
-                  text: "Solicitar asesoría",
+                  text: "Solicitar información",
                   href: "#contact-dark-form-card"
                 },
                 {
-                  text: "Sede CDMX",
+                  text: "Atención a aspirantes",
                   href: "#contact-dark-form-card"
                 }
               ]

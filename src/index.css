@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&family=Archivo:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:ital,wght@0,700;0,800;1,700;1,800&display=swap");
 @import "tailwindcss";
 @import "./styles/animations.css";
 @import "./styles/masks.css";
@@ -9,38 +9,38 @@
 
 /* webild:theme-ai */
 :root {
-  --primary-cta: #2a3140;
-  --primary-cta-text: #ffffff;
-  --secondary-cta: #ffffff;
-  --secondary-cta-text: #1f2430;
-  --background-accent: #8fd0ff;
+  --primary-cta: #F4B400;
+  --primary-cta-text: #0F2755;
+  --secondary-cta: #1B3A7A;
+  --secondary-cta-text: #ffffff;
+  --background-accent: #F4B400;
 
-  --background: #e8eef7;
-  --foreground: #1f2430;
-  --card: #ffffff;
-  --card-foreground: var(--foreground);
-  --popover: var(--card);
-  --popover-foreground: var(--foreground);
-  --primary: var(--primary-cta);
-  --primary-foreground: var(--primary-cta-text);
-  --secondary: var(--secondary-cta);
-  --secondary-foreground: var(--secondary-cta-text);
-  --muted: #f4f7fb;
-  --muted-foreground: #536079;
-  --accent: var(--background-accent);
-  --accent-foreground: #1f2430;
-  --deep: #2a3140;
+  --background: #0F2755;
+  --foreground: #ffffff;
+  --card: #1B3A7A;
+  --card-foreground: #ffffff;
+  --popover: #1B3A7A;
+  --popover-foreground: #ffffff;
+  --primary: #1B3A7A;
+  --primary-foreground: #ffffff;
+  --secondary: #132d63;
+  --secondary-foreground: #ffffff;
+  --muted: #1B3A7A;
+  --muted-foreground: #B8C8E2;
+  --accent: #F4B400;
+  --accent-foreground: #0F2755;
+  --deep: #0F2755;
   --deep-foreground: #ffffff;
   --destructive: #e5484d;
-  --destructive-foreground: #161616;
-  --border: #dde4ef;
-  --input: #d8dde5;
-  --ring: var(--primary-cta);
+  --destructive-foreground: #ffffff;
+  --border: rgba(244, 180, 0, 0.25);
+  --input: rgba(255, 255, 255, 0.2);
+  --ring: #F4B400;
 
-  --font-heading: "Archivo", "Inter Display", ui-sans-serif, system-ui, sans-serif;
-  --font-body: "Inter", "Inter Display", ui-sans-serif, system-ui, sans-serif;
-  --heading-weight: 400;
-  --heading-tracking: -0.04em;
+  --font-heading: "Montserrat", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --heading-weight: 700;
+  --heading-tracking: -0.02em;
   --heading-leading: 1.2;
   --text-display: clamp(2.75rem, 1.729rem + 4.19vw, 5.5rem);
   --text-h1: clamp(2.25rem, 1.786rem + 1.905vw, 3.5rem);
@@ -125,7 +125,7 @@
     margin: 0;
     background-color: var(--background);
     color: var(--foreground);
-    font-family: "Inter", "Inter Display", ui-sans-serif, system-ui, sans-serif;
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
     font-weight: 400;
     font-optical-sizing: auto;
     letter-spacing: 0;
@@ -133,7 +133,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: "Archivo", "Inter Display", ui-sans-serif, system-ui, sans-serif;
+    font-family: "Montserrat", ui-sans-serif, system-ui, sans-serif;
     font-weight: var(--heading-weight);
     letter-spacing: var(--heading-tracking);
     line-height: var(--heading-leading);
