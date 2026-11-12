@@ -64,8 +64,8 @@ const NavbarFloatingPill = ({
           : "border-b border-slate-200/60 py-3.5 sm:py-4"
       }`}
     >
-      <div className="mx-auto w-[var(--container)] px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-4">
+      <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 md:px-8 xl:px-12">
+        <div className="flex items-center justify-between gap-4 xl:gap-8">
           
           {/* Logo oficial a color */}
           <a
@@ -79,7 +79,7 @@ const NavbarFloatingPill = ({
                 alt={brand}
                 loading="eager"
                 decoding="async"
-                className="h-[2.85rem] sm:h-[3.35rem] w-auto max-w-[240px] sm:max-w-[310px] object-contain"
+                className="h-[2.85rem] sm:h-[3.25rem] xl:h-[3.5rem] w-auto max-w-[220px] sm:max-w-[280px] xl:max-w-[320px] object-contain"
               />
             ) : (
               <div className="flex flex-col justify-center leading-none">
@@ -94,25 +94,25 @@ const NavbarFloatingPill = ({
           </a>
 
           {/* Menú horizontal en azul oscuro para escritorio */}
-          <div className="hidden min-w-0 items-center gap-5 xl:gap-7 2xl:gap-8 lg:flex">
+          <div className="hidden min-w-0 flex-1 items-center justify-center gap-4 xl:gap-6 2xl:gap-8 xl:flex px-2">
             {navItems.map((item, i) => (
               <a
                 key={`${i}-${item.name}`}
                 href={item.href}
-                className="relative group whitespace-nowrap py-1 font-['Montserrat'] text-xs xl:text-sm font-bold text-[#0F2755] transition-colors duration-200 hover:text-[#1B3A7A]"
+                className="relative group shrink-0 whitespace-nowrap py-1 font-['Montserrat'] text-[15px] 2xl:text-[16px] font-semibold text-[#0F2755] transition-colors duration-200 hover:text-[#1B3A7A]"
               >
                 <span>{item.name}</span>
-                <span className="absolute inset-x-0 -bottom-0.5 h-[2px] scale-x-0 bg-[#F4B400] transition-transform duration-300 ease-out group-hover:scale-x-100 rounded-full" />
+                <span className="absolute inset-x-0 -bottom-0.5 h-[2.5px] scale-x-0 bg-[#F4B400] transition-transform duration-300 ease-out group-hover:scale-x-100 rounded-full" />
               </a>
             ))}
           </div>
 
           {/* Botón dorado y menú hamburguesa en móvil */}
-          <div className="flex shrink-0 items-center gap-3">
+          <div className="flex shrink-0 items-center gap-3 xl:gap-4">
             {cta && (
               <a
                 href={cta.href}
-                className="hidden lg:inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B400] px-5 py-2.5 text-xs xl:text-sm font-extrabold text-[#0F2755] shadow-[0_4px_14px_rgba(244,180,0,0.35)] transition-all duration-300 hover:bg-[#e0a400] hover:scale-105 hover:shadow-[0_6px_20px_rgba(244,180,0,0.45)]"
+                className="hidden sm:inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B400] px-5 py-2.5 sm:px-6 sm:py-3 font-['Montserrat'] font-bold text-xs sm:text-sm text-[#0F2755] shadow-[0_4px_14px_rgba(244,180,0,0.35)] transition-all duration-300 hover:bg-[#e0a400] hover:scale-105 hover:shadow-[0_6px_20px_rgba(244,180,0,0.45)] whitespace-nowrap"
               >
                 <span>{cta.text}</span>
                 <svg className="size-3.5 stroke-[3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -127,7 +127,7 @@ const NavbarFloatingPill = ({
               onClick={() => setOpen((value) => !value)}
               aria-expanded={open}
               aria-label={open ? closeText : menuText}
-              className="relative flex size-[42px] items-center justify-center rounded-xl border border-slate-200 bg-slate-50 text-[#0F2755] transition-colors hover:bg-slate-100 lg:hidden"
+              className="relative flex size-[42px] items-center justify-center rounded-xl border border-slate-200 bg-slate-50 text-[#0F2755] transition-colors hover:bg-slate-100 xl:hidden"
             >
               <div aria-hidden="true" className="relative h-[10px] w-[20px]">
                 <motion.div
@@ -168,9 +168,9 @@ const NavbarFloatingPill = ({
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={reduce ? { duration: 0 } : variantSpring}
-            className="overflow-hidden border-t border-slate-100 bg-white/98 backdrop-blur-xl lg:hidden shadow-xl"
+            className="overflow-hidden border-t border-slate-100 bg-white/98 backdrop-blur-xl xl:hidden shadow-xl"
           >
-            <div className="mx-auto flex max-h-[calc(100svh-5rem)] flex-col gap-4 overflow-y-auto px-6 py-6 w-[var(--container)]">
+            <div className="mx-auto flex max-h-[calc(100svh-5rem)] flex-col gap-4 overflow-y-auto px-6 py-6 w-full max-w-[1536px]">
               <div className="flex flex-col space-y-1">
                 {navItems.map((item, i) => (
                   <motion.a
@@ -180,7 +180,7 @@ const NavbarFloatingPill = ({
                     initial={reduce ? false : { opacity: 0, x: -12 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ ...spring, delay: 0.04 + i * 0.04 }}
-                    className="flex items-center justify-between rounded-xl px-4 py-3 font-['Montserrat'] font-bold text-base text-[#0F2755] hover:bg-slate-50 hover:text-[#1B3A7A] transition-colors"
+                    className="flex items-center justify-between rounded-xl px-4 py-3 font-['Montserrat'] font-semibold text-base text-[#0F2755] hover:bg-slate-50 hover:text-[#1B3A7A] transition-colors"
                   >
                     <span>{item.name}</span>
                     <svg className="size-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
@@ -191,11 +191,11 @@ const NavbarFloatingPill = ({
               </div>
 
               {cta && (
-                <div className="pt-2">
+                <div className="pt-2 sm:hidden">
                   <a
                     href={cta.href}
                     onClick={() => setOpen(false)}
-                    className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B400] px-6 py-3.5 font-['Montserrat'] font-extrabold text-sm text-[#0F2755] shadow-md hover:bg-[#e0a400] transition-colors"
+                    className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B400] px-6 py-3.5 font-['Montserrat'] font-bold text-sm text-[#0F2755] shadow-md hover:bg-[#e0a400] transition-colors"
                   >
                     <span>{cta.text}</span>
                     <svg className="size-4 stroke-[3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
