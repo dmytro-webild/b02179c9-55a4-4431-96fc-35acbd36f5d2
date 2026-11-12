@@ -79,15 +79,15 @@ const NavbarFloatingPill = ({
                 alt={brand}
                 loading="eager"
                 decoding="async"
-                className="h-[2.25rem] sm:h-[2.75rem] w-auto max-w-[210px] sm:max-w-[250px] object-contain"
+                className="h-[2.85rem] sm:h-[3.35rem] w-auto max-w-[240px] sm:max-w-[310px] object-contain"
               />
             ) : (
-              <div className="flex items-center gap-2">
-                <span className="font-['Montserrat'] font-extrabold text-xl tracking-tight text-[#0F2755]">
+              <div className="flex flex-col justify-center leading-none">
+                <span className="font-['Montserrat'] font-extrabold text-2xl sm:text-3xl tracking-tight text-[#0F2755]">
                   ENLACES
                 </span>
-                <span className="text-xs text-[#F4B400] font-bold hidden sm:inline uppercase tracking-wider">
-                  Educación
+                <span className="text-[10px] sm:text-xs text-[#0F2755] font-bold tracking-wider uppercase mt-0.5">
+                  Educación en línea
                 </span>
               </div>
             )}
