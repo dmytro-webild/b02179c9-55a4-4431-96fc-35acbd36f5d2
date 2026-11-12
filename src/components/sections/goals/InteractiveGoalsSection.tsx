@@ -50,7 +50,7 @@ const goalOptions: GoalOption[] = [
     ctaText: "Conocer Bachillerato",
     ctaHref: "#contact-dark-form-card",
     imageSrc:
-      "https://img.b2bpic.net/free-photo/graduation-high-school-university-concept_185193-110147.jpg",
+      "https://img.b2bpic.net/free-photo/graduation-high-school-university-concept_185193-110147.jpg?_wi=2",
     imageAlt: "Estudiantes de Bachillerato General con certificado",
     durationBadge: "Plan Acelerado",
     modalityBadge: "100% en Línea"
@@ -72,7 +72,7 @@ const goalOptions: GoalOption[] = [
     ctaText: "Conocer Licenciaturas",
     ctaHref: "#contact-dark-form-card",
     imageSrc:
-      "https://img.b2bpic.net/free-photo/front-view-floating-books-connected-by-ladders-education-day_23-2149241039.jpg",
+      "https://img.b2bpic.net/free-photo/front-view-floating-books-connected-by-ladders-education-day_23-2149241039.jpg?_wi=2",
     imageAlt: "Formación universitaria e impulso académico",
     durationBadge: "Modalidad Flexible",
     modalityBadge: "RVOE Garantizado"
@@ -94,7 +94,7 @@ const goalOptions: GoalOption[] = [
     ctaText: "Conocer Titulación por Experiencia",
     ctaHref: "#contact-dark-form-card",
     imageSrc:
-      "https://img.b2bpic.net/free-photo/businessman-using-digital-tablet-writing-clipboard-with-pen-gray-desk_23-2148052592.jpg",
+      "https://img.b2bpic.net/free-photo/businessman-using-digital-tablet-writing-clipboard-with-pen-gray-desk_23-2148052592.jpg?_wi=2",
     imageAlt: "Acreditación profesional por experiencia laboral",
     durationBadge: "Acreditación Ágil",
     modalityBadge: "Validez Oficial"
@@ -116,7 +116,7 @@ const goalOptions: GoalOption[] = [
     ctaText: "Conocer Posgrados",
     ctaHref: "#contact-dark-form-card",
     imageSrc:
-      "https://img.b2bpic.net/free-photo/factory-investors-review-documentation-mockup-notebook_482257-123446.jpg",
+      "https://img.b2bpic.net/free-photo/factory-investors-review-documentation-mockup-notebook_482257-123446.jpg?_wi=2",
     imageAlt: "Posgrados y especializaciones de liderazgo",
     durationBadge: "Perfil Directivo",
     modalityBadge: "100% en Línea"
@@ -138,7 +138,7 @@ const goalOptions: GoalOption[] = [
     ctaText: "Conocer Programa de Inglés",
     ctaHref: "#contact-dark-form-card",
     imageSrc:
-      "https://img.b2bpic.net/free-photo/smiley-people-book-club-side-view_23-2150059042.jpg",
+      "https://img.b2bpic.net/free-photo/smiley-people-book-club-side-view_23-2150059042.jpg?_wi=2",
     imageAlt: "Clases interactivas de inglés profesional",
     durationBadge: "Niveles A1 a C1",
     modalityBadge: "Clases En Vivo"
