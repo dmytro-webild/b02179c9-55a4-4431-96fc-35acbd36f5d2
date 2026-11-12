@@ -1,7 +1,7 @@
 import HeroBoardFrame from "@/components/sections/hero/HeroBoardFrame";
 import CinematicVideoSection from "@/components/sections/video/CinematicVideoSection";
+import EducationalOfferSection from "@/components/sections/gallery/EducationalOfferSection";
 import AboutStatementIconRow from "@/components/sections/about/AboutStatementIconRow";
-import GalleryTiltCards from "@/components/sections/gallery/GalleryTiltCards";
 import MetricsTrayCounters from "@/components/sections/metrics/MetricsTrayCounters";
 import TestimonialSpotlightCarousel from "@/components/sections/testimonial/TestimonialSpotlightCarousel";
 import FaqTrayAccordion from "@/components/sections/faq/FaqTrayAccordion";
@@ -63,6 +63,16 @@ export default function HomePage() {
         <CinematicVideoSection />
       </div>
 
+      <div id="oferta-educativa" data-webild-section="EducationalOfferSection" data-webild-section-id="EducationalOfferSection-1" data-section="oferta-educativa">
+        <EducationalOfferSection
+          badgeTag="Oferta Educativa de ENLACES"
+          mainTitle="El mundo está a su alcance"
+          secondaryTitle="El siguiente paso depende de usted"
+          description="Descubra nuestros programas académicos con modalidades flexibles diseñados para acelerar su crecimiento profesional con validez oficial."
+          linkLabel="Solicitar información"
+        />
+      </div>
+
       <div id="about" data-webild-section="AboutStatementIconRow" data-webild-section-id="AboutStatementIconRow-1" data-section="about" data-tone="card">
         <AboutStatementIconRow
           className="bg-transparent"
@@ -82,66 +92,6 @@ export default function HomePage() {
               icon: "UserCheck",
               title: "Acompañamiento docente",
               description: "Profesorado comprometido que le orienta paso a paso durante toda su formación académica."
-            }
-          ]}
-        />
-      </div>
-
-      <div id="oferta-educativa" data-webild-section="GalleryTiltCards" data-webild-section-id="GalleryTiltCards-1" data-section="gallery-tilt-cards">
-        <GalleryTiltCards
-          tag="Oferta educativa"
-          title="Opciones formativas para su desarrollo profesional"
-          description="Planes flexibles estructurados para cumplir sus metas académicas y obtener su título con validez oficial."
-          linkLabel="Solicitar informes"
-          ariaLabel="Programas académicos de ENLACES Educación"
-          items={[
-            {
-              title: "Bachillerato general",
-              tag: "Nivel medio superior",
-              description: "Concluya la preparatoria con horarios totalmente adaptables a su jornada de trabajo actual.",
-              href: "#contact-dark-form-card",
-              imageSrc: "https://img.b2bpic.net/free-photo/graduation-high-school-university-concept_185193-110147.jpg",
-              imageAlt: "Graduación de bachillerato"
-            },
-            {
-              title: "Licenciaturas ejecutivas",
-              tag: "Licenciatura",
-              description: "Obtenga su título profesional con reconocimiento de validez oficial de estudios (RVOE).",
-              href: "#contact-dark-form-card",
-              imageSrc: "https://img.b2bpic.net/free-photo/front-view-floating-books-connected-by-ladders-education-day_23-2149241039.jpg",
-              imageAlt: "Licenciaturas ejecutivas"
-            },
-            {
-              title: "Acreditación laboral",
-              tag: "Experiencia profesional",
-              description: "Valide formalmente los conocimientos y la experiencia profesional adquiridos en su trayectoria.",
-              href: "#contact-dark-form-card",
-              imageSrc: "https://img.b2bpic.net/free-photo/businessman-using-digital-tablet-writing-clipboard-with-pen-gray-desk_23-2148052592.jpg",
-              imageAlt: "Acreditación por experiencia laboral"
-            },
-            {
-              title: "Maestrías especializadas",
-              tag: "Posgrado",
-              description: "Fortalezca sus competencias directivas con programas avanzados orientados al liderazgo corporativo.",
-              href: "#contact-dark-form-card",
-              imageSrc: "https://img.b2bpic.net/free-photo/factory-investors-review-documentation-mockup-notebook_482257-123446.jpg",
-              imageAlt: "Maestrías y posgrados"
-            },
-            {
-              title: "Cursos ejecutivos",
-              tag: "Capacitación continua",
-              description: "Adquiera competencias prácticas e inmediatas en áreas clave para la actualización profesional.",
-              href: "#contact-dark-form-card",
-              imageSrc: "https://img.b2bpic.net/free-photo/smiley-people-book-club-side-view_23-2150059042.jpg",
-              imageAlt: "Cursos ejecutivos"
-            },
-            {
-              title: "Diplomados con validez",
-              tag: "Especialización",
-              description: "Especialización técnica con validez curricular diseñada para impulsar sus metas laborales.",
-              href: "#contact-dark-form-card",
-              imageSrc: "https://img.b2bpic.net/free-photo/young-students-studying-table_23-2147850725.jpg",
-              imageAlt: "Diplomados ejecutivos"
             }
           ]}
         />
