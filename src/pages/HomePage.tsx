@@ -24,13 +24,13 @@ export default function HomePage() {
           tag="EDUCACIÓN EN LÍNEA"
           title="La educación es el camino"
           highlightText="no el destino."
-          description="Concluya sus estudios, transforme su experiencia y construya nuevas oportunidades sin detener su vida."
+          description="Concluye tus estudios, transforma tu experiencia y construye nuevas oportunidades sin detener tu vida."
           primaryButton={{
-            text: "Explore nuestros programas",
+            text: "Explora nuestros programas",
             href: "#oferta-educativa"
           }}
           secondaryButton={{
-            text: "Conozca ENLACES",
+            text: "Conoce ENLACES",
             href: "#about"
           }}
           introDelay={0.1}
@@ -38,12 +38,12 @@ export default function HomePage() {
             {
               icon: "laptop",
               title: "Educación en línea",
-              subtitle: "Estudie desde donde esté."
+              subtitle: "Estudia desde donde estés."
             },
             {
               icon: "calendar",
               title: "Programas flexibles",
-              subtitle: "Con horarios que se adaptan a usted."
+              subtitle: "Con horarios que se adaptan a ti."
             },
             {
               icon: "shield",
@@ -53,7 +53,7 @@ export default function HomePage() {
             {
               icon: "users",
               title: "Acompañamiento académico",
-              subtitle: "Durante todo su proceso."
+              subtitle: "Durante todo tu proceso."
             }
           ]}
         />
@@ -66,10 +66,10 @@ export default function HomePage() {
       <div id="oferta-educativa" data-webild-section="EducationalOfferSection" data-webild-section-id="EducationalOfferSection-1" data-section="oferta-educativa">
         <EducationalOfferSection
           badgeTag="Oferta Educativa de ENLACES"
-          mainTitle="El mundo está a su alcance"
-          secondaryTitle="El siguiente paso depende de usted"
-          description="Descubra nuestros programas académicos con modalidades flexibles diseñados para acelerar su crecimiento profesional con validez oficial."
-          linkLabel="Solicitar información"
+          mainTitle="El mundo está a tu alcance"
+          secondaryTitle="El siguiente paso depende de ti"
+          description="Descubre nuestros programas académicos con modalidades flexibles diseñados para acelerar tu crecimiento profesional con validez oficial."
+          linkLabel="Solicita información"
         />
       </div>
 
@@ -80,22 +80,22 @@ export default function HomePage() {
       <div id="about" data-webild-section="AboutStatementIconRow" data-webild-section-id="AboutStatementIconRow-1" data-section="about" data-tone="card">
         <AboutStatementIconRow
           className="bg-transparent"
-          title="La educación debe adaptarse a su vida, no al revés. Acompañamos a adultos y profesionales a alcanzar sus metas académicas."
+          title="La educación debe adaptarse a tu vida, no al revés. Te acompañamos a alcanzar tus metas académicas."
           items={[
             {
               icon: "Clock",
               title: "Horarios adaptables",
-              description: "Diseñamos esquemas de estudio que se ajustan a sus jornadas laborales y responsabilidades personales."
+              description: "Diseñamos esquemas de estudio que se ajustan a tus jornadas laborales y responsabilidades personales."
             },
             {
               icon: "ShieldCheck",
               title: "Validez oficial RVOE",
-              description: "Todos nuestros programas cuentan con el reconocimiento oficial que respalda su crecimiento profesional."
+              description: "Todos nuestros programas cuentan con el reconocimiento oficial que respalda tu crecimiento profesional."
             },
             {
               icon: "UserCheck",
               title: "Acompañamiento docente",
-              description: "Profesorado comprometido que le orienta paso a paso durante toda su formación académica."
+              description: "Profesorado comprometido que te orienta paso a paso durante toda tu formación académica."
             }
           ]}
         />
@@ -124,7 +124,7 @@ export default function HomePage() {
               Empresas y Convenios
             </h2>
             <p className="mt-3 font-['Inter'] text-base text-slate-600 max-w-xl">
-              Establecemos alianzas estratégicas con empresas e instituciones para impulsar el desarrollo académico de sus colaboradores con planes preferenciales y acompañamiento personalizado.
+              Establecemos alianzas estratégicas con empresas e instituciones para impulsar el desarrollo académico de tus colaboradores con planes preferenciales y acompañamiento personalizado.
             </p>
           </motion.div>
 
@@ -213,7 +213,7 @@ export default function HomePage() {
               icon: "Award"
             }}
             title="Respaldados por la excelencia y validación oficial"
-            description="Información institucional verificada que refleja el compromiso de ENLACES con nuestros estudiantes."
+            description="Información institucional verificada que refleja el compromiso de ENLACES con tus metas educativas."
             items={[
               {
                 prefix: "Más de",
@@ -306,7 +306,7 @@ export default function HomePage() {
       <div id="faq-tray-accordion-1" data-webild-section="FaqTrayAccordion" data-webild-section-id="FaqTrayAccordion-1" data-section="faq-tray-accordion-1">
         <FaqTrayAccordion
           tag="Orientación"
-          title="Respuestas a sus dudas"
+          title="Respuestas a tus dudas"
           highlight="del proceso"
           items={[
             {
@@ -315,25 +315,25 @@ export default function HomePage() {
             },
             {
               title: "¿En qué modalidad se imparten las clases?",
-              description: "Disponemos de modalidades en línea, presenciales y mixtas diseñadas para adaptarse a sus horarios laborales y responsabilidades familiares."
+              description: "Disponemos de modalidades en línea, presenciales y mixtas diseñadas para adaptarse a tus horarios laborales y responsabilidades familiares."
             },
             {
               title: "¿Qué documentación se requiere para la inscripción?",
-              description: "Generalmente se solicita acta de nacimiento, CURP, certificado del nivel previo y comprobante de domicilio. Un asesor le asistirá durante todo el trámite."
+              description: "Generalmente se solicita acta de nacimiento, CURP, certificado del nivel previo y comprobante de domicilio. Un asesor te asistirá durante todo el trámite."
             },
             {
               title: "¿Cuándo inicia el siguiente periodo escolar?",
-              description: "Mantenemos aperturas periódicas a lo largo del año para que pueda comenzar sus estudios en el momento que resulte más conveniente para usted."
+              description: "Mantenemos aperturas periódicas a lo largo del año para que puedas comenzar tus estudios en el momento que resulte más conveniente para ti."
             },
             {
               title: "¿Puedo acreditar conocimientos por experiencia laboral?",
-              description: "Sí, contamos con esquemas de evaluación y acreditación que reconocen los saberes previos adquiridos a lo largo de su trayectoria profesional."
+              description: "Sí, contamos con esquemas de evaluación y acreditación que reconocen los saberes previos adquiridos a lo largo de tu trayectoria profesional."
             }
           ]}
           help={{
             label: "Asesoría",
-            title: "¿Tiene dudas sobre la admisión?",
-            description: "Margarita Gómez, Asesora Académica, le orientará de inmediato en todo su trámite.",
+            title: "¿Tienes dudas sobre la admisión?",
+            description: "Margarita Gómez, Asesora Académica, te orientará de inmediato en todo tu trámite.",
             cta: {
               text: "Contactar asesor",
               href: "#contact-dark-form-card"
@@ -346,7 +346,7 @@ export default function HomePage() {
 
       <div id="contact-dark-form-card" data-webild-section="ContactDarkFormCard" data-webild-section-id="ContactDarkFormCard-1" data-section="contact-dark-form-card">
         <ContactDarkFormCard
-          title="Solicite atención personalizada para su plan académico"
+          title="Solicita atención personalizada para tu plan académico"
           formTitle="Formulario de atención a aspirantes"
           fields={{
             name: "Nombre completo",
@@ -355,13 +355,13 @@ export default function HomePage() {
             message: "Mensaje o dudas"
           }}
           placeholders={{
-            name: "Escriba su nombre completo",
+            name: "Escribe tu nombre completo",
             email: "correo@ejemplo.com",
             company: "Ej. Bachillerato o Licenciatura",
-            message: "Escriba sus preguntas sobre admisión, costos o validez..."
+            message: "Escribe tus preguntas sobre admisión, costos o validez..."
           }}
           submitText="Enviar consulta"
-          successText="Gracias. Un asesor académico le responderá a la brevedad."
+          successText="Gracias. Un asesor académico te responderá a la brevedad."
           imageSrc="https://img.b2bpic.net/free-photo/animated-erasers-books-still-life_23-2149911070.jpg"
           imageAlt="animated erasers on books like a seesaw"
           ariaLabel="Formulario de contacto institucional para aspirantes"
