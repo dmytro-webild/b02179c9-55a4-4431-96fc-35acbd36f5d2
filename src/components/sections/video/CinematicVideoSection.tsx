@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import { Volume2, VolumeX, ArrowRight } from "lucide-react";
 
 interface CinematicVideoSectionProps {
   videoSrc?: string;
@@ -20,6 +22,7 @@ export default function CinematicVideoSection({
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
 
   // Scroll-based auto play on intersect / pause on exit
   useEffect(() => {
@@ -27,7 +30,7 @@ export default function CinematicVideoSection({
     const container = containerRef.current;
     if (!video || !container) return;
 
-    video.muted = true;
+    video.muted = isMuted;
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -50,32 +53,91 @@ export default function CinematicVideoSection({
     return () => {
       observer.disconnect();
     };
-  }, []);
+  }, [isMuted]);
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      const nextMuted = !isMuted;
+      videoRef.current.muted = nextMuted;
+      setIsMuted(nextMuted);
+    }
+  };
 
   return (
     <section
       ref={containerRef}
       aria-label={ariaLabel}
-      className={`relative w-full max-w-full aspect-video overflow-hidden bg-black p-0 m-0 border-0 shadow-none rounded-none ${className}`}
+      className={`bg-white py-14 sm:py-20 lg:py-24 border-0 shadow-none overflow-hidden ${className}`}
     >
-      {/* HTML5 Native Video element - 16:9 horizontal format, full width, autoPlay muted loop */}
-      <video
-        ref={videoRef}
-        src={videoSrc}
-        poster={posterSrc}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        onLoadedData={() => setIsLoaded(true)}
-        className={`w-full h-full object-cover block border-0 p-0 m-0 outline-none rounded-none shadow-none transition-opacity duration-700 ${
-          isLoaded ? "opacity-100" : "opacity-0"
-        }`}
-      />
+      <div className="mx-auto w-[var(--container)] max-w-7xl">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-12 lg:gap-16 items-center">
+          {/* Columna izquierda: Texto y Botón Dorado (En móviles va primero) */}
+          <div className="lg:col-span-7 flex flex-col justify-center text-left">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#1B3A7A]/15 bg-[#1B3A7A]/5 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#1B3A7A] w-fit mb-6">
+              <span className="size-2 rounded-full bg-[#F4B400] animate-pulse" />
+              Educación Flexible y Humana
+            </div>
 
-      {/* Transición suave superior */}
-      <div className="pointer-events-none absolute top-0 left-0 right-0 h-10 sm:h-20 bg-gradient-to-b from-white to-transparent z-10" />
+            <h2 className="font-heading font-extrabold text-[#0F2755] text-3xl sm:text-4xl lg:text-5xl leading-[1.15] tracking-tight mb-6">
+              Tu futuro está a un clic de distancia.
+            </h2>
+
+            <p className="font-sans text-[#475569] text-base sm:text-lg lg:text-xl leading-relaxed mb-8 max-w-2xl">
+              Estudia desde donde estés, con horarios que se adaptan a tu vida, tecnología educativa y acompañamiento humano durante todo tu proceso.
+            </p>
+
+            <div>
+              <Link
+                to="/oferta-educativa"
+                className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-[#F4B400] px-7 py-3.5 sm:px-8 sm:py-4 text-sm sm:text-base font-extrabold text-[#0F2755] transition-all duration-300 hover:bg-[#e0a400] hover:-translate-y-0.5 active:translate-y-0 active:scale-95 cursor-pointer shadow-none"
+              >
+                <span>Conoce nuestros programas</span>
+                <ArrowRight className="size-4 sm:size-5 text-[#0F2755] transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
+            </div>
+          </div>
+
+          {/* Columna derecha: Video vertical 9:16 (~600px altura en escritorio) (En móviles va segundo) */}
+          <div className="lg:col-span-5 flex justify-center items-center">
+            <div className="relative w-full max-w-[340px] sm:max-w-[360px] aspect-[9/16] lg:h-[600px] border-0 shadow-none bg-black rounded-2xl overflow-hidden flex items-center justify-center">
+              <video
+                ref={videoRef}
+                src={videoSrc}
+                poster={posterSrc}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                onLoadedData={() => setIsLoaded(true)}
+                className={`w-full h-full object-contain block border-0 p-0 m-0 outline-none shadow-none rounded-none transition-opacity duration-700 ${
+                  isLoaded ? "opacity-100" : "opacity-0"
+                }`}
+              />
+
+              {/* Botón discreto para activar el sonido */}
+              <button
+                type="button"
+                onClick={toggleMute}
+                aria-label={isMuted ? "Activar sonido" : "Silenciar sonido"}
+                className="absolute bottom-4 right-4 z-20 flex items-center gap-2 bg-[#0F2755]/85 hover:bg-[#0F2755] text-white text-xs font-semibold px-3 py-2 rounded-full backdrop-blur-md border border-white/20 transition-all duration-200 cursor-pointer shadow-none"
+              >
+                {isMuted ? (
+                  <>
+                    <VolumeX className="size-4 text-[#F4B400]" />
+                    <span>Activar sonido</span>
+                  </>
+                ) : (
+                  <>
+                    <Volume2 className="size-4 text-[#F4B400]" />
+                    <span>Silenciar</span>
+                  </>
+                )}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
