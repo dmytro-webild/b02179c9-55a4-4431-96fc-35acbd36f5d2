@@ -43,7 +43,7 @@ function BeforeAfterComparator({
   return (
     <div
       ref={containerRef}
-      className="relative aspect-[16/9] w-full overflow-hidden rounded-none select-none border-none shadow-sm bg-slate-900 group"
+      className="relative aspect-[16/9] w-full overflow-hidden rounded-none select-none border-none shadow-none bg-slate-900 group"
       onMouseDown={() => setIsDragging(true)}
       onMouseUp={() => setIsDragging(false)}
       onMouseLeave={() => setIsDragging(false)}
@@ -417,8 +417,8 @@ export default function NosotrosPage() {
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
             <BeforeAfterComparator
-              leftImage="https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794964568166-dspbzwe5.jpg"
-              rightImage="https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794963104796-efo7w95q.jpg"
+              leftImage="https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794965930131-mpzjh9z2.jpg"
+              rightImage="https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794965930133-xfuo9n4l.png"
               leftLabel="Nuestros inicios"
               rightLabel="Actualidad"
             />
