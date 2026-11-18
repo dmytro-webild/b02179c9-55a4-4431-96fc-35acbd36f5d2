@@ -80,9 +80,14 @@ export default function NosotrosPage() {
     },
   ];
 
-  const main2021Image = {
+  const banderas2021Image = {
     src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794974303173-6o60lm5z.png",
     alt: "DE MÉXICO AL MUNDO 2021 — Banderas de México y Estados Unidos",
+  };
+
+  const logo2021Image = {
+    src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794974303178-llvh7pl6.png",
+    alt: "DE MÉXICO AL MUNDO 2021 — Logotipo ENLACES Sin Fronteras",
   };
 
   const mainFilosofiaImage = {
@@ -115,20 +120,24 @@ export default function NosotrosPage() {
 
   const gallery2021Images = [
     {
-      src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794974303177-f337ck6j.png",
-      alt: "DE MÉXICO AL MUNDO 2021 — Fotografía 1",
+      src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1795020547298-x9eza7gx.png",
+      alt: "DE MÉXICO AL MUNDO 2021 — Panorámica superior",
     },
     {
-      src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794974916292-cm8m2xdt.jpg",
-      alt: "DE MÉXICO AL MUNDO 2021 — Fotografía 2",
+      src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1795020547300-37c1ibv3.png",
+      alt: "DE MÉXICO AL MUNDO 2021 — Fotografía principal",
     },
     {
-      src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1795019622846-46d4pffs.png",
-      alt: "DE MÉXICO AL MUNDO 2021 — Fotografía 3",
+      src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1795020547301-j20xf0ip.png",
+      alt: "DE MÉXICO AL MUNDO 2021 — Columna izquierda",
     },
     {
-      src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794974303178-llvh7pl6.png",
-      alt: "DE MÉXICO AL MUNDO 2021 — Fotografía 4",
+      src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1795020547302-lb7h1yjl.jpg",
+      alt: "DE MÉXICO AL MUNDO 2021 — Columna derecha superior",
+    },
+    {
+      src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1795020547302-5crw0ye7.png",
+      alt: "DE MÉXICO AL MUNDO 2021 — Columna derecha inferior",
     },
   ];
   return (
@@ -835,15 +844,15 @@ export default function NosotrosPage() {
                       DE MÉXICO AL MUNDO
                     </div>
 
-                    {/* Main Large Format Image (Photo 1) */}
+                    {/* Imagen 1: Panorámica superior, ancho completo */}
                     <div
                       className="relative group cursor-pointer overflow-hidden rounded-none shadow-none border-none bg-slate-100"
-                      onClick={() => setLightboxImage(main2021Image)}
+                      onClick={() => setLightboxImage(gallery2021Images[0])}
                     >
                       <img
-                        src={main2021Image.src}
-                        alt={main2021Image.alt}
-                        className="w-full h-auto object-contain rounded-none shadow-none border-none transition-transform duration-300 group-hover:scale-[1.01]"
+                        src={gallery2021Images[0].src}
+                        alt={gallery2021Images[0].alt}
+                        className="w-full h-auto block rounded-none shadow-none border-none transition-transform duration-300 group-hover:scale-[1.01]"
                       />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-center justify-center pointer-events-none">
                         <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 text-white text-xs font-['Montserrat'] font-semibold px-3 py-1.5 rounded-none shadow-none border-none flex items-center gap-1.5">
@@ -852,45 +861,28 @@ export default function NosotrosPage() {
                       </div>
                     </div>
 
-                    {/* Editorial Mosaic Gallery with Graduate Photos (2 Columns aligned to same height) */}
-                    <div className="grid grid-cols-2 gap-[6px]">
-                      {/* Egresado 1: Full width row */}
-                      <div
-                        className="col-span-2 relative group cursor-pointer overflow-hidden rounded-none shadow-none border-none bg-slate-100"
-                        onClick={() => setLightboxImage(gallery2021Images[0])}
-                      >
-                        <img
-                          src={gallery2021Images[0].src}
-                          alt={gallery2021Images[0].alt}
-                          className="w-full h-auto block rounded-none shadow-none border-none transition-transform duration-300 group-hover:scale-[1.01]"
-                        />
-                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-center justify-center pointer-events-none">
-                          <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 text-white text-[11px] font-['Montserrat'] font-semibold px-2 py-1 rounded-none shadow-none border-none flex items-center gap-1">
-                            <ZoomIn className="size-3" /> Ampliar
-                          </div>
+                    {/* Imagen 2: Fotografía principal del señor, ancho completo */}
+                    <div
+                      className="relative group cursor-pointer overflow-hidden rounded-none shadow-none border-none bg-slate-100"
+                      onClick={() => setLightboxImage(gallery2021Images[1])}
+                    >
+                      <img
+                        src={gallery2021Images[1].src}
+                        alt={gallery2021Images[1].alt}
+                        className="w-full h-auto block rounded-none shadow-none border-none transition-transform duration-300 group-hover:scale-[1.01]"
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-center justify-center pointer-events-none">
+                        <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 text-white text-xs font-['Montserrat'] font-semibold px-3 py-1.5 rounded-none shadow-none border-none flex items-center gap-1.5">
+                          <ZoomIn className="size-3.5" /> Ampliar imagen
                         </div>
                       </div>
+                    </div>
 
-                      {/* Egresada 2: Left column */}
+                    {/* Mosaico compacto y equilibrado (Imágenes 3, 4 y 5) */}
+                    <div className="grid grid-cols-2 gap-[6px] items-stretch min-h-[220px] sm:min-h-[280px]">
+                      {/* Imagen 3: Columna inferior izquierda */}
                       <div
-                        className="col-span-1 relative group cursor-pointer overflow-hidden rounded-none shadow-none border-none bg-slate-100 flex flex-col"
-                        onClick={() => setLightboxImage(gallery2021Images[1])}
-                      >
-                        <img
-                          src={gallery2021Images[1].src}
-                          alt={gallery2021Images[1].alt}
-                          className="w-full h-full object-cover block rounded-none shadow-none border-none transition-transform duration-300 group-hover:scale-[1.01]"
-                        />
-                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-center justify-center pointer-events-none">
-                          <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 text-white text-[11px] font-['Montserrat'] font-semibold px-2 py-1 rounded-none shadow-none border-none flex items-center gap-1">
-                            <ZoomIn className="size-3" /> Ampliar
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Right column: Nueva fotografía del señor */}
-                      <div
-                        className="col-span-1 relative group cursor-pointer overflow-hidden rounded-none shadow-none border-none bg-slate-100 flex flex-col"
+                        className="col-span-1 relative group cursor-pointer overflow-hidden rounded-none shadow-none border-none bg-slate-100 flex flex-col h-full"
                         onClick={() => setLightboxImage(gallery2021Images[2])}
                       >
                         <img
@@ -904,22 +896,75 @@ export default function NosotrosPage() {
                           </div>
                         </div>
                       </div>
+
+                      {/* Columna inferior derecha: Imagen 4 (superior) y Imagen 5 (inferior) */}
+                      <div className="col-span-1 flex flex-col gap-[6px] h-full">
+                        <div
+                          className="relative group cursor-pointer overflow-hidden rounded-none shadow-none border-none bg-slate-100 flex-1 min-h-0"
+                          onClick={() => setLightboxImage(gallery2021Images[3])}
+                        >
+                          <img
+                            src={gallery2021Images[3].src}
+                            alt={gallery2021Images[3].alt}
+                            className="w-full h-full object-cover block rounded-none shadow-none border-none transition-transform duration-300 group-hover:scale-[1.01]"
+                          />
+                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-center justify-center pointer-events-none">
+                            <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 text-white text-[11px] font-['Montserrat'] font-semibold px-2 py-1 rounded-none shadow-none border-none flex items-center gap-1">
+                              <ZoomIn className="size-3" /> Ampliar
+                            </div>
+                          </div>
+                        </div>
+
+                        <div
+                          className="relative group cursor-pointer overflow-hidden rounded-none shadow-none border-none bg-slate-100 flex-1 min-h-0"
+                          onClick={() => setLightboxImage(gallery2021Images[4])}
+                        >
+                          <img
+                            src={gallery2021Images[4].src}
+                            alt={gallery2021Images[4].alt}
+                            className="w-full h-full object-cover block rounded-none shadow-none border-none transition-transform duration-300 group-hover:scale-[1.01]"
+                          />
+                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-center justify-center pointer-events-none">
+                            <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 text-white text-[11px] font-['Montserrat'] font-semibold px-2 py-1 rounded-none shadow-none border-none flex items-center gap-1">
+                              <ZoomIn className="size-3" /> Ampliar
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
 
-                    {/* Logotipo Enlaces Sin Fronteras — Centrado debajo de la galería con mayor tamaño */}
-                    <div className="w-full flex justify-center mt-[6px]">
+                    {/* Logotipo ENLACES Sin Fronteras y Banderas conservadas debajo */}
+                    <div className="flex flex-col gap-[6px] w-full">
+                      <div className="w-full flex justify-center">
+                        <div
+                          className="relative group cursor-pointer overflow-hidden rounded-none shadow-none border-none bg-slate-100 w-full max-w-[460px] sm:max-w-[520px]"
+                          onClick={() => setLightboxImage(logo2021Image)}
+                        >
+                          <img
+                            src={logo2021Image.src}
+                            alt={logo2021Image.alt}
+                            className="w-full h-auto block rounded-none shadow-none border-none transition-transform duration-300 group-hover:scale-[1.01]"
+                          />
+                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-center justify-center pointer-events-none">
+                            <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 text-white text-[11px] font-['Montserrat'] font-semibold px-2.5 py-1 rounded-none shadow-none border-none flex items-center gap-1">
+                              <ZoomIn className="size-3" /> Ampliar
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
                       <div
-                        className="relative group cursor-pointer overflow-hidden rounded-none shadow-none border-none bg-slate-100 w-full max-w-[460px] sm:max-w-[520px]"
-                        onClick={() => setLightboxImage(gallery2021Images[3])}
+                        className="relative group cursor-pointer overflow-hidden rounded-none shadow-none border-none bg-slate-100 w-full"
+                        onClick={() => setLightboxImage(banderas2021Image)}
                       >
                         <img
-                          src={gallery2021Images[3].src}
-                          alt={gallery2021Images[3].alt}
+                          src={banderas2021Image.src}
+                          alt={banderas2021Image.alt}
                           className="w-full h-auto block rounded-none shadow-none border-none transition-transform duration-300 group-hover:scale-[1.01]"
                         />
                         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-center justify-center pointer-events-none">
-                          <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 text-white text-[11px] font-['Montserrat'] font-semibold px-2.5 py-1 rounded-none shadow-none border-none flex items-center gap-1">
-                            <ZoomIn className="size-3" /> Ampliar
+                          <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 text-white text-xs font-['Montserrat'] font-semibold px-3 py-1.5 rounded-none shadow-none border-none flex items-center gap-1.5">
+                            <ZoomIn className="size-3.5" /> Ampliar imagen
                           </div>
                         </div>
                       </div>
