@@ -7,19 +7,37 @@ export default function NosotrosPage() {
   return (
     <div className="bg-white min-h-screen text-[#0F2755]">
       {/* Editorial Portada / Hero Section */}
-      <section className="relative bg-white py-14 sm:py-20 lg:py-24 border-b border-slate-100 overflow-hidden">
+      <section className="relative bg-white py-12 sm:py-16 lg:py-24 border-b border-slate-100 overflow-hidden min-h-[560px] lg:min-h-[640px] flex items-center">
         {/* Subtle background glow accents */}
         <div className="pointer-events-none absolute -top-24 -left-24 size-96 rounded-full bg-[#1B3A7A]/5 blur-3xl" />
-        <div className="pointer-events-none absolute top-1/2 right-0 size-96 rounded-full bg-[#F4B400]/10 blur-3xl" />
+        <div className="pointer-events-none absolute bottom-0 left-1/3 size-96 rounded-full bg-[#F4B400]/5 blur-3xl" />
 
-        <div className="mx-auto w-[var(--container)] px-4 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+        {/* Right Half Photography - 50% screen width, 100% height, flush to right edge */}
+        <div className="w-full lg:w-1/2 lg:absolute lg:inset-y-0 lg:right-0 h-[360px] sm:h-[460px] lg:h-full relative overflow-hidden order-first lg:order-last">
+          <MotionMedia
+            src="https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794963104796-efo7w95q.jpg"
+            alt="Fotografía institucional real de ENLACES"
+            className="size-full object-cover object-[center_top] sm:object-center"
+            initial={{ opacity: 0, scale: 1.03 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.9, ease: "easeOut" }}
+          />
+
+          {/* Left horizontal soft gradient fade for seamless transition to white background */}
+          <div className="absolute inset-y-0 left-0 w-3/4 sm:w-3/5 lg:w-2/3 bg-gradient-to-r from-white via-white/80 via-white/30 to-transparent pointer-events-none" />
+
+          {/* Bottom gradient fade for mobile layout integration */}
+          <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white via-white/90 to-transparent lg:hidden pointer-events-none" />
+        </div>
+
+        <div className="relative z-10 mx-auto w-[var(--container)] px-4 sm:px-6 py-4 lg:py-0">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Column: Text Content */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
-              className="lg:col-span-7 flex flex-col items-start"
+              className="lg:col-span-7 xl:col-span-6 flex flex-col items-start max-w-2xl lg:max-w-none"
             >
               {/* Top Tag */}
               <div className="inline-flex items-center gap-2 rounded-full border border-[#1B3A7A]/20 bg-[#1B3A7A]/5 px-4 py-1.5 text-xs font-extrabold uppercase tracking-widest text-[#1B3A7A]">
@@ -38,7 +56,7 @@ export default function NosotrosPage() {
               </h1>
 
               {/* Complementary Text */}
-              <p className="mt-6 font-['Inter'] text-lg sm:text-xl text-slate-600 leading-relaxed font-medium max-w-2xl border-l-2 border-[#F4B400] pl-4 sm:pl-5 py-0.5">
+              <p className="mt-6 font-['Inter'] text-lg sm:text-xl text-slate-600 leading-relaxed font-medium max-w-xl border-l-2 border-[#F4B400] pl-4 sm:pl-5 py-0.5">
                 Una filosofía de vida. Una nueva manera de entender la educación.
               </p>
 
@@ -52,45 +70,10 @@ export default function NosotrosPage() {
                 </Link>
                 <Link
                   to="/oferta-educativa"
-                  className="rounded-full border border-slate-200 bg-slate-50 px-7 py-3.5 font-['Montserrat'] font-bold text-sm text-[#0F2755] hover:bg-slate-100 transition-all"
+                  className="rounded-full border border-slate-300 bg-white/90 backdrop-blur-sm px-7 py-3.5 font-['Montserrat'] font-bold text-sm text-[#0F2755] hover:bg-slate-50 transition-all shadow-sm"
                 >
                   Conoce nuestros programas
                 </Link>
-              </div>
-            </motion.div>
-
-            {/* Right Column: Attached Photography */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="lg:col-span-5 relative"
-            >
-              <div className="relative group mx-auto max-w-md lg:max-w-none">
-                {/* Decorative border accent */}
-                <div className="absolute -inset-2 sm:-inset-3 rounded-3xl bg-gradient-to-tr from-[#1B3A7A]/15 via-[#F4B400]/20 to-transparent blur-lg opacity-70 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                <div className="relative aspect-[4/3] sm:aspect-[4/5] lg:aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 bg-white">
-                  <MotionMedia
-                    src="https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794963104796-efo7w95q.jpg"
-                    alt="Fotografía institucional real de ENLACES"
-                    className="size-full object-cover object-top sm:object-center transition-transform duration-700 group-hover:scale-[1.03]"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0F2755]/50 via-transparent to-transparent pointer-events-none" />
-                  
-                  {/* Floating info badge */}
-                  <div className="absolute bottom-4 left-4 right-4 sm:bottom-5 sm:left-5 sm:right-5 p-3.5 sm:p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-white/50 shadow-xl">
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="size-2 rounded-full bg-[#F4B400]" />
-                      <span className="font-['Montserrat'] font-extrabold text-xs uppercase tracking-wider text-[#1B3A7A]">
-                        Comunidad ENLACES
-                      </span>
-                    </div>
-                    <p className="font-['Inter'] text-xs font-semibold text-slate-700">
-                      Fotografía institucional real de nuestra comunidad de estudiantes.
-                    </p>
-                  </div>
-                </div>
               </div>
             </motion.div>
           </div>
