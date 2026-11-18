@@ -1,8 +1,112 @@
+import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
-import { GraduationCap, BookOpen, Award, Handshake } from "lucide-react";
+import { GraduationCap, BookOpen, Award, Handshake, ChevronsLeftRight } from "lucide-react";
 import { MotionMedia } from "@/components/kit/Media";
 import AboutStatementIconRow from "@/components/sections/about/AboutStatementIconRow";
+
+function BeforeAfterComparator({
+  leftImage,
+  rightImage,
+  leftLabel,
+  rightLabel,
+}: {
+  leftImage: string;
+  rightImage: string;
+  leftLabel: string;
+  rightLabel: string;
+}) {
+  const [sliderPosition, setSliderPosition] = useState(50);
+  const [isDragging, setIsDragging] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const handleMove = (clientX: number) => {
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    const x = clientX - rect.left;
+    const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
+    setSliderPosition(percentage);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (e.touches[0]) {
+      handleMove(e.touches[0].clientX);
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (isDragging) {
+      handleMove(e.clientX);
+    }
+  };
+
+  return (
+    <div
+      ref={containerRef}
+      className="relative aspect-[16/9] w-full overflow-hidden rounded-none select-none border-none shadow-sm bg-slate-900 group"
+      onMouseDown={() => setIsDragging(true)}
+      onMouseUp={() => setIsDragging(false)}
+      onMouseLeave={() => setIsDragging(false)}
+      onMouseMove={handleMouseMove}
+      onTouchMove={handleTouchMove}
+    >
+      {/* Right Image (Actualidad) - Full Container Background */}
+      <MotionMedia
+        src={rightImage}
+        alt={rightLabel}
+        className="absolute inset-0 size-full object-cover rounded-none pointer-events-none"
+      />
+
+      {/* Right Label (Actualidad) */}
+      <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20 bg-[#0F2755]/85 backdrop-blur-md text-white font-['Montserrat'] font-bold text-xs sm:text-sm px-4 py-2 rounded-none uppercase tracking-wider shadow-lg pointer-events-none border border-white/20">
+        {rightLabel}
+      </div>
+
+      {/* Left Image (Nuestros inicios) - Clipped Overlay */}
+      <div
+        className="absolute inset-0 size-full overflow-hidden pointer-events-none"
+        style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
+      >
+        <MotionMedia
+          src={leftImage}
+          alt={leftLabel}
+          className="absolute inset-0 size-full object-cover rounded-none"
+        />
+      </div>
+
+      {/* Left Label (Nuestros inicios) */}
+      <div className="absolute top-4 left-4 sm:top-6 sm:left-6 z-20 bg-[#0F2755]/85 backdrop-blur-md text-white font-['Montserrat'] font-bold text-xs sm:text-sm px-4 py-2 rounded-none uppercase tracking-wider shadow-lg pointer-events-none border border-white/20">
+        {leftLabel}
+      </div>
+
+      {/* Central Slider Line */}
+      <div
+        className="absolute top-0 bottom-0 w-[3px] bg-white z-20 shadow-[0_0_10px_rgba(0,0,0,0.5)] pointer-events-none"
+        style={{ left: `${sliderPosition}%`, transform: "translateX(-50%)" }}
+      />
+
+      {/* Central Slider Handle Button */}
+      <div
+        className="absolute top-1/2 z-20 size-11 sm:size-14 -translate-y-1/2 -translate-x-1/2 rounded-full bg-white text-[#0F2755] shadow-2xl border-2 border-[#1B3A7A] flex items-center justify-center cursor-ew-resize transition-transform group-hover:scale-110 pointer-events-none"
+        style={{ left: `${sliderPosition}%` }}
+      >
+        <ChevronsLeftRight className="size-5 sm:size-6 text-[#1B3A7A]" />
+      </div>
+
+      {/* Transparent Input Range overlay for touch drag & accessibility */}
+      <input
+        type="range"
+        min="0"
+        max="100"
+        step="0.1"
+        value={sliderPosition}
+        onChange={(e) => setSliderPosition(parseFloat(e.target.value))}
+        aria-label="Comparador interactivo antes y después"
+        className="absolute inset-0 size-full opacity-0 z-30 cursor-ew-resize touch-none"
+      />
+    </div>
+  );
+}
 
 export default function NosotrosPage() {
   return (
@@ -268,6 +372,56 @@ export default function NosotrosPage() {
             <p className="font-['Montserrat'] italic font-semibold text-lg sm:text-xl text-[#1B3A7A]">
               Nuestro compromiso no comienza ni termina con tu inscripción. Te acompañamos durante el camino.
             </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Editorial Section: NUESTRA HISTORIA */}
+      <section className="bg-white py-20 sm:py-28 lg:py-32 border-b border-slate-100">
+        <div className="mx-auto w-[var(--container)] px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="flex flex-col items-center text-center"
+          >
+            {/* Label / Badge */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#1B3A7A]/20 bg-[#1B3A7A]/5 px-4 py-1.5 text-xs font-extrabold uppercase tracking-widest text-[#1B3A7A]">
+              NUESTRA HISTORIA
+            </div>
+
+            {/* Title */}
+            <h2 className="mt-6 font-['Montserrat'] font-extrabold text-3xl sm:text-4xl lg:text-[2.75rem] leading-[1.2] tracking-tight text-[#1B3A7A] text-center max-w-4xl">
+              De México al mundo.
+            </h2>
+
+            {/* Subtitle */}
+            <p className="mt-2 sm:mt-3 font-['Montserrat'] font-semibold text-lg sm:text-xl text-[#F4B400] text-center">
+              Una historia de evolución constante.
+            </p>
+
+            {/* Main Text */}
+            <p className="mt-6 font-['Inter'] text-slate-600 text-base sm:text-lg leading-relaxed text-center font-normal max-w-[850px] mx-auto">
+              Lo que comenzó en 2014 como una alternativa educativa en la Ciudad de México se convirtió en un proyecto que ha trascendido fronteras, generaciones y modalidades de aprendizaje.
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Interactive Before & After Comparator (16:9 panoramic ratio, 95% width, no border, sharp corners) */}
+        <div className="w-[95%] max-w-[1700px] mx-auto mt-10 sm:mt-14">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
+            <BeforeAfterComparator
+              leftImage="https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794964568166-dspbzwe5.jpg"
+              rightImage="https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794963104796-efo7w95q.jpg"
+              leftLabel="Nuestros inicios"
+              rightLabel="Actualidad"
+            />
           </motion.div>
         </div>
       </section>
