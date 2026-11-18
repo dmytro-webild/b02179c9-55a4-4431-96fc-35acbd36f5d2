@@ -79,6 +79,26 @@ export default function NosotrosPage() {
       alt: "CRECIENDO POR TODO MÉXICO 2016–2018 — Fotografía 4",
     },
   ];
+
+  const main2021Image = {
+    src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794974303169-rmb7tof9.png",
+    alt: "DE MÉXICO AL MUNDO 2021 — Fotografía principal",
+  };
+
+  const gallery2021Images = [
+    {
+      src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794974303173-6o60lm5z.png",
+      alt: "DE MÉXICO AL MUNDO 2021 — Fotografía 1",
+    },
+    {
+      src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794974303177-f337ck6j.png",
+      alt: "DE MÉXICO AL MUNDO 2021 — Fotografía 2",
+    },
+    {
+      src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794974303178-llvh7pl6.png",
+      alt: "DE MÉXICO AL MUNDO 2021 — Fotografía 3",
+    },
+  ];
   return (
     <div className="bg-white min-h-screen text-[#0F2755]">
       {/* Editorial Portada / Hero Section */}
@@ -759,6 +779,114 @@ export default function NosotrosPage() {
                       </div>
                     </div>
                   </div>
+                </div>
+              </motion.div>
+
+              {/* Event 4: 2021 */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="relative -mx-2 sm:-mx-6 lg:-mx-12 md:w-[calc(100%+3rem)] lg:w-[calc(100%+6rem)] md:-ml-6 lg:-ml-12 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 items-start pl-10 md:pl-0"
+              >
+                {/* Mobile Marker Dot */}
+                <div className="md:hidden absolute left-4 -translate-x-1/2 top-2 size-3.5 bg-[#F4B400] z-10 rounded-none border-none shadow-none" />
+
+                {/* Desktop Center Marker Dot */}
+                <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-2 size-4 bg-[#F4B400] z-10 rounded-none border-none shadow-none" />
+
+                {/* Photographic Gallery Left Column (Desktop) / Order 2 (Mobile) */}
+                <div className="md:pr-6 lg:pr-8 order-2 md:order-1 w-full mt-6 md:mt-0">
+                  <div className="flex flex-col gap-[6px]">
+                    <div className="inline-block bg-[#1B3A7A]/10 text-[#1B3A7A] text-[11px] sm:text-xs font-['Montserrat'] font-bold uppercase tracking-wider px-3 py-1 rounded-none border-none shadow-none self-start">
+                      DE MÉXICO AL MUNDO
+                    </div>
+
+                    {/* Main Large Format Image (Photo 1) */}
+                    <div
+                      className="relative group cursor-pointer overflow-hidden rounded-none shadow-none border-none bg-slate-100"
+                      onClick={() => setLightboxImage(main2021Image)}
+                    >
+                      <img
+                        src={main2021Image.src}
+                        alt={main2021Image.alt}
+                        className="w-full h-auto object-contain rounded-none shadow-none border-none transition-transform duration-300 group-hover:scale-[1.01]"
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-center justify-center pointer-events-none">
+                        <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 text-white text-xs font-['Montserrat'] font-semibold px-3 py-1.5 rounded-none shadow-none border-none flex items-center gap-1.5">
+                          <ZoomIn className="size-3.5" /> Ampliar imagen
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Editorial Mosaic Gallery with Independent Columns & Gap of 6px (Remaining 3 Images) */}
+                    <div className="grid grid-cols-2 gap-[6px]">
+                      {/* Photo 2 */}
+                      <div
+                        className="relative group cursor-pointer overflow-hidden rounded-none shadow-none border-none bg-slate-100"
+                        onClick={() => setLightboxImage(gallery2021Images[0])}
+                      >
+                        <img
+                          src={gallery2021Images[0].src}
+                          alt={gallery2021Images[0].alt}
+                          className="w-full h-auto object-contain rounded-none shadow-none border-none transition-transform duration-300 group-hover:scale-[1.01]"
+                        />
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-center justify-center pointer-events-none">
+                          <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 text-white text-[11px] font-['Montserrat'] font-semibold px-2 py-1 rounded-none shadow-none border-none flex items-center gap-1">
+                            <ZoomIn className="size-3" /> Ampliar
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Photo 3 */}
+                      <div
+                        className="relative group cursor-pointer overflow-hidden rounded-none shadow-none border-none bg-slate-100"
+                        onClick={() => setLightboxImage(gallery2021Images[1])}
+                      >
+                        <img
+                          src={gallery2021Images[1].src}
+                          alt={gallery2021Images[1].alt}
+                          className="w-full h-auto object-contain rounded-none shadow-none border-none transition-transform duration-300 group-hover:scale-[1.01]"
+                        />
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-center justify-center pointer-events-none">
+                          <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 text-white text-[11px] font-['Montserrat'] font-semibold px-2 py-1 rounded-none shadow-none border-none flex items-center gap-1">
+                            <ZoomIn className="size-3" /> Ampliar
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Photo 4 (Ultra wide banner spanning both columns) */}
+                      <div
+                        className="col-span-2 relative group cursor-pointer overflow-hidden rounded-none shadow-none border-none bg-slate-100"
+                        onClick={() => setLightboxImage(gallery2021Images[2])}
+                      >
+                        <img
+                          src={gallery2021Images[2].src}
+                          alt={gallery2021Images[2].alt}
+                          className="w-full h-auto object-contain rounded-none shadow-none border-none transition-transform duration-300 group-hover:scale-[1.01]"
+                        />
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-center justify-center pointer-events-none">
+                          <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 text-white text-[11px] font-['Montserrat'] font-semibold px-2 py-1 rounded-none shadow-none border-none flex items-center gap-1">
+                            <ZoomIn className="size-3" /> Ampliar
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Content Right Column (Desktop) / Order 1 (Mobile) */}
+                <div className="md:text-left md:pl-6 lg:pl-8 flex flex-col items-start order-1 md:order-2">
+                  <span className="inline-block font-['Montserrat'] font-extrabold text-3xl sm:text-4xl lg:text-[2.5rem] text-[#1B3A7A] leading-none tracking-tight">
+                    2021
+                  </span>
+                  <h3 className="mt-2 font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#0F2755]">
+                    La educación no tiene fronteras.
+                  </h3>
+                  <p className="mt-3 font-['Inter'] text-slate-600 text-base leading-relaxed font-normal max-w-lg">
+                    En 2021 cruzamos fronteras e iniciamos operaciones en San Diego, California, Estados Unidos, bajo el nombre de ENLACES Sin Fronteras. Con el compromiso de acercar nuevas oportunidades educativas a nuestros compatriotas, comenzamos a transformar la vida de mexicanos que, lejos de su país, deseaban continuar su formación académica y profesional.
+                  </p>
                 </div>
               </motion.div>
             </div>
