@@ -23,7 +23,7 @@ export default function NosotrosPage() {
       alt: "Plantel Metepec — Archivo histórico 2",
     },
     {
-      src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794972429124-gk0qmakr.jpg",
+      src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794973566874-rftdu0eq.jpg",
       alt: "Plantel Metepec — Archivo histórico 3",
     },
     {
@@ -629,7 +629,7 @@ export default function NosotrosPage() {
                 </div>
               </motion.div>
 
-              {/* Event 3: 2019 */}
+              {/* Event 3: 2018 */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -646,13 +646,13 @@ export default function NosotrosPage() {
                 {/* Content Left Column (Desktop & Mobile: Year, Title, Text, 16:9 Video) */}
                 <div className="md:text-right md:pr-6 lg:pr-8 flex flex-col items-start md:items-end">
                   <span className="inline-block font-['Montserrat'] font-extrabold text-3xl sm:text-4xl lg:text-[2.5rem] text-[#1B3A7A] leading-none tracking-tight">
-                    2019
+                    2018
                   </span>
                   <h3 className="mt-2 font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#0F2755]">
                     Un sueño que se convirtió en realidad.
                   </h3>
                   <p className="mt-3 font-['Inter'] text-slate-600 text-base leading-relaxed font-normal max-w-xl md:ml-auto">
-                    En 2019 inauguramos nuestro primer plantel escolarizado en Metepec, Estado de México, bajo el nombre de Claustro Latinoamericano ENLACES, ampliando nuestra oferta hacia la educación básica, media y media superior presencial.
+                    En 2018 inauguramos nuestro primer plantel escolarizado en Metepec, Estado de México, bajo el nombre de Claustro Latinoamericano ENLACES, ampliando nuestra oferta hacia la educación básica, media y media superior presencial.
                   </p>
 
                   {/* 16:9 Historical Video Space */}
@@ -662,7 +662,7 @@ export default function NosotrosPage() {
                         controls
                         preload="none"
                         playsInline
-                        poster="https://images.pexels.com/photos/40768671/pexels-photo-40768671.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+                        poster="https://res.cloudinary.com/r58dzn6z/video/upload/so_1/v1794969416/ENLACES_PLANTEL_METEPEC.jpg"
                         className="size-full object-contain rounded-none shadow-none border-none"
                       >
                         <source
@@ -708,26 +708,55 @@ export default function NosotrosPage() {
                       </div>
                     </div>
 
-                    {/* 2-Column Editorial Gallery (4 Remaining Images) */}
-                    <div className="grid grid-cols-2 gap-[6px]">
-                      {galleryHistoricalImages.map((img, idx) => (
-                        <div
-                          key={idx}
-                          className="relative group cursor-pointer overflow-hidden rounded-none shadow-none border-none bg-slate-100"
-                          onClick={() => setLightboxImage(img)}
-                        >
-                          <img
-                            src={img.src}
-                            alt={img.alt}
-                            className="w-full h-auto object-contain rounded-none shadow-none border-none transition-transform duration-300 group-hover:scale-[1.01]"
-                          />
-                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-center justify-center pointer-events-none">
-                            <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 text-white text-[11px] font-['Montserrat'] font-semibold px-2 py-1 rounded-none shadow-none border-none flex items-center gap-1">
-                              <ZoomIn className="size-3" /> Ampliar
+                    {/* 2-Column Editorial Mosaic Gallery with Independent Columns (4 Remaining Images) */}
+                    <div className="grid grid-cols-2 gap-[6px] items-start">
+                      {/* Column 1 */}
+                      <div className="flex flex-col gap-[6px]">
+                        {galleryHistoricalImages
+                          .filter((_, idx) => idx % 2 === 0)
+                          .map((img, idx) => (
+                            <div
+                              key={`col1-${idx}`}
+                              className="relative group cursor-pointer overflow-hidden rounded-none shadow-none border-none bg-slate-100"
+                              onClick={() => setLightboxImage(img)}
+                            >
+                              <img
+                                src={img.src}
+                                alt={img.alt}
+                                className="w-full h-auto block rounded-none shadow-none border-none transition-transform duration-300 group-hover:scale-[1.01]"
+                              />
+                              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-center justify-center pointer-events-none">
+                                <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 text-white text-[11px] font-['Montserrat'] font-semibold px-2 py-1 rounded-none shadow-none border-none flex items-center gap-1">
+                                  <ZoomIn className="size-3" /> Ampliar
+                                </div>
+                              </div>
                             </div>
-                          </div>
-                        </div>
-                      ))}
+                          ))}
+                      </div>
+
+                      {/* Column 2 */}
+                      <div className="flex flex-col gap-[6px]">
+                        {galleryHistoricalImages
+                          .filter((_, idx) => idx % 2 === 1)
+                          .map((img, idx) => (
+                            <div
+                              key={`col2-${idx}`}
+                              className="relative group cursor-pointer overflow-hidden rounded-none shadow-none border-none bg-slate-100"
+                              onClick={() => setLightboxImage(img)}
+                            >
+                              <img
+                                src={img.src}
+                                alt={img.alt}
+                                className="w-full h-auto block rounded-none shadow-none border-none transition-transform duration-300 group-hover:scale-[1.01]"
+                              />
+                              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-center justify-center pointer-events-none">
+                                <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 text-white text-[11px] font-['Montserrat'] font-semibold px-2 py-1 rounded-none shadow-none border-none flex items-center gap-1">
+                                  <ZoomIn className="size-3" /> Ampliar
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                      </div>
                     </div>
                   </div>
                 </div>
