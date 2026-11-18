@@ -81,7 +81,7 @@ export default function NosotrosPage() {
   ];
 
   const main2021Image = {
-    src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794974303169-rmb7tof9.png",
+    src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1795019622846-46d4pffs.png",
     alt: "DE MÉXICO AL MUNDO 2021 — Fotografía principal",
   };
 
@@ -212,7 +212,7 @@ export default function NosotrosPage() {
       </section>
 
       {/* Editorial Section: Quiénes Somos */}
-      <section className="bg-white py-20 sm:py-28 lg:py-32 border-b border-slate-100">
+      <section className="bg-white pt-20 sm:pt-28 lg:pt-32 pb-7 sm:pb-9 lg:pb-10 border-b border-slate-100">
         <div className="mx-auto w-[var(--container)] px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -393,7 +393,7 @@ export default function NosotrosPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="mt-16 sm:mt-20 text-center max-w-2xl mx-auto"
+            className="mt-8 sm:mt-10 text-center max-w-2xl mx-auto"
           >
             <p className="font-['Montserrat'] italic font-semibold text-lg sm:text-xl text-[#1B3A7A]">
               Nuestro compromiso no comienza ni termina con tu inscripción. Te acompañamos durante el camino.
@@ -403,7 +403,7 @@ export default function NosotrosPage() {
       </section>
 
       {/* Editorial Section: NUESTRA HISTORIA */}
-      <section className="bg-white py-20 sm:py-28 lg:py-32 border-b border-slate-100">
+      <section className="bg-white pt-7 sm:pt-9 lg:pt-10 pb-20 sm:pb-28 lg:pb-32 border-b border-slate-100">
         <div className="mx-auto w-[var(--container)] px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
