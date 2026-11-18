@@ -10,11 +10,15 @@ function BeforeAfterComparator({
   rightImage,
   leftLabel,
   rightLabel,
+  leftImageStyle,
+  rightImageStyle,
 }: {
   leftImage: string;
   rightImage: string;
   leftLabel: string;
   rightLabel: string;
+  leftImageStyle?: React.CSSProperties;
+  rightImageStyle?: React.CSSProperties;
 }) {
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
@@ -55,6 +59,11 @@ function BeforeAfterComparator({
         src={rightImage}
         alt={rightLabel}
         className="absolute inset-0 size-full object-cover rounded-none pointer-events-none"
+        style={{
+          transform: "scale(1.22) translateX(9%)",
+          transformOrigin: "center center",
+          ...rightImageStyle,
+        }}
       />
 
       {/* Right Label (Actualidad) */}
@@ -71,6 +80,11 @@ function BeforeAfterComparator({
           src={leftImage}
           alt={leftLabel}
           className="absolute inset-0 size-full object-cover rounded-none"
+          style={{
+            transform: "scale(1.28) translateX(-12%)",
+            transformOrigin: "center center",
+            ...leftImageStyle,
+          }}
         />
       </div>
 
