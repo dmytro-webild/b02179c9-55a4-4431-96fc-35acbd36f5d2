@@ -86,8 +86,8 @@ export default function NosotrosPage() {
   };
 
   const mainFilosofiaImage = {
-    src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794976613798-3syvce30.png",
-    alt: "NUESTRA FILOSOFÍA — Fotografía principal",
+    src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794976831718-skmzgu5q.png",
+    alt: "Nuestra Filosofía — Madre e hijas con carpeta ENLACES",
   };
 
   const filosofiaPrincipios = [
@@ -1057,69 +1057,80 @@ export default function NosotrosPage() {
       </section>
 
       {/* Editorial Section: NUESTRA FILOSOFÍA */}
-      <section className="bg-[#1B3A7A] py-20 sm:py-28 lg:py-32 border-b border-[#1B3A7A] overflow-hidden text-white">
-        <div className="mx-auto w-[var(--container)] px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-            {/* Text Column (Left) */}
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-              className="lg:col-span-6 flex flex-col items-start"
+      <section className="relative bg-[#1B3A7A] pt-16 sm:pt-20 lg:pt-24 pb-16 sm:pb-20 lg:pb-28 border-b border-[#1B3A7A] overflow-hidden text-white">
+        {/* Main Block Container */}
+        <div className="relative min-h-[480px] sm:min-h-[540px] lg:min-h-[620px] flex flex-col lg:flex-row lg:items-center mb-12 sm:mb-16 lg:mb-20">
+          {/* Right Half Photography - 50% section width, 100% height, flush to right edge */}
+          <div className="w-full lg:w-1/2 lg:absolute lg:inset-y-0 lg:right-0 h-[440px] sm:h-[540px] lg:h-full relative overflow-hidden order-first lg:order-last my-6 lg:my-0">
+            <div
+              className="relative size-full cursor-pointer group"
+              onClick={() => setLightboxImage(mainFilosofiaImage)}
             >
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-extrabold uppercase tracking-widest text-white mb-6">
-                NUESTRA FILOSOFÍA
-              </div>
+              <MotionMedia
+                src={mainFilosofiaImage.src}
+                alt={mainFilosofiaImage.alt}
+                className="size-full object-cover object-[center_top] sm:object-center rounded-none shadow-none border-none transition-transform duration-500 group-hover:scale-[1.02]"
+                initial={{ opacity: 0, scale: 1.02 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              />
 
-              {/* Title */}
-              <h2 className="font-['Montserrat'] font-extrabold text-3xl sm:text-4xl lg:text-[2.75rem] leading-[1.2] tracking-tight">
-                <span className="text-white">Creemos en las personas. </span>
-                <span className="text-[#F4B400] block sm:inline mt-1 sm:mt-0">
-                  Creemos en su capacidad de transformar el mundo.
-                </span>
-              </h2>
+              {/* Left horizontal soft gradient fade for seamless transition to blue background */}
+              <div className="absolute inset-y-0 left-0 w-2/5 sm:w-1/3 lg:w-2/5 bg-gradient-to-r from-[#1B3A7A] via-[#1B3A7A]/60 via-35% to-transparent pointer-events-none z-10" />
 
-              {/* Body Paragraphs */}
-              <div className="mt-6 sm:mt-8 space-y-5 font-['Inter'] text-slate-100 text-base sm:text-lg leading-relaxed font-normal">
-                <p>
-                  La educación no es únicamente la adquisición de conocimientos. Es una herramienta para descubrir nuestro potencial, superar nuestros propios límites y construir nuevas oportunidades.
-                </p>
-                <p>
-                  En ENLACES creemos que nunca dejamos de aprender. Que cada persona tiene una historia diferente, que el conocimiento no tiene fronteras y que la tecnología debe acercarnos a las oportunidades, no alejarnos de ellas.
-                </p>
-              </div>
-            </motion.div>
+              {/* Bottom gradient fade for seamless transition to the 4 principles block */}
+              <div className="absolute inset-x-0 bottom-0 h-28 sm:h-36 lg:h-44 bg-gradient-to-t from-[#1B3A7A] via-[#1B3A7A]/80 via-40% to-transparent pointer-events-none z-10" />
 
-            {/* Photo Column (Right) */}
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-              className="lg:col-span-6 w-full"
-            >
-              <div
-                className="relative group cursor-pointer overflow-hidden rounded-none shadow-none border-none w-full"
-                onClick={() => setLightboxImage(mainFilosofiaImage)}
-              >
-                <MotionMedia
-                  src={mainFilosofiaImage.src}
-                  alt={mainFilosofiaImage.alt}
-                  className="w-full h-auto object-cover rounded-none shadow-none border-none transition-transform duration-500 group-hover:scale-[1.02]"
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-center justify-center pointer-events-none">
-                  <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 text-white text-xs font-['Montserrat'] font-semibold px-3 py-1.5 rounded-none shadow-none border-none flex items-center gap-1.5">
-                    <ZoomIn className="size-3.5" /> Ampliar imagen
-                  </div>
+              {/* Hover zoom overlay hint */}
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center pointer-events-none z-20">
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 text-white text-xs font-['Montserrat'] font-semibold px-3 py-1.5 rounded-none shadow-none border-none flex items-center gap-1.5">
+                  <ZoomIn className="size-3.5" /> Ampliar imagen
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
 
-          {/* Cuatro Principios */}
-          <div className="mt-14 sm:mt-20 pt-10 sm:pt-14 border-t border-white/15 grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
+          {/* Left Column Text Content inside container width */}
+          <div className="relative z-10 mx-auto w-[var(--container)] px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+                className="lg:col-span-7 xl:col-span-6 flex flex-col items-start max-w-2xl lg:max-w-none"
+              >
+                {/* Badge */}
+                <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-extrabold uppercase tracking-widest text-white mb-6">
+                  NUESTRA FILOSOFÍA
+                </div>
+
+                {/* Title */}
+                <h2 className="font-['Montserrat'] font-extrabold text-3xl sm:text-4xl lg:text-[2.75rem] leading-[1.2] tracking-tight">
+                  <span className="text-white">Creemos en las personas. </span>
+                  <span className="text-[#F4B400] block sm:inline mt-1 sm:mt-0">
+                    Creemos en su capacidad de transformar el mundo.
+                  </span>
+                </h2>
+
+                {/* Body Paragraphs */}
+                <div className="mt-6 sm:mt-8 space-y-5 font-['Inter'] text-slate-100 text-base sm:text-lg leading-relaxed font-normal">
+                  <p>
+                    La educación no es únicamente la adquisición de conocimientos. Es una herramienta para descubrir nuestro potencial, superar nuestros propios límites y construir nuevas oportunidades.
+                  </p>
+                  <p>
+                    En ENLACES creemos que nunca dejamos de aprender. Que cada persona tiene una historia diferente, que el conocimiento no tiene fronteras y que la tecnología debe acercarnos a las oportunidades, no alejarnos de ellas.
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+
+        {/* Cuatro Principios */}
+        <div className="relative z-10 mx-auto w-[var(--container)] px-4 sm:px-6 lg:px-8">
+          <div className="pt-10 sm:pt-14 border-t border-white/15 grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
             {filosofiaPrincipios.map((item, index) => {
               const IconComponent = item.icon;
               return (
