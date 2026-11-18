@@ -45,7 +45,7 @@ export default function Layout() {
               href: "/testimonios-y-egresados"
             },
             {
-              name: "Sistema Operativo ENLACES",
+              name: "ENLACES 360",
               href: "/sistema-operativo-enlaces"
             },
             {
@@ -118,7 +118,7 @@ export default function Layout() {
                   href: "/testimonios-y-egresados"
                 },
                 {
-                  text: "Sistema Operativo ENLACES",
+                  text: "ENLACES 360",
                   href: "/sistema-operativo-enlaces"
                 }
               ]

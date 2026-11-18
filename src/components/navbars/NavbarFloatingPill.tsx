@@ -121,14 +121,14 @@ const NavbarFloatingPill = ({
 
   // Divide navigation items into 2 rows for desktop layout
   // Fila 1: Nosotros, Oferta educativa, Empresas y convenios, Experiencia ENLACES
-  // Fila 2: Testimonios y egresados, Sistema Operativo ENLACES, Contacto
+  // Fila 2: Testimonios y egresados, ENLACES 360, Contacto
   const row1Items = navItems.filter((item) =>
     ["nosotros", "oferta educativa", "empresas y convenios", "experiencia enlaces"].includes(
       item.name.trim().toLowerCase()
     )
   );
   const row2Items = navItems.filter((item) =>
-    ["testimonios y egresados", "sistema operativo enlaces", "contacto"].includes(
+    ["testimonios y egresados", "sistema operativo enlaces", "enlaces 360", "contacto"].includes(
       item.name.trim().toLowerCase()
     )
   );

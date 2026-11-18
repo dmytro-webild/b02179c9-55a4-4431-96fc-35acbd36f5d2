@@ -17,6 +17,6 @@ export const routes: Route[] = [
   { path: '/empresas-y-convenios', label: 'Empresas y convenios', pageFile: 'EmpresasConveniosPage' },
   { path: '/experiencia-enlaces', label: 'Experiencia ENLACES', pageFile: 'ExperienciaEnlacesPage' },
   { path: '/testimonios-y-egresados', label: 'Testimonios y egresados', pageFile: 'TestimoniosEgresadosPage' },
-  { path: '/sistema-operativo-enlaces', label: 'Sistema Operativo ENLACES', pageFile: 'SistemaOperativoEnlacesPage' },
+  { path: '/sistema-operativo-enlaces', label: 'ENLACES 360', pageFile: 'SistemaOperativoEnlacesPage' },
   { path: '/contacto', label: 'Contacto', pageFile: 'ContactoPage' },
 ];
