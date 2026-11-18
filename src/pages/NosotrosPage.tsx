@@ -1002,6 +1002,35 @@ export default function NosotrosPage() {
         </div>
       </section>
 
+      {/* Editorial Cierre de la Línea del Tiempo */}
+      <section className="bg-white py-20 sm:py-28 lg:py-32 border-b border-slate-100 overflow-hidden">
+        <div className="mx-auto w-[var(--container)] px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex flex-col items-center text-center max-w-4xl mx-auto"
+          >
+            {/* Texto Principal */}
+            <h3 className="font-['Montserrat'] font-extrabold italic text-2xl sm:text-4xl lg:text-[2.75rem] leading-[1.25] tracking-tight">
+              <span className="text-[#1B3A7A]">
+                Porque el mundo cambia, la educación evoluciona{" "}
+              </span>
+              <span className="text-[#F4B400] block sm:inline mt-1 sm:mt-0">
+                y nosotros avanzamos con ella.
+              </span>
+            </h3>
+
+            {/* Texto Secundario */}
+            <p className="mt-6 sm:mt-8 font-['Montserrat'] font-extrabold italic text-lg sm:text-2xl leading-relaxed">
+              <span className="text-[#1B3A7A]">Nuestra historia continúa. </span>
+              <span className="text-[#F4B400]">Y queremos que formes parte de ella.</span>
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Main Statement & Icon Row */}
       <div id="about" data-webild-section="AboutStatementIconRow" data-webild-section-id="AboutStatementIconRow-1" data-section="about">
         <AboutStatementIconRow
