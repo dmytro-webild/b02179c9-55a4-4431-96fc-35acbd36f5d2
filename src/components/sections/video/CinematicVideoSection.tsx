@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
-import { Volume2, VolumeX, ArrowRight } from "lucide-react";
+import { Volume2, VolumeX } from "lucide-react";
 
 interface CinematicVideoSectionProps {
   videoSrc?: string;
@@ -67,12 +66,12 @@ export default function CinematicVideoSection({
     <section
       ref={containerRef}
       aria-label={ariaLabel}
-      className={`bg-white pt-2 sm:pt-4 lg:pt-6 pb-12 sm:pb-16 lg:pb-20 border-0 shadow-none overflow-hidden ${className}`}
+      className={`bg-white pt-0 pb-12 sm:pb-16 lg:pb-20 border-0 shadow-none overflow-hidden ${className}`}
     >
       <div className="mx-auto w-[var(--container)] max-w-7xl px-3 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-14 items-center">
-          {/* Columna izquierda: Texto y Botón Dorado (En móviles va primero) */}
-          <div className="lg:col-span-7 flex flex-col justify-center text-left">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-14 items-start">
+          {/* Columna izquierda: Texto (En móviles va primero) */}
+          <div className="lg:col-span-7 flex flex-col justify-start text-left lg:pt-1">
             <div className="inline-flex items-center gap-2 rounded-full border border-[#1B3A7A]/15 bg-[#1B3A7A]/5 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#1B3A7A] w-fit mb-6">
               <span className="size-2 rounded-full bg-[#F4B400] animate-pulse" />
               Educación Flexible y Humana
@@ -82,24 +81,14 @@ export default function CinematicVideoSection({
               Tu futuro está a un clic de distancia.
             </h2>
 
-            <p className="font-sans text-[#475569] text-base sm:text-lg lg:text-xl leading-relaxed mb-8 max-w-2xl">
+            <p className="font-sans text-[#475569] text-base sm:text-lg lg:text-xl leading-relaxed mb-0 max-w-2xl">
               Estudia desde donde estés, con horarios que se adaptan a tu vida, tecnología educativa y acompañamiento humano durante todo tu proceso.
             </p>
-
-            <div>
-              <Link
-                to="/oferta-educativa"
-                className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-[#F4B400] px-7 py-3.5 sm:px-8 sm:py-4 text-sm sm:text-base font-extrabold text-[#0F2755] transition-all duration-300 hover:bg-[#e0a400] hover:-translate-y-0.5 active:translate-y-0 active:scale-95 cursor-pointer shadow-none"
-              >
-                <span>Conoce nuestros programas</span>
-                <ArrowRight className="size-4 sm:size-5 text-[#0F2755] transition-transform duration-300 group-hover:translate-x-1" />
-              </Link>
-            </div>
           </div>
 
           {/* Columna derecha: Video vertical 9:16 (+15% altura en escritorio: 690px) (En móviles ocupe todo el ancho disponible) */}
           <div className="lg:col-span-5 flex justify-center items-center w-full">
-            <div className="relative w-full max-w-full sm:max-w-md lg:w-[388px] lg:h-[690px] aspect-[9/16] border-0 shadow-none bg-transparent rounded-none overflow-hidden flex items-center justify-center">
+            <div className="relative w-full max-w-full sm:max-w-md lg:w-[388px] lg:h-[690px] aspect-[9/16] border-0 shadow-none bg-transparent rounded-[12px] overflow-hidden flex items-center justify-center">
               <video
                 ref={videoRef}
                 src={videoSrc}
@@ -110,7 +99,7 @@ export default function CinematicVideoSection({
                 playsInline
                 preload="metadata"
                 onLoadedData={() => setIsLoaded(true)}
-                className={`w-full h-full object-cover block border-0 p-0 m-0 outline-none shadow-none rounded-none transition-opacity duration-700 ${
+                className={`w-full h-full object-cover block border-0 p-0 m-0 outline-none shadow-none rounded-[12px] transition-opacity duration-700 ${
                   isLoaded ? "opacity-100" : "opacity-0"
                 }`}
               />
