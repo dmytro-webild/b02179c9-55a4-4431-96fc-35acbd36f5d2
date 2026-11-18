@@ -468,35 +468,57 @@ export default function NosotrosPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="relative grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-start pl-10 md:pl-0"
+                className="relative -mx-2 sm:-mx-6 lg:-mx-12 md:w-[calc(100%+3rem)] lg:w-[calc(100%+6rem)] md:-ml-6 lg:-ml-12 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 items-start pl-10 md:pl-0"
               >
                 {/* Mobile Marker Dot */}
-                <div className="md:hidden absolute left-4 -translate-x-1/2 top-2 size-3.5 rounded-full border-2 border-[#F4F6F9] bg-[#F4B400] shadow-sm z-10" />
+                <div className="md:hidden absolute left-4 -translate-x-1/2 top-2 size-3.5 bg-[#F4B400] z-10 rounded-none border-none shadow-none" />
 
                 {/* Desktop Center Marker Dot */}
-                <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-2 size-5 rounded-full border-4 border-[#F4F6F9] bg-[#F4B400] shadow-sm z-10" />
+                <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-2 size-4 bg-[#F4B400] z-10 rounded-none border-none shadow-none" />
 
-                {/* Content Left (Desktop) */}
-                <div className="md:text-right md:pr-12">
+                {/* Content Left Column (Desktop & Mobile: Year, Title, Text, 16:9 Video) */}
+                <div className="md:text-right md:pr-6 lg:pr-8 flex flex-col items-start md:items-end">
                   <span className="inline-block font-['Montserrat'] font-extrabold text-3xl sm:text-4xl lg:text-[2.5rem] text-[#1B3A7A] leading-none tracking-tight">
                     2019
                   </span>
                   <h3 className="mt-2 font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#0F2755]">
                     Un sueño que se convirtió en realidad.
                   </h3>
-                  <p className="mt-3 font-['Inter'] text-slate-600 text-base leading-relaxed font-normal max-w-lg md:ml-auto">
+                  <p className="mt-3 font-['Inter'] text-slate-600 text-base leading-relaxed font-normal max-w-xl md:ml-auto">
                     En 2019 inauguramos nuestro primer plantel escolarizado en Metepec, Estado de México, bajo el nombre de Claustro Latinoamericano ENLACES, ampliando nuestra oferta hacia la educación básica, media y media superior presencial.
                   </p>
+
+                  {/* 16:9 Historical Video Space */}
+                  <div className="mt-5 w-full max-w-xl md:ml-auto">
+                    <div className="relative aspect-[16/9] w-full overflow-hidden rounded-none shadow-none border-none bg-slate-900 group">
+                      <video
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        poster={mainHistoricalImage.src}
+                        className="size-full object-cover rounded-none shadow-none border-none"
+                      >
+                        <source
+                          src="https://res.cloudinary.com/r58dzn6z/video/upload/v1794457523/gemini_generated_video_ab0b3b50.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-10 bg-[#1B3A7A] text-white font-['Montserrat'] font-bold text-[11px] sm:text-xs px-3 py-1 rounded-none shadow-none border-none uppercase tracking-wider pointer-events-none">
+                        Video histórico del plantel
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Photographic Gallery Right Column (Desktop & Mobile) */}
-                <div className="md:pl-12 mt-2 md:mt-0">
-                  <div className="space-y-3">
-                    <div className="inline-block bg-[#1B3A7A]/10 text-[#1B3A7A] text-[11px] sm:text-xs font-['Montserrat'] font-bold uppercase tracking-wider px-3 py-1 rounded-none border-none shadow-none">
+                <div className="md:pl-6 lg:pl-8 mt-6 md:mt-0 w-full">
+                  <div className="flex flex-col gap-[6px]">
+                    <div className="inline-block bg-[#1B3A7A]/10 text-[#1B3A7A] text-[11px] sm:text-xs font-['Montserrat'] font-bold uppercase tracking-wider px-3 py-1 rounded-none border-none shadow-none self-start">
                       Archivo histórico del plantel Metepec
                     </div>
 
-                    {/* Main Large Format Image */}
+                    {/* Main Large Format Image (Photo 1) */}
                     <div
                       className="relative group cursor-pointer overflow-hidden rounded-none shadow-none border-none bg-slate-100"
                       onClick={() => setLightboxImage(mainHistoricalImage)}
@@ -507,14 +529,14 @@ export default function NosotrosPage() {
                         className="w-full h-auto object-contain rounded-none shadow-none border-none transition-transform duration-300 group-hover:scale-[1.01]"
                       />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-center justify-center pointer-events-none">
-                        <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 text-white text-xs font-['Montserrat'] font-semibold px-3 py-1.5 rounded-none flex items-center gap-1.5">
+                        <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 text-white text-xs font-['Montserrat'] font-semibold px-3 py-1.5 rounded-none shadow-none border-none flex items-center gap-1.5">
                           <ZoomIn className="size-3.5" /> Ampliar imagen
                         </div>
                       </div>
                     </div>
 
                     {/* 2-Column Editorial Gallery (4 Remaining Images) */}
-                    <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
+                    <div className="grid grid-cols-2 gap-[6px]">
                       {galleryHistoricalImages.map((img, idx) => (
                         <div
                           key={idx}
@@ -527,7 +549,7 @@ export default function NosotrosPage() {
                             className="w-full h-auto object-contain rounded-none shadow-none border-none transition-transform duration-300 group-hover:scale-[1.01]"
                           />
                           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-center justify-center pointer-events-none">
-                            <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 text-white text-[11px] font-['Montserrat'] font-semibold px-2 py-1 rounded-none flex items-center gap-1">
+                            <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 text-white text-[11px] font-['Montserrat'] font-semibold px-2 py-1 rounded-none shadow-none border-none flex items-center gap-1">
                               <ZoomIn className="size-3" /> Ampliar
                             </div>
                           </div>
