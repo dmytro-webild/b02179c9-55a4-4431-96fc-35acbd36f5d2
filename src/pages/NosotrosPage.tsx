@@ -23,7 +23,7 @@ export default function NosotrosPage() {
       alt: "Plantel Metepec — Archivo histórico 2",
     },
     {
-      src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794973566874-rftdu0eq.jpg",
+      src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794973760037-vpokf6ew.jpg",
       alt: "Plantel Metepec — Archivo histórico 3",
     },
     {
@@ -666,7 +666,7 @@ export default function NosotrosPage() {
                         className="size-full object-contain rounded-none shadow-none border-none"
                       >
                         <source
-                          src="https://res.cloudinary.com/r58dzn6z/video/upload/v1794969416/ENLACES_PLANTEL_METEPEC.mov"
+                          src="https://res.cloudinary.com/r58dzn6z/video/upload/v1794969416/ENLACES_PLANTEL_METEPEC.mp4"
                           type="video/mp4"
                         />
                         <source
