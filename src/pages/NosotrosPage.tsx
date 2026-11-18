@@ -492,15 +492,17 @@ export default function NosotrosPage() {
                   <div className="mt-5 w-full max-w-xl md:ml-auto">
                     <div className="relative aspect-[16/9] w-full overflow-hidden rounded-none shadow-none border-none bg-slate-900 group">
                       <video
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        poster={mainHistoricalImage.src}
-                        className="size-full object-cover rounded-none shadow-none border-none"
+                        controls
+                        preload="none"
+                        poster="https://res.cloudinary.com/r58dzn6z/image/upload/v1794968685/3C1924BF-CF2F-4DA3-8BC9-06A541FB9A3A_4_5005_c.jpg"
+                        className="size-full object-contain rounded-none shadow-none border-none"
                       >
                         <source
-                          src="https://res.cloudinary.com/r58dzn6z/video/upload/v1794457523/gemini_generated_video_ab0b3b50.mp4"
+                          src="https://res.cloudinary.com/r58dzn6z/image/upload/v1794968685/3C1924BF-CF2F-4DA3-8BC9-06A541FB9A3A_4_5005_c.jpg"
+                          type="video/mp4"
+                        />
+                        <source
+                          src="https://res.cloudinary.com/r58dzn6z/video/upload/v1794968685/3C1924BF-CF2F-4DA3-8BC9-06A541FB9A3A_4_5005_c.mp4"
                           type="video/mp4"
                         />
                       </video>
@@ -508,6 +510,9 @@ export default function NosotrosPage() {
                         Video histórico del plantel
                       </div>
                     </div>
+                    <p className="mt-2.5 font-['Inter'] text-xs sm:text-sm font-medium italic text-slate-600 text-left md:text-right leading-normal">
+                      «Así se vivía la experiencia ENLACES en nuestro plantel de Metepec»
+                    </p>
                   </div>
                 </div>
 
