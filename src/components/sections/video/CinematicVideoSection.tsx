@@ -67,10 +67,10 @@ export default function CinematicVideoSection({
     <section
       ref={containerRef}
       aria-label={ariaLabel}
-      className={`bg-white py-14 sm:py-20 lg:py-24 border-0 shadow-none overflow-hidden ${className}`}
+      className={`bg-white pt-2 sm:pt-4 lg:pt-6 pb-12 sm:pb-16 lg:pb-20 border-0 shadow-none overflow-hidden ${className}`}
     >
-      <div className="mx-auto w-[var(--container)] max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-12 lg:gap-16 items-center">
+      <div className="mx-auto w-[var(--container)] max-w-7xl px-3 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-14 items-center">
           {/* Columna izquierda: Texto y Botón Dorado (En móviles va primero) */}
           <div className="lg:col-span-7 flex flex-col justify-center text-left">
             <div className="inline-flex items-center gap-2 rounded-full border border-[#1B3A7A]/15 bg-[#1B3A7A]/5 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#1B3A7A] w-fit mb-6">
@@ -97,9 +97,9 @@ export default function CinematicVideoSection({
             </div>
           </div>
 
-          {/* Columna derecha: Video vertical 9:16 (~600px altura en escritorio) (En móviles va segundo) */}
-          <div className="lg:col-span-5 flex justify-center items-center">
-            <div className="relative w-full max-w-[340px] sm:max-w-[360px] aspect-[9/16] lg:h-[600px] border-0 shadow-none bg-black rounded-2xl overflow-hidden flex items-center justify-center">
+          {/* Columna derecha: Video vertical 9:16 (+15% altura en escritorio: 690px) (En móviles ocupe todo el ancho disponible) */}
+          <div className="lg:col-span-5 flex justify-center items-center w-full">
+            <div className="relative w-full max-w-full sm:max-w-md lg:w-[388px] lg:h-[690px] aspect-[9/16] border-0 shadow-none bg-transparent rounded-none overflow-hidden flex items-center justify-center">
               <video
                 ref={videoRef}
                 src={videoSrc}
@@ -110,17 +110,17 @@ export default function CinematicVideoSection({
                 playsInline
                 preload="metadata"
                 onLoadedData={() => setIsLoaded(true)}
-                className={`w-full h-full object-contain block border-0 p-0 m-0 outline-none shadow-none rounded-none transition-opacity duration-700 ${
+                className={`w-full h-full object-cover block border-0 p-0 m-0 outline-none shadow-none rounded-none transition-opacity duration-700 ${
                   isLoaded ? "opacity-100" : "opacity-0"
                 }`}
               />
 
-              {/* Botón discreto para activar el sonido */}
+              {/* Botón discreto para activar el sonido en la esquina inferior izquierda */}
               <button
                 type="button"
                 onClick={toggleMute}
                 aria-label={isMuted ? "Activar sonido" : "Silenciar sonido"}
-                className="absolute bottom-4 right-4 z-20 flex items-center gap-2 bg-[#0F2755]/85 hover:bg-[#0F2755] text-white text-xs font-semibold px-3 py-2 rounded-full backdrop-blur-md border border-white/20 transition-all duration-200 cursor-pointer shadow-none"
+                className="absolute bottom-4 left-4 z-20 flex items-center gap-2 bg-[#0F2755]/85 hover:bg-[#0F2755] text-white text-xs font-semibold px-3.5 py-2 rounded-full backdrop-blur-md border border-white/20 transition-all duration-200 cursor-pointer shadow-md"
               >
                 {isMuted ? (
                   <>

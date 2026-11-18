@@ -93,6 +93,45 @@ const portalSections = [
   },
 ];
 
+const institutionalBenefits = [
+  {
+    title: "Educación en línea",
+    subtitle: "Estudia desde donde estés.",
+    icon: (
+      <svg className="size-6 text-[#1B3A7A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+    ),
+  },
+  {
+    title: "Programas flexibles",
+    subtitle: "Con horarios que se adaptan a ti.",
+    icon: (
+      <svg className="size-6 text-[#1B3A7A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+      </svg>
+    ),
+  },
+  {
+    title: "Validez oficial*",
+    subtitle: "En los programas correspondientes.",
+    icon: (
+      <svg className="size-6 text-[#1B3A7A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+      </svg>
+    ),
+  },
+  {
+    title: "Acompañamiento académico",
+    subtitle: "Durante todo tu proceso.",
+    icon: (
+      <svg className="size-6 text-[#1B3A7A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+      </svg>
+    ),
+  },
+];
+
 export default function HomePage() {
   return (
     <>
@@ -117,28 +156,6 @@ export default function HomePage() {
             href: "/nosotros"
           }}
           introDelay={0.1}
-          features={[
-            {
-              icon: "laptop",
-              title: "Educación en línea",
-              subtitle: "Estudia desde donde estés."
-            },
-            {
-              icon: "calendar",
-              title: "Programas flexibles",
-              subtitle: "Con horarios que se adaptan a ti."
-            },
-            {
-              icon: "shield",
-              title: "Validez oficial*",
-              subtitle: "En los programas correspondientes."
-            },
-            {
-              icon: "users",
-              title: "Acompañamiento académico",
-              subtitle: "Durante todo tu proceso."
-            }
-          ]}
         />
       </div>
 
@@ -146,6 +163,36 @@ export default function HomePage() {
       <div id="video-cinematografico" data-webild-section="CinematicVideoSection" data-webild-section-id="CinematicVideoSection-1" data-section="video-cinematografico">
         <CinematicVideoSection videoSrc="https://res.cloudinary.com/r58dzn6z/video/upload/v1794975513/VENTAJAS_EDUCACION_EN_LINEA_COMPRIMIDO_16MB.mp4" />
       </div>
+
+      {/* Los cuatro beneficios institucionales */}
+      <section id="beneficios-institucionales" data-webild-section="InstitutionalBenefits" data-section="beneficios-institucionales" className="py-12 sm:py-16 bg-slate-50/60 border-y border-slate-200/60">
+        <div className="mx-auto w-[var(--container)] max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+            {institutionalBenefits.map((item, idx) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.08 }}
+                className="flex items-start gap-4 p-5 sm:p-6 rounded-2xl bg-white border border-slate-200/90 shadow-sm transition-all duration-300 hover:shadow-md hover:border-[#1B3A7A]/30"
+              >
+                <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-[#1B3A7A]/10 text-[#1B3A7A]">
+                  {item.icon}
+                </div>
+                <div>
+                  <h3 className="font-['Montserrat'] font-bold text-base text-[#0F2755]">
+                    {item.title}
+                  </h3>
+                  <p className="mt-1 font-['Inter'] text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    {item.subtitle}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Portal Institucional - Accesos directos a las 7 áreas principales */}
       <section id="portal-secciones" data-webild-section="PortalSections" data-section="portal-secciones" className="py-20 sm:py-24 bg-white border-t border-slate-100">
