@@ -172,7 +172,7 @@ const TestimonialSpotlightCarousel = ({ tag, title, description, items, backgrou
                             alt={item.imageAlt ?? item.name}
                             loading="lazy"
                             decoding="async"
-                            className="absolute inset-0 size-full object-cover"
+                            className="absolute inset-0 size-full object-cover object-[center_top]"
                           />
                         </div>
                         <figcaption className="flex flex-col gap-1">

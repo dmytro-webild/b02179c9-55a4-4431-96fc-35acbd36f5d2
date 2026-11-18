@@ -148,7 +148,7 @@ export default function NosotrosPage() {
           <MotionMedia
             src="https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794963104796-efo7w95q.jpg"
             alt="Fotografía institucional real de ENLACES"
-            className="size-full object-cover object-[center_top] sm:object-center"
+            className="size-full object-cover object-[center_top]"
             initial={{ opacity: 0, scale: 1.03 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9, ease: "easeOut" }}
@@ -447,7 +447,7 @@ export default function NosotrosPage() {
             <MotionMedia
               src="https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794965930131-mpzjh9z2.jpg"
               alt="Nuestros inicios"
-              className="size-full object-cover rounded-none"
+              className="size-full object-cover object-[center_top] rounded-none"
             />
             <div className="absolute top-3 left-3 sm:top-5 sm:left-5 z-10 bg-[#1B3A7A] text-white font-['Montserrat'] font-bold text-xs sm:text-sm px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-none shadow-none border-none uppercase tracking-wider pointer-events-none">
               Nuestros inicios
@@ -465,7 +465,7 @@ export default function NosotrosPage() {
             <MotionMedia
               src="https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794965930133-xfuo9n4l.png"
               alt="Nuestra evolución"
-              className="size-full object-cover rounded-none"
+              className="size-full object-cover object-[center_top] rounded-none"
             />
             <div className="absolute top-3 left-3 sm:top-5 sm:left-5 z-10 bg-[#1B3A7A] text-white font-['Montserrat'] font-bold text-xs sm:text-sm px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-none shadow-none border-none uppercase tracking-wider pointer-events-none">
               Nuestra evolución
@@ -1069,7 +1069,7 @@ export default function NosotrosPage() {
               <MotionMedia
                 src={mainFilosofiaImage.src}
                 alt={mainFilosofiaImage.alt}
-                className="size-full object-cover object-[center_top] sm:object-center rounded-none shadow-none border-none transition-transform duration-500 group-hover:scale-[1.02]"
+                className="size-full object-cover object-[center_top] rounded-none shadow-none border-none transition-transform duration-500 group-hover:scale-[1.02]"
                 initial={{ opacity: 0, scale: 1.02 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
