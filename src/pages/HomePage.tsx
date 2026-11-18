@@ -142,9 +142,9 @@ export default function HomePage() {
         />
       </div>
 
-      {/* Video cinematográfico intacto */}
+      {/* Video cinematográfico de ventajas de educación en línea */}
       <div id="video-cinematografico" data-webild-section="CinematicVideoSection" data-webild-section-id="CinematicVideoSection-1" data-section="video-cinematografico">
-        <CinematicVideoSection videoSrc="https://res.cloudinary.com/r58dzn6z/video/upload/v1794457523/gemini_generated_video_ab0b3b50.mp4" />
+        <CinematicVideoSection videoSrc="https://res.cloudinary.com/r58dzn6z/video/upload/v1794975513/VENTAJAS_EDUCACION_EN_LINEA_COMPRIMIDO_16MB.mp4" />
       </div>
 
       {/* Portal Institucional - Accesos directos a las 7 áreas principales */}
