@@ -86,7 +86,7 @@ export default function NosotrosPage() {
   };
 
   const mainFilosofiaImage = {
-    src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794977469769-6m2r8x7v.jpg",
+    src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794976613798-3syvce30.png",
     alt: "NUESTRA FILOSOFÍA — Fotografía principal",
   };
 
@@ -1015,9 +1015,6 @@ export default function NosotrosPage() {
                           type="video/mp4"
                         />
                       </video>
-                      <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-10 bg-[#1B3A7A] text-white font-['Montserrat'] font-bold text-[11px] sm:text-xs px-3 py-1 rounded-none shadow-none border-none uppercase tracking-wider pointer-events-none">
-                        Video conceptual
-                      </div>
                     </div>
                     <p className="mt-2 font-['Inter'] text-xs sm:text-sm font-medium italic text-slate-600 text-left leading-normal">
                       «Representación conceptual de nuestra transformación digital»
@@ -1104,13 +1101,13 @@ export default function NosotrosPage() {
               className="lg:col-span-6 w-full"
             >
               <div
-                className="relative group cursor-pointer overflow-hidden rounded-none shadow-none border-none bg-slate-900 aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] w-full"
+                className="relative group cursor-pointer overflow-hidden rounded-none shadow-none border-none w-full"
                 onClick={() => setLightboxImage(mainFilosofiaImage)}
               >
                 <MotionMedia
                   src={mainFilosofiaImage.src}
                   alt={mainFilosofiaImage.alt}
-                  className="size-full object-cover rounded-none shadow-none border-none transition-transform duration-500 group-hover:scale-[1.02]"
+                  className="w-full h-auto object-cover rounded-none shadow-none border-none transition-transform duration-500 group-hover:scale-[1.02]"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-center justify-center pointer-events-none">
                   <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 text-white text-xs font-['Montserrat'] font-semibold px-3 py-1.5 rounded-none shadow-none border-none flex items-center gap-1.5">
