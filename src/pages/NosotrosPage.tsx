@@ -1,10 +1,36 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
-import { GraduationCap, BookOpen, Award, Handshake } from "lucide-react";
+import { GraduationCap, BookOpen, Award, Handshake, X, ZoomIn } from "lucide-react";
 import { MotionMedia } from "@/components/kit/Media";
 import AboutStatementIconRow from "@/components/sections/about/AboutStatementIconRow";
 
 export default function NosotrosPage() {
+  const [lightboxImage, setLightboxImage] = useState<{ src: string; alt: string } | null>(null);
+
+  const mainHistoricalImage = {
+    src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794968305968-uuaos5p0.jpg",
+    alt: "Inauguración del plantel Metepec — Fotografía principal",
+  };
+
+  const galleryHistoricalImages = [
+    {
+      src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794968305970-diqvhl75.jpg",
+      alt: "Plantel Metepec — Archivo histórico 1",
+    },
+    {
+      src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794968305970-gl4b6ryc.jpg",
+      alt: "Plantel Metepec — Archivo histórico 2",
+    },
+    {
+      src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794968305971-8s5z6l4p.jpg",
+      alt: "Plantel Metepec — Archivo histórico 3",
+    },
+    {
+      src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794968305971-zpfnhyrv.jpg",
+      alt: "Plantel Metepec — Archivo histórico 4",
+    },
+  ];
   return (
     <div className="bg-white min-h-screen text-[#0F2755]">
       {/* Editorial Portada / Hero Section */}
@@ -442,7 +468,7 @@ export default function NosotrosPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="relative grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-12 items-start pl-10 md:pl-0"
+                className="relative grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-start pl-10 md:pl-0"
               >
                 {/* Mobile Marker Dot */}
                 <div className="md:hidden absolute left-4 -translate-x-1/2 top-2 size-3.5 rounded-full border-2 border-[#F4F6F9] bg-[#F4B400] shadow-sm z-10" />
@@ -456,15 +482,60 @@ export default function NosotrosPage() {
                     2019
                   </span>
                   <h3 className="mt-2 font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#0F2755]">
-                    Un nuevo capítulo.
+                    Un sueño que se convirtió en realidad.
                   </h3>
                   <p className="mt-3 font-['Inter'] text-slate-600 text-base leading-relaxed font-normal max-w-lg md:ml-auto">
-                    Inauguramos nuestro primer plantel escolarizado en Metepec, Estado de México, incorporando educación básica presencial.
+                    En 2019 inauguramos nuestro primer plantel escolarizado en Metepec, Estado de México, bajo el nombre de Claustro Latinoamericano ENLACES, ampliando nuestra oferta hacia la educación básica, media y media superior presencial.
                   </p>
                 </div>
 
-                {/* Empty Right Column (Desktop) */}
-                <div className="hidden md:block md:pl-12" />
+                {/* Photographic Gallery Right Column (Desktop & Mobile) */}
+                <div className="md:pl-12 mt-2 md:mt-0">
+                  <div className="space-y-3">
+                    <div className="inline-block bg-[#1B3A7A]/10 text-[#1B3A7A] text-[11px] sm:text-xs font-['Montserrat'] font-bold uppercase tracking-wider px-3 py-1 rounded-none border-none shadow-none">
+                      Archivo histórico del plantel Metepec
+                    </div>
+
+                    {/* Main Large Format Image */}
+                    <div
+                      className="relative group cursor-pointer overflow-hidden rounded-none shadow-none border-none bg-slate-100"
+                      onClick={() => setLightboxImage(mainHistoricalImage)}
+                    >
+                      <img
+                        src={mainHistoricalImage.src}
+                        alt={mainHistoricalImage.alt}
+                        className="w-full h-auto object-contain rounded-none shadow-none border-none transition-transform duration-300 group-hover:scale-[1.01]"
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-center justify-center pointer-events-none">
+                        <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 text-white text-xs font-['Montserrat'] font-semibold px-3 py-1.5 rounded-none flex items-center gap-1.5">
+                          <ZoomIn className="size-3.5" /> Ampliar imagen
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* 2-Column Editorial Gallery (4 Remaining Images) */}
+                    <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
+                      {galleryHistoricalImages.map((img, idx) => (
+                        <div
+                          key={idx}
+                          className="relative group cursor-pointer overflow-hidden rounded-none shadow-none border-none bg-slate-100"
+                          onClick={() => setLightboxImage(img)}
+                        >
+                          <img
+                            src={img.src}
+                            alt={img.alt}
+                            className="w-full h-auto object-contain rounded-none shadow-none border-none transition-transform duration-300 group-hover:scale-[1.01]"
+                          />
+                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-center justify-center pointer-events-none">
+                            <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 text-white text-[11px] font-['Montserrat'] font-semibold px-2 py-1 rounded-none flex items-center gap-1">
+                              <ZoomIn className="size-3" /> Ampliar
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             </div>
           </div>
@@ -576,6 +647,35 @@ export default function NosotrosPage() {
           </div>
         </div>
       </section>
+
+      {/* Lightbox / Image Zoom Modal */}
+      {lightboxImage && (
+        <div
+          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 sm:p-8 cursor-zoom-out"
+          onClick={() => setLightboxImage(null)}
+        >
+          <button
+            onClick={() => setLightboxImage(null)}
+            className="absolute top-4 right-4 sm:top-6 sm:right-6 text-white/80 hover:text-white p-2.5 rounded-full bg-white/10 hover:bg-white/20 transition-colors z-50 cursor-pointer"
+            aria-label="Cerrar vista ampliada"
+          >
+            <X className="size-6 sm:size-8" />
+          </button>
+          <div
+            className="relative max-w-5xl max-h-[90vh] flex flex-col items-center justify-center cursor-default"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={lightboxImage.src}
+              alt={lightboxImage.alt}
+              className="max-w-full max-h-[80vh] object-contain rounded-none shadow-none border-none"
+            />
+            <p className="mt-3.5 font-['Inter'] text-xs sm:text-sm text-slate-300 text-center font-medium">
+              {lightboxImage.alt} — Archivo histórico del plantel Metepec
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
