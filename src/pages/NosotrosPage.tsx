@@ -50,6 +50,10 @@ export default function NosotrosPage() {
       src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794972429125-ihr4c4u4.jpg",
       alt: "NUESTROS INICIOS 2014 — Archivo histórico 3",
     },
+    {
+      src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794972887340-nrxwo85z.jpg",
+      alt: "NUESTROS INICIOS 2014 — Archivo histórico 4",
+    },
   ];
   return (
     <div className="bg-white min-h-screen text-[#0F2755]">
@@ -471,7 +475,7 @@ export default function NosotrosPage() {
                       </div>
                     </div>
 
-                    {/* 2-Column Editorial Gallery (3 Remaining Images) */}
+                    {/* 2-Column Editorial Gallery (4 Remaining Images) */}
                     <div className="grid grid-cols-2 gap-[6px]">
                       {gallery2014Images.map((img, idx) => (
                         <div
