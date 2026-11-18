@@ -70,24 +70,24 @@ export default function NosotrosPage() {
                 {/* Decorative border accent */}
                 <div className="absolute -inset-2 sm:-inset-3 rounded-3xl bg-gradient-to-tr from-[#1B3A7A]/15 via-[#F4B400]/20 to-transparent blur-lg opacity-70 group-hover:opacity-100 transition-opacity duration-500" />
                 
-                <div className="relative aspect-[3/4] sm:aspect-[4/5] lg:aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 bg-white">
+                <div className="relative aspect-[4/3] sm:aspect-[4/5] lg:aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 bg-white">
                   <MotionMedia
                     src="https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794963104796-efo7w95q.jpg"
-                    alt="Innovación en Educación - ENLACES"
-                    className="size-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                    alt="Fotografía institucional real de ENLACES"
+                    className="size-full object-cover object-top sm:object-center transition-transform duration-700 group-hover:scale-[1.03]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0F2755]/70 via-transparent to-transparent opacity-80" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0F2755]/50 via-transparent to-transparent pointer-events-none" />
                   
                   {/* Floating info badge */}
-                  <div className="absolute bottom-5 left-5 right-5 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-white/40 shadow-xl">
+                  <div className="absolute bottom-4 left-4 right-4 sm:bottom-5 sm:left-5 sm:right-5 p-3.5 sm:p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-white/50 shadow-xl">
                     <div className="flex items-center gap-2 mb-1">
                       <span className="size-2 rounded-full bg-[#F4B400]" />
                       <span className="font-['Montserrat'] font-extrabold text-xs uppercase tracking-wider text-[#1B3A7A]">
-                        ENLACES Educación
+                        Comunidad ENLACES
                       </span>
                     </div>
                     <p className="font-['Inter'] text-xs font-semibold text-slate-700">
-                      Formación profesional con validez oficial y calidez humana.
+                      Fotografía institucional real de nuestra comunidad de estudiantes.
                     </p>
                   </div>
                 </div>
