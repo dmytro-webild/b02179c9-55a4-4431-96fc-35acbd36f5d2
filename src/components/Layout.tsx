@@ -60,7 +60,7 @@ export default function Layout() {
           introDelay={0.2}
         />
       </header>
-      <main className="flex-grow pt-16 lg:pt-20" data-button="chip" data-card="tray" data-pattern="none">
+      <main className="flex-grow pt-16 sm:pt-20 lg:pt-24" data-button="chip" data-card="tray" data-pattern="none">
         <Outlet />
       </main>
       <footer data-webild-section="Footer" data-section="footer">
