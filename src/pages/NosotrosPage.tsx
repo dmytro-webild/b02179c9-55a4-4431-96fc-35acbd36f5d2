@@ -119,65 +119,67 @@ export default function NosotrosPage() {
               </p>
             </div>
           </motion.div>
+        </div>
 
-          {/* Photographic Strip (Franja fotográfica - 3 columns equal height, horizontal scroll gallery on mobile) */}
-          <div className="mt-14 sm:mt-20">
-            <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-none gap-3 sm:gap-4 -mx-4 px-4 sm:mx-0 sm:px-0 md:grid md:grid-cols-3 md:overflow-visible">
-              {/* Image 1: Left - Joven acompañado de un niño */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="flex-none w-[82vw] sm:w-[60vw] md:w-full snap-center overflow-hidden rounded-xl h-[320px] sm:h-[380px] lg:h-[440px]"
-              >
-                <MotionMedia
-                  src="https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794964568166-dspbzwe5.jpg"
-                  alt="Joven acompañado de un niño"
-                  className="size-full object-cover object-[center_20%]"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.4 }}
-                />
-              </motion.div>
+        {/* Photographic Strip (Editorial gallery: 95% width, 6px gap, sharp corners, subtle hover zoom) */}
+        <div className="w-[95%] max-w-[1700px] mx-auto mt-8 sm:mt-12">
+          <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-none gap-[6px] md:grid md:grid-cols-3 md:overflow-visible">
+            {/* Image 1: Left - Joven acompañado de un niño */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="flex-none w-[85vw] sm:w-[60vw] md:w-full snap-center overflow-hidden rounded-none h-[320px] sm:h-[400px] lg:h-[460px]"
+            >
+              <MotionMedia
+                src="https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794964568166-dspbzwe5.jpg"
+                alt="Joven acompañado de un niño"
+                className="size-full object-cover object-[center_18%] rounded-none"
+                whileHover={{ scale: 1.03 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+              />
+            </motion.div>
 
-              {/* Image 2: Center - Adulto mayor con su certificado */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="flex-none w-[82vw] sm:w-[60vw] md:w-full snap-center overflow-hidden rounded-xl h-[320px] sm:h-[380px] lg:h-[440px]"
-              >
-                <MotionMedia
-                  src="https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794964568168-3kfwe8mc.jpg"
-                  alt="Adulto mayor con su certificado"
-                  className="size-full object-cover object-[center_25%]"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.4 }}
-                />
-              </motion.div>
+            {/* Image 2: Center - Adulto mayor con su certificado */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="flex-none w-[85vw] sm:w-[60vw] md:w-full snap-center overflow-hidden rounded-none h-[320px] sm:h-[400px] lg:h-[460px]"
+            >
+              <MotionMedia
+                src="https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794964568168-3kfwe8mc.jpg"
+                alt="Adulto mayor con su certificado"
+                className="size-full object-cover object-[center_22%] rounded-none"
+                whileHover={{ scale: 1.03 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+              />
+            </motion.div>
 
-              {/* Image 3: Right - Fotografía institucional del Estado de México */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="flex-none w-[82vw] sm:w-[60vw] md:w-full snap-center overflow-hidden rounded-xl h-[320px] sm:h-[380px] lg:h-[440px]"
-              >
-                <MotionMedia
-                  src="https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794964568169-bwteunii.png"
-                  alt="Fotografía institucional del Estado de México"
-                  className="size-full object-cover object-[center_30%]"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.4 }}
-                />
-              </motion.div>
-            </div>
+            {/* Image 3: Right - Fotografía institucional del Estado de México */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="flex-none w-[85vw] sm:w-[60vw] md:w-full snap-center overflow-hidden rounded-none h-[320px] sm:h-[400px] lg:h-[460px]"
+            >
+              <MotionMedia
+                src="https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794964568169-bwteunii.png"
+                alt="Fotografía institucional del Estado de México"
+                className="size-full object-cover object-[center_25%] rounded-none"
+                whileHover={{ scale: 1.03 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+              />
+            </motion.div>
           </div>
+        </div>
 
+        <div className="mx-auto w-[var(--container)] px-4 sm:px-6 lg:px-8">
           {/* 4 Institutional Pillars in 2 Columns (Discrete linear icons, no cards/borders/shadows) */}
-          <div className="mt-16 sm:mt-24 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 sm:gap-14 lg:gap-16">
+          <div className="mt-10 sm:mt-14 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 sm:gap-14 lg:gap-16">
             {/* Block 1 */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
