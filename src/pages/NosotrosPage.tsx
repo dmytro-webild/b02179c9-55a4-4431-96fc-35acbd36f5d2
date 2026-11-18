@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
-import { GraduationCap, ShieldCheck, Lightbulb, Users } from "lucide-react";
+import { GraduationCap, BookOpen, Award, Handshake } from "lucide-react";
 import { MotionMedia } from "@/components/kit/Media";
 import AboutStatementIconRow from "@/components/sections/about/AboutStatementIconRow";
 
@@ -109,18 +109,74 @@ export default function NosotrosPage() {
             {/* Introductory 3 Paragraphs (Max Width 900px, Centered) */}
             <div className="mt-10 max-w-[900px] mx-auto space-y-6 font-['Inter'] text-slate-600 text-base sm:text-lg leading-relaxed text-center font-normal">
               <p>
-                En Grupo ENLACES concebimos la educación como un proceso continuo de transformación y superación personal. Desde nuestros inicios, hemos asumido el compromiso de ofrecer alternativas formativas de excelencia que se adapten a las necesidades cambiantes de la sociedad contemporánea y a la realidad de cada uno de nuestros estudiantes.
+                Somos una <strong className="font-semibold text-[#0F2755]">institución educativa internacional de origen mexicano</strong>, comprometida con la formación académica, personal y profesional de jóvenes y adultos.
               </p>
               <p>
-                Creemos firmemente que el aprendizaje no tiene límites de edad ni restricciones de horario. Por ello, desarrollamos un ecosistema académico flexible e innovador que integra tecnología de vanguardia, acompañamiento docente cercano y planes de estudio con validez oficial RVOE, permitiendo a jóvenes y adultos alcanzar sus metas profesionales sin comprometer sus responsabilidades diarias.
+                En ENLACES creemos que la educación es una herramienta de transformación que debe estar al alcance de todas las personas, sin importar su edad, ubicación geográfica o circunstancias de vida.
               </p>
               <p>
-                Nuestra misión es impulsar el talento, fortalecer la confianza de nuestra comunidad y brindar herramientas prácticas para afrontar con éxito los retos del mundo laboral. En ENLACES, cada etapa educativa es una oportunidad para evolucionar, trascender y construir un futuro lleno de posibilidades.
+                Integramos innovación, tecnología y vocación educativa para desarrollar programas que respondan a las necesidades de un mundo en constante evolución, formando personas preparadas para afrontar los desafíos del presente y construir las oportunidades del futuro.
               </p>
             </div>
           </motion.div>
 
-          {/* 4 Editorial Blocks in 2 Columns (Discrete linear icons, no cards/borders/shadows) */}
+          {/* Photographic Strip (Franja fotográfica - 3 columns equal height, horizontal scroll gallery on mobile) */}
+          <div className="mt-14 sm:mt-20">
+            <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-none gap-3 sm:gap-4 -mx-4 px-4 sm:mx-0 sm:px-0 md:grid md:grid-cols-3 md:overflow-visible">
+              {/* Image 1: Left - Joven acompañado de un niño */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="flex-none w-[82vw] sm:w-[60vw] md:w-full snap-center overflow-hidden rounded-xl h-[320px] sm:h-[380px] lg:h-[440px]"
+              >
+                <MotionMedia
+                  src="https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794964568166-dspbzwe5.jpg"
+                  alt="Joven acompañado de un niño"
+                  className="size-full object-cover object-[center_20%]"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.4 }}
+                />
+              </motion.div>
+
+              {/* Image 2: Center - Adulto mayor con su certificado */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="flex-none w-[82vw] sm:w-[60vw] md:w-full snap-center overflow-hidden rounded-xl h-[320px] sm:h-[380px] lg:h-[440px]"
+              >
+                <MotionMedia
+                  src="https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794964568168-3kfwe8mc.jpg"
+                  alt="Adulto mayor con su certificado"
+                  className="size-full object-cover object-[center_25%]"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.4 }}
+                />
+              </motion.div>
+
+              {/* Image 3: Right - Fotografía institucional del Estado de México */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="flex-none w-[82vw] sm:w-[60vw] md:w-full snap-center overflow-hidden rounded-xl h-[320px] sm:h-[380px] lg:h-[440px]"
+              >
+                <MotionMedia
+                  src="https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794964568169-bwteunii.png"
+                  alt="Fotografía institucional del Estado de México"
+                  className="size-full object-cover object-[center_30%]"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.4 }}
+                />
+              </motion.div>
+            </div>
+          </div>
+
+          {/* 4 Institutional Pillars in 2 Columns (Discrete linear icons, no cards/borders/shadows) */}
           <div className="mt-16 sm:mt-24 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 sm:gap-14 lg:gap-16">
             {/* Block 1 */}
             <motion.div
@@ -134,10 +190,10 @@ export default function NosotrosPage() {
                 <GraduationCap className="size-9 stroke-[1.5]" />
               </div>
               <h3 className="font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#0F2755] tracking-tight">
-                Modelo Educativo Flexible
+                Aprender sin límites.
               </h3>
               <p className="mt-3 font-['Inter'] text-slate-600 leading-relaxed text-base">
-                Diseñamos rutas de aprendizaje dinámicas que se ajustan al tiempo y metas de cada alumno, combinando metodologías presenciales y digitales para maximizar la efectividad académica.
+                Desarrollamos modelos educativos flexibles que te permiten iniciar, continuar o complementar tu formación, sin dejar de lado tus responsabilidades y proyectos personales.
               </p>
             </motion.div>
 
@@ -150,13 +206,13 @@ export default function NosotrosPage() {
               className="flex flex-col items-start"
             >
               <div className="mb-4 text-[#1B3A7A]">
-                <ShieldCheck className="size-9 stroke-[1.5]" />
+                <BookOpen className="size-9 stroke-[1.5]" />
               </div>
               <h3 className="font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#0F2755] tracking-tight">
-                Calidad y Certeza RVOE
+                Mucho más que estudiar.
               </h3>
               <p className="mt-3 font-['Inter'] text-slate-600 leading-relaxed text-base">
-                Todos nuestros programas cuentan con el debido reconocimiento oficial, garantizando validez legal, certeza profesional y respaldo institucional en cada certificación y titulación.
+                Combinamos tecnología, clases en vivo, recursos educativos y acompañamiento humano para brindarte una experiencia de aprendizaje integral.
               </p>
             </motion.div>
 
@@ -169,13 +225,13 @@ export default function NosotrosPage() {
               className="flex flex-col items-start"
             >
               <div className="mb-4 text-[#1B3A7A]">
-                <Lightbulb className="size-9 stroke-[1.5]" />
+                <Award className="size-9 stroke-[1.5]" />
               </div>
               <h3 className="font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#0F2755] tracking-tight">
-                Innovación Pedagógica
+                Formación continua.
               </h3>
               <p className="mt-3 font-['Inter'] text-slate-600 leading-relaxed text-base">
-                Incorporamos metodologías activas y herramientas tecnológicas avanzadas que promueven un aprendizaje interactivo, reflexivo y directamente aplicable al entorno laboral.
+                Desde el bachillerato hasta el posgrado, ofrecemos alternativas educativas para diferentes momentos, necesidades y objetivos profesionales.
               </p>
             </motion.div>
 
@@ -188,16 +244,29 @@ export default function NosotrosPage() {
               className="flex flex-col items-start"
             >
               <div className="mb-4 text-[#1B3A7A]">
-                <Users className="size-9 stroke-[1.5]" />
+                <Handshake className="size-9 stroke-[1.5]" />
               </div>
               <h3 className="font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#0F2755] tracking-tight">
-                Acompañamiento Integral
+                Crecemos juntos.
               </h3>
               <p className="mt-3 font-['Inter'] text-slate-600 leading-relaxed text-base">
-                Un equipo docente calificado y tutores comprometidos te acompañan de manera cercana durante toda tu trayectoria, guiándote hacia el cumplimiento de tus propósitos.
+                Colaboramos con empresas, organizaciones e instituciones públicas y privadas para acercar la educación a más personas.
               </p>
             </motion.div>
           </div>
+
+          {/* Highlighted Closing Phrase */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="mt-16 sm:mt-20 text-center max-w-2xl mx-auto"
+          >
+            <p className="font-['Montserrat'] italic font-semibold text-lg sm:text-xl text-[#1B3A7A]">
+              Nuestro compromiso no comienza ni termina con tu inscripción. Te acompañamos durante el camino.
+            </p>
+          </motion.div>
         </div>
       </section>
 
