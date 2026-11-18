@@ -58,7 +58,7 @@ export default function OfertaTitulacionPage() {
                 <MotionMedia
                   src="https://img.b2bpic.net/free-photo/businessman-using-digital-tablet-writing-clipboard-with-pen-gray-desk_23-2148052592.jpg?_wi=1"
                   alt="Titulación por Experiencia Laboral ENLACES"
-                  className="size-full object-cover"
+                  className="size-full object-cover object-[center_top]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0F2755]/60 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/80 shadow-lg">
