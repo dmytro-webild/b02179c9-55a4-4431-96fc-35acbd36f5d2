@@ -936,6 +936,67 @@ export default function NosotrosPage() {
                   </p>
                 </div>
               </motion.div>
+
+              {/* Event 5: 2023 – Actualidad */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                className="relative -mx-2 sm:-mx-6 lg:-mx-12 md:w-[calc(100%+3rem)] lg:w-[calc(100%+6rem)] md:-ml-6 lg:-ml-12 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 items-start pl-10 md:pl-0"
+              >
+                {/* Mobile Marker Dot */}
+                <div className="md:hidden absolute left-4 -translate-x-1/2 top-2 size-3.5 bg-[#F4B400] z-10 rounded-none border-none shadow-none" />
+
+                {/* Desktop Center Marker Dot */}
+                <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-2 size-4 bg-[#F4B400] z-10 rounded-none border-none shadow-none" />
+
+                {/* Content Left Column (Desktop & Mobile: Year, Title, Text) */}
+                <div className="md:text-right md:pr-6 lg:pr-8 flex flex-col items-start md:items-end">
+                  <span className="inline-block font-['Montserrat'] font-extrabold text-3xl sm:text-4xl lg:text-[2.5rem] text-[#1B3A7A] leading-none tracking-tight">
+                    2023 – Actualidad
+                  </span>
+                  <h3 className="mt-2 font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#0F2755]">
+                    Transformamos nuestra manera de enseñar. Y seguimos avanzando.
+                  </h3>
+                  <p className="mt-3 font-['Inter'] text-slate-600 text-base leading-relaxed font-normal max-w-xl md:ml-auto">
+                    En 2023 iniciamos una nueva etapa de transformación digital, integrando tecnología, innovación y nuevos modelos educativos que nos permitieron llevar la educación más allá de las aulas.
+                  </p>
+                  <p className="mt-3 font-['Inter'] text-slate-600 text-base leading-relaxed font-normal max-w-xl md:ml-auto">
+                    Hoy, con más de 10,000 egresados, presencia nacional e internacional y una oferta educativa en constante evolución, seguimos construyendo nuevas formas de aprender, crecer y transformar vidas.
+                  </p>
+                </div>
+
+                {/* Video Right Column (Desktop & Mobile) */}
+                <div className="md:pl-6 lg:pl-8 mt-6 md:mt-0 w-full">
+                  <div className="flex flex-col gap-[6px]">
+                    <div className="inline-block bg-[#1B3A7A]/10 text-[#1B3A7A] text-[11px] sm:text-xs font-['Montserrat'] font-bold uppercase tracking-wider px-3 py-1 rounded-none border-none shadow-none self-start">
+                      Transformación Digital
+                    </div>
+
+                    <div className="relative aspect-[16/9] w-full overflow-hidden rounded-none shadow-none border-none bg-slate-900">
+                      <video
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className="size-full object-cover rounded-none shadow-none border-none"
+                      >
+                        <source
+                          src="https://res.cloudinary.com/r58dzn6z/video/upload/v1794457523/gemini_generated_video_ab0b3b50.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-10 bg-[#1B3A7A] text-white font-['Montserrat'] font-bold text-[11px] sm:text-xs px-3 py-1 rounded-none shadow-none border-none uppercase tracking-wider pointer-events-none">
+                        Video conceptual
+                      </div>
+                    </div>
+                    <p className="mt-2 font-['Inter'] text-xs sm:text-sm font-medium italic text-slate-600 text-left leading-normal">
+                      «Representación conceptual de nuestra transformación digital»
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
             </div>
           </div>
         </div>
