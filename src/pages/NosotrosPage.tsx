@@ -1,23 +1,98 @@
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
+import { MotionMedia } from "@/components/kit/Media";
 import AboutStatementIconRow from "@/components/sections/about/AboutStatementIconRow";
 
 export default function NosotrosPage() {
   return (
     <div className="bg-white min-h-screen text-[#0F2755]">
-      {/* Banner Header */}
-      <section className="relative bg-linear-to-b from-slate-50 to-white py-16 sm:py-20 border-b border-slate-200/60">
-        <div className="mx-auto w-[var(--container)]">
-          <div className="flex flex-col items-start max-w-3xl">
-            <span className="rounded-full border border-[#1B3A7A]/20 bg-[#1B3A7A]/5 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#1B3A7A]">
-              Institución Educativa
-            </span>
-            <h1 className="mt-4 font-['Montserrat'] font-extrabold text-4xl sm:text-5xl text-[#0F2755] leading-tight">
-              Sobre nosotros
-            </h1>
-            <p className="mt-4 font-['Inter'] text-lg text-slate-600 leading-relaxed">
-              La educación debe adaptarse a tu vida, no al revés. En ENLACES Educación te acompañamos a alcanzar tus metas académicas mediante esquemas flexibles y respaldo oficial.
-            </p>
+      {/* Editorial Portada / Hero Section */}
+      <section className="relative bg-white py-14 sm:py-20 lg:py-24 border-b border-slate-100 overflow-hidden">
+        {/* Subtle background glow accents */}
+        <div className="pointer-events-none absolute -top-24 -left-24 size-96 rounded-full bg-[#1B3A7A]/5 blur-3xl" />
+        <div className="pointer-events-none absolute top-1/2 right-0 size-96 rounded-full bg-[#F4B400]/10 blur-3xl" />
+
+        <div className="mx-auto w-[var(--container)] px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+            {/* Left Column: Text Content */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="lg:col-span-7 flex flex-col items-start"
+            >
+              {/* Top Tag */}
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#1B3A7A]/20 bg-[#1B3A7A]/5 px-4 py-1.5 text-xs font-extrabold uppercase tracking-widest text-[#1B3A7A]">
+                <span className="size-2 rounded-full bg-[#F4B400] animate-pulse" />
+                INNOVACIÓN EN EDUCACIÓN
+              </div>
+
+              {/* Title: Montserrat 800 Italic */}
+              <h1 className="mt-6 font-['Montserrat'] font-extrabold italic text-3xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.75rem] leading-[1.12] tracking-tight">
+                <span className="block text-[#1B3A7A]">
+                  Estudia como si fueras a vivir por siempre.
+                </span>
+                <span className="block text-[#F4B400] mt-1 sm:mt-2">
+                  Vive como si fueras a morir mañana.
+                </span>
+              </h1>
+
+              {/* Complementary Text */}
+              <p className="mt-6 font-['Inter'] text-lg sm:text-xl text-slate-600 leading-relaxed font-medium max-w-2xl border-l-2 border-[#F4B400] pl-4 sm:pl-5 py-0.5">
+                Una filosofía de vida. Una nueva manera de entender la educación.
+              </p>
+
+              {/* Call to Actions */}
+              <div className="mt-8 sm:mt-10 flex flex-wrap gap-4 items-center">
+                <Link
+                  to="/contacto"
+                  className="rounded-full bg-[#F4B400] px-7 py-3.5 font-['Montserrat'] font-extrabold text-sm text-[#0F2755] shadow-md hover:bg-amber-300 transition-all hover:scale-105"
+                >
+                  Solicitar informes
+                </Link>
+                <Link
+                  to="/oferta-educativa"
+                  className="rounded-full border border-slate-200 bg-slate-50 px-7 py-3.5 font-['Montserrat'] font-bold text-sm text-[#0F2755] hover:bg-slate-100 transition-all"
+                >
+                  Conoce nuestros programas
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Right Column: Attached Photography */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              className="lg:col-span-5 relative"
+            >
+              <div className="relative group mx-auto max-w-md lg:max-w-none">
+                {/* Decorative border accent */}
+                <div className="absolute -inset-2 sm:-inset-3 rounded-3xl bg-gradient-to-tr from-[#1B3A7A]/15 via-[#F4B400]/20 to-transparent blur-lg opacity-70 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                <div className="relative aspect-[3/4] sm:aspect-[4/5] lg:aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 bg-white">
+                  <MotionMedia
+                    src="https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794963104796-efo7w95q.jpg"
+                    alt="Innovación en Educación - ENLACES"
+                    className="size-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0F2755]/70 via-transparent to-transparent opacity-80" />
+                  
+                  {/* Floating info badge */}
+                  <div className="absolute bottom-5 left-5 right-5 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-white/40 shadow-xl">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="size-2 rounded-full bg-[#F4B400]" />
+                      <span className="font-['Montserrat'] font-extrabold text-xs uppercase tracking-wider text-[#1B3A7A]">
+                        ENLACES Educación
+                      </span>
+                    </div>
+                    <p className="font-['Inter'] text-xs font-semibold text-slate-700">
+                      Formación profesional con validez oficial y calidez humana.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
