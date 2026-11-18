@@ -60,8 +60,9 @@ export default function SistemaOperativoEnlacesPage() {
               <span className="size-1.5 rounded-full bg-[#F4B400]" />
               Tu ecosistema educativo
             </span>
-            <h1 className="mt-4 font-['Montserrat'] font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#0F2755] tracking-tight">
-              ENLACES 360
+            <h1 className="mt-4 font-['Montserrat'] font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight">
+              <span className="text-[#1B3A7A]">ENLACES</span>{" "}
+              <span className="text-[#F4B400]">360</span>
             </h1>
             <p className="mt-3 font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#1B3A7A]">
               Tu enlace con el mundo
