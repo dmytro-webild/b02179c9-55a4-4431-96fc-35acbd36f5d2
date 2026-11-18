@@ -344,6 +344,133 @@ export default function NosotrosPage() {
         </div>
       </section>
 
+      {/* Editorial Section: CADA PASO CUENTA (LÍNEA DEL TIEMPO) */}
+      <section className="bg-[#F4F6F9] py-20 sm:py-28 border-b border-slate-200/60 overflow-hidden">
+        <div className="mx-auto w-[var(--container)] px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="flex flex-col items-center text-center mb-14 sm:mb-20"
+          >
+            {/* Label / Badge */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#1B3A7A]/20 bg-[#1B3A7A]/5 px-4 py-1.5 text-xs font-extrabold uppercase tracking-widest text-[#1B3A7A]">
+              LÍNEA DEL TIEMPO
+            </div>
+
+            {/* Title */}
+            <h2 className="mt-6 font-['Montserrat'] font-extrabold text-3xl sm:text-4xl lg:text-[2.75rem] leading-[1.2] tracking-tight text-[#1B3A7A]">
+              Cada paso cuenta.
+            </h2>
+          </motion.div>
+
+          {/* Timeline Container */}
+          <div className="relative max-w-5xl mx-auto">
+            {/* Desktop Central Line */}
+            <div className="hidden md:block absolute left-1/2 top-4 bottom-4 w-[3px] -translate-x-1/2 bg-gradient-to-b from-[#F4B400] via-[#1B3A7A]/40 to-[#1B3A7A]/10 rounded-full" />
+
+            {/* Mobile Left Line */}
+            <div className="md:hidden absolute left-4 top-4 bottom-4 w-[2.5px] -translate-x-1/2 bg-gradient-to-b from-[#F4B400] via-[#1B3A7A]/40 to-[#1B3A7A]/10 rounded-full" />
+
+            <div className="space-y-12 sm:space-y-16">
+              {/* Event 1: 2014 */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="relative grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-12 items-start pl-10 md:pl-0"
+              >
+                {/* Mobile Marker Dot */}
+                <div className="md:hidden absolute left-4 -translate-x-1/2 top-2 size-3.5 rounded-full border-2 border-[#F4F6F9] bg-[#F4B400] shadow-sm z-10" />
+
+                {/* Desktop Center Marker Dot */}
+                <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-2 size-5 rounded-full border-4 border-[#F4F6F9] bg-[#F4B400] shadow-sm z-10" />
+
+                {/* Content Left (Desktop) */}
+                <div className="md:text-right md:pr-12">
+                  <span className="inline-block font-['Montserrat'] font-extrabold text-3xl sm:text-4xl lg:text-[2.5rem] text-[#1B3A7A] leading-none tracking-tight">
+                    2014
+                  </span>
+                  <h3 className="mt-2 font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#0F2755]">
+                    Aquí comienza nuestra historia.
+                  </h3>
+                  <p className="mt-3 font-['Inter'] text-slate-600 text-base leading-relaxed font-normal max-w-lg md:ml-auto">
+                    Nacemos en la Ciudad de México, preparando a jóvenes y adultos para acreditar el bachillerato mediante las evaluaciones de COLBACH y CENEVAL. Descubrimos el enorme impacto social de brindar nuevas oportunidades educativas.
+                  </p>
+                </div>
+
+                {/* Empty Right Column (Desktop) */}
+                <div className="hidden md:block md:pl-12" />
+              </motion.div>
+
+              {/* Event 2: 2016–2019 */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="relative grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-12 items-start pl-10 md:pl-0"
+              >
+                {/* Mobile Marker Dot */}
+                <div className="md:hidden absolute left-4 -translate-x-1/2 top-2 size-3.5 rounded-full border-2 border-[#F4F6F9] bg-[#F4B400] shadow-sm z-10" />
+
+                {/* Desktop Center Marker Dot */}
+                <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-2 size-5 rounded-full border-4 border-[#F4F6F9] bg-[#F4B400] shadow-sm z-10" />
+
+                {/* Empty Left Column (Desktop) */}
+                <div className="hidden md:block md:pr-12" />
+
+                {/* Content Right (Desktop) */}
+                <div className="md:text-left md:pl-12">
+                  <span className="inline-block font-['Montserrat'] font-extrabold text-3xl sm:text-4xl lg:text-[2.5rem] text-[#1B3A7A] leading-none tracking-tight">
+                    2016–2019
+                  </span>
+                  <h3 className="mt-2 font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#0F2755]">
+                    Crecemos contigo.
+                  </h3>
+                  <p className="mt-3 font-['Inter'] text-slate-600 text-base leading-relaxed font-normal max-w-lg">
+                    Expandimos nuestra presencia a Tijuana, Chihuahua, Estado de México, Nayarit, San Luis Potosí, Guerrero, Quintana Roo, Guadalajara, Monterrey y Coahuila, fortaleciendo nuestras alianzas y nuestra oferta educativa.
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* Event 3: 2019 */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="relative grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-12 items-start pl-10 md:pl-0"
+              >
+                {/* Mobile Marker Dot */}
+                <div className="md:hidden absolute left-4 -translate-x-1/2 top-2 size-3.5 rounded-full border-2 border-[#F4F6F9] bg-[#F4B400] shadow-sm z-10" />
+
+                {/* Desktop Center Marker Dot */}
+                <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-2 size-5 rounded-full border-4 border-[#F4F6F9] bg-[#F4B400] shadow-sm z-10" />
+
+                {/* Content Left (Desktop) */}
+                <div className="md:text-right md:pr-12">
+                  <span className="inline-block font-['Montserrat'] font-extrabold text-3xl sm:text-4xl lg:text-[2.5rem] text-[#1B3A7A] leading-none tracking-tight">
+                    2019
+                  </span>
+                  <h3 className="mt-2 font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#0F2755]">
+                    Un nuevo capítulo.
+                  </h3>
+                  <p className="mt-3 font-['Inter'] text-slate-600 text-base leading-relaxed font-normal max-w-lg md:ml-auto">
+                    Inauguramos nuestro primer plantel escolarizado en Metepec, Estado de México, incorporando educación básica presencial.
+                  </p>
+                </div>
+
+                {/* Empty Right Column (Desktop) */}
+                <div className="hidden md:block md:pl-12" />
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Main Statement & Icon Row */}
       <div id="about" data-webild-section="AboutStatementIconRow" data-webild-section-id="AboutStatementIconRow-1" data-section="about">
         <AboutStatementIconRow
