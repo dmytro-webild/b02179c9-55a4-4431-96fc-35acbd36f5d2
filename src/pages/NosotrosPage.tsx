@@ -23,12 +23,32 @@ export default function NosotrosPage() {
       alt: "Plantel Metepec — Archivo histórico 2",
     },
     {
-      src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794968305971-8s5z6l4p.jpg",
+      src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794972429124-gk0qmakr.jpg",
       alt: "Plantel Metepec — Archivo histórico 3",
     },
     {
       src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794968305971-zpfnhyrv.jpg",
       alt: "Plantel Metepec — Archivo histórico 4",
+    },
+  ];
+
+  const main2014Image = {
+    src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794972429120-ksf6w7ip.png",
+    alt: "NUESTROS INICIOS 2014 — Fotografía principal",
+  };
+
+  const gallery2014Images = [
+    {
+      src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794972429123-3ga3uko7.png",
+      alt: "NUESTROS INICIOS 2014 — Archivo histórico 1",
+    },
+    {
+      src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794972429124-gk0qmakr.jpg",
+      alt: "NUESTROS INICIOS 2014 — Archivo histórico 2",
+    },
+    {
+      src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794972429125-ihr4c4u4.jpg",
+      alt: "NUESTROS INICIOS 2014 — Archivo histórico 3",
     },
   ];
   return (
@@ -406,29 +426,74 @@ export default function NosotrosPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="relative grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-12 items-start pl-10 md:pl-0"
+                className="relative -mx-2 sm:-mx-6 lg:-mx-12 md:w-[calc(100%+3rem)] lg:w-[calc(100%+6rem)] md:-ml-6 lg:-ml-12 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 items-start pl-10 md:pl-0"
               >
                 {/* Mobile Marker Dot */}
-                <div className="md:hidden absolute left-4 -translate-x-1/2 top-2 size-3.5 rounded-full border-2 border-[#F4F6F9] bg-[#F4B400] shadow-sm z-10" />
+                <div className="md:hidden absolute left-4 -translate-x-1/2 top-2 size-3.5 bg-[#F4B400] z-10 rounded-none border-none shadow-none" />
 
                 {/* Desktop Center Marker Dot */}
-                <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-2 size-5 rounded-full border-4 border-[#F4F6F9] bg-[#F4B400] shadow-sm z-10" />
+                <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-2 size-4 bg-[#F4B400] z-10 rounded-none border-none shadow-none" />
 
-                {/* Content Left (Desktop) */}
-                <div className="md:text-right md:pr-12">
+                {/* Content Left Column (Desktop & Mobile: Year, Title, Text) */}
+                <div className="md:text-right md:pr-6 lg:pr-8 flex flex-col items-start md:items-end">
                   <span className="inline-block font-['Montserrat'] font-extrabold text-3xl sm:text-4xl lg:text-[2.5rem] text-[#1B3A7A] leading-none tracking-tight">
                     2014
                   </span>
                   <h3 className="mt-2 font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#0F2755]">
                     Aquí comienza nuestra historia.
                   </h3>
-                  <p className="mt-3 font-['Inter'] text-slate-600 text-base leading-relaxed font-normal max-w-lg md:ml-auto">
+                  <p className="mt-3 font-['Inter'] text-slate-600 text-base leading-relaxed font-normal max-w-xl md:ml-auto">
                     Nacemos en la Ciudad de México, preparando a jóvenes y adultos para acreditar el bachillerato mediante las evaluaciones de COLBACH y CENEVAL. Descubrimos el enorme impacto social de brindar nuevas oportunidades educativas.
                   </p>
                 </div>
 
-                {/* Empty Right Column (Desktop) */}
-                <div className="hidden md:block md:pl-12" />
+                {/* Photographic Gallery Right Column (Desktop & Mobile) */}
+                <div className="md:pl-6 lg:pl-8 mt-6 md:mt-0 w-full">
+                  <div className="flex flex-col gap-[6px]">
+                    <div className="inline-block bg-[#1B3A7A]/10 text-[#1B3A7A] text-[11px] sm:text-xs font-['Montserrat'] font-bold uppercase tracking-wider px-3 py-1 rounded-none border-none shadow-none self-start">
+                      NUESTROS INICIOS
+                    </div>
+
+                    {/* Main Large Format Image (Photo 1) */}
+                    <div
+                      className="relative group cursor-pointer overflow-hidden rounded-none shadow-none border-none bg-slate-100"
+                      onClick={() => setLightboxImage(main2014Image)}
+                    >
+                      <img
+                        src={main2014Image.src}
+                        alt={main2014Image.alt}
+                        className="w-full h-auto object-contain rounded-none shadow-none border-none transition-transform duration-300 group-hover:scale-[1.01]"
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-center justify-center pointer-events-none">
+                        <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 text-white text-xs font-['Montserrat'] font-semibold px-3 py-1.5 rounded-none shadow-none border-none flex items-center gap-1.5">
+                          <ZoomIn className="size-3.5" /> Ampliar imagen
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* 2-Column Editorial Gallery (3 Remaining Images) */}
+                    <div className="grid grid-cols-2 gap-[6px]">
+                      {gallery2014Images.map((img, idx) => (
+                        <div
+                          key={idx}
+                          className="relative group cursor-pointer overflow-hidden rounded-none shadow-none border-none bg-slate-100"
+                          onClick={() => setLightboxImage(img)}
+                        >
+                          <img
+                            src={img.src}
+                            alt={img.alt}
+                            className="w-full h-auto object-contain rounded-none shadow-none border-none transition-transform duration-300 group-hover:scale-[1.01]"
+                          />
+                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-center justify-center pointer-events-none">
+                            <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 text-white text-[11px] font-['Montserrat'] font-semibold px-2 py-1 rounded-none shadow-none border-none flex items-center gap-1">
+                              <ZoomIn className="size-3" /> Ampliar
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </motion.div>
 
               {/* Event 2: 2016–2019 */}
