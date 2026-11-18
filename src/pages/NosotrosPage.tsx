@@ -85,6 +85,11 @@ export default function NosotrosPage() {
     alt: "DE MÉXICO AL MUNDO 2021 — Fotografía principal",
   };
 
+  const mainFilosofiaImage = {
+    src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794977469769-6m2r8x7v.jpg",
+    alt: "NUESTRA FILOSOFÍA — Fotografía principal",
+  };
+
   const gallery2021Images = [
     {
       src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794974303173-6o60lm5z.png",
@@ -447,7 +452,7 @@ export default function NosotrosPage() {
       </section>
 
       {/* Editorial Section: CADA PASO CUENTA (LÍNEA DEL TIEMPO) */}
-      <section className="bg-[#F4F6F9] py-20 sm:py-28 border-b border-slate-200/60 overflow-hidden">
+      <section className="bg-[#F4F6F9] pt-20 sm:pt-28 pb-10 sm:pb-14 border-b border-slate-200/60 overflow-hidden">
         <div className="mx-auto w-[var(--container)] px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -1003,7 +1008,7 @@ export default function NosotrosPage() {
       </section>
 
       {/* Editorial Cierre de la Línea del Tiempo */}
-      <section className="bg-white py-20 sm:py-28 lg:py-32 border-b border-slate-100 overflow-hidden">
+      <section className="bg-white pt-10 sm:pt-14 lg:pt-16 pb-20 sm:pb-28 lg:pb-32 border-b border-slate-100 overflow-hidden">
         <div className="mx-auto w-[var(--container)] px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -1028,6 +1033,70 @@ export default function NosotrosPage() {
               <span className="text-[#F4B400]">Y queremos que formes parte de ella.</span>
             </p>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Editorial Section: NUESTRA FILOSOFÍA */}
+      <section className="bg-[#1B3A7A] py-20 sm:py-28 lg:py-32 border-b border-[#1B3A7A] overflow-hidden text-white">
+        <div className="mx-auto w-[var(--container)] px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            {/* Text Column (Left) */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="lg:col-span-6 flex flex-col items-start"
+            >
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-extrabold uppercase tracking-widest text-white mb-6">
+                NUESTRA FILOSOFÍA
+              </div>
+
+              {/* Title */}
+              <h2 className="font-['Montserrat'] font-extrabold text-3xl sm:text-4xl lg:text-[2.75rem] leading-[1.2] tracking-tight">
+                <span className="text-white">Creemos en las personas. </span>
+                <span className="text-[#F4B400] block sm:inline mt-1 sm:mt-0">
+                  Creemos en su capacidad de transformar el mundo.
+                </span>
+              </h2>
+
+              {/* Body Paragraphs */}
+              <div className="mt-6 sm:mt-8 space-y-5 font-['Inter'] text-slate-100 text-base sm:text-lg leading-relaxed font-normal">
+                <p>
+                  La educación no es únicamente la adquisición de conocimientos. Es una herramienta para descubrir nuestro potencial, superar nuestros propios límites y construir nuevas oportunidades.
+                </p>
+                <p>
+                  En ENLACES creemos que nunca dejamos de aprender. Que cada persona tiene una historia diferente, que el conocimiento no tiene fronteras y que la tecnología debe acercarnos a las oportunidades, no alejarnos de ellas.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Photo Column (Right) */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+              className="lg:col-span-6 w-full"
+            >
+              <div
+                className="relative group cursor-pointer overflow-hidden rounded-none shadow-none border-none bg-slate-900 aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] w-full"
+                onClick={() => setLightboxImage(mainFilosofiaImage)}
+              >
+                <MotionMedia
+                  src={mainFilosofiaImage.src}
+                  alt={mainFilosofiaImage.alt}
+                  className="size-full object-cover rounded-none shadow-none border-none transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-center justify-center pointer-events-none">
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 text-white text-xs font-['Montserrat'] font-semibold px-3 py-1.5 rounded-none shadow-none border-none flex items-center gap-1.5">
+                    <ZoomIn className="size-3.5" /> Ampliar imagen
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
