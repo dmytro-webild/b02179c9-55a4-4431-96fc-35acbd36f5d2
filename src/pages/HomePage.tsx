@@ -165,9 +165,9 @@ export default function HomePage() {
       </div>
 
       {/* Los cuatro beneficios institucionales */}
-      <section id="beneficios-institucionales" data-webild-section="InstitutionalBenefits" data-section="beneficios-institucionales" className="py-12 sm:py-16 bg-slate-50/60 border-y border-slate-200/60">
-        <div className="mx-auto w-[var(--container)] max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+      <section id="beneficios-institucionales" data-webild-section="InstitutionalBenefits" data-section="beneficios-institucionales" className="bg-white pt-2 sm:pt-4 pb-12 sm:pb-16 lg:pb-20 border-0 shadow-none">
+        <div className="mx-auto w-[var(--container)]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10">
             {institutionalBenefits.map((item, idx) => (
               <motion.div
                 key={item.title}
@@ -175,7 +175,7 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.08 }}
-                className="flex items-start gap-4 p-5 sm:p-6 rounded-2xl bg-white border border-slate-200/90 shadow-sm transition-all duration-300 hover:shadow-md hover:border-[#1B3A7A]/30"
+                className="flex items-start gap-4 p-0 bg-transparent border-0 shadow-none"
               >
                 <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-[#1B3A7A]/10 text-[#1B3A7A]">
                   {item.icon}

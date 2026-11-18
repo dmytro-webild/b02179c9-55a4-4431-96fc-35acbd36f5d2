@@ -66,12 +66,12 @@ export default function CinematicVideoSection({
     <section
       ref={containerRef}
       aria-label={ariaLabel}
-      className={`bg-white pt-0 pb-12 sm:pb-16 lg:pb-20 border-0 shadow-none overflow-hidden ${className}`}
+      className={`bg-white pt-4 sm:pt-6 lg:pt-8 pb-4 sm:pb-6 lg:pb-8 border-0 shadow-none overflow-hidden ${className}`}
     >
-      <div className="mx-auto w-[var(--container)] max-w-7xl px-3 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-14 items-start">
-          {/* Columna izquierda: Texto (En móviles va primero) */}
-          <div className="lg:col-span-7 flex flex-col justify-start text-left lg:pt-1">
+      <div className="mx-auto w-[var(--container)]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 xl:gap-16 items-center">
+          {/* Columna izquierda: Texto (Reubicado ligeramente por encima del centro vertical) */}
+          <div className="lg:col-span-7 flex flex-col justify-center text-left lg:-mt-8 xl:-mt-10">
             <div className="inline-flex items-center gap-2 rounded-full border border-[#1B3A7A]/15 bg-[#1B3A7A]/5 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#1B3A7A] w-fit mb-6">
               <span className="size-2 rounded-full bg-[#F4B400] animate-pulse" />
               Educación Flexible y Humana
