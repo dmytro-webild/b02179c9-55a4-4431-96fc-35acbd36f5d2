@@ -494,16 +494,17 @@ export default function NosotrosPage() {
                       <video
                         controls
                         preload="none"
-                        poster="https://res.cloudinary.com/r58dzn6z/image/upload/v1794968685/3C1924BF-CF2F-4DA3-8BC9-06A541FB9A3A_4_5005_c.jpg"
+                        playsInline
+                        poster="https://images.pexels.com/photos/40768671/pexels-photo-40768671.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
                         className="size-full object-contain rounded-none shadow-none border-none"
                       >
                         <source
-                          src="https://res.cloudinary.com/r58dzn6z/image/upload/v1794968685/3C1924BF-CF2F-4DA3-8BC9-06A541FB9A3A_4_5005_c.jpg"
+                          src="https://res.cloudinary.com/r58dzn6z/video/upload/v1794969416/ENLACES_PLANTEL_METEPEC.mov"
                           type="video/mp4"
                         />
                         <source
-                          src="https://res.cloudinary.com/r58dzn6z/video/upload/v1794968685/3C1924BF-CF2F-4DA3-8BC9-06A541FB9A3A_4_5005_c.mp4"
-                          type="video/mp4"
+                          src="https://res.cloudinary.com/r58dzn6z/video/upload/v1794969416/ENLACES_PLANTEL_METEPEC.mov"
+                          type="video/quicktime"
                         />
                       </video>
                       <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-10 bg-[#1B3A7A] text-white font-['Montserrat'] font-bold text-[11px] sm:text-xs px-3 py-1 rounded-none shadow-none border-none uppercase tracking-wider pointer-events-none">
