@@ -499,26 +499,55 @@ export default function NosotrosPage() {
                       </div>
                     </div>
 
-                    {/* 2-Column Editorial Gallery (4 Remaining Images) */}
-                    <div className="grid grid-cols-2 gap-[6px]">
-                      {gallery2014Images.map((img, idx) => (
-                        <div
-                          key={idx}
-                          className="relative group cursor-pointer overflow-hidden rounded-none shadow-none border-none bg-slate-100"
-                          onClick={() => setLightboxImage(img)}
-                        >
-                          <img
-                            src={img.src}
-                            alt={img.alt}
-                            className="w-full h-auto object-contain rounded-none shadow-none border-none transition-transform duration-300 group-hover:scale-[1.01]"
-                          />
-                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-center justify-center pointer-events-none">
-                            <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 text-white text-[11px] font-['Montserrat'] font-semibold px-2 py-1 rounded-none shadow-none border-none flex items-center gap-1">
-                              <ZoomIn className="size-3" /> Ampliar
+                    {/* 2-Column Editorial Mosaic Gallery with Independent Columns (4 Remaining Images) */}
+                    <div className="grid grid-cols-2 gap-[6px] items-start">
+                      {/* Column 1 */}
+                      <div className="flex flex-col gap-[6px]">
+                        {gallery2014Images
+                          .filter((_, idx) => idx % 2 === 0)
+                          .map((img, idx) => (
+                            <div
+                              key={`col1-${idx}`}
+                              className="relative group cursor-pointer overflow-hidden rounded-none shadow-none border-none bg-slate-100"
+                              onClick={() => setLightboxImage(img)}
+                            >
+                              <img
+                                src={img.src}
+                                alt={img.alt}
+                                className="w-full h-auto block rounded-none shadow-none border-none transition-transform duration-300 group-hover:scale-[1.01]"
+                              />
+                              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-center justify-center pointer-events-none">
+                                <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 text-white text-[11px] font-['Montserrat'] font-semibold px-2 py-1 rounded-none shadow-none border-none flex items-center gap-1">
+                                  <ZoomIn className="size-3" /> Ampliar
+                                </div>
+                              </div>
                             </div>
-                          </div>
-                        </div>
-                      ))}
+                          ))}
+                      </div>
+
+                      {/* Column 2 */}
+                      <div className="flex flex-col gap-[6px]">
+                        {gallery2014Images
+                          .filter((_, idx) => idx % 2 === 1)
+                          .map((img, idx) => (
+                            <div
+                              key={`col2-${idx}`}
+                              className="relative group cursor-pointer overflow-hidden rounded-none shadow-none border-none bg-slate-100"
+                              onClick={() => setLightboxImage(img)}
+                            >
+                              <img
+                                src={img.src}
+                                alt={img.alt}
+                                className="w-full h-auto block rounded-none shadow-none border-none transition-transform duration-300 group-hover:scale-[1.01]"
+                              />
+                              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-center justify-center pointer-events-none">
+                                <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 text-white text-[11px] font-['Montserrat'] font-semibold px-2 py-1 rounded-none shadow-none border-none flex items-center gap-1">
+                                  <ZoomIn className="size-3" /> Ampliar
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                      </div>
                     </div>
                   </div>
                 </div>
