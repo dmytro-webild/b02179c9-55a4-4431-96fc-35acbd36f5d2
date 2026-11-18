@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
-import { GraduationCap, BookOpen, Award, Handshake, X, ZoomIn } from "lucide-react";
+import { GraduationCap, BookOpen, Award, Handshake, X, ZoomIn, RefreshCw, Lightbulb, Heart, TrendingUp } from "lucide-react";
 import { MotionMedia } from "@/components/kit/Media";
 import AboutStatementIconRow from "@/components/sections/about/AboutStatementIconRow";
 
@@ -89,6 +89,29 @@ export default function NosotrosPage() {
     src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794977469769-6m2r8x7v.jpg",
     alt: "NUESTRA FILOSOFÍA — Fotografía principal",
   };
+
+  const filosofiaPrincipios = [
+    {
+      icon: RefreshCw,
+      title: "RESILIENCIA",
+      description: "Siempre existe una oportunidad para volver a empezar.",
+    },
+    {
+      icon: Lightbulb,
+      title: "INNOVACIÓN",
+      description: "Cuestionamos lo establecido para encontrar mejores formas de enseñar.",
+    },
+    {
+      icon: Heart,
+      title: "HUMANIDAD",
+      description: "Detrás de cada alumno existe una persona, una historia y un sueño.",
+    },
+    {
+      icon: TrendingUp,
+      title: "EVOLUCIÓN",
+      description: "Aprender es un compromiso para toda la vida.",
+    },
+  ];
 
   const gallery2021Images = [
     {
@@ -1096,6 +1119,33 @@ export default function NosotrosPage() {
                 </div>
               </div>
             </motion.div>
+          </div>
+
+          {/* Cuatro Principios */}
+          <div className="mt-14 sm:mt-20 pt-10 sm:pt-14 border-t border-white/15 grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
+            {filosofiaPrincipios.map((item, index) => {
+              const IconComponent = item.icon;
+              return (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+                  className="flex flex-col items-start"
+                >
+                  <div className="mb-3.5 text-[#F4B400]">
+                    <IconComponent className="size-7 sm:size-8 stroke-[1.75]" />
+                  </div>
+                  <h3 className="font-['Montserrat'] font-bold text-white text-base sm:text-lg tracking-wider uppercase">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 font-['Inter'] text-slate-100 text-xs sm:text-sm leading-relaxed font-normal">
+                    {item.description}
+                  </p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
