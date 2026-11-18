@@ -58,25 +58,25 @@ export default function NosotrosPage() {
 
   const main2016Image = {
     src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794973036104-zwutrzz6.jpg",
-    alt: "CRECIENDO POR TODO MÉXICO 2016–2019 — Fotografía principal",
+    alt: "CRECIENDO POR TODO MÉXICO 2016–2018 — Fotografía principal",
   };
 
   const gallery2016Images = [
     {
       src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794973036106-10odwqoq.png",
-      alt: "CRECIENDO POR TODO MÉXICO 2016–2019 — Fotografía 1",
+      alt: "CRECIENDO POR TODO MÉXICO 2016–2018 — Fotografía 1",
     },
     {
       src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794973036107-wsala713.jpg",
-      alt: "CRECIENDO POR TODO MÉXICO 2016–2019 — Fotografía 2",
+      alt: "CRECIENDO POR TODO MÉXICO 2016–2018 — Fotografía 2",
     },
     {
       src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794973036108-iwvncb3x.jpg",
-      alt: "CRECIENDO POR TODO MÉXICO 2016–2019 — Fotografía 3",
+      alt: "CRECIENDO POR TODO MÉXICO 2016–2018 — Fotografía 3",
     },
     {
       src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794973036108-5vfx4jnt.png",
-      alt: "CRECIENDO POR TODO MÉXICO 2016–2019 — Fotografía 4",
+      alt: "CRECIENDO POR TODO MÉXICO 2016–2018 — Fotografía 4",
     },
   ];
   return (
@@ -553,7 +553,7 @@ export default function NosotrosPage() {
                 </div>
               </motion.div>
 
-              {/* Event 2: 2016–2019 */}
+              {/* Event 2: 2016–2018 */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -618,7 +618,7 @@ export default function NosotrosPage() {
                 {/* Content Right Column (Desktop) / Order 1 (Mobile) */}
                 <div className="md:text-left md:pl-6 lg:pl-8 flex flex-col items-start order-1 md:order-2">
                   <span className="inline-block font-['Montserrat'] font-extrabold text-3xl sm:text-4xl lg:text-[2.5rem] text-[#1B3A7A] leading-none tracking-tight">
-                    2016–2019
+                    2016–2018
                   </span>
                   <h3 className="mt-2 font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#0F2755]">
                     Crecemos contigo.
