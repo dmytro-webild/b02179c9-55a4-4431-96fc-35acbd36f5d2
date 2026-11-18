@@ -1,126 +1,8 @@
-import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
-import { GraduationCap, BookOpen, Award, Handshake, ChevronsLeftRight } from "lucide-react";
+import { GraduationCap, BookOpen, Award, Handshake } from "lucide-react";
 import { MotionMedia } from "@/components/kit/Media";
 import AboutStatementIconRow from "@/components/sections/about/AboutStatementIconRow";
-
-function BeforeAfterComparator({
-  leftImage,
-  rightImage,
-  leftLabel,
-  rightLabel,
-  leftImageStyle,
-  rightImageStyle,
-}: {
-  leftImage: string;
-  rightImage: string;
-  leftLabel: string;
-  rightLabel: string;
-  leftImageStyle?: React.CSSProperties;
-  rightImageStyle?: React.CSSProperties;
-}) {
-  const [sliderPosition, setSliderPosition] = useState(50);
-  const [isDragging, setIsDragging] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  const handleMove = (clientX: number) => {
-    if (!containerRef.current) return;
-    const rect = containerRef.current.getBoundingClientRect();
-    const x = clientX - rect.left;
-    const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
-    setSliderPosition(percentage);
-  };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (e.touches[0]) {
-      handleMove(e.touches[0].clientX);
-    }
-  };
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (isDragging) {
-      handleMove(e.clientX);
-    }
-  };
-
-  return (
-    <div
-      ref={containerRef}
-      className="relative aspect-[16/9] w-full overflow-hidden rounded-none select-none border-none shadow-none bg-slate-900 group"
-      onMouseDown={() => setIsDragging(true)}
-      onMouseUp={() => setIsDragging(false)}
-      onMouseLeave={() => setIsDragging(false)}
-      onMouseMove={handleMouseMove}
-      onTouchMove={handleTouchMove}
-    >
-      {/* Right Image (Actualidad) - Full Container Background */}
-      <MotionMedia
-        src={rightImage}
-        alt={rightLabel}
-        className="absolute inset-0 size-full object-cover rounded-none pointer-events-none"
-        style={{
-          transform: "scale(1.22) translateX(9%)",
-          transformOrigin: "center center",
-          ...rightImageStyle,
-        }}
-      />
-
-      {/* Right Label (Actualidad) */}
-      <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20 bg-[#0F2755]/85 backdrop-blur-md text-white font-['Montserrat'] font-bold text-xs sm:text-sm px-4 py-2 rounded-none uppercase tracking-wider shadow-lg pointer-events-none border border-white/20">
-        {rightLabel}
-      </div>
-
-      {/* Left Image (Nuestros inicios) - Clipped Overlay */}
-      <div
-        className="absolute inset-0 size-full overflow-hidden pointer-events-none"
-        style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
-      >
-        <MotionMedia
-          src={leftImage}
-          alt={leftLabel}
-          className="absolute inset-0 size-full object-cover rounded-none"
-          style={{
-            transform: "scale(1.28) translateX(-12%)",
-            transformOrigin: "center center",
-            ...leftImageStyle,
-          }}
-        />
-      </div>
-
-      {/* Left Label (Nuestros inicios) */}
-      <div className="absolute top-4 left-4 sm:top-6 sm:left-6 z-20 bg-[#0F2755]/85 backdrop-blur-md text-white font-['Montserrat'] font-bold text-xs sm:text-sm px-4 py-2 rounded-none uppercase tracking-wider shadow-lg pointer-events-none border border-white/20">
-        {leftLabel}
-      </div>
-
-      {/* Central Slider Line */}
-      <div
-        className="absolute top-0 bottom-0 w-[3px] bg-white z-20 shadow-[0_0_10px_rgba(0,0,0,0.5)] pointer-events-none"
-        style={{ left: `${sliderPosition}%`, transform: "translateX(-50%)" }}
-      />
-
-      {/* Central Slider Handle Button */}
-      <div
-        className="absolute top-1/2 z-20 size-11 sm:size-14 -translate-y-1/2 -translate-x-1/2 rounded-full bg-white text-[#0F2755] shadow-2xl border-2 border-[#1B3A7A] flex items-center justify-center cursor-ew-resize transition-transform group-hover:scale-110 pointer-events-none"
-        style={{ left: `${sliderPosition}%` }}
-      >
-        <ChevronsLeftRight className="size-5 sm:size-6 text-[#1B3A7A]" />
-      </div>
-
-      {/* Transparent Input Range overlay for touch drag & accessibility */}
-      <input
-        type="range"
-        min="0"
-        max="100"
-        step="0.1"
-        value={sliderPosition}
-        onChange={(e) => setSliderPosition(parseFloat(e.target.value))}
-        aria-label="Comparador interactivo antes y después"
-        className="absolute inset-0 size-full opacity-0 z-30 cursor-ew-resize touch-none"
-      />
-    </div>
-  );
-}
 
 export default function NosotrosPage() {
   return (
@@ -422,20 +304,42 @@ export default function NosotrosPage() {
           </motion.div>
         </div>
 
-        {/* Interactive Before & After Comparator (16:9 panoramic ratio, 95% width, no border, sharp corners) */}
-        <div className="w-[95%] max-w-[1700px] mx-auto mt-10 sm:mt-14">
+        {/* Panoramic Photography Stack (16:9 ratio, 95% width, 6px separation, no borders or shadows) */}
+        <div className="w-[95%] max-w-[1700px] mx-auto mt-10 sm:mt-14 flex flex-col gap-[6px]">
+          {/* Top Photo: Nuestros inicios */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="relative aspect-[16/9] w-full overflow-hidden rounded-none shadow-none border-none bg-slate-900"
           >
-            <BeforeAfterComparator
-              leftImage="https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794965930131-mpzjh9z2.jpg"
-              rightImage="https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794965930133-xfuo9n4l.png"
-              leftLabel="Nuestros inicios"
-              rightLabel="Actualidad"
+            <MotionMedia
+              src="https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794965930131-mpzjh9z2.jpg"
+              alt="Nuestros inicios"
+              className="size-full object-cover rounded-none"
             />
+            <div className="absolute top-3 left-3 sm:top-5 sm:left-5 z-10 bg-[#1B3A7A] text-white font-['Montserrat'] font-bold text-xs sm:text-sm px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-none shadow-none border-none uppercase tracking-wider pointer-events-none">
+              Nuestros inicios
+            </div>
+          </motion.div>
+
+          {/* Bottom Photo: Nuestra evolución */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
+            className="relative aspect-[16/9] w-full overflow-hidden rounded-none shadow-none border-none bg-slate-900"
+          >
+            <MotionMedia
+              src="https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794965930133-xfuo9n4l.png"
+              alt="Nuestra evolución"
+              className="size-full object-cover rounded-none"
+            />
+            <div className="absolute top-3 left-3 sm:top-5 sm:left-5 z-10 bg-[#1B3A7A] text-white font-['Montserrat'] font-bold text-xs sm:text-sm px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-none shadow-none border-none uppercase tracking-wider pointer-events-none">
+              Nuestra evolución
+            </div>
           </motion.div>
         </div>
       </section>
