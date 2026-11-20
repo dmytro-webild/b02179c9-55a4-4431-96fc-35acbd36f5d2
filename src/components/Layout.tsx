@@ -127,33 +127,33 @@ export default function Layout() {
               title: "Contacto",
               links: [
                 {
-                  text: "informes@enlaces.edu.mx",
-                  href: "mailto:informes@enlaces.edu.mx"
+                  text: "WhatsApp: 56 1864 2699",
+                  href: "https://wa.me/525618642699"
                 },
                 {
-                  text: "Solicita información",
-                  href: "/contacto"
+                  text: "Tel: 56 4004 5860",
+                  href: "tel:5640045860"
                 },
                 {
-                  text: "Atención a aspirantes",
+                  text: "Tel: 56 3365 6122",
+                  href: "tel:5633656122"
+                },
+                {
+                  text: "Página de contacto",
                   href: "/contacto"
                 }
               ]
             },
             {
-              title: "Información legal",
+              title: "Oficinas centrales",
               links: [
                 {
-                  text: "Aviso de privacidad",
-                  href: "/contacto"
+                  text: "Av. Paseo de la Reforma 342, piso 26, Col. Juárez, Alc. Cuauhtémoc, C.P. 06500, CDMX",
+                  href: "https://www.google.com/maps/search/?api=1&query=Av.+Paseo+de+la+Reforma+342,+piso+26,+colonia+Ju%C3%A1rez,+Alcald%C3%ADa+Cuauht%C3%A9moc,+C.+P.+06500,+Ciudad+de+M%C3%A9xico"
                 },
                 {
-                  text: "Términos de servicio",
-                  href: "/contacto"
-                },
-                {
-                  text: "Validez oficial RVOE",
-                  href: "/nosotros"
+                  text: "Cómo llegar (Google Maps)",
+                  href: "https://www.google.com/maps/search/?api=1&query=Av.+Paseo+de+la+Reforma+342,+piso+26,+colonia+Ju%C3%A1rez,+Alcald%C3%ADa+Cuauht%C3%A9moc,+C.+P.+06500,+Ciudad+de+M%C3%A9xico"
                 }
               ]
             }
