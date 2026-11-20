@@ -17,6 +17,13 @@ import {
 } from "lucide-react";
 
 export default function OfertaBachilleratoPage() {
+  const pasosPortada = [
+    { num: "01", titulo: "Inscríbete", icon: UserCheck },
+    { num: "02", titulo: "Prepárate", icon: BookOpen },
+    { num: "03", titulo: "Aplica tu examen", icon: FileText },
+    { num: "04", titulo: "Recibe tu certificado", icon: Award },
+  ];
+
   const otherCategories = [
     { title: "Bachillerato en 18 meses", href: "/oferta/bachillerato-18-meses", tag: "Nivel Medio Superior" },
     { title: "Licenciaturas Ejecutivas", href: "/oferta-educativa/licenciaturas", tag: "Nivel Superior" },
@@ -82,6 +89,33 @@ export default function OfertaBachilleratoPage() {
                 Prepárate en línea durante 4 meses con un modelo flexible, clases y acompañamiento académico para dar el siguiente paso hacia tu certificado de bachillerato.
               </p>
 
+              {/* Secuencia visual de 4 pasos */}
+              <div className="mt-6 w-full max-w-2xl">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3">
+                  {pasosPortada.map((step) => {
+                    const IconComp = step.icon;
+                    return (
+                      <div
+                        key={step.num}
+                        className="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-50/80 border border-slate-200/60"
+                      >
+                        <div className="flex shrink-0 items-center justify-center size-8 rounded-lg bg-[#1B3A7A] text-[#F4B400]">
+                          <IconComp className="w-4 h-4" />
+                        </div>
+                        <div className="flex flex-col min-w-0">
+                          <span className="text-[10px] font-extrabold text-[#F4B400] font-['Montserrat'] tracking-wider leading-none">
+                            {step.num}
+                          </span>
+                          <span className="text-xs font-bold text-[#1B3A7A] font-['Montserrat'] leading-tight mt-0.5">
+                            {step.titulo}
+                          </span>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
               <div className="mt-8 flex flex-wrap gap-4 items-center">
                 <Link
                   to="/contacto"
@@ -139,6 +173,9 @@ export default function OfertaBachilleratoPage() {
               <div className="mt-5 font-['Inter'] text-base sm:text-lg text-slate-600 leading-relaxed space-y-4">
                 <p>
                   No importa cuánto tiempo haya pasado ni cuántas veces hayas tenido que dejar tus estudios para después.
+                </p>
+                <p>
+                  Solo tú sabes cuánto ha significado no haber terminado tus estudios. Las oportunidades que dejaste pasar, las puertas que no se abrieron o las veces que sentiste que te faltaba algo para seguir adelante. Nadie conoce mejor que tú el valor de esa meta pendiente.
                 </p>
                 <p>
                   Lo importante es que hoy puedes dar ese paso que quedó pendiente. Porque terminar una etapa también significa abrir la puerta a nuevos sueños, continuar preparándote y descubrir hasta dónde puedes llegar.
