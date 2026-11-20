@@ -82,6 +82,62 @@ export default function OfertaBachilleratoPage() {
                 Prepárate en línea durante 4 meses con un modelo flexible, clases y acompañamiento académico para dar el siguiente paso hacia tu certificado de bachillerato.
               </p>
 
+              {/* Secuencia de 4 etapas */}
+              <div className="mt-8 w-full max-w-2xl">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-6 gap-x-2">
+                  {/* Etapa 1: Inscríbete */}
+                  <div className="flex flex-col items-center text-center">
+                    <div className="relative flex items-center justify-center w-full">
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#FFF4D1] flex items-center justify-center shrink-0 z-10">
+                        <UserCheck className="w-6 h-6 sm:w-7 sm:h-7 text-[#1B3A7A]" />
+                      </div>
+                      <div className="absolute left-1/2 top-1/2 -translate-y-1/2 w-full h-[2px] bg-[#F4B400] z-0" />
+                    </div>
+                    <span className="mt-2.5 font-['Montserrat'] font-semibold text-xs sm:text-sm text-[#1B3A7A] leading-tight px-1">
+                      Inscríbete
+                    </span>
+                  </div>
+
+                  {/* Etapa 2: Prepárate */}
+                  <div className="flex flex-col items-center text-center">
+                    <div className="relative flex items-center justify-center w-full">
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#FFF4D1] flex items-center justify-center shrink-0 z-10">
+                        <BookOpen className="w-6 h-6 sm:w-7 sm:h-7 text-[#1B3A7A]" />
+                      </div>
+                      <div className="hidden sm:block absolute left-1/2 top-1/2 -translate-y-1/2 w-full h-[2px] bg-[#F4B400] z-0" />
+                    </div>
+                    <span className="mt-2.5 font-['Montserrat'] font-semibold text-xs sm:text-sm text-[#1B3A7A] leading-tight px-1">
+                      Prepárate
+                    </span>
+                  </div>
+
+                  {/* Etapa 3: Aplica tu examen */}
+                  <div className="flex flex-col items-center text-center">
+                    <div className="relative flex items-center justify-center w-full">
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#FFF4D1] flex items-center justify-center shrink-0 z-10">
+                        <CheckCircle2 className="w-6 h-6 sm:w-7 sm:h-7 text-[#1B3A7A]" />
+                      </div>
+                      <div className="absolute left-1/2 top-1/2 -translate-y-1/2 w-full h-[2px] bg-[#F4B400] z-0" />
+                    </div>
+                    <span className="mt-2.5 font-['Montserrat'] font-semibold text-xs sm:text-sm text-[#1B3A7A] leading-tight px-1">
+                      Aplica tu examen
+                    </span>
+                  </div>
+
+                  {/* Etapa 4: Recibe tu certificado */}
+                  <div className="flex flex-col items-center text-center">
+                    <div className="relative flex items-center justify-center w-full">
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#FFF4D1] flex items-center justify-center shrink-0 z-10">
+                        <Award className="w-6 h-6 sm:w-7 sm:h-7 text-[#1B3A7A]" />
+                      </div>
+                    </div>
+                    <span className="mt-2.5 font-['Montserrat'] font-semibold text-xs sm:text-sm text-[#1B3A7A] leading-tight px-1">
+                      Recibe tu certificado
+                    </span>
+                  </div>
+                </div>
+              </div>
+
               <div className="mt-8 flex flex-wrap gap-4 items-center">
                 <Link
                   to="/contacto"
