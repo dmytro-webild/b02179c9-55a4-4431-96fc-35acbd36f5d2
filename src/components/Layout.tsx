@@ -73,7 +73,11 @@ export default function Layout() {
               title: "Oferta educativa",
               links: [
                 {
-                  text: "Bachillerato General",
+                  text: "Bachillerato en 4 meses",
+                  href: "/oferta-educativa/bachillerato"
+                },
+                {
+                  text: "Bachillerato en 18 meses",
                   href: "/oferta-educativa/bachillerato"
                 },
                 {
@@ -137,6 +141,10 @@ export default function Layout() {
                 {
                   text: "Tel: 56 3365 6122",
                   href: "tel:5633656122"
+                },
+                {
+                  text: "contacto@enlaces.edu.mx",
+                  href: "mailto:contacto@enlaces.edu.mx"
                 },
                 {
                   text: "Página de contacto",

@@ -111,18 +111,6 @@ const portalSections = [
       </svg>
     ),
   },
-  {
-    title: "Contacto",
-    tag: "Atención Personalizada",
-    description: "Resuelve tus dudas en tiempo real y recibe orientación personalizada para dar tu siguiente paso hoy mismo.",
-    href: "/contacto",
-    actionText: "Contacta a un asesor",
-    icon: (
-      <svg className="size-6 text-[#F4B400]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-      </svg>
-    ),
-  },
 ];
 
 const institutionalBenefits = [
@@ -263,8 +251,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Portal Institucional - Accesos directos a las 7 áreas principales */}
-      <section id="portal-secciones" data-webild-section="PortalSections" data-section="portal-secciones" className="py-20 sm:py-24 bg-white border-t border-slate-100">
+      {/* Portal Institucional - Accesos directos a las 6 áreas principales */}
+      <section id="portal-secciones" data-webild-section="PortalSections" data-section="portal-secciones" className="pt-16 sm:pt-20 pb-10 sm:pb-12 bg-white border-t border-slate-100">
         <div className="mx-auto w-[var(--container)]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -277,13 +265,12 @@ export default function HomePage() {
               Explora nuestro portal institucional
             </h2>
             <p className="mt-3 font-['Inter'] text-base text-slate-600 leading-relaxed">
-              Selecciona cualquiera de nuestras siete áreas principales para conocer en detalle lo que tenemos preparado para ti.
+              Selecciona cualquiera de nuestras áreas principales para conocer en detalle lo que tenemos preparado para ti.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {portalSections.map((sec, idx) => {
-              const isLast = idx === portalSections.length - 1;
               return (
                 <motion.div
                   key={sec.href}
@@ -291,15 +278,12 @@ export default function HomePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.07 }}
-                  className={isLast ? "md:col-span-2 lg:col-span-3" : ""}
                 >
                   <Link
                     to={sec.href}
-                    className={`group flex flex-col justify-between h-full rounded-2xl border border-slate-200/90 bg-white p-7 sm:p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-[#F4B400]/50 hover:shadow-xl ${
-                      isLast ? "lg:flex-row lg:items-center lg:gap-8 bg-gradient-to-r from-white via-white to-amber-50/40" : ""
-                    }`}
+                    className="group flex flex-col justify-between h-full rounded-2xl border border-slate-200/90 bg-white p-7 sm:p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-[#F4B400]/50 hover:shadow-xl"
                   >
-                    <div className={isLast ? "lg:flex-1" : ""}>
+                    <div>
                       <div className="flex items-center justify-between mb-5">
                         <div className="flex size-12 items-center justify-center rounded-xl bg-[#0F2755] transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#1B3A7A]">
                           {sec.icon}
@@ -315,9 +299,7 @@ export default function HomePage() {
                         {sec.description}
                       </p>
                     </div>
-                    <div className={`mt-6 flex items-center font-['Montserrat'] text-xs font-extrabold text-[#1B3A7A] group-hover:text-[#F4B400] transition-colors gap-2 ${
-                      isLast ? "lg:mt-0 lg:shrink-0" : ""
-                    }`}>
+                    <div className="mt-6 flex items-center font-['Montserrat'] text-xs font-extrabold text-[#1B3A7A] group-hover:text-[#F4B400] transition-colors gap-2">
                       <span>{sec.actionText}</span>
                       <svg className="size-4 stroke-[3] group-hover:translate-x-1.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -336,7 +318,7 @@ export default function HomePage() {
         id="contacto"
         data-webild-section="HomeContact"
         data-section="contacto"
-        className="py-16 sm:py-24 bg-linear-to-b from-white via-slate-50/60 to-white border-0 shadow-none"
+        className="pt-10 sm:pt-14 pb-16 sm:pb-24 bg-linear-to-b from-white via-slate-50/60 to-white border-0 shadow-none"
       >
         <div className="mx-auto w-[var(--container)] px-4 sm:px-6">
           {/* Header */}
@@ -345,7 +327,7 @@ export default function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-center max-w-3xl mx-auto mb-12 sm:mb-16"
+            className="text-center max-w-3xl mx-auto mb-10 sm:mb-14"
           >
             <span className="inline-flex items-center gap-2 rounded-full border border-[#1B3A7A]/15 bg-[#1B3A7A]/5 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#1B3A7A] mb-4">
               <span className="size-2 rounded-full bg-[#25D366] animate-pulse" />
@@ -360,7 +342,7 @@ export default function HomePage() {
           </motion.div>
 
           {/* Bloque Editorial sin bordes ni sombras */}
-          <div className="max-w-4xl mx-auto space-y-10 sm:space-y-14">
+          <div className="max-w-4xl mx-auto space-y-8 sm:space-y-12">
             
             {/* 1. WhatsApp */}
             <motion.div
@@ -438,7 +420,42 @@ export default function HomePage() {
               </div>
             </motion.div>
 
-            {/* 3. Redes Sociales */}
+            {/* 3. Correo Electrónico */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.08 }}
+              className="p-6 sm:p-8 rounded-3xl bg-slate-50/80 border-0 shadow-none text-[#0F2755]"
+            >
+              <span className="text-xs font-bold uppercase tracking-widest text-[#1B3A7A]">Contacto Digital</span>
+              <h3 className="mt-1 font-['Montserrat'] font-bold text-xl text-[#0F2755]">Correo electrónico</h3>
+              <div className="mt-4">
+                <a
+                  href="mailto:contacto@enlaces.edu.mx"
+                  className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 sm:p-5 rounded-2xl bg-white hover:bg-blue-100/50 text-[#0F2755] transition-all duration-300 group border-0 shadow-none"
+                >
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-[#1B3A7A]/10 text-[#1B3A7A] group-hover:bg-[#1B3A7A] group-hover:text-white transition-colors">
+                      <svg className="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <span className="font-['Montserrat'] font-extrabold text-lg sm:text-xl text-[#0F2755] truncate">
+                      contacto@enlaces.edu.mx
+                    </span>
+                  </div>
+                  <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#1B3A7A] group-hover:translate-x-1 transition-transform shrink-0 self-end sm:self-auto">
+                    Enviar correo
+                    <svg className="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            </motion.div>
+
+            {/* 4. Redes Sociales */}
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}

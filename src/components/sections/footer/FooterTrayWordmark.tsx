@@ -1,4 +1,3 @@
-import { useLayoutEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, useReducedMotion } from "motion/react";
 import { clsx, type ClassValue } from "clsx";
@@ -51,27 +50,8 @@ const SOCIAL_NETWORKS = [
 
 const spring = { type: "spring", bounce: 0.2, duration: 1 } as const;
 
-const FooterTrayWordmark = ({ brand, wordmark, columns = [], copyright, topText = "Volver arriba", ariaLabel, className }: FooterTrayWordmarkProps) => {
+const FooterTrayWordmark = ({ brand, columns = [], copyright, topText = "Volver arriba", ariaLabel, className }: FooterTrayWordmarkProps) => {
   const reduce = useReducedMotion();
-  const boxRef = useRef<HTMLDivElement>(null);
-  const measureRef = useRef<HTMLParagraphElement>(null);
-  const [scale, setScale] = useState(1);
-  const mark = wordmark ?? brand;
-
-  useLayoutEffect(() => {
-    const box = boxRef.current;
-    const text = measureRef.current;
-    if (!box || !text) return;
-    const fit = () => {
-      const width = text.scrollWidth;
-      if (width > 0) setScale(box.clientWidth / width);
-    };
-    fit();
-    document.fonts?.ready.then(fit);
-    const observer = new ResizeObserver(fit);
-    observer.observe(box);
-    return () => observer.disconnect();
-  }, [mark]);
 
   const rise = (delay: number) =>
     reduce ? {} : { initial: { opacity: 0, y: 24 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true, amount: 0.3 }, transition: { ...spring, delay } };
@@ -85,9 +65,9 @@ const FooterTrayWordmark = ({ brand, wordmark, columns = [], copyright, topText 
 
   return (
     <footer aria-label={ariaLabel ?? `${brand} footer`} className={cn("relative bg-background pt-[calc(var(--section-space)/2)] text-foreground", className)}>
-      <div className="relative isolate mx-[var(--panel-inset)] mb-[var(--panel-inset)] overflow-hidden rounded-[var(--radius-card)] bg-[#0F2755] pt-[clamp(2.5rem,5vw,4.5rem)] text-white shadow-2xl border border-amber-400/20">
+      <div className="relative isolate mx-[var(--panel-inset)] mb-[var(--panel-inset)] overflow-hidden rounded-[var(--radius-card)] bg-[#0F2755] pt-[clamp(2.5rem,5vw,4.5rem)] pb-[clamp(2rem,4vw,3rem)] text-white shadow-2xl border border-amber-400/20">
         
-        {/* Rueda oficial como elemento decorativo en la zona inferior izquierda */}
+        {/* Rueda oficial como elemento decorativo en la zona inferior izquierda (15% opacidad, sin texto superpuesto) */}
         <img
           src="https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794456185254-3zlenx22.png"
           alt=""
@@ -97,7 +77,7 @@ const FooterTrayWordmark = ({ brand, wordmark, columns = [], copyright, topText 
 
         <div className="relative z-10 mx-auto grid w-[var(--container)] grid-cols-1 gap-x-[var(--gap)] gap-y-[clamp(2.5rem,5vw,3.5rem)] lg:grid-cols-[minmax(0,1.1fr)_minmax(0,2.1fr)]">
           
-          {/* Logotipo textual blanco grande + Educación en línea + Iconos sociales blancos */}
+          {/* Logotipo textual blanco grande + Educación en línea + Frase Innovación en educación + Iconos sociales blancos */}
           <div className="flex flex-col gap-5 items-start pr-4">
             <Link to="/" aria-label={brand} className="flex flex-col items-start group">
               <span className="font-['Montserrat'] font-extrabold text-3xl sm:text-4xl lg:text-5xl tracking-tight text-white leading-none">
@@ -108,8 +88,8 @@ const FooterTrayWordmark = ({ brand, wordmark, columns = [], copyright, topText 
               </span>
             </Link>
             
-            <p className="text-xs sm:text-sm text-blue-200/80 leading-relaxed font-['Inter'] max-w-sm">
-              Transformando el futuro académico de México con programas flexibles y validez oficial.
+            <p className="font-['Montserrat'] font-extrabold text-sm sm:text-base tracking-wider text-white uppercase">
+              INNOVACIÓN EN EDUCACIÓN
             </p>
 
             <div className="flex flex-col gap-2 pt-2">
@@ -203,23 +183,6 @@ const FooterTrayWordmark = ({ brand, wordmark, columns = [], copyright, topText 
               </svg>
             </div>
           </button>
-        </div>
-
-        <div ref={boxRef} aria-hidden="true" className="relative z-10 mx-auto mt-[clamp(1.5rem,4vw,3rem)] w-[var(--container)] min-w-0">
-          <p ref={measureRef} className="invisible absolute left-0 top-0 w-max whitespace-pre font-[family-name:var(--font-heading)] text-[length:var(--text-display)] font-semibold leading-none tracking-[-0.07em]">
-            {mark}
-          </p>
-          <div style={{ fontSize: `calc(var(--text-display) * ${scale})` }} className="h-[0.78em] overflow-hidden">
-            <motion.p
-              initial={reduce ? false : { y: "0.3em" }}
-              whileInView={{ y: "0em" }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={spring}
-              className="whitespace-pre bg-linear-to-b from-foreground to-foreground/35 bg-clip-text font-[family-name:var(--font-heading)] font-semibold leading-none tracking-[-0.07em] text-transparent"
-            >
-              {mark}
-            </motion.p>
-          </div>
         </div>
       </div>
     </footer>
