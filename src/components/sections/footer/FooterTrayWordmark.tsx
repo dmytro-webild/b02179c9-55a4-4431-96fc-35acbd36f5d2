@@ -3,11 +3,10 @@ import { Link } from "react-router-dom";
 import { motion, useReducedMotion } from "motion/react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
-import Media from "@/components/kit/Media";
 
 const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs));
 
-type FooterLink = { text: string; href: string };
+type FooterLink = { text: string; href: string; isButton?: boolean };
 
 type FooterColumn = { title: string; links: FooterLink[] };
 
@@ -25,13 +24,13 @@ type FooterTrayWordmarkProps = {
 const SOCIAL_NETWORKS = [
   {
     name: "Facebook",
-    href: "https://www.facebook.com/share/1CEUfXWjBB/?mibextid=wwXIfr",
+    href: "https://www.facebook.com/share/1CEUfXWjBB/",
     path: "M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z",
   },
   {
     name: "Instagram",
     href: "https://www.instagram.com/enlaceseducacion",
-    path: "M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z",
+    path: "M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z",
   },
   {
     name: "TikTok",
@@ -52,7 +51,7 @@ const SOCIAL_NETWORKS = [
 
 const spring = { type: "spring", bounce: 0.2, duration: 1 } as const;
 
-const FooterTrayWordmark = ({ brand, logoSrc, wordmark, columns = [], copyright, topText = "Volver arriba", ariaLabel, className }: FooterTrayWordmarkProps) => {
+const FooterTrayWordmark = ({ brand, wordmark, columns = [], copyright, topText = "Volver arriba", ariaLabel, className }: FooterTrayWordmarkProps) => {
   const reduce = useReducedMotion();
   const boxRef = useRef<HTMLDivElement>(null);
   const measureRef = useRef<HTMLParagraphElement>(null);
@@ -87,21 +86,37 @@ const FooterTrayWordmark = ({ brand, logoSrc, wordmark, columns = [], copyright,
   return (
     <footer aria-label={ariaLabel ?? `${brand} footer`} className={cn("relative bg-background pt-[calc(var(--section-space)/2)] text-foreground", className)}>
       <div className="relative isolate mx-[var(--panel-inset)] mb-[var(--panel-inset)] overflow-hidden rounded-[var(--radius-card)] bg-[#0F2755] pt-[clamp(2.5rem,5vw,4.5rem)] text-white shadow-2xl border border-amber-400/20">
-        <div className="mx-auto grid w-[var(--container)] grid-cols-1 gap-x-[var(--gap)] gap-y-[clamp(2.5rem,5vw,3.5rem)] lg:grid-cols-[minmax(0,1.2fr)_minmax(0,2fr)]">
-          <div className="flex flex-col gap-4 items-start pr-4">
-            <Link to="/" aria-label={brand} className="flex w-fit min-w-0 items-start">
-              {logoSrc ? (
-                <Media src={logoSrc} alt={brand} loading="lazy" decoding="async" className="h-[clamp(2rem,3vw,2.5rem)] w-auto max-w-[60vw] object-contain" />
-              ) : (
-                <p className="font-[family-name:var(--font-heading)] text-[length:var(--text-h3)] leading-[1.2] tracking-[var(--heading-tracking)] [overflow-wrap:anywhere]">{brand}</p>
-              )}
+        
+        {/* Rueda oficial como elemento decorativo en la zona inferior izquierda */}
+        <img
+          src="https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794456185254-3zlenx22.png"
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute -bottom-16 -left-16 w-72 sm:w-96 md:w-[440px] h-auto opacity-15 select-none object-contain invert brightness-200"
+        />
+
+        <div className="relative z-10 mx-auto grid w-[var(--container)] grid-cols-1 gap-x-[var(--gap)] gap-y-[clamp(2.5rem,5vw,3.5rem)] lg:grid-cols-[minmax(0,1.1fr)_minmax(0,2.1fr)]">
+          
+          {/* Logotipo textual blanco grande + Educación en línea + Iconos sociales blancos */}
+          <div className="flex flex-col gap-5 items-start pr-4">
+            <Link to="/" aria-label={brand} className="flex flex-col items-start group">
+              <span className="font-['Montserrat'] font-extrabold text-3xl sm:text-4xl lg:text-5xl tracking-tight text-white leading-none">
+                ENLACES
+              </span>
+              <span className="font-['Montserrat'] text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-blue-100/90 mt-1.5">
+                Educación en línea
+              </span>
             </Link>
-            <p className="text-xs text-blue-200/80 leading-relaxed font-['Inter']">
+            
+            <p className="text-xs sm:text-sm text-blue-200/80 leading-relaxed font-['Inter'] max-w-sm">
               Transformando el futuro académico de México con programas flexibles y validez oficial.
             </p>
-            <div className="flex flex-col gap-1.5">
-              <span className="text-[11px] uppercase tracking-wider font-bold text-[#F4B400]">Síguenos en redes sociales</span>
-              <div className="flex items-center gap-2.5 pt-1">
+
+            <div className="flex flex-col gap-2 pt-2">
+              <span className="text-[11px] uppercase tracking-wider font-bold text-[#F4B400]">
+                Síguenos en redes sociales
+              </span>
+              <div className="flex items-center gap-3 pt-1">
                 {SOCIAL_NETWORKS.map((social) => (
                   <a
                     key={social.name}
@@ -110,9 +125,9 @@ const FooterTrayWordmark = ({ brand, logoSrc, wordmark, columns = [], copyright,
                     rel="noopener noreferrer"
                     aria-label={social.name}
                     title={social.name}
-                    className="flex size-9 items-center justify-center rounded-lg bg-blue-900/60 text-blue-100 border border-blue-700/40 hover:bg-[#F4B400] hover:text-[#0F2755] hover:border-[#F4B400] hover:scale-110 active:scale-95 transition-all duration-300"
+                    className="flex size-11 items-center justify-center rounded-xl bg-white/10 text-white border border-white/20 hover:bg-white hover:text-[#0F2755] hover:border-white hover:scale-110 active:scale-95 transition-all duration-300"
                   >
-                    <svg viewBox="0 0 24 24" className="size-4 fill-current" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" className="size-5 fill-current" aria-hidden="true">
                       <path d={social.path} />
                     </svg>
                   </a>
@@ -125,28 +140,47 @@ const FooterTrayWordmark = ({ brand, logoSrc, wordmark, columns = [], copyright,
             <nav aria-label="Footer" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-[var(--gap)] gap-y-[2.5rem]">
               {shown.map((column, i) => (
                 <motion.div key={`${i}-${column.title}`} {...rise(0.1 + i * 0.08)} className="flex min-w-0 flex-col gap-[1rem]">
-                  <h3 className="text-[length:var(--text-label)] leading-[1.5] text-[#F4B400] font-bold uppercase tracking-wider [overflow-wrap:anywhere]">{column.title}</h3>
-                  <div className="flex flex-col gap-[0.5rem]">
-                    {column.links.slice(0, 8).map((link, j) => {
+                  <h3 className="text-[length:var(--text-label)] leading-[1.5] text-[#F4B400] font-bold uppercase tracking-wider [overflow-wrap:anywhere]">
+                    {column.title}
+                  </h3>
+                  <div className="flex flex-col gap-[0.6rem]">
+                    {column.links.map((link, j) => {
+                      if (link.isButton) {
+                        return (
+                          <a
+                            key={`${j}-${link.text}`}
+                            href={link.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-2 inline-flex items-center gap-2 rounded-xl bg-[#F4B400] px-4 py-2.5 text-xs font-bold text-[#0F2755] shadow-sm hover:bg-amber-300 transition-colors w-fit"
+                          >
+                            <svg className="size-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            {link.text}
+                          </a>
+                        );
+                      }
                       if (link.href.startsWith("/")) {
                         return (
                           <Link
                             key={`${j}-${link.text}`}
                             to={link.href}
-                            className="w-fit text-[length:var(--text-body)] leading-[1.5] text-blue-100/90 [overflow-wrap:anywhere] transition-all duration-300 hover:text-[#F4B400] hover:translate-x-0.5"
+                            className="w-fit text-xs sm:text-sm leading-[1.5] text-blue-100/90 [overflow-wrap:anywhere] transition-all duration-300 hover:text-[#F4B400] hover:translate-x-0.5"
                           >
                             {link.text}
                           </Link>
                         );
                       }
-                      const isExternal = link.href.startsWith("http") || link.href.startsWith("https");
+                      const isExternal = link.href.startsWith("http") || link.href.startsWith("https") || link.href.startsWith("tel:");
                       return (
                         <a
                           key={`${j}-${link.text}`}
                           href={link.href}
-                          target={isExternal ? "_blank" : undefined}
-                          rel={isExternal ? "noopener noreferrer" : undefined}
-                          className="w-fit text-[length:var(--text-body)] leading-[1.5] text-blue-100/90 [overflow-wrap:anywhere] transition-all duration-300 hover:text-[#F4B400] hover:translate-x-0.5"
+                          target={isExternal && !link.href.startsWith("tel:") ? "_blank" : undefined}
+                          rel={isExternal && !link.href.startsWith("tel:") ? "noopener noreferrer" : undefined}
+                          className="w-fit text-xs sm:text-sm leading-[1.5] text-blue-100/90 [overflow-wrap:anywhere] transition-all duration-300 hover:text-[#F4B400] hover:translate-x-0.5"
                         >
                           {link.text}
                         </a>
@@ -159,7 +193,7 @@ const FooterTrayWordmark = ({ brand, logoSrc, wordmark, columns = [], copyright,
           )}
         </div>
 
-        <div className="mx-auto mt-[clamp(3rem,6vw,5rem)] flex w-[var(--container)] flex-wrap items-center justify-between gap-x-[var(--gap)] gap-y-[0.75rem] border-t border-blue-900/60 pt-[1.25rem]">
+        <div className="relative z-10 mx-auto mt-[clamp(3rem,6vw,5rem)] flex w-[var(--container)] flex-wrap items-center justify-between gap-x-[var(--gap)] gap-y-[0.75rem] border-t border-blue-900/60 pt-[1.25rem]">
           {copyright && <p className="text-[length:var(--text-small)] leading-[1.5] text-blue-200/80">{copyright}</p>}
           <button onClick={scrollToTop} className="group flex items-center gap-[0.625rem] text-[length:var(--text-small)] leading-[1.5] text-blue-200 hover:text-[#F4B400] cursor-pointer">
             {topText}
@@ -171,7 +205,7 @@ const FooterTrayWordmark = ({ brand, logoSrc, wordmark, columns = [], copyright,
           </button>
         </div>
 
-        <div ref={boxRef} aria-hidden="true" className="relative mx-auto mt-[clamp(1.5rem,4vw,3rem)] w-[var(--container)] min-w-0">
+        <div ref={boxRef} aria-hidden="true" className="relative z-10 mx-auto mt-[clamp(1.5rem,4vw,3rem)] w-[var(--container)] min-w-0">
           <p ref={measureRef} className="invisible absolute left-0 top-0 w-max whitespace-pre font-[family-name:var(--font-heading)] text-[length:var(--text-display)] font-semibold leading-none tracking-[-0.07em]">
             {mark}
           </p>
