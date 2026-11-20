@@ -192,7 +192,8 @@ export default function OfertaBachilleratoPage() {
       <section className="py-16 sm:py-24 bg-white">
         <div className="mx-auto w-[var(--container)] px-4 sm:px-6">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <span className="rounded-full border border-[#1B3A7A]/20 bg-[#1B3A7A]/5 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#1B3A7A]">
+            <span className="inline-flex items-center gap-1.5 font-['Montserrat'] font-semibold text-xs text-[#1B3A7A] uppercase tracking-wider">
+              <span className="size-1.5 rounded-full bg-[#F4B400] shrink-0" />
               Estructura del Programa
             </span>
             <h2 className="mt-4 font-['Montserrat'] font-extrabold text-3xl sm:text-4xl text-[#0F2755]">
@@ -206,7 +207,7 @@ export default function OfertaBachilleratoPage() {
 
           {/* Grid de 5 Bloques Informativos en 2 Columnas */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-stretch">
-            {/* Bloque 1: Metodología */}
+            {/* Bloque 1: Alternativa Acuerdo 286 */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -218,15 +219,43 @@ export default function OfertaBachilleratoPage() {
                   <div className="w-10 h-10 rounded-xl bg-[#FFF4D1] text-[#1B3A7A] flex items-center justify-center shrink-0 border border-[#F4B400]/40">
                     <BookOpen className="w-5 h-5 text-[#1B3A7A]" />
                   </div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#1B3A7A]">
+                  <span className="inline-flex items-center gap-1.5 font-['Montserrat'] font-semibold text-xs text-[#1B3A7A] uppercase tracking-wider">
+                    <span className="size-1.5 rounded-full bg-[#F4B400] shrink-0" />
+                    Alternativa Acuerdo 286
+                  </span>
+                </div>
+                <h3 className="font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#1B3A7A]">
+                  Una forma diferente de terminar tu preparatoria
+                </h3>
+                <p className="mt-3 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed">
+                  No necesitas volver a cursar tres años de escuela para alcanzar esta meta. El Acuerdo 286 de la Secretaría de Educación Pública contempla una alternativa para acreditar los conocimientos correspondientes al bachillerato mediante una evaluación. En lugar de cursar nuevamente todas las materias de una preparatoria tradicional, puedes prepararte para presentar un examen que evalúa tus conocimientos del nivel medio superior. ENLACES te ayuda a prepararte y te acompaña durante todo el proceso.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Bloque 2: Preparación en Línea */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.05 }}
+              className="rounded-2xl border border-slate-200/80 bg-white p-6 sm:p-8 shadow-2xs hover:border-[#F4B400]/60 transition-all flex flex-col justify-between"
+            >
+              <div>
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-10 h-10 rounded-xl bg-[#FFF4D1] text-[#1B3A7A] flex items-center justify-center shrink-0 border border-[#F4B400]/40">
+                    <CheckCircle2 className="w-5 h-5 text-[#1B3A7A]" />
+                  </div>
+                  <span className="inline-flex items-center gap-1.5 font-['Montserrat'] font-semibold text-xs text-[#1B3A7A] uppercase tracking-wider">
+                    <span className="size-1.5 rounded-full bg-[#F4B400] shrink-0" />
                     Metodología ENLACES
                   </span>
                 </div>
                 <h3 className="font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#1B3A7A]">
-                  Una preparación que se adapta a tu vida
+                  Te preparamos para lograrlo
                 </h3>
                 <p className="mt-3 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed">
-                  Nuestro programa se desarrolla en línea mediante la Metodología ENLACES, con sesiones académicas en vivo que también quedan grabadas para que puedas consultarlas posteriormente. Así puedes prepararte sin descuidar tus responsabilidades personales y laborales.
+                  Desde el momento en que te inscribes, recibes una guía de estudios diseñada específicamente para el Examen Único. Además, cuentas con sesiones académicas en vivo todas las semanas, grabaciones disponibles para repasar los temas y acompañamiento de tutores para resolver tus dudas. Todo mediante una metodología de preparación en línea que te permite continuar con tu trabajo, tu familia y tus actividades habituales.
                 </p>
               </div>
               <div className="mt-6 pt-4 border-t border-slate-100">
@@ -240,33 +269,7 @@ export default function OfertaBachilleratoPage() {
               </div>
             </motion.div>
 
-            {/* Bloque 2: Ritmo de Estudio */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.05 }}
-              className="rounded-2xl border border-slate-200/80 bg-white p-6 sm:p-8 shadow-2xs hover:border-[#F4B400]/60 transition-all flex flex-col justify-between"
-            >
-              <div>
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-xl bg-[#FFF4D1] text-[#1B3A7A] flex items-center justify-center shrink-0 border border-[#F4B400]/40">
-                    <Clock className="w-5 h-5 text-[#1B3A7A]" />
-                  </div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#1B3A7A]">
-                    Flexibilidad Académica
-                  </span>
-                </div>
-                <h3 className="font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#1B3A7A]">
-                  Avanza a tu propio ritmo
-                </h3>
-                <p className="mt-3 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed">
-                  El periodo de preparación y presentación del examen puede ser de 1 a 4 meses. Puedes solicitar tu evaluación cuando te sientas preparado, de acuerdo con las fechas de aplicación disponibles y los requisitos del proceso.
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Bloque 3: El Examen */}
+            {/* Bloque 3: Avanza a tu propio ritmo */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -277,22 +280,23 @@ export default function OfertaBachilleratoPage() {
               <div>
                 <div className="flex items-center gap-3 mb-5">
                   <div className="w-10 h-10 rounded-xl bg-[#FFF4D1] text-[#1B3A7A] flex items-center justify-center shrink-0 border border-[#F4B400]/40">
-                    <Target className="w-5 h-5 text-[#1B3A7A]" />
+                    <Clock className="w-5 h-5 text-[#1B3A7A]" />
                   </div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#1B3A7A]">
-                    Evaluación Unificada
+                  <span className="inline-flex items-center gap-1.5 font-['Montserrat'] font-semibold text-xs text-[#1B3A7A] uppercase tracking-wider">
+                    <span className="size-1.5 rounded-full bg-[#F4B400] shrink-0" />
+                    Flexibilidad de Tiempos
                   </span>
                 </div>
                 <h3 className="font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#1B3A7A]">
-                  Un examen, tres oportunidades
+                  Avanza a tu propio ritmo
                 </h3>
                 <p className="mt-3 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed">
-                  La acreditación se realiza mediante un examen único. Cuentas con hasta tres oportunidades para presentarlo, conforme a las condiciones y convocatorias aplicables. Durante tu preparación recibirás orientación académica para llegar con mayor seguridad.
+                  Tu preparación puede durar de 1 a 4 meses. Si te sientes preparado antes de concluir los cuatro meses, puedes solicitar tu evaluación, siempre que existan fechas disponibles y cumplas los requisitos del centro evaluador. La modalidad de presentación del examen depende del centro evaluador y de la convocatoria correspondiente.
                 </p>
               </div>
             </motion.div>
 
-            {/* Bloque 4: Certificado Oficial */}
+            {/* Bloque 4: Un examen, tres oportunidades */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -303,22 +307,23 @@ export default function OfertaBachilleratoPage() {
               <div>
                 <div className="flex items-center gap-3 mb-5">
                   <div className="w-10 h-10 rounded-xl bg-[#FFF4D1] text-[#1B3A7A] flex items-center justify-center shrink-0 border border-[#F4B400]/40">
-                    <Award className="w-5 h-5 text-[#1B3A7A]" />
+                    <Target className="w-5 h-5 text-[#1B3A7A]" />
                   </div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#1B3A7A]">
-                    Validez SEP
+                  <span className="inline-flex items-center gap-1.5 font-['Montserrat'] font-semibold text-xs text-[#1B3A7A] uppercase tracking-wider">
+                    <span className="size-1.5 rounded-full bg-[#F4B400] shrink-0" />
+                    Examen Único
                   </span>
                 </div>
                 <h3 className="font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#1B3A7A]">
-                  Tu esfuerzo, respaldado por un certificado oficial
+                  Un examen, tres oportunidades
                 </h3>
                 <p className="mt-3 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed">
-                  Al acreditar tu examen obtendrás tu Certificado Oficial de Bachillerato expedido con validez oficial ante la SEP, reconocido en todo el país y aceptado para continuar tus estudios universitarios o impulsar tu desarrollo laboral.
+                  La acreditación se realiza mediante el Examen Único del Acuerdo 286. El programa incluye tres oportunidades de presentación, para que tengas la posibilidad de volver a intentarlo si no acreditas la evaluación en tu primera ocasión. Durante tu preparación contarás con orientación académica para llegar al examen con mayor seguridad.
                 </p>
               </div>
             </motion.div>
 
-            {/* Bloque 5: Acompañamiento Académico */}
+            {/* Bloque 5: Tú estudias. Nosotros nos encargamos del proceso. */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -331,19 +336,49 @@ export default function OfertaBachilleratoPage() {
                   <div className="w-10 h-10 rounded-xl bg-[#FFF4D1] text-[#1B3A7A] flex items-center justify-center shrink-0 border border-[#F4B400]/40">
                     <UserCheck className="w-5 h-5 text-[#1B3A7A]" />
                   </div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#1B3A7A]">
-                    Tutoría Continua
+                  <span className="inline-flex items-center gap-1.5 font-['Montserrat'] font-semibold text-xs text-[#1B3A7A] uppercase tracking-wider">
+                    <span className="size-1.5 rounded-full bg-[#F4B400] shrink-0" />
+                    Gestión Integral y Certificación
                   </span>
                 </div>
                 <h3 className="font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#1B3A7A]">
-                  Acompañamiento académico en todo momento
+                  Tú estudias. Nosotros nos encargamos del proceso.
                 </h3>
                 <p className="mt-3 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed max-w-4xl">
-                  Durante todo tu proceso contarás con el respaldo de tutores y asesores educativos que te guiarán paso a paso, resolviendo tus dudas y brindándote el seguimiento constante que necesitas para alcanzar tu meta con éxito.
+                  En ENLACES no solamente te preparamos para el examen. También te orientamos, acompañamos y realizamos las gestiones necesarias durante el proceso de evaluación y certificación. No necesitas realizar trámites ni pagos directamente ante otras instituciones por el proceso contratado. ENLACES coordina las gestiones correspondientes y te mantiene informado hasta la entrega de tu documentación. Una vez que acreditas el examen, comienza el trámite de tu certificado oficial de bachillerato. El plazo de entrega es de hasta 120 días hábiles contados desde la acreditación del examen. Tu certificado tiene validez oficial y te permite acreditar tus estudios de nivel medio superior para continuar tu formación académica o respaldar tu preparación ante nuevas oportunidades laborales.
                 </p>
               </div>
             </motion.div>
           </div>
+
+          {/* Requisitos del Programa - Incorporación Discreta */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.25 }}
+            className="mt-8 rounded-2xl border border-slate-200/80 bg-slate-50/70 p-6 sm:p-7 shadow-2xs"
+          >
+            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+              <div className="flex items-center gap-3 shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-[#FFF4D1] text-[#1B3A7A] flex items-center justify-center shrink-0 border border-[#F4B400]/40">
+                  <Award className="w-5 h-5 text-[#1B3A7A]" />
+                </div>
+                <div>
+                  <span className="inline-flex items-center gap-1.5 font-['Montserrat'] font-semibold text-xs text-[#1B3A7A] uppercase tracking-wider">
+                    <span className="size-1.5 rounded-full bg-[#F4B400] shrink-0" />
+                    Requisitos de Ingreso
+                  </span>
+                  <h3 className="font-['Montserrat'] font-bold text-base sm:text-lg text-[#0F2755]">
+                    Requisitos del programa
+                  </h3>
+                </div>
+              </div>
+              <p className="text-sm font-['Inter'] text-slate-600 leading-relaxed lg:max-w-3xl">
+                Tener al menos 18 años, haber concluido la secundaria y contar con el certificado de secundaria y la documentación requerida para el proceso.
+              </p>
+            </div>
+          </motion.div>
 
           {/* Franja Institucional: Validez Oficial SEP - Acuerdo 286 */}
           <motion.div
