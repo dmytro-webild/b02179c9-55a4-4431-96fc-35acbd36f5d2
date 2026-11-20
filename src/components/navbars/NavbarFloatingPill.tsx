@@ -289,6 +289,8 @@ const NavbarFloatingPill = ({
               ) : (
                 <a
                   href={cta.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hidden sm:inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B400] px-4 py-2 sm:px-5 sm:py-2.5 font-['Montserrat'] font-bold text-xs xl:text-sm text-[#0F2755] shadow-[0_4px_14px_rgba(244,180,0,0.35)] transition-all duration-300 hover:bg-[#e0a400] hover:scale-105 hover:shadow-[0_6px_20px_rgba(244,180,0,0.45)] whitespace-nowrap"
                 >
                   <span>{cta.text}</span>
@@ -582,6 +584,8 @@ const NavbarFloatingPill = ({
                   ) : (
                     <a
                       href={cta.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       onClick={() => setOpen(false)}
                       className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B400] px-6 py-3.5 font-['Montserrat'] font-bold text-sm text-[#0F2755] shadow-md hover:bg-[#e0a400] transition-colors"
                     >

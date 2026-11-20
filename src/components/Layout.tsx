@@ -54,8 +54,8 @@ export default function Layout() {
             }
           ]}
           cta={{
-            text: "Solicita información",
-            href: "/contacto"
+            text: "Inscríbete",
+            href: "https://enlaces.edu.mx/inscripcion/"
           }}
           introDelay={0.2}
         />
