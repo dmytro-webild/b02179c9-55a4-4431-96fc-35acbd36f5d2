@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import {
   BookOpen,
   Award,
@@ -8,10 +9,40 @@ import {
   Clock,
   ArrowRight,
   CheckCircle2,
-  UserCheck
+  UserCheck,
+  ChevronDown
 } from "lucide-react";
 
 export default function OfertaBachilleratoPage() {
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+
+  const faqs = [
+    {
+      question: "¿Puedo terminar mi preparatoria en cuatro meses?",
+      answer: "Puedes prepararte y presentar el examen en un periodo de 1 a 4 meses, sujeto a las fechas disponibles. La entrega del certificado tiene un plazo adicional."
+    },
+    {
+      question: "¿El certificado tiene validez oficial?",
+      answer: "Sí. La acreditación se realiza conforme al Acuerdo 286 de la SEP y el certificado oficial tiene validez nacional."
+    },
+    {
+      question: "¿Puedo inscribirme si llevo muchos años sin estudiar?",
+      answer: "Sí. Recibirás una guía de estudios, sesiones semanales en vivo, clases grabadas y acompañamiento de tutores."
+    },
+    {
+      question: "¿Qué pasa si no apruebo el examen?",
+      answer: "Tu programa incluye tres oportunidades de presentación."
+    },
+    {
+      question: "¿Tengo que hacer trámites ante otras instituciones?",
+      answer: "No. ENLACES realiza las gestiones correspondientes y te acompaña hasta entregarte tu certificado."
+    },
+    {
+      question: "¿Cuándo recibiré mi certificado?",
+      answer: "En un plazo de hasta 120 días hábiles desde que acreditas el examen."
+    }
+  ];
+
   const otherCategories = [
     { title: "Bachillerato en 18 meses", href: "/oferta/bachillerato-18-meses", tag: "Nivel Medio Superior" },
     { title: "Licenciaturas Ejecutivas", href: "/oferta-educativa/licenciaturas", tag: "Nivel Superior" },
@@ -481,6 +512,78 @@ export default function OfertaBachilleratoPage() {
               </div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* SECCIÓN 4 — PREGUNTAS FRECUENTES */}
+      <section className="py-16 sm:py-20 bg-white border-t border-slate-200/80">
+        <div className="mx-auto w-[var(--container)] px-4 sm:px-6">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <span className="inline-flex items-center gap-1.5 font-['Montserrat'] font-semibold text-xs text-[#1B3A7A] uppercase tracking-wider">
+              <span className="size-1.5 rounded-full bg-[#F4B400] shrink-0" />
+              Aclara tus dudas
+            </span>
+            <h2 className="mt-3 font-['Montserrat'] font-extrabold text-3xl sm:text-4xl text-[#0F2755]">
+              Preguntas frecuentes
+            </h2>
+            <div className="mx-auto my-4 h-1 w-16 rounded-full bg-gradient-to-r from-[#1B3A7A] via-[#F4B400] to-[#1B3A7A]" />
+            <p className="font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed">
+              Encuentra respuestas a las consultas más habituales sobre nuestro programa de Bachillerato en 4 meses.
+            </p>
+          </div>
+
+          <div className="max-w-3xl mx-auto space-y-4">
+            {faqs.map((faq, idx) => {
+              const isOpen = openFaqIndex === idx;
+              return (
+                <div
+                  key={idx}
+                  className={`bg-white rounded-2xl border transition-all duration-200 overflow-hidden ${
+                    isOpen ? "border-[#F4B400] shadow-sm" : "border-slate-200/80 hover:border-slate-300 shadow-2xs"
+                  }`}
+                >
+                  <button
+                    type="button"
+                    onClick={() => setOpenFaqIndex(isOpen ? null : idx)}
+                    aria-expanded={isOpen}
+                    className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 cursor-pointer focus:outline-none"
+                  >
+                    <div className="flex items-center gap-3 sm:gap-4 pr-2">
+                      <span className="w-7 h-7 rounded-full bg-[#FFF4D1] text-[#0F2755] font-['Montserrat'] font-bold text-xs flex items-center justify-center shrink-0 border border-[#F4B400]/50">
+                        {idx + 1}
+                      </span>
+                      <h3 className="font-['Montserrat'] font-bold text-base sm:text-lg text-[#0F2755] leading-snug">
+                        {faq.question}
+                      </h3>
+                    </div>
+                    <div
+                      className={`w-8 h-8 rounded-full bg-[#FFF4D1] text-[#0F2755] flex items-center justify-center shrink-0 border border-[#F4B400]/50 transition-transform duration-300 ${
+                        isOpen ? "rotate-180 bg-[#F4B400]" : ""
+                      }`}
+                    >
+                      <ChevronDown className="w-4 h-4" />
+                    </div>
+                  </button>
+
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.25, ease: "easeInOut" }}
+                        className="overflow-hidden"
+                      >
+                        <div className="px-5 sm:px-6 pb-5 sm:pb-6 pt-1 text-slate-600 font-['Inter'] text-sm sm:text-base leading-relaxed border-t border-slate-100">
+                          <p>{faq.answer}</p>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
