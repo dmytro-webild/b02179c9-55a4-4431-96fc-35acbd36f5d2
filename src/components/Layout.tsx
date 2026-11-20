@@ -74,11 +74,11 @@ export default function Layout() {
               links: [
                 {
                   text: "Bachillerato en 4 meses",
-                  href: "/oferta-educativa/bachillerato"
+                  href: "/oferta/bachillerato-4-meses"
                 },
                 {
                   text: "Bachillerato en 18 meses",
-                  href: "/oferta-educativa/bachillerato"
+                  href: "/oferta/bachillerato-18-meses"
                 },
                 {
                   text: "Licenciaturas Ejecutivas",

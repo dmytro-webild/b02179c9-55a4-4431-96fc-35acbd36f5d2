@@ -22,10 +22,17 @@ const variantSpring = { type: "spring", bounce: 0, duration: 0.8 } as const;
 
 const ofertaCategories = [
   {
-    title: "Bachillerato",
-    href: "/oferta-educativa/bachillerato",
+    title: "Bachillerato en 4 meses",
+    href: "/oferta/bachillerato-4-meses",
     tag: "Medio Superior",
-    description: "Concluye tu preparatoria con horarios adaptables a tu jornada de trabajo.",
+    description: "Acredita tu preparatoria de forma intensiva en 4 meses con validez oficial SEP.",
+    badgeGold: "Acelerado SEP",
+  },
+  {
+    title: "Bachillerato en 18 meses",
+    href: "/oferta/bachillerato-18-meses",
+    tag: "Medio Superior",
+    description: "Programa flexible de preparatoria diseñado para estudiar a tu propio ritmo.",
     badgeGold: "Validez Oficial SEP",
   },
   {
@@ -364,8 +371,8 @@ const NavbarFloatingPill = ({
                 </Link>
               </div>
 
-              {/* 6 Grid Categories */}
-              <div className="grid grid-cols-3 gap-4">
+              {/* 7 Grid Categories */}
+              <div className="grid grid-cols-3 gap-3.5">
                 {ofertaCategories.map((cat, idx) => (
                   <Link
                     key={idx}
@@ -461,7 +468,7 @@ const NavbarFloatingPill = ({
                           <span className="flex items-center gap-2">
                             <span>{item.name}</span>
                             <span className="text-[10px] bg-[#F4B400] text-[#0F2755] font-extrabold px-2 py-0.5 rounded-full uppercase">
-                              6 Áreas
+                              7 Áreas
                             </span>
                           </span>
                           <svg

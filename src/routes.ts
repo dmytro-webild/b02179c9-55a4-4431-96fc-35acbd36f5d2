@@ -9,6 +9,8 @@ export const routes: Route[] = [
   { path: '/nosotros', label: 'Nosotros', pageFile: 'NosotrosPage' },
   { path: '/oferta-educativa', label: 'Oferta educativa', pageFile: 'OfertaEducativaPage' },
   { path: '/oferta-educativa/bachillerato', label: 'Bachillerato', pageFile: 'OfertaBachilleratoPage' },
+  { path: '/oferta/bachillerato-4-meses', label: 'Bachillerato en 4 meses', pageFile: 'OfertaBachilleratoPage' },
+  { path: '/oferta/bachillerato-18-meses', label: 'Bachillerato en 18 meses', pageFile: 'OfertaBachilleratoPage' },
   { path: '/oferta-educativa/licenciaturas', label: 'Licenciaturas', pageFile: 'OfertaLicenciaturasPage' },
   { path: '/oferta-educativa/titulacion-por-experiencia-laboral', label: 'Titulación por Experiencia Laboral', pageFile: 'OfertaTitulacionPage' },
   { path: '/oferta-educativa/maestrias', label: 'Maestrías', pageFile: 'OfertaMaestriasPage' },

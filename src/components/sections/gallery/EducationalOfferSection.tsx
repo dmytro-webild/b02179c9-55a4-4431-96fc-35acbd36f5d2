@@ -40,13 +40,24 @@ const defaultPrograms: ProgramItem[] = [
   },
   {
     categoryKey: "bachillerato",
-    title: "Bachillerato General",
-    tag: "Nivel Medio Superior",
+    title: "Bachillerato en 4 meses",
+    tag: "Acreditación Acelerada",
     highlightLabel: "Validez Oficial SEP",
-    description: "Concluye la preparatoria con horarios totalmente adaptables a tu jornada de trabajo actual sin descuidar tus actividades.",
-    href: "/oferta-educativa/bachillerato",
+    description: "Concluye tu preparatoria de forma intensiva en tan solo 4 meses con acompañamiento personalizado y certificado oficial.",
+    href: "/oferta/bachillerato-4-meses",
     imageSrc: "https://img.b2bpic.net/free-photo/graduation-high-school-university-concept_185193-110147.jpg?_wi=1",
-    imageAlt: "Estudiantes de Bachillerato General",
+    imageAlt: "Estudiantes de Bachillerato en 4 meses",
+    isFeatured: true
+  },
+  {
+    categoryKey: "bachillerato",
+    title: "Bachillerato en 18 meses",
+    tag: "Modalidad Flexible",
+    highlightLabel: "Validez Oficial SEP",
+    description: "Programa flexible de preparatoria en 18 meses, diseñado para estudiar a tu propio ritmo sin descuidar tu empleo.",
+    href: "/oferta/bachillerato-18-meses",
+    imageSrc: "https://img.b2bpic.net/free-photo/young-students-studying-table_23-2147850725.jpg",
+    imageAlt: "Estudiantes de Bachillerato en 18 meses",
     isFeatured: true
   },
   {
@@ -121,14 +132,14 @@ export default function EducationalOfferSection({
     if (isTitulacion) {
       return {
         variant: "titulacion",
-        colSpan: "col-span-1 md:col-span-2 lg:col-span-7",
+        colSpan: "col-span-1 md:col-span-2 lg:col-span-12",
       };
     }
 
     if (isBachillerato) {
       return {
         variant: "bachillerato",
-        colSpan: "col-span-1 md:col-span-2 lg:col-span-5",
+        colSpan: "col-span-1 md:col-span-1 lg:col-span-6",
       };
     }
 
