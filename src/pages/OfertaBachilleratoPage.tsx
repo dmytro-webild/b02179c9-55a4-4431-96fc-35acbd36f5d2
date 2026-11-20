@@ -200,7 +200,7 @@ export default function OfertaBachilleratoPage() {
               Información Académica
             </h2>
             <div className="mx-auto my-4 h-1 w-16 rounded-full bg-gradient-to-r from-[#1B3A7A] via-[#F4B400] to-[#1B3A7A]" />
-            <p className="font-['Inter'] text-slate-600 text-base leading-relaxed">
+            <p className="font-['Inter'] text-slate-600 text-base leading-relaxed text-left sm:text-justify">
               Conoce cómo funciona nuestro programa, cómo te preparamos para el examen y cómo te acompañamos hasta recibir tu certificado oficial.
             </p>
           </div>
@@ -344,17 +344,17 @@ export default function OfertaBachilleratoPage() {
                 <h3 className="font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#1B3A7A]">
                   Tú estudias. Nosotros nos encargamos del proceso.
                 </h3>
-                <div className="mt-3 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed max-w-4xl space-y-3 text-left sm:text-justify">
-                  <p>
+                <div className="mt-3 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed max-w-4xl space-y-3">
+                  <p className="text-left sm:text-justify">
                     En ENLACES no solamente te preparamos para el examen. También te orientamos, acompañamos y realizamos las gestiones necesarias durante el proceso de evaluación y certificación.
                   </p>
-                  <p>
+                  <p className="text-left sm:text-justify">
                     No necesitas realizar trámites ni pagos directamente ante otras instituciones por el proceso contratado. ENLACES coordina las gestiones correspondientes y te mantiene informado hasta la entrega de tu documentación.
                   </p>
-                  <p>
+                  <p className="text-left sm:text-justify">
                     Una vez que acreditas el examen, comienza el trámite de tu certificado oficial de bachillerato. El plazo de entrega es de hasta 120 días hábiles contados desde la acreditación del examen.
                   </p>
-                  <p>
+                  <p className="text-left sm:text-justify">
                     Tu certificado tiene validez oficial y te permite acreditar tus estudios de nivel medio superior para continuar tu formación académica o respaldar tu preparación ante nuevas oportunidades laborales.
                   </p>
                 </div>
@@ -418,7 +418,7 @@ export default function OfertaBachilleratoPage() {
               </span>
             </div>
 
-            <p className="font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed mb-8 max-w-4xl">
+            <p className="font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed mb-8 max-w-4xl text-left sm:text-justify">
               Nuestro programa se encuentra estructurado con total apego a los lineamientos institucionales, garantizando claridad y certeza legal en cada una de las fases de tu proceso educativo:
             </p>
 
@@ -435,7 +435,7 @@ export default function OfertaBachilleratoPage() {
                   <h4 className="font-['Montserrat'] font-bold text-base text-[#0F2755]">
                     Preparación Académica
                   </h4>
-                  <p className="mt-2 font-['Inter'] text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  <p className="mt-2 font-['Inter'] text-xs sm:text-sm text-slate-600 leading-relaxed text-left sm:text-justify">
                     Formación y asesoría continua en línea a cargo de ENLACES para garantizar tu aprendizaje y preparación idónea para la evaluación.
                   </p>
                 </div>
@@ -453,7 +453,7 @@ export default function OfertaBachilleratoPage() {
                   <h4 className="font-['Montserrat'] font-bold text-base text-[#0F2755]">
                     Evaluación Global
                   </h4>
-                  <p className="mt-2 font-['Inter'] text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  <p className="mt-2 font-['Inter'] text-xs sm:text-sm text-slate-600 leading-relaxed text-left sm:text-justify">
                     Presentación del examen único conforme a los términos y convocatorias de la instancia de evaluación correspondiente.
                   </p>
                 </div>
@@ -471,7 +471,7 @@ export default function OfertaBachilleratoPage() {
                   <h4 className="font-['Montserrat'] font-bold text-base text-[#0F2755]">
                     Expedición del Certificado
                   </h4>
-                  <p className="mt-2 font-['Inter'] text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  <p className="mt-2 font-['Inter'] text-xs sm:text-sm text-slate-600 leading-relaxed text-left sm:text-justify">
                     Trámite y expedición del Certificado Oficial de Bachillerato por parte de la Secretaría de Educación Pública con validez en todo el país.
                   </p>
                 </div>
