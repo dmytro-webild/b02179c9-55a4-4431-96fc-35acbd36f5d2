@@ -358,7 +358,8 @@ export default function OfertaBachilleratoPage() {
                   <ShieldCheck className="w-6 h-6" />
                 </div>
                 <div>
-                  <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#F4B400] bg-[#0F2755] px-2.5 py-0.5 rounded-full inline-block mb-1">
+                  <span className="inline-flex items-center gap-1.5 font-['Montserrat'] font-semibold text-xs text-[#1B3A7A] uppercase tracking-wider mb-1">
+                    <span className="size-1.5 rounded-full bg-[#F4B400] shrink-0" />
                     Validez Oficial SEP
                   </span>
                   <h3 className="font-['Montserrat'] font-extrabold text-xl sm:text-2xl text-[#0F2755]">
@@ -379,7 +380,8 @@ export default function OfertaBachilleratoPage() {
               <div className="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-2xs flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-[11px] font-extrabold text-[#F4B400] bg-[#0F2755] px-2.5 py-0.5 rounded-full">
+                    <span className="inline-flex items-center gap-1.5 font-['Montserrat'] font-semibold text-xs text-[#1B3A7A] uppercase tracking-wider">
+                      <span className="size-1.5 rounded-full bg-[#F4B400] shrink-0" />
                       Etapa 1
                     </span>
                     <BookOpen className="w-5 h-5 text-[#1B3A7A]" />
@@ -396,7 +398,8 @@ export default function OfertaBachilleratoPage() {
               <div className="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-2xs flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-[11px] font-extrabold text-[#F4B400] bg-[#0F2755] px-2.5 py-0.5 rounded-full">
+                    <span className="inline-flex items-center gap-1.5 font-['Montserrat'] font-semibold text-xs text-[#1B3A7A] uppercase tracking-wider">
+                      <span className="size-1.5 rounded-full bg-[#F4B400] shrink-0" />
                       Etapa 2
                     </span>
                     <Target className="w-5 h-5 text-[#1B3A7A]" />
@@ -413,7 +416,8 @@ export default function OfertaBachilleratoPage() {
               <div className="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-2xs flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-[11px] font-extrabold text-[#F4B400] bg-[#0F2755] px-2.5 py-0.5 rounded-full">
+                    <span className="inline-flex items-center gap-1.5 font-['Montserrat'] font-semibold text-xs text-[#1B3A7A] uppercase tracking-wider">
+                      <span className="size-1.5 rounded-full bg-[#F4B400] shrink-0" />
                       Etapa 3
                     </span>
                     <Award className="w-5 h-5 text-[#1B3A7A]" />
@@ -445,7 +449,8 @@ export default function OfertaBachilleratoPage() {
                 className="group rounded-2xl border border-slate-200 bg-white p-4 shadow-xs hover:border-[#F4B400] hover:shadow-md transition-all flex flex-col justify-between"
               >
                 <div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#F4B400] bg-[#0F2755] px-2 py-0.5 rounded-full">
+                  <span className="inline-flex items-center gap-1.5 font-['Montserrat'] font-semibold text-xs uppercase tracking-wider text-[#1B3A7A]">
+                    <span className="size-1.5 rounded-full bg-[#F4B400] shrink-0" />
                     {cat.tag}
                   </span>
                   <h4 className="mt-2 font-['Montserrat'] font-bold text-sm text-[#0F2755] group-hover:text-[#1B3A7A] transition-colors">
