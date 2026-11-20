@@ -40,6 +40,18 @@ export default function OfertaBachilleratoPage() {
     {
       question: "¿Cuándo recibiré mi certificado?",
       answer: "En un plazo de hasta 120 días hábiles desde que acreditas el examen."
+    },
+    {
+      question: "¿Puedo estudiar si trabajo y tengo poco tiempo?",
+      answer: "Sí. Nuestro programa está diseñado para adaptarse a tus responsabilidades. Tendrás acceso a una guía de estudios, sesiones académicas en vivo todas las semanas, clases grabadas y acompañamiento de tutores para preparar tu examen sin descuidar tu trabajo y tu familia."
+    },
+    {
+      question: "¿Cuánto tiempo debo dedicar a estudiar?",
+      answer: "Depende de tus conocimientos previos y tu disponibilidad. Puedes organizar tus tiempos utilizando la guía de estudios y las clases grabadas, además de participar en las sesiones semanales en vivo. Nuestros tutores te orientarán durante tu preparación."
+    },
+    {
+      question: "¿Tengo que asistir presencialmente a clases o al examen?",
+      answer: "La preparación académica con ENLACES se realiza en línea. La modalidad de presentación del examen, presencial o en línea, dependerá de las condiciones establecidas por el centro evaluador y la convocatoria correspondiente."
     }
   ];
 
