@@ -80,11 +80,6 @@ export default function NosotrosPage() {
     },
   ];
 
-  const banderas2021Image = {
-    src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794974303173-6o60lm5z.png",
-    alt: "DE MÉXICO AL MUNDO 2021 — Banderas de México y Estados Unidos",
-  };
-
   const logo2021Image = {
     src: "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794974303178-llvh7pl6.png",
     alt: "DE MÉXICO AL MUNDO 2021 — Logotipo ENLACES Sin Fronteras",
@@ -940,38 +935,20 @@ export default function NosotrosPage() {
                       </div>
                     </div>
 
-                    {/* Logotipo ENLACES Sin Fronteras y Banderas conservadas debajo */}
-                    <div className="flex flex-col gap-[6px] w-full">
-                      <div className="w-full flex justify-center">
-                        <div
-                          className="relative group cursor-pointer overflow-hidden rounded-none shadow-none border-none bg-slate-100 w-full max-w-[460px] sm:max-w-[520px]"
-                          onClick={() => setLightboxImage(logo2021Image)}
-                        >
-                          <img
-                            src={logo2021Image.src}
-                            alt={logo2021Image.alt}
-                            className="w-full h-auto block rounded-none shadow-none border-none transition-transform duration-300 group-hover:scale-[1.01]"
-                          />
-                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-center justify-center pointer-events-none">
-                            <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 text-white text-[11px] font-['Montserrat'] font-semibold px-2.5 py-1 rounded-none shadow-none border-none flex items-center gap-1">
-                              <ZoomIn className="size-3" /> Ampliar
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
+                    {/* Logotipo ENLACES Sin Fronteras */}
+                    <div className="w-full flex justify-center">
                       <div
                         className="relative group cursor-pointer overflow-hidden rounded-none shadow-none border-none bg-slate-100 w-full"
-                        onClick={() => setLightboxImage(banderas2021Image)}
+                        onClick={() => setLightboxImage(logo2021Image)}
                       >
                         <img
-                          src={banderas2021Image.src}
-                          alt={banderas2021Image.alt}
+                          src={logo2021Image.src}
+                          alt={logo2021Image.alt}
                           className="w-full h-auto block rounded-none shadow-none border-none transition-transform duration-300 group-hover:scale-[1.01]"
                         />
                         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-center justify-center pointer-events-none">
-                          <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 text-white text-xs font-['Montserrat'] font-semibold px-3 py-1.5 rounded-none shadow-none border-none flex items-center gap-1.5">
-                            <ZoomIn className="size-3.5" /> Ampliar imagen
+                          <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 text-white text-[11px] font-['Montserrat'] font-semibold px-2.5 py-1 rounded-none shadow-none border-none flex items-center gap-1">
+                            <ZoomIn className="size-3" /> Ampliar
                           </div>
                         </div>
                       </div>
