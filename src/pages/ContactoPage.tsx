@@ -160,7 +160,7 @@ export default function ContactoPage() {
                 </div>
                 <h2 className="font-['Montserrat'] font-bold text-xl text-[#0F2755]">Oficinas centrales</h2>
                 <p className="mt-3 font-['Inter'] text-sm sm:text-base text-slate-700 leading-relaxed font-medium">
-                  Av. Paseo de la Reforma 342, piso 26, colonia Juárez, Alcaldía Cuauhtémoc, C. P. 06500, Ciudad de México.
+                  Av. Paseo de la Reforma 342, piso 26, colonia Juárez, Alcaldía Cuauhtémoc, <span className="whitespace-nowrap">C.P.&nbsp;06500</span>, Ciudad de México.
                 </p>
               </div>
 
