@@ -84,12 +84,12 @@ const FooterTrayWordmark = ({ brand, columns = [], copyright, topText = "Volver 
     <footer aria-label={ariaLabel ?? `${brand} footer`} className={cn("relative bg-background pt-[calc(var(--section-space)/2)] text-foreground", className)}>
       <div className="relative isolate mx-[var(--panel-inset)] mb-[var(--panel-inset)] overflow-hidden rounded-[var(--radius-card)] bg-[#0F2755] pt-[clamp(2.5rem,5vw,4.5rem)] pb-[clamp(2rem,4vw,3rem)] text-white shadow-2xl border border-amber-400/20">
         
-        {/* Rueda oficial decorativa en esquina inferior izquierda (reducida 20%, >30px de separación de redes sociales, >20px por encima de la línea de derechos reservados, blanco 25% opacidad, detrás de contenido) */}
+        {/* Rueda oficial decorativa en esquina inferior izquierda (desplazada hacia abajo: >=25px por debajo de redes sociales, >=15px por encima de la línea de derechos reservados, blanco 25% opacidad, detrás de contenido) */}
         <img
           src="https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794456185254-3zlenx22.png"
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute bottom-[100px] sm:bottom-[110px] md:bottom-[120px] -left-10 sm:-left-12 md:-left-14 w-56 sm:w-72 md:w-[340px] h-auto opacity-25 select-none object-contain z-0"
+          className="pointer-events-none absolute bottom-[85px] sm:bottom-[92px] md:bottom-[98px] lg:bottom-[102px] -left-6 sm:-left-8 md:-left-10 w-20 sm:w-24 md:w-28 lg:w-24 h-auto opacity-25 select-none object-contain z-0"
           style={{ filter: "brightness(0) invert(1)" }}
         />
 
