@@ -74,8 +74,9 @@ export default function OfertaBachilleratoPage() {
                 Bachillerato Intensivo • Validez Oficial SEP
               </span>
 
-              <h1 className="mt-4 font-['Montserrat'] font-extrabold text-3xl sm:text-5xl text-[#0F2755] leading-tight tracking-tight">
-                Tu prepa en 4 meses, en 4 pasos
+              <h1 className="mt-4 font-['Montserrat'] font-extrabold text-3xl sm:text-5xl leading-tight tracking-tight text-left">
+                <span className="block text-[#1B3A7A]">TU PREPA EN 4 MESES,</span>
+                <span className="block text-[#F4B400]">EN 4 PASOS.</span>
               </h1>
 
               <p className="mt-5 font-['Inter'] text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
@@ -95,20 +96,14 @@ export default function OfertaBachilleratoPage() {
 
             {/* Columna Derecha: Contenedor del video oficial */}
             <div className="lg:col-span-5 relative">
-              <div className="relative aspect-[16/9] sm:aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-2 border-[#F4B400]/40 bg-gradient-to-br from-[#0F2755] via-[#1B3A7A] to-[#0F2755] flex flex-col items-center justify-center text-white p-6 text-center group">
-                <div className="absolute inset-0 bg-black/20" />
-                <div className="relative z-10 flex flex-col items-center">
-                  <div className="size-16 rounded-full bg-[#F4B400] text-[#0F2755] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform mb-3">
-                    <Play className="w-7 h-7 fill-current translate-x-0.5" />
-                  </div>
-                  <span className="inline-block rounded-full bg-white/20 backdrop-blur-md px-3.5 py-1 text-xs font-bold text-amber-300 border border-white/20 mb-2">
-                    Video Oficial
-                  </span>
-                  <h3 className="font-['Montserrat'] font-bold text-lg text-white">Bachillerato en 4 Meses</h3>
-                  <p className="mt-1 font-['Inter'] text-xs text-slate-300 max-w-xs">
-                    [ Contenedor reservado para el video oficial del programa ]
-                  </p>
-                </div>
+              <div className="overflow-hidden rounded-3xl shadow-2xl border-2 border-[#F4B400]/40 bg-black">
+                <video
+                  controls
+                  playsInline
+                  preload="metadata"
+                  className="w-full h-auto block rounded-3xl"
+                  src="https://res.cloudinary.com/r58dzn6z/video/upload/v1795211234/PREPA_INFORMATIVO_8.9MB.mp4"
+                />
               </div>
             </div>
           </div>
