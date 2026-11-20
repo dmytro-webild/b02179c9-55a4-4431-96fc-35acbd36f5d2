@@ -84,20 +84,11 @@ const FooterTrayWordmark = ({ brand, columns = [], copyright, topText = "Volver 
     <footer aria-label={ariaLabel ?? `${brand} footer`} className={cn("relative bg-background pt-[calc(var(--section-space)/2)] text-foreground", className)}>
       <div className="relative isolate mx-[var(--panel-inset)] mb-[var(--panel-inset)] overflow-hidden rounded-[var(--radius-card)] bg-[#0F2755] pt-[clamp(2.5rem,5vw,4.5rem)] pb-[clamp(2rem,4vw,3rem)] text-white shadow-2xl border border-amber-400/20">
         
-        {/* Rueda oficial decorativa en esquina inferior izquierda (desplazada hacia abajo: >=25px por debajo de redes sociales, >=15px por encima de la línea de derechos reservados, blanco 25% opacidad, detrás de contenido) */}
-        <img
-          src="https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794456185254-3zlenx22.png"
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none absolute bottom-[85px] sm:bottom-[92px] md:bottom-[98px] lg:bottom-[102px] -left-6 sm:-left-8 md:-left-10 w-20 sm:w-24 md:w-28 lg:w-24 h-auto opacity-25 select-none object-contain z-0"
-          style={{ filter: "brightness(0) invert(1)" }}
-        />
-
         <div className="relative z-10 mx-auto grid w-[var(--container)] grid-cols-1 gap-x-[var(--gap)] gap-y-[clamp(2.5rem,5vw,3.5rem)] lg:grid-cols-[minmax(0,1.1fr)_minmax(0,2.1fr)]">
           
-          {/* Logotipo textual blanco grande + Frase Innovación en educación + Iconos sociales blancos */}
-          <div className="flex flex-col gap-5 items-start pr-4">
-            <Link to="/" aria-label={brand} className="flex flex-col items-start group">
+          {/* Logotipo textual blanco grande + Frase Innovación en educación + Iconos sociales blancos + Rueda institucional */}
+          <div className="flex flex-col items-start pr-4">
+            <Link to="/" aria-label={brand} className="flex flex-col items-start group mb-5">
               <span className="font-['Montserrat'] font-extrabold text-3xl sm:text-4xl lg:text-5xl tracking-tight text-white leading-none">
                 ENLACES
               </span>
@@ -128,6 +119,15 @@ const FooterTrayWordmark = ({ brand, columns = [], copyright, topText = "Volver 
                 ))}
               </div>
             </div>
+
+            {/* Rueda oficial decorativa en flujo normal de la primera columna */}
+            <img
+              src="https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794456185254-3zlenx22.png"
+              alt=""
+              aria-hidden="true"
+              className="pointer-events-none mt-6 w-full max-w-[180px] h-auto opacity-25 select-none object-contain"
+              style={{ filter: "brightness(0) invert(1)" }}
+            />
           </div>
 
           {shown.length > 0 && (
