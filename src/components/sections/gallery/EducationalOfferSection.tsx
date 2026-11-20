@@ -56,7 +56,7 @@ const defaultPrograms: ProgramItem[] = [
     highlightLabel: "Validez Oficial SEP",
     description: "Programa flexible de preparatoria en 18 meses, diseñado para estudiar a tu propio ritmo sin descuidar tu empleo.",
     href: "/oferta/bachillerato-18-meses",
-    imageSrc: "https://img.b2bpic.net/free-photo/young-students-studying-table_23-2147850725.jpg",
+    imageSrc: "https://img.b2bpic.net/free-photo/young-students-studying-table_23-2147850725.jpg?_wi=1",
     imageAlt: "Estudiantes de Bachillerato en 18 meses",
     isFeatured: true
   },
@@ -87,7 +87,7 @@ const defaultPrograms: ProgramItem[] = [
     highlightLabel: "Actualización Continua",
     description: "Especialización técnica intensiva con validez curricular diseñada para impulsar de inmediato tus metas profesionales.",
     href: "/oferta-educativa/diplomados",
-    imageSrc: "https://img.b2bpic.net/free-photo/young-students-studying-table_23-2147850725.jpg",
+    imageSrc: "https://img.b2bpic.net/free-photo/young-students-studying-table_23-2147850725.jpg?_wi=2",
     imageAlt: "Diplomados y cursos de actualización profesional"
   },
   {
