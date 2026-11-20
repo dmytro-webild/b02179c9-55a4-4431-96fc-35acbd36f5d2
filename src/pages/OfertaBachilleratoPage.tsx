@@ -52,13 +52,13 @@ export default function OfertaBachilleratoPage() {
   return (
     <div className="bg-white min-h-screen text-[#0F2755]">
       {/* SECCIÓN 1 — PORTADA */}
-      <section className="relative bg-gradient-to-b from-slate-50 via-white to-white py-14 sm:py-20 border-b border-slate-200/60 overflow-hidden">
+      <section className="relative bg-gradient-to-b from-slate-50 via-white to-white pt-5 sm:pt-9 pb-14 sm:pb-20 border-b border-slate-200/60 overflow-hidden">
         <div className="pointer-events-none absolute -top-32 right-0 size-96 rounded-full bg-[#F4B400]/10 blur-3xl" />
         <div className="pointer-events-none absolute bottom-0 left-0 size-80 rounded-full bg-[#1B3A7A]/5 blur-2xl" />
 
         <div className="mx-auto w-[var(--container)] px-4 sm:px-6 relative z-10">
           {/* Breadcrumbs */}
-          <nav className="flex items-center gap-2 text-xs font-semibold text-slate-500 mb-8">
+          <nav className="flex items-center gap-2 text-xs font-semibold text-slate-500 mb-6">
             <Link to="/" className="hover:text-[#1B3A7A] transition-colors">Inicio</Link>
             <span>/</span>
             <Link to="/oferta-educativa" className="hover:text-[#1B3A7A] transition-colors">Oferta educativa</Link>
