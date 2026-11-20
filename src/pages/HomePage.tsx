@@ -67,7 +67,7 @@ const portalSections = [
     ),
   },
   {
-    title: "Sistema Operativo ENLACES",
+    title: "ENLACES 360",
     tag: "Campus Virtual",
     description: "Explora la plataforma virtual 24/7 y la tecnología flexible diseñada para adaptarse a tu ritmo de vida.",
     href: "/sistema-operativo-enlaces",
@@ -112,7 +112,7 @@ const institutionalBenefits = [
     ),
   },
   {
-    title: "Validez oficial*",
+    title: "Validez oficial",
     subtitle: "En los programas correspondientes.",
     icon: (
       <svg className="size-6 text-[#1B3A7A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
@@ -238,13 +238,9 @@ export default function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto mb-14 sm:mb-16"
+            className="text-center max-w-3xl mx-auto mb-10 sm:mb-12"
           >
-            <span className="inline-flex items-center gap-2 rounded-full border border-[#1B3A7A]/20 bg-[#1B3A7A]/5 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#1B3A7A]">
-              <span className="size-2 rounded-full bg-[#F4B400]" />
-              Puerta de entrada al portal
-            </span>
-            <h2 className="mt-4 font-['Montserrat'] font-extrabold text-3xl sm:text-4xl text-[#0F2755]">
+            <h2 className="font-['Montserrat'] font-extrabold text-3xl sm:text-4xl text-[#0F2755]">
               Explora nuestro portal institucional
             </h2>
             <p className="mt-3 font-['Inter'] text-base text-slate-600 leading-relaxed">
