@@ -50,6 +50,23 @@ const SOCIAL_NETWORKS = [
 
 const spring = { type: "spring", bounce: 0.2, duration: 1 } as const;
 
+const renderLinkContent = (text: string) => {
+  if (text.includes("C.P.")) {
+    const parts = text.split(/(C\.P\.(?:\u00A0|\s)*\d{5})/g);
+    return parts.map((part, index) => {
+      if (/^C\.P\.(?:\u00A0|\s)*\d{5}$/.test(part)) {
+        return (
+          <span key={index} className="inline-block whitespace-nowrap">
+            {part.replace(/(C\.P\.)(?:\u00A0|\s)*/, "C.P.\u00A0")}
+          </span>
+        );
+      }
+      return part;
+    });
+  }
+  return text;
+};
+
 const FooterTrayWordmark = ({ brand, columns = [], copyright, topText = "Volver arriba", ariaLabel, className }: FooterTrayWordmarkProps) => {
   const reduce = useReducedMotion();
 
@@ -67,12 +84,13 @@ const FooterTrayWordmark = ({ brand, columns = [], copyright, topText = "Volver 
     <footer aria-label={ariaLabel ?? `${brand} footer`} className={cn("relative bg-background pt-[calc(var(--section-space)/2)] text-foreground", className)}>
       <div className="relative isolate mx-[var(--panel-inset)] mb-[var(--panel-inset)] overflow-hidden rounded-[var(--radius-card)] bg-[#0F2755] pt-[clamp(2.5rem,5vw,4.5rem)] pb-[clamp(2rem,4vw,3rem)] text-white shadow-2xl border border-amber-400/20">
         
-        {/* Rueda oficial como elemento decorativo en la zona inferior izquierda (15% opacidad, sin texto superpuesto) */}
+        {/* Rueda oficial como elemento decorativo en la zona inferior izquierda (15% opacidad blanco puro #FFFFFF, sin texto superpuesto) */}
         <img
           src="https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794456185254-3zlenx22.png"
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute -bottom-16 -left-16 w-72 sm:w-96 md:w-[440px] h-auto opacity-15 select-none object-contain invert brightness-200"
+          className="pointer-events-none absolute -bottom-16 -left-16 w-72 sm:w-96 md:w-[440px] h-auto opacity-15 select-none object-contain"
+          style={{ filter: "brightness(0) invert(1)" }}
         />
 
         <div className="relative z-10 mx-auto grid w-[var(--container)] grid-cols-1 gap-x-[var(--gap)] gap-y-[clamp(2.5rem,5vw,3.5rem)] lg:grid-cols-[minmax(0,1.1fr)_minmax(0,2.1fr)]">
@@ -149,7 +167,7 @@ const FooterTrayWordmark = ({ brand, columns = [], copyright, topText = "Volver 
                             to={link.href}
                             className="w-fit text-xs sm:text-sm leading-[1.5] text-blue-100/90 [overflow-wrap:anywhere] transition-all duration-300 hover:text-[#F4B400] hover:translate-x-0.5"
                           >
-                            {link.text}
+                            {renderLinkContent(link.text)}
                           </Link>
                         );
                       }
@@ -162,7 +180,7 @@ const FooterTrayWordmark = ({ brand, columns = [], copyright, topText = "Volver 
                           rel={isExternal && !link.href.startsWith("tel:") ? "noopener noreferrer" : undefined}
                           className="w-fit text-xs sm:text-sm leading-[1.5] text-blue-100/90 [overflow-wrap:anywhere] transition-all duration-300 hover:text-[#F4B400] hover:translate-x-0.5"
                         >
-                          {link.text}
+                          {renderLinkContent(link.text)}
                         </a>
                       );
                     })}
