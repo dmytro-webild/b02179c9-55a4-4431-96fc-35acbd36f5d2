@@ -2,17 +2,12 @@ import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import {
   BookOpen,
-  Sparkles,
-  Calendar,
-  Globe,
   Award,
   ShieldCheck,
-  ClipboardList,
   Target,
   Clock,
   ArrowRight,
   CheckCircle2,
-  FileText,
   UserCheck
 } from "lucide-react";
 
@@ -23,29 +18,6 @@ export default function OfertaBachilleratoPage() {
     { title: "Titulación por Experiencia", href: "/oferta-educativa/titulacion-por-experiencia-laboral", tag: "Acreditación Ágil" },
     { title: "Maestrías Especializadas", href: "/oferta-educativa/maestrias", tag: "Posgrados" },
     { title: "Diplomados con Validez", href: "/oferta-educativa/diplomados", tag: "Especialización" },
-  ];
-
-  const pasosProceso = [
-    {
-      num: "01",
-      titulo: "1. Inscripción y Registro",
-      desc: "Completa tu solicitud de ingreso, entrega tu documentación básica y recibe tus accesos inmediatos a la plataforma educativa.",
-    },
-    {
-      num: "02",
-      titulo: "2. Inducción y Plataforma",
-      desc: "Familiarízate con el aula virtual y conoce a tu tutor académico, quien te acompañará paso a paso en tu proceso de aprendizaje.",
-    },
-    {
-      num: "03",
-      titulo: "3. Desarrollo Modular (4 Meses)",
-      desc: "Avanza en tus contenidos mediante clases en vivo o grabadas, lecturas digitales y ejercicios prácticos adaptados a tu tiempo.",
-    },
-    {
-      num: "04",
-      titulo: "4. Evaluación y Certificación",
-      desc: "Acredita tus materias y tramita tu Certificado Oficial de Bachillerato reconocido por la SEP para continuar tus metas.",
-    },
   ];
 
   return (
@@ -232,239 +204,230 @@ export default function OfertaBachilleratoPage() {
             </p>
           </div>
 
-          {/* Grid Modular de la Información Académica */}
-          <div className="space-y-12">
-            {/* Bloque 1: ¿Qué es? y ¿Cómo funciona? */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="rounded-3xl border border-slate-200 bg-slate-50/60 p-8 shadow-xs hover:shadow-md transition-shadow relative overflow-hidden"
-              >
-                <div className="size-12 rounded-2xl bg-[#0F2755] text-[#F4B400] flex items-center justify-center mb-6 shadow-sm">
-                  <BookOpen className="w-6 h-6" />
-                </div>
-                <h3 className="font-['Montserrat'] font-extrabold text-2xl text-[#0F2755]">
-                  ¿Qué es?
-                </h3>
-                <p className="mt-4 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed">
-                  Es un programa intensivo de nivel Medio Superior diseñado para que concluyas tu bachillerato de forma rápida, flexible y con validez oficial, ideal para quienes buscan superarse profesionalmente o continuar sus estudios superiores adaptados a su ritmo de vida.
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="rounded-3xl border border-slate-200 bg-slate-50/60 p-8 shadow-xs hover:shadow-md transition-shadow relative overflow-hidden"
-              >
-                <div className="size-12 rounded-2xl bg-[#0F2755] text-[#F4B400] flex items-center justify-center mb-6 shadow-sm">
-                  <Sparkles className="w-6 h-6" />
-                </div>
-                <h3 className="font-['Montserrat'] font-extrabold text-2xl text-[#0F2755]">
-                  ¿Cómo funciona?
-                </h3>
-                <p className="mt-4 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed">
-                  Mediante un modelo educativo 100% en línea organizado en módulos mensuales. Accedes a nuestra plataforma de aprendizaje las 24 horas del día, donde revisas contenidos, realizas actividades prácticas y cuentas con el respaldo constante de asesores académicos.
-                </p>
-              </motion.div>
-            </div>
-
-            {/* Bloque 2: ¿Cuándo? y ¿Dónde? */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="rounded-3xl border border-slate-200 bg-slate-50/60 p-8 shadow-xs hover:shadow-md transition-shadow relative overflow-hidden"
-              >
-                <div className="size-12 rounded-2xl bg-[#0F2755] text-[#F4B400] flex items-center justify-center mb-6 shadow-sm">
-                  <Calendar className="w-6 h-6" />
-                </div>
-                <h3 className="font-['Montserrat'] font-extrabold text-2xl text-[#0F2755]">
-                  ¿Cuándo?
-                </h3>
-                <p className="mt-4 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed">
-                  Inicios de ciclo continuos cada mes con inscripciones abiertas durante todo el año. Tú decides tus horarios de estudio día a día para equilibrar tus estudios con tus responsabilidades laborales y personales.
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="rounded-3xl border border-slate-200 bg-slate-50/60 p-8 shadow-xs hover:shadow-md transition-shadow relative overflow-hidden"
-              >
-                <div className="size-12 rounded-2xl bg-[#0F2755] text-[#F4B400] flex items-center justify-center mb-6 shadow-sm">
-                  <Globe className="w-6 h-6" />
-                </div>
-                <h3 className="font-['Montserrat'] font-extrabold text-2xl text-[#0F2755]">
-                  ¿Dónde?
-                </h3>
-                <p className="mt-4 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed">
-                  Modalidad 100% en línea accesible desde cualquier lugar. Solo necesitas una computadora, tablet o smartphone con conexión a Internet para ingresar a tus aulas virtuales.
-                </p>
-              </motion.div>
-            </div>
-
-            {/* Bloque 3: ¿Por qué estudiar este programa? y Validez oficial */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="rounded-3xl border border-slate-200 bg-slate-50/60 p-8 shadow-xs hover:shadow-md transition-shadow relative overflow-hidden"
-              >
-                <div className="size-12 rounded-2xl bg-[#0F2755] text-[#F4B400] flex items-center justify-center mb-6 shadow-sm">
-                  <Award className="w-6 h-6" />
-                </div>
-                <h3 className="font-['Montserrat'] font-extrabold text-2xl text-[#0F2755]">
-                  ¿Por qué estudiar este programa?
-                </h3>
-                <ul className="mt-4 space-y-2.5 font-['Inter'] text-slate-600 text-sm sm:text-base">
-                  <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-5 h-5 text-[#F4B400] shrink-0 mt-0.5" />
-                    <span>Conclusión acelerada en tan solo 4 meses.</span>
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-5 h-5 text-[#F4B400] shrink-0 mt-0.5" />
-                    <span>Flexibilidad de horarios adaptada a tu vida diaria.</span>
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-5 h-5 text-[#F4B400] shrink-0 mt-0.5" />
-                    <span>Acompañamiento docente y tutorías personalizadas.</span>
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-5 h-5 text-[#F4B400] shrink-0 mt-0.5" />
-                    <span>Plataforma disponible las 24 horas del día.</span>
-                  </li>
-                </ul>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="rounded-3xl border border-[#F4B400]/40 bg-gradient-to-br from-[#0F2755]/5 to-amber-500/5 p-8 shadow-xs hover:shadow-md transition-shadow relative overflow-hidden"
-              >
-                <div className="size-12 rounded-2xl bg-[#0F2755] text-[#F4B400] flex items-center justify-center mb-6 shadow-sm">
-                  <ShieldCheck className="w-6 h-6" />
-                </div>
-                <h3 className="font-['Montserrat'] font-extrabold text-2xl text-[#0F2755]">
-                  Validez oficial
-                </h3>
-                <p className="mt-4 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed">
-                  Certificado oficial otorgado con Validez Oficial SEP (RVOE), reconocido en toda la República Mexicana. Te permite ingresar a cualquier universidad pública o privada y abre nuevas oportunidades laborales.
-                </p>
-                <div className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#0F2755] px-4 py-1.5 text-xs font-bold text-[#F4B400]">
-                  <FileText className="w-4 h-4" />
-                  <span>Certificación SEP 100% Oficial</span>
-                </div>
-              </motion.div>
-            </div>
-
-            {/* Bloque 4: Requisitos y Evaluación */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="rounded-3xl border border-slate-200 bg-slate-50/60 p-8 shadow-xs hover:shadow-md transition-shadow relative overflow-hidden"
-              >
-                <div className="size-12 rounded-2xl bg-[#0F2755] text-[#F4B400] flex items-center justify-center mb-6 shadow-sm">
-                  <ClipboardList className="w-6 h-6" />
-                </div>
-                <h3 className="font-['Montserrat'] font-extrabold text-2xl text-[#0F2755]">
-                  Requisitos
-                </h3>
-                <ul className="mt-4 space-y-2 font-['Inter'] text-slate-600 text-sm sm:text-base">
-                  <li className="flex items-center gap-2">
-                    <span className="size-1.5 rounded-full bg-[#1B3A7A]" />
-                    <span>Acta de nacimiento (copia digital legible).</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="size-1.5 rounded-full bg-[#1B3A7A]" />
-                    <span>Certificado de secundaria concluida.</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="size-1.5 rounded-full bg-[#1B3A7A]" />
-                    <span>Clave Única de Registro de Población (CURP).</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="size-1.5 rounded-full bg-[#1B3A7A]" />
-                    <span>Identificación oficial vigente (INE o pasaporte).</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="size-1.5 rounded-full bg-[#1B3A7A]" />
-                    <span>Comprobante de domicilio reciente.</span>
-                  </li>
-                </ul>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="rounded-3xl border border-slate-200 bg-slate-50/60 p-8 shadow-xs hover:shadow-md transition-shadow relative overflow-hidden"
-              >
-                <div className="size-12 rounded-2xl bg-[#0F2755] text-[#F4B400] flex items-center justify-center mb-6 shadow-sm">
-                  <Target className="w-6 h-6" />
-                </div>
-                <h3 className="font-['Montserrat'] font-extrabold text-2xl text-[#0F2755]">
-                  Evaluación
-                </h3>
-                <p className="mt-4 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed">
-                  Modelo de evaluación continua mediante entrega de actividades modulares en plataforma y evaluaciones objetivas periódicas, asegurando un aprendizaje efectivo y continuo sin cargas excesivas.
-                </p>
-              </motion.div>
-            </div>
-
-            {/* Bloque 5: Tiempos y pasos del proceso */}
+          {/* Grid de 5 Bloques Informativos en 2 Columnas */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-stretch">
+            {/* Bloque 1: Metodología */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="rounded-3xl border border-slate-200 bg-slate-50 p-8 sm:p-10 shadow-sm"
+              className="rounded-2xl border border-slate-200/80 bg-white p-6 sm:p-8 shadow-2xs hover:border-[#F4B400]/60 transition-all flex flex-col justify-between"
             >
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 pb-6 border-b border-slate-200">
-                <div>
-                  <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#1B3A7A] mb-2">
-                    <Clock className="w-4 h-4 text-[#F4B400]" />
-                    <span>Ruta de Aprendizaje</span>
+              <div>
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-10 h-10 rounded-xl bg-[#FFF4D1] text-[#1B3A7A] flex items-center justify-center shrink-0 border border-[#F4B400]/40">
+                    <BookOpen className="w-5 h-5 text-[#1B3A7A]" />
                   </div>
-                  <h3 className="font-['Montserrat'] font-extrabold text-2xl sm:text-3xl text-[#0F2755]">
-                    Tiempos y pasos del proceso
-                  </h3>
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#1B3A7A]">
+                    Metodología ENLACES
+                  </span>
                 </div>
-                <span className="self-start md:self-auto rounded-full bg-[#0F2755] px-4 py-2 font-['Montserrat'] font-bold text-xs text-[#F4B400]">
-                  Duración Total: 4 Meses
-                </span>
+                <h3 className="font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#1B3A7A]">
+                  Una preparación que se adapta a tu vida
+                </h3>
+                <p className="mt-3 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed">
+                  Nuestro programa se desarrolla en línea mediante la Metodología ENLACES, con sesiones académicas en vivo que también quedan grabadas para que puedas consultarlas posteriormente. Así puedes prepararte sin descuidar tus responsabilidades personales y laborales.
+                </p>
               </div>
+              <div className="mt-6 pt-4 border-t border-slate-100">
+                <Link
+                  to="/experiencia-enlaces"
+                  className="inline-flex items-center gap-2 rounded-full border border-[#1B3A7A]/30 bg-[#1B3A7A]/5 px-5 py-2.5 font-['Montserrat'] font-bold text-xs sm:text-sm text-[#1B3A7A] hover:bg-[#1B3A7A] hover:text-white transition-all shadow-2xs group"
+                >
+                  <span>Conoce la Experiencia ENLACES</span>
+                  <ArrowRight className="w-4 h-4 text-[#F4B400] transition-transform group-hover:translate-x-0.5" />
+                </Link>
+              </div>
+            </motion.div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                {pasosProceso.map((paso, idx) => (
-                  <div key={idx} className="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-xs flex flex-col justify-between">
-                    <div>
-                      <span className="font-['Montserrat'] font-extrabold text-2xl text-[#F4B400]">
-                        {paso.num}
-                      </span>
-                      <h4 className="mt-2 font-['Montserrat'] font-bold text-base text-[#0F2755]">
-                        {paso.titulo}
-                      </h4>
-                      <p className="mt-2 font-['Inter'] text-xs text-slate-600 leading-relaxed">
-                        {paso.desc}
-                      </p>
-                    </div>
+            {/* Bloque 2: Ritmo de Estudio */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.05 }}
+              className="rounded-2xl border border-slate-200/80 bg-white p-6 sm:p-8 shadow-2xs hover:border-[#F4B400]/60 transition-all flex flex-col justify-between"
+            >
+              <div>
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-10 h-10 rounded-xl bg-[#FFF4D1] text-[#1B3A7A] flex items-center justify-center shrink-0 border border-[#F4B400]/40">
+                    <Clock className="w-5 h-5 text-[#1B3A7A]" />
                   </div>
-                ))}
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#1B3A7A]">
+                    Flexibilidad Académica
+                  </span>
+                </div>
+                <h3 className="font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#1B3A7A]">
+                  Avanza a tu propio ritmo
+                </h3>
+                <p className="mt-3 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed">
+                  El periodo de preparación y presentación del examen puede ser de 1 a 4 meses. Puedes solicitar tu evaluación cuando te sientas preparado, de acuerdo con las fechas de aplicación disponibles y los requisitos del proceso.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Bloque 3: El Examen */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="rounded-2xl border border-slate-200/80 bg-white p-6 sm:p-8 shadow-2xs hover:border-[#F4B400]/60 transition-all flex flex-col justify-between"
+            >
+              <div>
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-10 h-10 rounded-xl bg-[#FFF4D1] text-[#1B3A7A] flex items-center justify-center shrink-0 border border-[#F4B400]/40">
+                    <Target className="w-5 h-5 text-[#1B3A7A]" />
+                  </div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#1B3A7A]">
+                    Evaluación Unificada
+                  </span>
+                </div>
+                <h3 className="font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#1B3A7A]">
+                  Un examen, tres oportunidades
+                </h3>
+                <p className="mt-3 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed">
+                  La acreditación se realiza mediante un examen único. Cuentas con hasta tres oportunidades para presentarlo, conforme a las condiciones y convocatorias aplicables. Durante tu preparación recibirás orientación académica para llegar con mayor seguridad.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Bloque 4: Certificado Oficial */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.15 }}
+              className="rounded-2xl border border-slate-200/80 bg-white p-6 sm:p-8 shadow-2xs hover:border-[#F4B400]/60 transition-all flex flex-col justify-between"
+            >
+              <div>
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-10 h-10 rounded-xl bg-[#FFF4D1] text-[#1B3A7A] flex items-center justify-center shrink-0 border border-[#F4B400]/40">
+                    <Award className="w-5 h-5 text-[#1B3A7A]" />
+                  </div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#1B3A7A]">
+                    Validez SEP
+                  </span>
+                </div>
+                <h3 className="font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#1B3A7A]">
+                  Tu esfuerzo, respaldado por un certificado oficial
+                </h3>
+                <p className="mt-3 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed">
+                  Al acreditar tu examen obtendrás tu Certificado Oficial de Bachillerato expedido con validez oficial ante la SEP, reconocido en todo el país y aceptado para continuar tus estudios universitarios o impulsar tu desarrollo laboral.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Bloque 5: Acompañamiento Académico */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="md:col-span-2 rounded-2xl border border-slate-200/80 bg-white p-6 sm:p-8 shadow-2xs hover:border-[#F4B400]/60 transition-all flex flex-col justify-between"
+            >
+              <div>
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-10 h-10 rounded-xl bg-[#FFF4D1] text-[#1B3A7A] flex items-center justify-center shrink-0 border border-[#F4B400]/40">
+                    <UserCheck className="w-5 h-5 text-[#1B3A7A]" />
+                  </div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#1B3A7A]">
+                    Tutoría Continua
+                  </span>
+                </div>
+                <h3 className="font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#1B3A7A]">
+                  Acompañamiento académico en todo momento
+                </h3>
+                <p className="mt-3 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed max-w-4xl">
+                  Durante todo tu proceso contarás con el respaldo de tutores y asesores educativos que te guiarán paso a paso, resolviendo tus dudas y brindándote el seguimiento constante que necesitas para alcanzar tu meta con éxito.
+                </p>
               </div>
             </motion.div>
           </div>
+
+          {/* Franja Institucional: Validez Oficial SEP - Acuerdo 286 */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-12 sm:mt-16 rounded-3xl border border-slate-200/90 bg-slate-50/80 p-6 sm:p-8 md:p-10 shadow-2xs relative overflow-hidden"
+          >
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 mb-8 border-b border-slate-200/80">
+              <div className="flex items-center gap-3">
+                <div className="w-11 h-11 rounded-2xl bg-[#0F2755] text-[#F4B400] flex items-center justify-center shrink-0 shadow-xs">
+                  <ShieldCheck className="w-6 h-6" />
+                </div>
+                <div>
+                  <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#F4B400] bg-[#0F2755] px-2.5 py-0.5 rounded-full inline-block mb-1">
+                    Validez Oficial SEP
+                  </span>
+                  <h3 className="font-['Montserrat'] font-extrabold text-xl sm:text-2xl text-[#0F2755]">
+                    Acreditación Oficial mediante el Acuerdo 286 de la SEP
+                  </h3>
+                </div>
+              </div>
+              <span className="self-start md:self-auto text-xs font-bold text-[#1B3A7A] bg-white border border-slate-200 rounded-full px-4 py-1.5 shadow-2xs">
+                Validez Nacional
+              </span>
+            </div>
+
+            <p className="font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed mb-8 max-w-4xl">
+              Nuestro programa se encuentra estructurado con total apego a los lineamientos institucionales, garantizando claridad y certeza legal en cada una de las fases de tu proceso educativo:
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-2xs flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-[11px] font-extrabold text-[#F4B400] bg-[#0F2755] px-2.5 py-0.5 rounded-full">
+                      Etapa 1
+                    </span>
+                    <BookOpen className="w-5 h-5 text-[#1B3A7A]" />
+                  </div>
+                  <h4 className="font-['Montserrat'] font-bold text-base text-[#0F2755]">
+                    Preparación Académica
+                  </h4>
+                  <p className="mt-2 font-['Inter'] text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    Formación y asesoría continua en línea a cargo de ENLACES para garantizar tu aprendizaje y preparación idónea para la evaluación.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-2xs flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-[11px] font-extrabold text-[#F4B400] bg-[#0F2755] px-2.5 py-0.5 rounded-full">
+                      Etapa 2
+                    </span>
+                    <Target className="w-5 h-5 text-[#1B3A7A]" />
+                  </div>
+                  <h4 className="font-['Montserrat'] font-bold text-base text-[#0F2755]">
+                    Evaluación Global
+                  </h4>
+                  <p className="mt-2 font-['Inter'] text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    Presentación del examen único conforme a los términos y convocatorias de la instancia de evaluación correspondiente.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-2xs flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-[11px] font-extrabold text-[#F4B400] bg-[#0F2755] px-2.5 py-0.5 rounded-full">
+                      Etapa 3
+                    </span>
+                    <Award className="w-5 h-5 text-[#1B3A7A]" />
+                  </div>
+                  <h4 className="font-['Montserrat'] font-bold text-base text-[#0F2755]">
+                    Expedición del Certificado
+                  </h4>
+                  <p className="mt-2 font-['Inter'] text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    Trámite y expedición del Certificado Oficial de Bachillerato por parte de la Secretaría de Educación Pública con validez en todo el país.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
