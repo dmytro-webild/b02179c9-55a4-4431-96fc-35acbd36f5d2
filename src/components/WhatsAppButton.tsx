@@ -1,45 +1,5 @@
-import { useLocation } from "react-router-dom";
-
-// Número de WhatsApp oficial (se configurará posteriormente)
-const OFFICIAL_WHATSAPP_NUMBER = "";
-
-const PROGRAM_MESSAGES: Record<string, string> = {
-  "/oferta-educativa/bachillerato": "Hola, me gustaría recibir información sobre el programa de Bachillerato General.",
-  "/oferta-educativa/licenciaturas": "Hola, me gustaría recibir información sobre el programa de Licenciaturas Ejecutivas.",
-  "/oferta-educativa/titulacion-por-experiencia-laboral": "Hola, me gustaría recibir información sobre el programa de Titulación por Experiencia Laboral.",
-  "/oferta-educativa/maestrias": "Hola, me gustaría recibir información sobre el programa de Maestrías Especializadas.",
-  "/oferta-educativa/diplomados": "Hola, me gustaría recibir información sobre el programa de Diplomados con Validez.",
-  "/oferta-educativa/ingles": "Hola, me gustaría recibir información sobre el Programa de Inglés.",
-  "/oferta-educativa": "Hola, me gustaría recibir información sobre la Oferta Educativa de ENLACES.",
-};
-
-const DEFAULT_MESSAGE = "Hola, me gustaría obtener información sobre ENLACES Educación.";
-
-function getWhatsAppMessage(pathname: string): string {
-  if (PROGRAM_MESSAGES[pathname]) {
-    return PROGRAM_MESSAGES[pathname];
-  }
-  if (pathname.startsWith("/oferta-educativa/")) {
-    const raw = pathname.replace("/oferta-educativa/", "").replace(/-/g, " ");
-    const formatted = raw.charAt(0).toUpperCase() + raw.slice(1);
-    return `Hola, me gustaría recibir información sobre el programa de ${formatted}.`;
-  }
-  return DEFAULT_MESSAGE;
-}
-
-function getWhatsAppUrl(pathname: string): string {
-  const message = getWhatsAppMessage(pathname);
-  const encodedMsg = encodeURIComponent(message);
-  if (OFFICIAL_WHATSAPP_NUMBER) {
-    return `https://wa.me/${OFFICIAL_WHATSAPP_NUMBER}?text=${encodedMsg}`;
-  }
-  return `https://wa.me/?text=${encodedMsg}`;
-}
-
 export default function WhatsAppButton() {
-  const { pathname } = useLocation();
-  const whatsappUrl = getWhatsAppUrl(pathname);
-  const currentMessage = getWhatsAppMessage(pathname);
+  const whatsappUrl = "https://wa.me/525618642699";
 
   return (
     <a
@@ -47,7 +7,7 @@ export default function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Contactar por WhatsApp"
-      title={`Enviar WhatsApp: ${currentMessage}`}
+      title="Contactar por WhatsApp: 56 1864 2699"
       className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50 flex items-center justify-center size-14 sm:size-16 rounded-full bg-[#25D366] text-white shadow-lg hover:shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[#25D366]/40 group"
       data-webild-element="whatsapp-float-button"
     >
