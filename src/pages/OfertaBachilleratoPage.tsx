@@ -409,8 +409,11 @@ export default function OfertaBachilleratoPage() {
                     Validez Oficial SEP
                   </span>
                   <h3 className="font-['Montserrat'] font-extrabold text-xl sm:text-2xl text-[#0F2755]">
-                    Acreditación Oficial mediante el Acuerdo 286 de la SEP
+                    Tu camino hacia el certificado oficial
                   </h3>
+                  <p className="font-['Inter'] text-xs font-medium text-slate-500 mt-1">
+                    Acreditación mediante el Acuerdo 286 de la SEP
+                  </p>
                 </div>
               </div>
               <span className="self-start md:self-auto text-xs font-bold text-[#1B3A7A] bg-white border border-slate-200 rounded-full px-4 py-1.5 shadow-2xs">
@@ -418,8 +421,8 @@ export default function OfertaBachilleratoPage() {
               </span>
             </div>
 
-            <p className="font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed mb-8 max-w-4xl text-left sm:text-justify">
-              Nuestro programa se encuentra estructurado con total apego a los lineamientos institucionales, garantizando claridad y certeza legal en cada una de las fases de tu proceso educativo:
+            <p className="font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed mb-8 max-w-4xl text-left">
+              Desde tu inscripción hasta la entrega de tu certificado, ENLACES te acompaña en cada etapa. Conoce cómo funciona el proceso y qué puedes esperar en cada momento.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -435,7 +438,7 @@ export default function OfertaBachilleratoPage() {
                   <h4 className="font-['Montserrat'] font-bold text-base text-[#0F2755]">
                     Preparación Académica
                   </h4>
-                  <p className="mt-2 font-['Inter'] text-xs sm:text-sm text-slate-600 leading-relaxed text-left sm:text-justify">
+                  <p className="mt-2 font-['Inter'] text-xs sm:text-sm text-slate-600 leading-relaxed text-left">
                     Durante 1 a 4 meses te preparas con nuestra guía de estudios, sesiones semanales en vivo, clases grabadas y acompañamiento de tutores. Puedes solicitar tu evaluación cuando estés preparado, sujeto a las fechas disponibles.
                   </p>
                 </div>
@@ -453,7 +456,7 @@ export default function OfertaBachilleratoPage() {
                   <h4 className="font-['Montserrat'] font-bold text-base text-[#0F2755]">
                     Evaluación
                   </h4>
-                  <p className="mt-2 font-['Inter'] text-xs sm:text-sm text-slate-600 leading-relaxed text-left sm:text-justify">
+                  <p className="mt-2 font-['Inter'] text-xs sm:text-sm text-slate-600 leading-relaxed text-left">
                     Presentas el Examen Único conforme a las condiciones y convocatorias del centro evaluador. Tu programa incluye tres oportunidades para acreditar los conocimientos correspondientes al bachillerato.
                   </p>
                 </div>
@@ -471,7 +474,7 @@ export default function OfertaBachilleratoPage() {
                   <h4 className="font-['Montserrat'] font-bold text-base text-[#0F2755]">
                     Certificación
                   </h4>
-                  <p className="mt-2 font-['Inter'] text-xs sm:text-sm text-slate-600 leading-relaxed text-left sm:text-justify">
+                  <p className="mt-2 font-['Inter'] text-xs sm:text-sm text-slate-600 leading-relaxed text-left">
                     Una vez que acreditas el examen, ENLACES realiza las gestiones necesarias y te entrega tu certificado oficial de bachillerato en un plazo de hasta 120 días hábiles, contados desde la acreditación.
                   </p>
                 </div>
