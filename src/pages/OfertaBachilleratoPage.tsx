@@ -17,13 +17,6 @@ import {
 } from "lucide-react";
 
 export default function OfertaBachilleratoPage() {
-  const pasosPortada = [
-    { titulo: "Inscríbete", icon: UserCheck },
-    { titulo: "Prepárate", icon: BookOpen },
-    { titulo: "Aplica tu examen", icon: FileText },
-    { titulo: "Recibe tu certificado", icon: Award },
-  ];
-
   const otherCategories = [
     { title: "Bachillerato en 18 meses", href: "/oferta/bachillerato-18-meses", tag: "Nivel Medio Superior" },
     { title: "Licenciaturas Ejecutivas", href: "/oferta-educativa/licenciaturas", tag: "Nivel Superior" },
@@ -88,49 +81,6 @@ export default function OfertaBachilleratoPage() {
               <p className="mt-5 font-['Inter'] text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
                 Prepárate en línea durante 4 meses con un modelo flexible, clases y acompañamiento académico para dar el siguiente paso hacia tu certificado de bachillerato.
               </p>
-
-              {/* Secuencia visual de 4 pasos */}
-              <div className="mt-7 w-full max-w-2xl">
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-3 gap-y-6 sm:gap-x-6 sm:gap-y-0">
-                  {pasosPortada.map((step, idx) => {
-                    const IconComp = step.icon;
-                    const showLine = idx !== 3;
-                    const lineClass =
-                      idx === 3
-                        ? "hidden"
-                        : idx === 1
-                        ? "hidden sm:block"
-                        : "block";
-
-                    return (
-                      <div
-                        key={step.titulo}
-                        className="flex flex-col items-center text-center relative"
-                      >
-                        {/* Circle & Connecting Line Container */}
-                        <div className="relative flex items-center justify-center w-full">
-                          {/* Connecting Line */}
-                          {showLine && (
-                            <div
-                              className={`absolute left-1/2 top-1/2 -translate-y-1/2 h-[2.5px] bg-[#F4B400] z-0 pointer-events-none w-[calc(100%+0.75rem)] sm:w-[calc(100%+1.5rem)] ${lineClass}`}
-                            />
-                          )}
-
-                          {/* Icon Circle */}
-                          <div className="relative z-10 flex shrink-0 items-center justify-center size-12 sm:size-14 rounded-full bg-[#FFF4D1] text-[#1B3A7A]">
-                            <IconComp className="size-6 sm:size-7" />
-                          </div>
-                        </div>
-
-                        {/* Step Title */}
-                        <span className="mt-2.5 sm:mt-3 font-['Montserrat'] font-semibold text-[13px] sm:text-[14px] text-[#1B3A7A] leading-tight text-center">
-                          {step.titulo}
-                        </span>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
 
               <div className="mt-8 flex flex-wrap gap-4 items-center">
                 <Link
