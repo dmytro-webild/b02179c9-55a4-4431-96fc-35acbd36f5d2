@@ -403,7 +403,7 @@ export default function NosotrosPage() {
       </section>
 
       {/* Editorial Section: NUESTRA HISTORIA */}
-      <section className="bg-white pt-7 sm:pt-9 lg:pt-10 pb-20 sm:pb-28 lg:pb-32 border-b border-slate-100">
+      <section className="bg-white pt-7 sm:pt-9 lg:pt-10 pb-0 border-b-0">
         <div className="mx-auto w-[var(--container)] px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
