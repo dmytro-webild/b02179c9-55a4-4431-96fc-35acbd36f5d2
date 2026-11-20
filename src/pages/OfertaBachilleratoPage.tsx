@@ -11,7 +11,6 @@ import {
   Target,
   Clock,
   ArrowRight,
-  Play,
   CheckCircle2,
   FileText,
   UserCheck
@@ -114,21 +113,16 @@ export default function OfertaBachilleratoPage() {
       <section className="py-16 sm:py-20 bg-slate-50 border-b border-slate-200/80 relative overflow-hidden">
         <div className="mx-auto w-[var(--container)] px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-            {/* Izquierda: Espacio para el video real de un egresado */}
+            {/* Izquierda: Video del egresado */}
             <div className="lg:col-span-5 order-2 lg:order-1 relative">
-              <div className="relative aspect-[16/9] sm:aspect-[4/3] rounded-3xl overflow-hidden shadow-xl border border-slate-200 bg-gradient-to-br from-[#0F2755] to-[#1B3A7A] flex flex-col items-center justify-center text-white p-6 text-center group">
-                <div className="absolute inset-0 bg-black/30" />
-                <div className="relative z-10 flex flex-col items-center">
-                  <div className="size-14 rounded-full bg-white/10 backdrop-blur-md border border-white/30 text-[#F4B400] flex items-center justify-center shadow-md group-hover:bg-[#F4B400] group-hover:text-[#0F2755] transition-all mb-3">
-                    <Play className="w-6 h-6 fill-current translate-x-0.5" />
-                  </div>
-                  <span className="inline-block rounded-full bg-amber-400/20 backdrop-blur-md px-3 py-1 text-xs font-bold text-amber-300 border border-amber-400/30 mb-2">
-                    Testimonio de Egresado
-                  </span>
-                  <p className="font-['Montserrat'] font-semibold text-sm text-white max-w-xs">
-                    [ Contenedor reservado para el video real de un egresado ]
-                  </p>
-                </div>
+              <div className="overflow-hidden rounded-3xl shadow-xl border border-slate-200 bg-black">
+                <video
+                  controls
+                  playsInline
+                  preload="metadata"
+                  className="w-full h-auto block rounded-3xl"
+                  src="https://res.cloudinary.com/r58dzn6z/video/upload/v1795211729/CerveceriaDelBarrio_Felipe_Optimizado.mp4"
+                />
               </div>
             </div>
 
@@ -138,13 +132,21 @@ export default function OfertaBachilleratoPage() {
                 Historias que inspiran
               </span>
 
-              <h2 className="font-['Montserrat'] font-extrabold text-3xl sm:text-4xl text-[#0F2755] leading-tight">
-                Siempre hay un momento para cumplir tus sueños
+              <h2 className="font-['Montserrat'] font-bold text-3xl sm:text-4xl text-[#0F2755] leading-tight">
+                <span className="text-[#1B3A7A]">Tu historia</span> todavía tiene <span className="text-[#F4B400]">mucho por contar.</span>
               </h2>
 
-              <p className="mt-5 font-['Inter'] text-base sm:text-lg text-slate-600 leading-relaxed">
-                No importa cuánto tiempo haya pasado ni los obstáculos que hayas enfrentado. Siempre puedes volver a intentarlo, avanzar y alcanzar esa meta que significa tanto para ti y para quienes te acompañan.
-              </p>
+              <div className="mt-5 font-['Inter'] text-base sm:text-lg text-slate-600 leading-relaxed space-y-4">
+                <p>
+                  No importa cuánto tiempo haya pasado ni cuántas veces hayas tenido que dejar tus estudios para después.
+                </p>
+                <p>
+                  Lo importante es que hoy puedes dar ese paso que quedó pendiente. Porque terminar una etapa también significa abrir la puerta a nuevos sueños, continuar preparándote y descubrir hasta dónde puedes llegar.
+                </p>
+                <p>
+                  Nunca es tarde para comenzar de nuevo. <span className="font-bold text-[#0F2755]">Y este puede ser el primer paso hacia todo lo que quieres lograr.</span>
+                </p>
+              </div>
 
               <div className="mt-6 pt-6 border-t border-slate-200 w-full flex items-center gap-3 text-xs font-bold text-[#1B3A7A]">
                 <UserCheck className="w-5 h-5 text-[#F4B400]" />
