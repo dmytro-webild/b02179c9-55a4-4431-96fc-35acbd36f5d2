@@ -516,7 +516,7 @@ export default function OfertaBachilleratoPage() {
       </section>
 
       {/* SECCIÓN 4 — PREGUNTAS FRECUENTES */}
-      <section className="py-16 sm:py-20 bg-white border-t border-slate-200/80">
+      <section className="pt-9 sm:pt-11 pb-12 sm:pb-14 bg-white border-t border-slate-200/80">
         <div className="mx-auto w-[var(--container)] px-4 sm:px-6">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <span className="inline-flex items-center gap-1.5 font-['Montserrat'] font-semibold text-xs text-[#1B3A7A] uppercase tracking-wider">
@@ -548,14 +548,9 @@ export default function OfertaBachilleratoPage() {
                     aria-expanded={isOpen}
                     className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 cursor-pointer focus:outline-none"
                   >
-                    <div className="flex items-center gap-3 sm:gap-4 pr-2">
-                      <span className="w-7 h-7 rounded-full bg-[#FFF4D1] text-[#0F2755] font-['Montserrat'] font-bold text-xs flex items-center justify-center shrink-0 border border-[#F4B400]/50">
-                        {idx + 1}
-                      </span>
-                      <h3 className="font-['Montserrat'] font-bold text-base sm:text-lg text-[#0F2755] leading-snug">
-                        {faq.question}
-                      </h3>
-                    </div>
+                    <h3 className="font-['Montserrat'] font-bold text-base sm:text-lg text-[#0F2755] leading-snug pr-2">
+                      {faq.question}
+                    </h3>
                     <div
                       className={`w-8 h-8 rounded-full bg-[#FFF4D1] text-[#0F2755] flex items-center justify-center shrink-0 border border-[#F4B400]/50 transition-transform duration-300 ${
                         isOpen ? "rotate-180 bg-[#F4B400]" : ""
