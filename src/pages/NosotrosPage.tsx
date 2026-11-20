@@ -534,6 +534,13 @@ export default function NosotrosPage() {
                   <p className="mt-3 font-['Inter'] text-slate-600 text-base leading-relaxed font-normal max-w-xl md:ml-auto">
                     Nacemos en la Ciudad de México, preparando a jóvenes y adultos para acreditar el bachillerato mediante las evaluaciones de COLBACH y CENEVAL. Descubrimos el enorme impacto social de brindar nuevas oportunidades educativas.
                   </p>
+                  <video
+                    controls
+                    preload="metadata"
+                    playsInline
+                    src="https://res.cloudinary.com/r58dzn6z/video/upload/v1795194453/IMG_1454.TRIM.mov"
+                    className="mt-[30px] w-full max-w-xl md:ml-auto rounded-none shadow-none border-none object-contain"
+                  />
                 </div>
 
                 {/* Photographic Gallery Right Column (Desktop & Mobile) */}
