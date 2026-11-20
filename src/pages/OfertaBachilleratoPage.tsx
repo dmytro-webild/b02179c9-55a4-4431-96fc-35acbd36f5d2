@@ -201,7 +201,7 @@ export default function OfertaBachilleratoPage() {
             </h2>
             <div className="mx-auto my-4 h-1 w-16 rounded-full bg-gradient-to-r from-[#1B3A7A] via-[#F4B400] to-[#1B3A7A]" />
             <p className="font-['Inter'] text-slate-600 text-base leading-relaxed">
-              Consulta los aspectos clave y la organización modular del Bachillerato en 4 meses.
+              Conoce cómo funciona nuestro programa, cómo te preparamos para el examen y cómo te acompañamos hasta recibir tu certificado oficial.
             </p>
           </div>
 
@@ -227,7 +227,7 @@ export default function OfertaBachilleratoPage() {
                 <h3 className="font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#1B3A7A]">
                   Una forma diferente de terminar tu preparatoria
                 </h3>
-                <p className="mt-3 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed">
+                <p className="mt-3 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed text-left sm:text-justify">
                   No necesitas volver a cursar tres años de escuela para alcanzar esta meta. El Acuerdo 286 de la Secretaría de Educación Pública contempla una alternativa para acreditar los conocimientos correspondientes al bachillerato mediante una evaluación. En lugar de cursar nuevamente todas las materias de una preparatoria tradicional, puedes prepararte para presentar un examen que evalúa tus conocimientos del nivel medio superior. ENLACES te ayuda a prepararte y te acompaña durante todo el proceso.
                 </p>
               </div>
@@ -254,7 +254,7 @@ export default function OfertaBachilleratoPage() {
                 <h3 className="font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#1B3A7A]">
                   Te preparamos para lograrlo
                 </h3>
-                <p className="mt-3 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed">
+                <p className="mt-3 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed text-left sm:text-justify">
                   Desde el momento en que te inscribes, recibes una guía de estudios diseñada específicamente para el Examen Único. Además, cuentas con sesiones académicas en vivo todas las semanas, grabaciones disponibles para repasar los temas y acompañamiento de tutores para resolver tus dudas. Todo mediante una metodología de preparación en línea que te permite continuar con tu trabajo, tu familia y tus actividades habituales.
                 </p>
               </div>
@@ -290,7 +290,7 @@ export default function OfertaBachilleratoPage() {
                 <h3 className="font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#1B3A7A]">
                   Avanza a tu propio ritmo
                 </h3>
-                <p className="mt-3 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed">
+                <p className="mt-3 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed text-left sm:text-justify">
                   Tu preparación puede durar de 1 a 4 meses. Si te sientes preparado antes de concluir los cuatro meses, puedes solicitar tu evaluación, siempre que existan fechas disponibles y cumplas los requisitos del centro evaluador. La modalidad de presentación del examen depende del centro evaluador y de la convocatoria correspondiente.
                 </p>
               </div>
@@ -317,7 +317,7 @@ export default function OfertaBachilleratoPage() {
                 <h3 className="font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#1B3A7A]">
                   Un examen, tres oportunidades
                 </h3>
-                <p className="mt-3 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed">
+                <p className="mt-3 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed text-left sm:text-justify">
                   La acreditación se realiza mediante el Examen Único del Acuerdo 286. El programa incluye tres oportunidades de presentación, para que tengas la posibilidad de volver a intentarlo si no acreditas la evaluación en tu primera ocasión. Durante tu preparación contarás con orientación académica para llegar al examen con mayor seguridad.
                 </p>
               </div>
@@ -344,9 +344,20 @@ export default function OfertaBachilleratoPage() {
                 <h3 className="font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#1B3A7A]">
                   Tú estudias. Nosotros nos encargamos del proceso.
                 </h3>
-                <p className="mt-3 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed max-w-4xl">
-                  En ENLACES no solamente te preparamos para el examen. También te orientamos, acompañamos y realizamos las gestiones necesarias durante el proceso de evaluación y certificación. No necesitas realizar trámites ni pagos directamente ante otras instituciones por el proceso contratado. ENLACES coordina las gestiones correspondientes y te mantiene informado hasta la entrega de tu documentación. Una vez que acreditas el examen, comienza el trámite de tu certificado oficial de bachillerato. El plazo de entrega es de hasta 120 días hábiles contados desde la acreditación del examen. Tu certificado tiene validez oficial y te permite acreditar tus estudios de nivel medio superior para continuar tu formación académica o respaldar tu preparación ante nuevas oportunidades laborales.
-                </p>
+                <div className="mt-3 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed max-w-4xl space-y-3 text-left sm:text-justify">
+                  <p>
+                    En ENLACES no solamente te preparamos para el examen. También te orientamos, acompañamos y realizamos las gestiones necesarias durante el proceso de evaluación y certificación.
+                  </p>
+                  <p>
+                    No necesitas realizar trámites ni pagos directamente ante otras instituciones por el proceso contratado. ENLACES coordina las gestiones correspondientes y te mantiene informado hasta la entrega de tu documentación.
+                  </p>
+                  <p>
+                    Una vez que acreditas el examen, comienza el trámite de tu certificado oficial de bachillerato. El plazo de entrega es de hasta 120 días hábiles contados desde la acreditación del examen.
+                  </p>
+                  <p>
+                    Tu certificado tiene validez oficial y te permite acreditar tus estudios de nivel medio superior para continuar tu formación académica o respaldar tu preparación ante nuevas oportunidades laborales.
+                  </p>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -374,7 +385,7 @@ export default function OfertaBachilleratoPage() {
                   </h3>
                 </div>
               </div>
-              <p className="text-sm font-['Inter'] text-slate-600 leading-relaxed lg:max-w-3xl">
+              <p className="text-sm font-['Inter'] text-slate-600 leading-relaxed lg:max-w-3xl text-left sm:text-justify">
                 Tener al menos 18 años, haber concluido la secundaria y contar con el certificado de secundaria y la documentación requerida para el proceso.
               </p>
             </div>
