@@ -166,7 +166,7 @@ const HeroBoardFrame = ({
       data-scene
       aria-label={ariaLabel ?? "Portada principal"}
       className={cn(
-        "relative isolate min-h-[70vh] lg:min-h-[75vh] flex items-center overflow-hidden bg-white text-[#0F2755] pt-24 pb-4 sm:pb-6 lg:pt-28 lg:pb-8",
+        "relative isolate overflow-hidden bg-white text-[#0F2755] pt-6 sm:pt-8 lg:pt-10 pb-6 sm:pb-8 lg:pb-10",
         className
       )}
     >
