@@ -18,10 +18,10 @@ import {
 
 export default function OfertaBachilleratoPage() {
   const pasosPortada = [
-    { num: "01", titulo: "Inscríbete", icon: UserCheck },
-    { num: "02", titulo: "Prepárate", icon: BookOpen },
-    { num: "03", titulo: "Aplica tu examen", icon: FileText },
-    { num: "04", titulo: "Recibe tu certificado", icon: Award },
+    { titulo: "Inscríbete", icon: UserCheck },
+    { titulo: "Prepárate", icon: BookOpen },
+    { titulo: "Aplica tu examen", icon: FileText },
+    { titulo: "Recibe tu certificado", icon: Award },
   ];
 
   const otherCategories = [
@@ -90,26 +90,42 @@ export default function OfertaBachilleratoPage() {
               </p>
 
               {/* Secuencia visual de 4 pasos */}
-              <div className="mt-6 w-full max-w-2xl">
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3">
-                  {pasosPortada.map((step) => {
+              <div className="mt-7 w-full max-w-2xl">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-3 gap-y-6 sm:gap-x-6 sm:gap-y-0">
+                  {pasosPortada.map((step, idx) => {
                     const IconComp = step.icon;
+                    const showLine = idx !== 3;
+                    const lineClass =
+                      idx === 3
+                        ? "hidden"
+                        : idx === 1
+                        ? "hidden sm:block"
+                        : "block";
+
                     return (
                       <div
-                        key={step.num}
-                        className="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-50/80 border border-slate-200/60"
+                        key={step.titulo}
+                        className="flex flex-col items-center text-center relative"
                       >
-                        <div className="flex shrink-0 items-center justify-center size-8 rounded-lg bg-[#1B3A7A] text-[#F4B400]">
-                          <IconComp className="w-4 h-4" />
+                        {/* Circle & Connecting Line Container */}
+                        <div className="relative flex items-center justify-center w-full">
+                          {/* Connecting Line */}
+                          {showLine && (
+                            <div
+                              className={`absolute left-1/2 top-1/2 -translate-y-1/2 h-[2.5px] bg-[#F4B400] z-0 pointer-events-none w-[calc(100%+0.75rem)] sm:w-[calc(100%+1.5rem)] ${lineClass}`}
+                            />
+                          )}
+
+                          {/* Icon Circle */}
+                          <div className="relative z-10 flex shrink-0 items-center justify-center size-12 sm:size-14 rounded-full bg-[#FFF4D1] text-[#1B3A7A]">
+                            <IconComp className="size-6 sm:size-7" />
+                          </div>
                         </div>
-                        <div className="flex flex-col min-w-0">
-                          <span className="text-[10px] font-extrabold text-[#F4B400] font-['Montserrat'] tracking-wider leading-none">
-                            {step.num}
-                          </span>
-                          <span className="text-xs font-bold text-[#1B3A7A] font-['Montserrat'] leading-tight mt-0.5">
-                            {step.titulo}
-                          </span>
-                        </div>
+
+                        {/* Step Title */}
+                        <span className="mt-2.5 sm:mt-3 font-['Montserrat'] font-semibold text-[13px] sm:text-[14px] text-[#1B3A7A] leading-tight text-center">
+                          {step.titulo}
+                        </span>
                       </div>
                     );
                   })}
