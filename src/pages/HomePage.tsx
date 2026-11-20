@@ -500,7 +500,7 @@ export default function HomePage() {
                 <span className="text-xs font-bold uppercase tracking-widest text-[#1B3A7A]">Ubicación Física</span>
                 <h3 className="mt-1 font-['Montserrat'] font-bold text-xl text-[#0F2755]">Oficinas centrales</h3>
                 <p className="mt-2 font-['Inter'] text-sm sm:text-base text-slate-700 leading-relaxed max-w-xl">
-                  Av. Paseo de la Reforma 342, piso 26, Col. Juárez, Alcaldía Cuauhtémoc, C. P. 06500, Ciudad de México.
+                  Av. Paseo de la Reforma 342, piso 26, Col. Juárez, Alcaldía Cuauhtémoc, <span className="whitespace-nowrap">C.P.&nbsp;06500</span>, Ciudad de México.
                 </p>
               </div>
               <a

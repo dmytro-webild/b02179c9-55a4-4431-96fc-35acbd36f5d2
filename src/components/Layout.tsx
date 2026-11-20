@@ -156,7 +156,7 @@ export default function Layout() {
               title: "Oficinas centrales",
               links: [
                 {
-                  text: "Av. Paseo de la Reforma 342, piso 26, Col. Juárez, Alc. Cuauhtémoc, C.P.\u00A006500, CDMX",
+                  text: "Av. Paseo de la Reforma 342, piso 26, Col. Juárez, Alcaldía Cuauhtémoc, C.P. 06500, Ciudad de México.",
                   href: "https://www.google.com/maps/search/?api=1&query=Av.+Paseo+de+la+Reforma+342,+piso+26,+colonia+Ju%C3%A1rez,+Alcald%C3%ADa+Cuauht%C3%A9moc,+C.+P.+06500,+Ciudad+de+M%C3%A9xico"
                 },
                 {
