@@ -436,7 +436,7 @@ export default function OfertaBachilleratoPage() {
                     Preparación Académica
                   </h4>
                   <p className="mt-2 font-['Inter'] text-xs sm:text-sm text-slate-600 leading-relaxed text-left sm:text-justify">
-                    Formación y asesoría continua en línea a cargo de ENLACES para garantizar tu aprendizaje y preparación idónea para la evaluación.
+                    Durante 1 a 4 meses te preparas con nuestra guía de estudios, sesiones semanales en vivo, clases grabadas y acompañamiento de tutores. Puedes solicitar tu evaluación cuando estés preparado, sujeto a las fechas disponibles.
                   </p>
                 </div>
               </div>
@@ -451,10 +451,10 @@ export default function OfertaBachilleratoPage() {
                     <Target className="w-5 h-5 text-[#1B3A7A]" />
                   </div>
                   <h4 className="font-['Montserrat'] font-bold text-base text-[#0F2755]">
-                    Evaluación Global
+                    Evaluación
                   </h4>
                   <p className="mt-2 font-['Inter'] text-xs sm:text-sm text-slate-600 leading-relaxed text-left sm:text-justify">
-                    Presentación del examen único conforme a los términos y convocatorias de la instancia de evaluación correspondiente.
+                    Presentas el Examen Único conforme a las condiciones y convocatorias del centro evaluador. Tu programa incluye tres oportunidades para acreditar los conocimientos correspondientes al bachillerato.
                   </p>
                 </div>
               </div>
@@ -469,10 +469,10 @@ export default function OfertaBachilleratoPage() {
                     <Award className="w-5 h-5 text-[#1B3A7A]" />
                   </div>
                   <h4 className="font-['Montserrat'] font-bold text-base text-[#0F2755]">
-                    Expedición del Certificado
+                    Certificación
                   </h4>
                   <p className="mt-2 font-['Inter'] text-xs sm:text-sm text-slate-600 leading-relaxed text-left sm:text-justify">
-                    Trámite y expedición del Certificado Oficial de Bachillerato por parte de la Secretaría de Educación Pública con validez en todo el país.
+                    Una vez que acreditas el examen, ENLACES realiza las gestiones necesarias y te entrega tu certificado oficial de bachillerato en un plazo de hasta 120 días hábiles, contados desde la acreditación.
                   </p>
                 </div>
               </div>
