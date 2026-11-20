@@ -79,7 +79,7 @@ export default function OfertaBachilleratoPage() {
               </h1>
 
               <p className="mt-5 font-['Inter'] text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
-                Prepárate en línea con un modelo flexible, acompañamiento académico y herramientas diseñadas para ayudarte a alcanzar tu meta.
+                Prepárate en línea durante 4 meses con un modelo flexible, clases y acompañamiento académico para dar el siguiente paso hacia tu certificado de bachillerato.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-4 items-center">
@@ -87,7 +87,7 @@ export default function OfertaBachilleratoPage() {
                   to="/contacto"
                   className="rounded-full bg-[#F4B400] px-8 py-4 font-['Montserrat'] font-extrabold text-sm text-[#0F2755] shadow-md hover:bg-amber-300 transition-all hover:scale-105 inline-flex items-center gap-2"
                 >
-                  Solicita información
+                  Solicitar informes
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
