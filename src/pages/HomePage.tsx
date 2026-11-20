@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import HeroBoardFrame from "@/components/sections/hero/HeroBoardFrame";
-import CinematicVideoSection from "@/components/sections/video/CinematicVideoSection";
 import ScrollToneBackdrop from "@/components/kit/ScrollToneBackdrop";
 import LoaderChipFill from "@/components/loaders/LoaderChipFill";
 
@@ -139,7 +138,7 @@ export default function HomePage() {
 
       <LoaderChipFill label="ENLACES Educación" />
 
-      {/* Portada actual y rueda institucional intactas */}
+      {/* Portada actual con mensaje principal a la izquierda y video vertical de la presentadora a la derecha */}
       <div id="home" data-webild-section="HeroBoardFrame" data-webild-section-id="HeroBoardFrame-1" data-section="home">
         <HeroBoardFrame
           className="bg-white"
@@ -155,14 +154,51 @@ export default function HomePage() {
             text: "Conoce ENLACES",
             href: "/nosotros"
           }}
+          videoSrc="https://res.cloudinary.com/r58dzn6z/video/upload/v1794975513/VENTAJAS_EDUCACION_EN_LINEA_COMPRIMIDO_16MB.mp4"
           introDelay={0.1}
         />
       </div>
 
-      {/* Video cinematográfico de ventajas de educación en línea */}
-      <div id="video-cinematografico" data-webild-section="CinematicVideoSection" data-webild-section-id="CinematicVideoSection-1" data-section="video-cinematografico">
-        <CinematicVideoSection videoSrc="https://res.cloudinary.com/r58dzn6z/video/upload/v1794975513/VENTAJAS_EDUCACION_EN_LINEA_COMPRIMIDO_16MB.mp4" />
-      </div>
+      {/* Secciones de texto secundario y rueda institucional centrada */}
+      <section id="educacion-flexible" data-webild-section="EducacionFlexible" data-section="educacion-flexible" className="bg-white py-8 sm:py-12 overflow-hidden border-0 shadow-none">
+        <div className="mx-auto w-[var(--container)] flex flex-col items-center text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="max-w-3xl mx-auto flex flex-col items-center text-center"
+          >
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#1B3A7A]/15 bg-[#1B3A7A]/5 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#1B3A7A] mb-4">
+              <span className="size-2 rounded-full bg-[#F4B400] animate-pulse" />
+              Educación Flexible y Humana
+            </div>
+
+            <h2 className="font-['Montserrat'] font-extrabold text-[#0F2755] text-3xl sm:text-4xl lg:text-4xl leading-[1.15] tracking-tight mb-4">
+              Tu futuro está a un clic de distancia.
+            </h2>
+
+            <p className="font-['Inter'] text-[#475569] text-base sm:text-lg leading-relaxed max-w-2xl mb-0">
+              Estudia desde donde estés, con horarios que se adaptan a tu vida, tecnología educativa y acompañamiento humano durante todo tu proceso.
+            </p>
+          </motion.div>
+
+          {/* Rueda original ENLACES centrada, azul tenue y tamaño elegante */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mt-6 sm:mt-8 flex items-center justify-center"
+          >
+            <img
+              src="https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794456185254-3zlenx22.png"
+              alt="Rueda institucional ENLACES"
+              className="w-[260px] sm:w-[330px] md:w-[390px] lg:w-[430px] h-auto aspect-square object-contain mix-blend-multiply opacity-[0.20]"
+            />
+          </motion.div>
+        </div>
+      </section>
 
       {/* Los cuatro beneficios institucionales */}
       <section id="beneficios-institucionales" data-webild-section="InstitutionalBenefits" data-section="beneficios-institucionales" className="bg-white pt-2 sm:pt-4 pb-12 sm:pb-16 lg:pb-20 border-0 shadow-none">

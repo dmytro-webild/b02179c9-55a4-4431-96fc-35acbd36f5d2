@@ -1,8 +1,9 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, useReducedMotion } from "motion/react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { Volume2, VolumeX } from "lucide-react";
 
 const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs));
 
@@ -17,8 +18,7 @@ type HeroBoardFrameProps = {
   description?: string;
   primaryButton?: Button;
   secondaryButton?: Button;
-  imageSrc?: string;
-  imageAlt?: string;
+  videoSrc?: string;
   features?: FeatureItem[];
   introDelay?: number;
   ariaLabel?: string;
@@ -56,15 +56,99 @@ const FeatureIcon = ({ name }: { name: FeatureItem["icon"] }) => {
   );
 };
 
-const ENLACES_WHEEL_SRC = "https://storage.googleapis.com/webild/users/user_3KviWw22IHbUwhmRoxf95hIHXdW/uploaded-1794456185254-3zlenx22.png";
+const DEFAULT_VIDEO_SRC =
+  "https://res.cloudinary.com/r58dzn6z/video/upload/v1794975513/VENTAJAS_EDUCACION_EN_LINEA_COMPRIMIDO_16MB.mp4";
+
+const HeroVideoPlayer = ({ videoSrc }: { videoSrc: string }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    const container = containerRef.current;
+    if (!video || !container) return;
+
+    video.muted = isMuted;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            video
+              .play()
+              .then(() => setIsLoaded(true))
+              .catch(() => {});
+          } else {
+            video.pause();
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    observer.observe(container);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [isMuted]);
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      const nextMuted = !isMuted;
+      videoRef.current.muted = nextMuted;
+      setIsMuted(nextMuted);
+    }
+  };
+
+  return (
+    <div
+      ref={containerRef}
+      className="relative w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[340px] xl:max-w-[360px] aspect-[9/16] rounded-2xl overflow-hidden shadow-xl bg-slate-900 border border-slate-200/60 flex items-center justify-center"
+    >
+      <video
+        ref={videoRef}
+        src={videoSrc}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        onLoadedData={() => setIsLoaded(true)}
+        className={`w-full h-full object-cover object-top block border-0 p-0 m-0 outline-none transition-opacity duration-700 ${
+          isLoaded ? "opacity-100" : "opacity-0"
+        }`}
+      />
+      <button
+        type="button"
+        onClick={toggleMute}
+        aria-label={isMuted ? "Activar sonido" : "Silenciar sonido"}
+        className="absolute bottom-4 left-4 z-20 flex items-center gap-2 bg-[#0F2755]/85 hover:bg-[#0F2755] text-white text-xs font-semibold px-3.5 py-2 rounded-full backdrop-blur-md border border-white/20 transition-all duration-200 cursor-pointer shadow-md"
+      >
+        {isMuted ? (
+          <>
+            <VolumeX className="size-4 text-[#F4B400]" />
+            <span>Activar sonido</span>
+          </>
+        ) : (
+          <>
+            <Volume2 className="size-4 text-[#F4B400]" />
+            <span>Silenciar</span>
+          </>
+        )}
+      </button>
+    </div>
+  );
+};
 
 const HeroBoardFrame = ({
   tag = "EDUCACIÓN EN LÍNEA",
   description,
   primaryButton,
   secondaryButton,
-  imageSrc = ENLACES_WHEEL_SRC,
-  imageAlt = "Rueda institucional ENLACES",
+  videoSrc = DEFAULT_VIDEO_SRC,
   features = [],
   introDelay = 0,
   ariaLabel,
@@ -82,12 +166,12 @@ const HeroBoardFrame = ({
       data-scene
       aria-label={ariaLabel ?? "Portada principal"}
       className={cn(
-        "relative isolate min-h-[70vh] lg:min-h-[75vh] flex items-center overflow-hidden bg-white text-[#0F2755] pt-24 pb-2 sm:pb-3 lg:pt-28 lg:pb-4",
+        "relative isolate min-h-[70vh] lg:min-h-[75vh] flex items-center overflow-hidden bg-white text-[#0F2755] pt-24 pb-4 sm:pb-6 lg:pt-28 lg:pb-8",
         className
       )}
     >
       <div className="relative mx-auto w-[var(--container)]">
-        {/* Main Hero Row: Text composition on left, Wheel watermark on right (vertically centered with main text block) */}
+        {/* Main Hero Row: Text composition on left, Vertical 9:16 Video on right */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column - Main Text composition */}
           <div className="lg:col-span-7 xl:col-span-7 flex flex-col items-start text-left z-10 max-w-3xl lg:max-w-none">
@@ -173,17 +257,13 @@ const HeroBoardFrame = ({
             )}
           </div>
 
-          {/* Right Column - Institutional Wheel Watermark (~20% larger, vertically centered with text block) */}
+          {/* Right Column - Presenter Vertical 9:16 Video */}
           <div className="lg:col-span-5 xl:col-span-5 flex items-center justify-center lg:justify-end mt-8 lg:mt-0">
             <motion.div
               {...appear(40, 0.3)}
-              className="relative flex items-center justify-center pointer-events-none select-none"
+              className="relative flex items-center justify-center w-full"
             >
-              <img
-                src={imageSrc}
-                alt={imageAlt}
-                className="w-[335px] sm:w-[455px] md:w-[530px] lg:w-[575px] xl:w-[625px] h-auto aspect-square object-contain mix-blend-multiply opacity-[0.18]"
-              />
+              <HeroVideoPlayer videoSrc={videoSrc} />
             </motion.div>
           </div>
         </div>
