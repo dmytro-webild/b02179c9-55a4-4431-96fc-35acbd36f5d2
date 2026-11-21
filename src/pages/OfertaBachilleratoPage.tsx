@@ -58,7 +58,7 @@ export default function OfertaBachilleratoPage() {
   const otherCategories = [
     { title: "Bachillerato en 18 meses", href: "/oferta/bachillerato-18-meses", tag: "Nivel Medio Superior" },
     { title: "Licenciaturas Ejecutivas", href: "/oferta-educativa/licenciaturas", tag: "Nivel Superior" },
-    { title: "Titulación por Experiencia", href: "/oferta-educativa/titulacion-por-experiencia-laboral", tag: "Acreditación Ágil" },
+    { title: "Titulación por Experiencia", href: "/oferta/titulacion-por-experiencia-laboral", tag: "Acreditación Ágil" },
     { title: "Maestrías Especializadas", href: "/oferta-educativa/maestrias", tag: "Posgrados" },
     { title: "Diplomados con Validez", href: "/oferta-educativa/diplomados", tag: "Especialización" },
   ];

@@ -44,7 +44,7 @@ const ofertaCategories = [
   },
   {
     title: "Titulación por Experiencia Laboral",
-    href: "/oferta-educativa/titulacion-por-experiencia-laboral",
+    href: "/oferta/titulacion-por-experiencia-laboral",
     tag: "Acreditación Ágil",
     description: "Valida tu trayectoria profesional acumulada con título formal.",
     badgeGold: "Acreditación Directa",
