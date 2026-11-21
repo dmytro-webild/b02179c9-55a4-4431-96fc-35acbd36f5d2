@@ -660,27 +660,6 @@ export default function OfertaBachilleratoPage() {
           </div>
         </div>
       </section>
-
-      {/* Banner CTA Final */}
-      <section className="py-16 bg-[#0F2755] text-white">
-        <div className="mx-auto w-[var(--container)] px-4 text-center max-w-3xl">
-          <h2 className="font-['Montserrat'] font-extrabold text-3xl sm:text-4xl text-white">
-            ¿Listo para iniciar tu Bachillerato en 4 meses?
-          </h2>
-          <p className="mt-4 font-['Inter'] text-base text-blue-100">
-            Nuestros asesores educativos te orientarán en cada paso para tu inscripción y resolverán todas tus dudas.
-          </p>
-          <div className="mt-8 flex justify-center">
-            <Link
-              to="/contacto"
-              className="rounded-full bg-[#F4B400] px-8 py-4 font-['Montserrat'] font-extrabold text-sm text-[#0F2755] shadow-lg hover:bg-amber-300 transition-all hover:scale-105 inline-flex items-center gap-2"
-            >
-              Contactar a un asesor
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
