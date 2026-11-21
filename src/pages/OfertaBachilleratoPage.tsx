@@ -207,7 +207,7 @@ export default function OfertaBachilleratoPage() {
                 <span className="text-[#1B3A7A]">Tu historia</span> todavía tiene <span className="text-[#F4B400]">mucho por contar.</span>
               </h2>
 
-              <div className="mt-5 font-['Inter'] text-base sm:text-lg text-slate-600 leading-relaxed space-y-4">
+              <div className="mt-5 font-['Inter'] text-base sm:text-lg text-slate-600 leading-relaxed space-y-4 text-left sm:text-justify">
                 <p>
                   No importa cuánto tiempo haya pasado ni cuántas veces hayas tenido que dejar tus estudios para después.
                 </p>
@@ -452,7 +452,7 @@ export default function OfertaBachilleratoPage() {
                     Validez Oficial SEP
                   </span>
                   <h3 className="font-['Montserrat'] font-extrabold text-xl sm:text-2xl text-[#0F2755]">
-                    Tu camino hacia el certificado oficial
+                    Validez oficial
                   </h3>
                   <p className="font-['Inter'] text-xs font-medium text-slate-500 mt-1">
                     Acreditación mediante el Acuerdo 286 de la SEP
@@ -460,7 +460,7 @@ export default function OfertaBachilleratoPage() {
                 </div>
               </div>
               <span className="self-start md:self-auto text-xs font-bold text-[#1B3A7A] bg-white border border-slate-200 rounded-full px-4 py-1.5 shadow-2xs">
-                Validez Nacional
+                Validez oficial en México
               </span>
             </div>
 
@@ -594,36 +594,28 @@ export default function OfertaBachilleratoPage() {
         </div>
       </section>
 
-      {/* SECCIÓN CIERRE COMERCIAL */}
+      {/* SECCIÓN CIERRE EMOCIONAL */}
       <section className="py-12 sm:py-16 bg-slate-50/70 border-t border-slate-200/80">
         <div className="mx-auto w-[var(--container)] px-4 sm:px-6">
           <div className="max-w-3xl mx-auto text-center">
             <span className="inline-flex items-center gap-1.5 font-['Montserrat'] font-semibold text-xs text-[#1B3A7A] uppercase tracking-wider mb-3">
               <span className="size-1.5 rounded-full bg-[#F4B400] shrink-0" />
-              Da el siguiente paso
+              HISTORIAS QUE INSPIRAN
             </span>
             <h2 className="font-['Montserrat'] font-extrabold text-2xl sm:text-4xl text-[#0F2755] leading-tight">
-              Tu historia no termina donde pausaste tus estudios.
+              Ellos lo lograron. Tú también puedes.
             </h2>
             <div className="mx-auto my-4 h-1 w-16 rounded-full bg-gradient-to-r from-[#1B3A7A] via-[#F4B400] to-[#1B3A7A]" />
             <p className="font-['Inter'] text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
-              Hoy puedes retomar esa meta que dejaste pendiente. En ENLACES te acompañamos desde tu preparación hasta la entrega de tu certificado oficial de bachillerato. Da el siguiente paso hacia nuevas oportunidades.
+              Cada uno de nuestros egresados tiene una historia diferente, pero todos comparten algo: decidieron dar el siguiente paso. Conoce sus experiencias y descubre lo que también puedes lograr.
             </p>
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
-                href="https://enlaces.edu.mx/inscripcion/"
-                target="_blank"
-                rel="noopener noreferrer"
+            <div className="mt-8 flex items-center justify-center">
+              <Link
+                to="/testimonios-y-egresados"
                 className="w-full sm:w-auto rounded-full bg-[#F4B400] px-8 py-3.5 font-['Montserrat'] font-extrabold text-sm text-[#0F2755] shadow-md hover:bg-amber-300 transition-all hover:scale-105 inline-flex items-center justify-center gap-2"
               >
-                Inscríbete
+                Conoce sus historias
                 <ArrowRight className="w-4 h-4" />
-              </a>
-              <Link
-                to="/contacto"
-                className="w-full sm:w-auto rounded-full border border-slate-300 bg-white px-8 py-3.5 font-['Montserrat'] font-bold text-sm text-[#0F2755] hover:bg-slate-100 hover:border-slate-400 transition-all inline-flex items-center justify-center gap-2"
-              >
-                Solicitar informes
               </Link>
             </div>
           </div>
