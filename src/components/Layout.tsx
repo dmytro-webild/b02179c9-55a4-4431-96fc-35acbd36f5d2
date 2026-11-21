@@ -86,7 +86,7 @@ export default function Layout() {
                 },
                 {
                   text: "Titulación por Experiencia",
-                  href: "/oferta-educativa/titulacion-por-experiencia-laboral"
+                  href: "/oferta/titulacion-por-experiencia-laboral"
                 },
                 {
                   text: "Maestrías Especializadas",

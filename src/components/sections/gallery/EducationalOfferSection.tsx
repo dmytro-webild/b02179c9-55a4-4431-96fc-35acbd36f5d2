@@ -33,7 +33,7 @@ const defaultPrograms: ProgramItem[] = [
     tag: "Acreditación Ágil",
     highlightLabel: "Destacado • Experiencia Profesional",
     description: "Acredita formalmente tus conocimientos y trayectoria profesional acumulada mediante evaluación directa de competencias laborales.",
-    href: "/oferta-educativa/titulacion-por-experiencia-laboral",
+    href: "/oferta/titulacion-por-experiencia-laboral",
     imageSrc: "https://img.b2bpic.net/free-photo/businessman-using-digital-tablet-writing-clipboard-with-pen-gray-desk_23-2148052592.jpg?_wi=1",
     imageAlt: "Titulación y acreditación por experiencia laboral",
     isFeatured: true

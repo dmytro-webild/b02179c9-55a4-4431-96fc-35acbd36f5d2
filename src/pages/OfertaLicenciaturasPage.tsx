@@ -5,7 +5,7 @@ import { MotionMedia } from "@/components/kit/Media";
 export default function OfertaLicenciaturasPage() {
   const otherCategories = [
     { title: "Bachillerato", href: "/oferta-educativa/bachillerato", tag: "Medio Superior" },
-    { title: "Titulación por Experiencia Laboral", href: "/oferta-educativa/titulacion-por-experiencia-laboral", tag: "Acreditación Ágil" },
+    { title: "Titulación por Experiencia Laboral", href: "/oferta/titulacion-por-experiencia-laboral", tag: "Acreditación Ágil" },
     { title: "Maestrías", href: "/oferta-educativa/maestrias", tag: "Posgrados" },
     { title: "Diplomados", href: "/oferta-educativa/diplomados", tag: "Especialización" },
     { title: "Inglés", href: "/oferta-educativa/ingles", tag: "Idioma Global" },
