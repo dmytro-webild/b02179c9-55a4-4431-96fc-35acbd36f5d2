@@ -93,9 +93,35 @@ export default function OfertaBachilleratoPage() {
                 <span className="block text-[#F4B400]">EN 4 PASOS.</span>
               </h1>
 
-              <p className="mt-5 font-['Inter'] text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
-                Prepárate en línea durante 4 meses con un modelo flexible, clases y acompañamiento académico para dar el siguiente paso hacia tu certificado de bachillerato.
-              </p>
+              <div className="mt-6 space-y-3.5 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl text-left">
+                <h2 className="font-['Montserrat'] font-bold text-lg sm:text-xl text-[#1B3A7A]">
+                  ¿Necesitas terminar tu preparatoria?
+                </h2>
+
+                <p className="font-['Montserrat'] font-extrabold text-base sm:text-lg text-[#0F2755] leading-snug">
+                  Sí es posible. Y no tienes que poner tu vida en pausa para lograrlo.
+                </p>
+
+                <p>
+                  Sabemos que muchas veces el trabajo, la familia o las responsabilidades personales nos obligan a dejar nuestros estudios para después. Pero eso no significa que tengas que renunciar a tus metas.
+                </p>
+
+                <p>
+                  En ENLACES te ofrecemos una alternativa para prepararte y acreditar tu bachillerato mediante un examen único, sin necesidad de cursar nuevamente tres años de preparatoria.
+                </p>
+
+                <p>
+                  Con nuestro programa de preparación en línea, clases en vivo y grabadas, materiales de estudio y acompañamiento académico, puedes prepararte durante un periodo de hasta cuatro meses, de acuerdo con tus conocimientos y disponibilidad.
+                </p>
+
+                <p className="font-bold text-[#1B3A7A] text-base sm:text-lg pt-1">
+                  Tu experiencia cuenta, tu tiempo vale y tu futuro merece nuevas oportunidades.
+                </p>
+
+                <p className="font-semibold text-[#0F2755]">
+                  Hoy puedes dar el primer paso.
+                </p>
+              </div>
 
               {/* Secuencia de 4 etapas */}
               <div className="mt-8 w-full max-w-2xl">
