@@ -1171,7 +1171,7 @@ export default function NosotrosPage() {
           items={[
             {
               icon: "Clock",
-              title: "Horarios adaptables",
+              title: "Horarios flexibles",
               description: "Diseñamos esquemas de estudio que se ajustan a tus jornadas laborales y responsabilidades personales."
             },
             {
