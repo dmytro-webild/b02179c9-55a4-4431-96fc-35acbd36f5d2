@@ -83,42 +83,37 @@ export default function OfertaBachilleratoPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             {/* Columna Izquierda: Mensaje Principal */}
             <div className="lg:col-span-7 flex flex-col items-start">
-              <span className="inline-flex items-center gap-2 rounded-full border border-[#F4B400]/50 bg-[#F4B400]/10 px-4 py-1.5 text-xs font-extrabold uppercase tracking-wider text-[#0F2755]">
-                <span className="size-2 rounded-full bg-[#F4B400]" />
-                Bachillerato Intensivo • Validez Oficial SEP
-              </span>
-
-              <h1 className="mt-4 font-['Montserrat'] font-extrabold text-3xl sm:text-5xl leading-tight tracking-tight text-left">
+              <h1 className="font-['Montserrat'] font-extrabold text-3xl sm:text-5xl leading-tight tracking-tight text-left">
                 <span className="block text-[#1B3A7A]">TU PREPA EN 4 MESES,</span>
                 <span className="block text-[#F4B400]">EN 4 PASOS.</span>
               </h1>
 
               <div className="mt-6 space-y-3.5 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl text-left">
-                <h2 className="font-['Montserrat'] font-bold text-lg sm:text-xl text-[#1B3A7A]">
+                <h2 className="font-['Montserrat'] font-bold text-lg sm:text-xl text-[#1B3A7A] text-left">
                   ¿Necesitas terminar tu preparatoria?
                 </h2>
 
-                <p className="font-['Montserrat'] font-extrabold text-base sm:text-lg text-[#0F2755] leading-snug">
+                <p className="font-['Montserrat'] font-extrabold text-base sm:text-lg text-[#0F2755] leading-snug text-left">
                   Sí es posible. Y no tienes que poner tu vida en pausa para lograrlo.
                 </p>
 
-                <p>
+                <p className="text-left sm:text-justify">
                   Sabemos que muchas veces el trabajo, la familia o las responsabilidades personales nos obligan a dejar nuestros estudios para después. Pero eso no significa que tengas que renunciar a tus metas.
                 </p>
 
-                <p>
+                <p className="text-left sm:text-justify">
                   En ENLACES te ofrecemos una alternativa para prepararte y acreditar tu bachillerato mediante un examen único, sin necesidad de cursar nuevamente tres años de preparatoria.
                 </p>
 
-                <p>
+                <p className="text-left sm:text-justify">
                   Con nuestro programa de preparación en línea, clases en vivo y grabadas, materiales de estudio y acompañamiento académico, puedes prepararte durante un periodo de hasta cuatro meses, de acuerdo con tus conocimientos y disponibilidad.
                 </p>
 
-                <p className="font-bold text-[#1B3A7A] text-base sm:text-lg pt-1">
+                <p className="font-bold text-[#1B3A7A] text-base sm:text-lg pt-1 text-left">
                   Tu experiencia cuenta, tu tiempo vale y tu futuro merece nuevas oportunidades.
                 </p>
 
-                <p className="font-semibold text-[#0F2755]">
+                <p className="font-semibold text-[#0F2755] text-left">
                   Hoy puedes dar el primer paso.
                 </p>
               </div>
@@ -191,8 +186,13 @@ export default function OfertaBachilleratoPage() {
             </div>
 
             {/* Columna Derecha: Contenedor del video oficial */}
-            <div className="lg:col-span-5 relative">
-              <div className="overflow-hidden rounded-3xl shadow-2xl border-2 border-[#F4B400]/40 bg-black">
+            <div className="lg:col-span-5 relative flex flex-col items-center">
+              <span className="inline-flex items-center gap-2 rounded-full border border-[#F4B400]/50 bg-[#F4B400]/10 px-4 py-1.5 text-xs font-extrabold uppercase tracking-wider text-[#0F2755] mb-4 sm:mb-5 text-center">
+                <span className="size-2 rounded-full bg-[#F4B400]" />
+                Bachillerato Intensivo • Validez Oficial SEP
+              </span>
+
+              <div className="overflow-hidden rounded-3xl shadow-2xl border-2 border-[#F4B400]/40 bg-black w-full">
                 <video
                   controls
                   playsInline
