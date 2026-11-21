@@ -460,7 +460,7 @@ export default function OfertaBachilleratoPage() {
                 </div>
               </div>
               <span className="self-start md:self-auto text-xs font-bold text-[#1B3A7A] bg-white border border-slate-200 rounded-full px-4 py-1.5 shadow-2xs">
-                Validez oficial en México
+                Validez internacional
               </span>
             </div>
 
