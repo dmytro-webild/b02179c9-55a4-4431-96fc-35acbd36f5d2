@@ -83,38 +83,35 @@ export default function OfertaTitulacionExperienciaLaboralPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             {/* Columna Izquierda: Mensaje Principal */}
             <div className="lg:col-span-7 flex flex-col items-start">
+              <span className="inline-flex items-center gap-2 rounded-full border border-[#F4B400]/50 bg-[#F4B400]/10 px-4 py-1.5 text-xs font-extrabold uppercase tracking-wider text-[#0F2755] mb-4 text-left">
+                <span className="size-2 rounded-full bg-[#F4B400]" />
+                TITULACIÓN POR EXPERIENCIA LABORAL · ACUERDO 286
+              </span>
+
               <h1 className="font-['Montserrat'] font-extrabold text-3xl sm:text-5xl leading-tight tracking-tight text-left">
-                <span className="block text-[#1B3A7A]">TITULACIÓN POR</span>
-                <span className="block text-[#F4B400]">EXPERIENCIA LABORAL.</span>
+                <span className="block text-[#1B3A7A]">TU EXPERIENCIA VALE.</span>
+                <span className="block text-[#F4B400]">CONVIÉRTELA EN UN TÍTULO PROFESIONAL.</span>
               </h1>
 
               <div className="mt-6 space-y-3.5 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl text-left">
-                <h2 className="font-['Montserrat'] font-bold text-lg sm:text-xl text-[#1B3A7A] text-left">
-                  ¿Quieres validar tu trayectoria profesional?
-                </h2>
-
-                <p className="font-['Montserrat'] font-extrabold text-base sm:text-lg text-[#0F2755] leading-snug text-left">
-                  Sí es posible. Valida tus conocimientos sin poner tu carrera en pausa.
+                <p className="text-left sm:text-justify">
+                  ¿Llevas años trabajando en tu profesión, pero todavía no tienes un título que respalde tus conocimientos?
                 </p>
 
                 <p className="text-left sm:text-justify">
-                  Sabemos que el verdadero aprendizaje también ocurre en la práctica diaria, resolviendo problemas reales y asumiendo responsabilidades en tu trabajo. Tus años de experiencia valen.
+                  Tu experiencia cuenta. Todo lo que has aprendido trabajando, resolviendo problemas y enfrentando nuevos retos tiene valor.
                 </p>
 
                 <p className="text-left sm:text-justify">
-                  En ENLACES te ofrecemos un esquema integral para evaluar y acreditar tus conocimientos por experiencia laboral de manera oficial, sin necesidad de cursar años lectivos adicionales.
+                  En ENLACES te ayudamos a prepararte para acreditar tus conocimientos mediante un proceso de evaluación que puede permitirte obtener tu título profesional, conforme a los requisitos y procedimientos aplicables.
                 </p>
 
                 <p className="text-left sm:text-justify">
-                  Con nuestro programa de acompañamiento profesional en línea, revisión de expedientes, asesoría experta y guías de evaluación, te preparamos de forma ágil y adaptada a tus tiempos.
+                  No tienes que empezar de cero ni dejar de trabajar para dar el siguiente paso en tu desarrollo profesional.
                 </p>
 
                 <p className="font-bold text-[#1B3A7A] text-base sm:text-lg pt-1 text-left">
-                  Tu experiencia cuenta, tu esfuerzo vale y tu futuro merece el respaldo de un título oficial.
-                </p>
-
-                <p className="font-semibold text-[#0F2755] text-left">
-                  Hoy puedes dar el primer paso.
+                  Ya tienes la experiencia. Ahora prepárate para obtener el reconocimiento que mereces.
                 </p>
               </div>
 
@@ -134,7 +131,7 @@ export default function OfertaTitulacionExperienciaLaboralPage() {
                     </span>
                   </div>
 
-                  {/* Etapa 2: Evalúa tu perfil */}
+                  {/* Etapa 2: Prepárate */}
                   <div className="flex flex-col items-center text-center">
                     <div className="relative flex items-center justify-center w-full">
                       <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#FFF4D1] flex items-center justify-center shrink-0 z-10">
@@ -143,11 +140,11 @@ export default function OfertaTitulacionExperienciaLaboralPage() {
                       <div className="hidden sm:block absolute left-1/2 top-1/2 -translate-y-1/2 w-full h-[2px] bg-[#F4B400] z-0" />
                     </div>
                     <span className="mt-2.5 font-['Montserrat'] font-semibold text-xs sm:text-sm text-[#1B3A7A] leading-tight px-1">
-                      Evalúa tu perfil
+                      Prepárate
                     </span>
                   </div>
 
-                  {/* Etapa 3: Aplica tu examen */}
+                  {/* Etapa 3: Acredita tu evaluación */}
                   <div className="flex flex-col items-center text-center">
                     <div className="relative flex items-center justify-center w-full">
                       <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#FFF4D1] flex items-center justify-center shrink-0 z-10">
@@ -156,11 +153,11 @@ export default function OfertaTitulacionExperienciaLaboralPage() {
                       <div className="absolute left-1/2 top-1/2 -translate-y-1/2 w-full h-[2px] bg-[#F4B400] z-0" />
                     </div>
                     <span className="mt-2.5 font-['Montserrat'] font-semibold text-xs sm:text-sm text-[#1B3A7A] leading-tight px-1">
-                      Acredita la evaluación
+                      Acredita tu evaluación
                     </span>
                   </div>
 
-                  {/* Etapa 4: Recibe tu título */}
+                  {/* Etapa 4: Obtén tu título */}
                   <div className="flex flex-col items-center text-center">
                     <div className="relative flex items-center justify-center w-full">
                       <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#FFF4D1] flex items-center justify-center shrink-0 z-10">
@@ -168,7 +165,7 @@ export default function OfertaTitulacionExperienciaLaboralPage() {
                       </div>
                     </div>
                     <span className="mt-2.5 font-['Montserrat'] font-semibold text-xs sm:text-sm text-[#1B3A7A] leading-tight px-1">
-                      Recibe tu título
+                      Obtén tu título
                     </span>
                   </div>
                 </div>
@@ -189,7 +186,7 @@ export default function OfertaTitulacionExperienciaLaboralPage() {
             <div className="lg:col-span-5 relative flex flex-col items-center">
               <span className="inline-flex items-center gap-2 rounded-full border border-[#F4B400]/50 bg-[#F4B400]/10 px-4 py-1.5 text-xs font-extrabold uppercase tracking-wider text-[#0F2755] mb-4 sm:mb-5 text-center">
                 <span className="size-2 rounded-full bg-[#F4B400]" />
-                Titulación Profesional • Validez Oficial SEP
+                TITULACIÓN POR EXPERIENCIA LABORAL · ACUERDO 286
               </span>
 
               <div className="overflow-hidden rounded-3xl shadow-2xl border-2 border-[#F4B400]/40 bg-black w-full">
