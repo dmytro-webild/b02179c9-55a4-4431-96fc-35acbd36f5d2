@@ -6,7 +6,6 @@ import {
   Award,
   ShieldCheck,
   Target,
-  Clock,
   ArrowRight,
   CheckCircle2,
   UserCheck,
@@ -264,13 +263,13 @@ export default function OfertaTitulacionExperienciaLaboralPage() {
             </h2>
             <div className="mx-auto my-4 h-1 w-16 rounded-full bg-gradient-to-r from-[#1B3A7A] via-[#F4B400] to-[#1B3A7A]" />
             <p className="font-['Inter'] text-slate-600 text-base leading-relaxed text-left sm:text-justify">
-              Conoce cómo funciona la evaluación de experiencia laboral, cómo integramos tu expediente y cómo te acompañamos hasta obtener tu documento oficial.
+              Descubre cómo funciona la titulación por experiencia laboral, qué necesitas y cómo te acompañamos durante el proceso.
             </p>
           </div>
 
           {/* Grid de 5 Bloques Informativos en 2 Columnas */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-stretch">
-            {/* Bloque 1: Alternativa Acuerdo 286 / Titulación por Experiencia */}
+            {/* Bloque 1: Acreditación de conocimientos */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -284,24 +283,51 @@ export default function OfertaTitulacionExperienciaLaboralPage() {
                   </div>
                   <span className="inline-flex items-center gap-1.5 font-['Montserrat'] font-semibold text-xs text-[#1B3A7A] uppercase tracking-wider">
                     <span className="size-1.5 rounded-full bg-[#F4B400] shrink-0" />
-                    Evaluación de Competencias
+                    Acreditación de conocimientos
                   </span>
                 </div>
                 <h3 className="font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#1B3A7A]">
-                  Una vía directa para titular tu experiencia
+                  ¿Cómo puedes titularte por experiencia laboral?
                 </h3>
                 <p className="mt-3 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed text-left sm:text-justify">
-                  No es necesario volver a cursar materias presenciales cuando ya dominas tu área de trabajo. Los mecanismos oficiales contemplan la validación de conocimientos mediante la evaluación de portafolio y examen de conocimientos. ENLACES te asesora para estructurar adecuadamente tu expediente y presentar tus evaluaciones con éxito.
+                  El Acuerdo 286 de la SEP contempla procedimientos para acreditar conocimientos adquiridos mediante la experiencia laboral o el aprendizaje autodidacta. Esto permite que personas con preparación y conocimientos profesionales puedan demostrar sus competencias mediante evaluaciones, sin cursar nuevamente una licenciatura completa. La experiencia por sí sola no otorga el título: debes cumplir los requisitos y acreditar las evaluaciones correspondientes.
                 </p>
               </div>
             </motion.div>
 
-            {/* Bloque 2: Preparación en Línea */}
+            {/* Bloque 2: Requisitos de participación */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.05 }}
+              className="rounded-2xl border border-slate-200/80 bg-white p-6 sm:p-8 shadow-2xs hover:border-[#F4B400]/60 transition-all flex flex-col justify-between"
+            >
+              <div>
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-10 h-10 rounded-xl bg-[#FFF4D1] text-[#1B3A7A] flex items-center justify-center shrink-0 border border-[#F4B400]/40">
+                    <ShieldCheck className="w-5 h-5 text-[#1B3A7A]" />
+                  </div>
+                  <span className="inline-flex items-center gap-1.5 font-['Montserrat'] font-semibold text-xs text-[#1B3A7A] uppercase tracking-wider">
+                    <span className="size-1.5 rounded-full bg-[#F4B400] shrink-0" />
+                    Requisitos de participación
+                  </span>
+                </div>
+                <h3 className="font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#1B3A7A]">
+                  ¿Quién puede participar?
+                </h3>
+                <p className="mt-3 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed text-left sm:text-justify">
+                  Este programa está dirigido a personas con conocimientos y experiencia en una profesión que todavía no cuentan con el título correspondiente. ENLACES orienta principalmente a aspirantes con tres años o más de experiencia laboral. Los requisitos específicos dependen de la licenciatura y del procedimiento aplicable. Nuestro equipo revisará tu perfil antes de iniciar.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Bloque 3: Metodología ENLACES */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
               className="rounded-2xl border border-slate-200/80 bg-white p-6 sm:p-8 shadow-2xs hover:border-[#F4B400]/60 transition-all flex flex-col justify-between"
             >
               <div>
@@ -315,10 +341,10 @@ export default function OfertaTitulacionExperienciaLaboralPage() {
                   </span>
                 </div>
                 <h3 className="font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#1B3A7A]">
-                  Te preparamos y guiamos paso a paso
+                  Prepárate sin dejar de trabajar
                 </h3>
                 <p className="mt-3 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed text-left sm:text-justify">
-                  Desde tu ingreso, cuentas con material de apoyo especializado, tutorías para organizar tu portafolio de evidencias y sesiones de orientación teórica. Todo de manera 100% en línea para integrarse sin problemas con tus actividades y horario de trabajo.
+                  Durante aproximadamente cuatro meses podrás prepararte en línea con nuestra metodología educativa, materiales de estudio, sesiones académicas y acompañamiento docente. El programa está diseñado para ayudarte a organizar y fortalecer tus conocimientos sin descuidar tus responsabilidades laborales y familiares.
                 </p>
               </div>
               <div className="mt-6 pt-4 border-t border-slate-100">
@@ -332,34 +358,7 @@ export default function OfertaTitulacionExperienciaLaboralPage() {
               </div>
             </motion.div>
 
-            {/* Bloque 3: Avanza a tu propio ritmo */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="rounded-2xl border border-slate-200/80 bg-white p-6 sm:p-8 shadow-2xs hover:border-[#F4B400]/60 transition-all flex flex-col justify-between"
-            >
-              <div>
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-xl bg-[#FFF4D1] text-[#1B3A7A] flex items-center justify-center shrink-0 border border-[#F4B400]/40">
-                    <Clock className="w-5 h-5 text-[#1B3A7A]" />
-                  </div>
-                  <span className="inline-flex items-center gap-1.5 font-['Montserrat'] font-semibold text-xs text-[#1B3A7A] uppercase tracking-wider">
-                    <span className="size-1.5 rounded-full bg-[#F4B400] shrink-0" />
-                    Flexibilidad de Tiempos
-                  </span>
-                </div>
-                <h3 className="font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#1B3A7A]">
-                  Avanza a tu propio ritmo
-                </h3>
-                <p className="mt-3 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed text-left sm:text-justify">
-                  Tu etapa de preparación y recopilación de evidencias se realiza en un esquema flexible de 1 a 4 meses. En cuanto tu expediente esté listo y cumplas los criterios de evaluación, agendamos tu proceso conforme a la programación del centro evaluador.
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Bloque 4: Oportunidades de evaluación */}
+            {/* Bloque 4: Evaluación profesional */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -374,19 +373,19 @@ export default function OfertaTitulacionExperienciaLaboralPage() {
                   </div>
                   <span className="inline-flex items-center gap-1.5 font-['Montserrat'] font-semibold text-xs text-[#1B3A7A] uppercase tracking-wider">
                     <span className="size-1.5 rounded-full bg-[#F4B400] shrink-0" />
-                    Evaluación Garantizada
+                    Evaluación profesional
                   </span>
                 </div>
                 <h3 className="font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#1B3A7A]">
-                  Proceso con respaldo y acompañamiento
+                  Demuestra lo que sabes
                 </h3>
                 <p className="mt-3 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed text-left sm:text-justify">
-                  La evaluación contempla pruebas conceptuales y sustentación de expediente. En caso de requerir un reforzamiento, tu programa contempla oportunidades adicionales y retroalimentación personalizada para garantizar tu éxito.
+                  Para obtener tu título deberás acreditar las evaluaciones establecidas para la licenciatura elegida. ENLACES te orientará sobre los contenidos, las condiciones de aplicación y las oportunidades disponibles conforme al centro evaluador. La titulación depende de aprobar las evaluaciones y cumplir los requisitos correspondientes.
                 </p>
               </div>
             </motion.div>
 
-            {/* Bloque 5: Tú estudias. Nosotros nos encargamos del proceso. */}
+            {/* Bloque 5: Acompañamiento integral */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -401,26 +400,15 @@ export default function OfertaTitulacionExperienciaLaboralPage() {
                   </div>
                   <span className="inline-flex items-center gap-1.5 font-['Montserrat'] font-semibold text-xs text-[#1B3A7A] uppercase tracking-wider">
                     <span className="size-1.5 rounded-full bg-[#F4B400] shrink-0" />
-                    Gestión Integral y Titulación
+                    Acompañamiento integral
                   </span>
                 </div>
                 <h3 className="font-['Montserrat'] font-bold text-xl sm:text-2xl text-[#1B3A7A]">
-                  Tú demuestras tu experiencia. Nosotros gestionamos todo lo demás.
+                  Te acompañamos durante todo el proceso
                 </h3>
-                <div className="mt-3 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed max-w-4xl space-y-3">
-                  <p className="text-left sm:text-justify">
-                    En ENLACES no solo preparamos tu expediente. Gestionamos la canalización institucional, coordinamos las fechas de evaluación y damos seguimiento al trámite oficial.
-                  </p>
-                  <p className="text-left sm:text-justify">
-                    Evitas vueltas innecesarias y trámites complejos. Nosotros coordinamos cada etapa del proceso administrativo hasta la entrega final de tu documentación oficial.
-                  </p>
-                  <p className="text-left sm:text-justify">
-                    Al concluir satisfactoriamente las evaluaciones, se inicia el trámite de emisión del documento con validez oficial garantizada ante las instancias educativas correspondientes.
-                  </p>
-                  <p className="text-left sm:text-justify">
-                    Tu documento cuenta con reconocimiento pleno para abrir nuevas oportunidades profesionales, aspirar a cargos de mayor jerarquía o continuar tu desarrollo académico.
-                  </p>
-                </div>
+                <p className="mt-3 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed text-left sm:text-justify">
+                  Desde la revisión de tu perfil hasta los trámites posteriores a la evaluación, contarás con orientación académica y administrativa. Nuestro equipo te ayudará a resolver dudas, prepararte y conocer los pasos necesarios para obtener tu documentación profesional.
+                </p>
               </div>
             </motion.div>
           </div>
