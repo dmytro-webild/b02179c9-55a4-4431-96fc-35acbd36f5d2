@@ -203,14 +203,14 @@ export default function OfertaTitulacionExperienciaLaboralPage() {
         <div className="mx-auto w-[var(--container)] px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             {/* Izquierda: Video del egresado */}
-            <div className="lg:col-span-5 order-2 lg:order-1 relative">
-              <div className="overflow-hidden rounded-3xl shadow-xl border border-slate-200 bg-black">
+            <div className="lg:col-span-5 order-2 lg:order-1 relative flex flex-col items-center justify-center">
+              <div className="overflow-hidden rounded-3xl shadow-xl border border-slate-200 bg-black w-full max-w-sm mx-auto">
                 <video
                   controls
                   playsInline
                   preload="metadata"
-                  className="w-full h-auto block rounded-3xl"
-                  src="https://res.cloudinary.com/r58dzn6z/video/upload/v1795211729/CerveceriaDelBarrio_Felipe_Optimizado.mp4"
+                  className="w-full h-auto block rounded-3xl aspect-[9/16] object-cover"
+                  src="https://res.cloudinary.com/r58dzn6z/video/upload/v1795239860/CLAUDIA_AYALA_final.mp4"
                 />
               </div>
             </div>
@@ -218,25 +218,27 @@ export default function OfertaTitulacionExperienciaLaboralPage() {
             {/* Derecha: Mensaje emocional */}
             <div className="lg:col-span-7 order-1 lg:order-2 flex flex-col items-start">
               <span className="rounded-full border border-[#1B3A7A]/20 bg-[#1B3A7A]/5 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#1B3A7A] mb-4">
-                Historias que inspiran
+                HISTORIAS QUE INSPIRAN
               </span>
 
               <h2 className="font-['Montserrat'] font-bold text-3xl sm:text-4xl text-[#0F2755] leading-tight">
-                <span className="text-[#1B3A7A]">Tu trayectoria</span> merece <span className="text-[#F4B400]">reconocimiento oficial.</span>
+                <span className="text-[#1B3A7A]">Tu trayectoria merece</span>{" "}
+                <span className="text-[#F4B400]">reconocimiento oficial.</span>
               </h2>
 
               <div className="mt-5 font-['Inter'] text-base sm:text-lg text-slate-600 leading-relaxed space-y-4 text-left sm:text-justify">
                 <p>
-                  No importa cuántos años lleves trabajando o en qué etapa de tu vida profesional te encuentres.
+                  Detrás de cada año de trabajo hay esfuerzo, aprendizaje y decisiones que han construido tu trayectoria profesional. Has adquirido conocimientos, enfrentado retos y resuelto problemas reales con dedicación.
                 </p>
                 <p>
-                  Solo tú sabes el esfuerzo dedicado a cada proyecto, los retos superados y la experiencia acumulada día con día. Es momento de consolidar legalmente todo lo que ya sabes hacer.
+                  Tu experiencia tiene un valor incalculable, pero sin un título formal, muchas puertas pueden permanecer cerradas o tu crecimiento puede verse limitado.
                 </p>
                 <p>
-                  Obtener tu titulación por experiencia laboral no solo reconoce tu dedicación, sino que abre las puertas a mejores oportunidades de desarrollo, ascensos y reconocimiento formal.
+                  En ENLACES creemos que el conocimiento adquirido en la práctica merece el mismo reconocimiento que el obtenido en un aula. Por eso te acompañamos en el proceso de Titulación por Experiencia Laboral (Acuerdo 286), guiándote paso a paso para que transformes tu trayectoria en un título profesional oficial.
                 </p>
                 <p>
-                  Nunca es tarde para validar formalmente tu talento. <span className="font-bold text-[#0F2755]">Y este puede ser el gran paso para impulsar tu carrera.</span>
+                  No se trata de empezar de cero, sino de dar el paso que valida todo lo que ya sabes hacer.{" "}
+                  <strong className="font-bold text-[#0F2755]">El reconocimiento formal de tu talento está a tu alcance.</strong>
                 </p>
               </div>
 
