@@ -460,20 +460,20 @@ export default function OfertaTitulacionExperienciaLaboralPage() {
                     Validez Oficial SEP
                   </span>
                   <h3 className="font-['Montserrat'] font-extrabold text-xl sm:text-2xl text-[#0F2755]">
-                    Validez Oficial Garantizada
+                    Tu título profesional con validez oficial
                   </h3>
                   <p className="font-['Inter'] text-xs font-medium text-slate-500 mt-1">
-                    Acreditación legal sustentada por el marco normativo educativo
+                    Procedimiento de acreditación mediante el Acuerdo 286 de la SEP
                   </p>
                 </div>
               </div>
               <span className="self-start md:self-auto text-xs font-bold text-[#1B3A7A] bg-white border border-slate-200 rounded-full px-4 py-1.5 shadow-2xs">
-                Validez Nacional
+                Validez internacional
               </span>
             </div>
 
             <p className="font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed mb-8 max-w-4xl text-left">
-              Desde tu registro inicial hasta la recepción de tu título oficial, ENLACES supervisa cada paso del procedimiento administrativo y académico.
+              ENLACES te acompaña durante tu preparación, evaluación y los trámites para obtener tu título profesional, conforme a los requisitos aplicables.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -487,10 +487,10 @@ export default function OfertaTitulacionExperienciaLaboralPage() {
                     <BookOpen className="w-5 h-5 text-[#1B3A7A]" />
                   </div>
                   <h4 className="font-['Montserrat'] font-bold text-base text-[#0F2755]">
-                    Integración de Expediente
+                    Preparación Académica
                   </h4>
                   <p className="mt-2 font-['Inter'] text-xs sm:text-sm text-slate-600 leading-relaxed text-left">
-                    Recopilación y estructuración de tus constancias de trabajo, portafolio de evidencias y revisión documental previa con tu tutor.
+                    Preparación académica en línea durante aproximadamente cuatro meses con materiales de estudio, sesiones académicas y acompañamiento docente.
                   </p>
                 </div>
               </div>
@@ -505,10 +505,10 @@ export default function OfertaTitulacionExperienciaLaboralPage() {
                     <Target className="w-5 h-5 text-[#1B3A7A]" />
                   </div>
                   <h4 className="font-['Montserrat'] font-bold text-base text-[#0F2755]">
-                    Evaluación de Competencias
+                    Evaluación Profesional
                   </h4>
                   <p className="mt-2 font-['Inter'] text-xs sm:text-sm text-slate-600 leading-relaxed text-left">
-                    Presentación del examen de conocimientos y defensa de evidencias ante las instancias correspondientes del centro evaluador.
+                    Presentación y acreditación de las evaluaciones correspondientes a tu licenciatura ante el centro evaluador autorizado.
                   </p>
                 </div>
               </div>
@@ -523,10 +523,10 @@ export default function OfertaTitulacionExperienciaLaboralPage() {
                     <Award className="w-5 h-5 text-[#1B3A7A]" />
                   </div>
                   <h4 className="font-['Montserrat'] font-bold text-base text-[#0F2755]">
-                    Expedición del Título
+                    Título y Cédula Profesional
                   </h4>
                   <p className="mt-2 font-['Inter'] text-xs sm:text-sm text-slate-600 leading-relaxed text-left">
-                    Al dictaminar favorablemente tu evaluación, ENLACES gestiona la expedición y entrega de tu título oficial debidamente registrado.
+                    Trámites de expedición del título y cédula profesional ante las autoridades competentes.
                   </p>
                 </div>
               </div>
