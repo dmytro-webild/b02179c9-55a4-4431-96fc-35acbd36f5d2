@@ -17,24 +17,20 @@ export default function OfertaTitulacionExperienciaLaboralPage() {
 
   const faqs = [
     {
-      question: "¿Cómo funciona la Titulación por Experiencia Laboral?",
-      answer: "Es un proceso que permite certificar y obtener un título evaluando los conocimientos y competencias adquiridos a lo largo de tu trayectoria profesional mediante la integración de un expediente y evaluaciones específicas."
+      question: "¿Qué es la Titulación por Experiencia Laboral?",
+      answer: "Es una alternativa para acreditar conocimientos profesionales adquiridos mediante el trabajo, la formación o el aprendizaje autodidacta. A través del Acuerdo 286 de la SEP, las personas elegibles pueden demostrar sus conocimientos mediante evaluaciones y obtener un título profesional sin cursar nuevamente una licenciatura completa."
     },
     {
-      question: "¿El título o certificado obtenido tiene validez oficial?",
-      answer: "Sí. La acreditación se realiza mediante los mecanismos oficiales de evaluación de la SEP y el documento final cuenta con plena validez oficial a nivel nacional."
+      question: "¿Necesito haber estudiado una licenciatura anteriormente?",
+      answer: "No necesariamente. Puedes participar si cuentas con los conocimientos profesionales necesarios y cumples los requisitos académicos y documentales establecidos para la licenciatura elegida."
     },
     {
-      question: "¿Quiénes pueden solicitar su Titulación por Experiencia Laboral?",
-      answer: "Personas mayores de edad que cuenten con experiencia laboral comprobable en el área de interés, antecedentes escolares requeridos y compromiso para integrar su expediente."
+      question: "¿Cuántos años de experiencia laboral necesito?",
+      answer: "ENLACES orienta principalmente a personas con tres años o más de experiencia en el área profesional que desean acreditar. Revisaremos tu perfil para determinar si cumples los requisitos correspondientes."
     },
     {
-      question: "¿Qué pasa si no apruebo alguna evaluación en el primer intento?",
-      answer: "Tu programa incluye oportunidades de reevaluación y acompañamiento de tutores para reforzar los aspectos requeridos antes de volver a presentar."
-    },
-    {
-      question: "¿Tengo que realizar trámites ante otras instituciones?",
-      answer: "No. ENLACES realiza la coordinación de las gestiones institucionales y te acompaña desde tu inscripción hasta la entrega de tu documento oficial."
+      question: "¿Cómo puedo obtener un título sin estudiar cuatro o cinco años?",
+      answer: "Porque este procedimiento reconoce conocimientos previamente adquiridos. No consiste en cursar una licenciatura tradicional en menos tiempo. Debes demostrar esos conocimientos a través de las evaluaciones establecidas."
     },
     {
       question: "¿Cuánto tiempo toma el proceso de certificación?",
@@ -43,6 +39,18 @@ export default function OfertaTitulacionExperienciaLaboralPage() {
     {
       question: "¿Puedo realizar el proceso si trabajo a tiempo completo?",
       answer: "Sí. Nuestro modelo está diseñado para profesionales activos. Toda la preparación y seguimiento se realiza en línea con flexibilidad total de horarios."
+    },
+    {
+      question: "¿El título o certificado obtenido tiene validez oficial?",
+      answer: "Sí. La acreditación se realiza mediante los mecanismos oficiales de evaluación de la SEP y el documento final cuenta con plena validez oficial a nivel nacional."
+    },
+    {
+      question: "¿Qué pasa si no apruebo alguna evaluación en el primer intento?",
+      answer: "Tu programa incluye oportunidades de reevaluación y acompañamiento de tutores para reforzar los aspectos requeridos antes de volver a presentar."
+    },
+    {
+      question: "¿Tengo que realizar trámites ante otras instituciones?",
+      answer: "No. ENLACES realiza la coordinación de las gestiones institucionales y te acompaña desde tu inscripción hasta la entrega de tu documento oficial."
     },
     {
       question: "¿Qué tipo de asesoría recibo durante el proceso?",
@@ -548,7 +556,7 @@ export default function OfertaTitulacionExperienciaLaboralPage() {
             </h2>
             <div className="mx-auto my-4 h-1 w-16 rounded-full bg-gradient-to-r from-[#1B3A7A] via-[#F4B400] to-[#1B3A7A]" />
             <p className="font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed">
-              Encuentra respuestas a las consultas más habituales sobre nuestro programa de Titulación por Experiencia Laboral.
+              Resolvemos tus dudas para que avances con confianza hacia tu título profesional.
             </p>
           </div>
 
