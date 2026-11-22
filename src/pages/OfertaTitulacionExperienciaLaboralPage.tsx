@@ -88,25 +88,25 @@ export default function OfertaTitulacionExperienciaLaboralPage() {
                 TITULACIÓN POR EXPERIENCIA LABORAL · ACUERDO 286
               </span>
 
-              <h1 className="font-['Montserrat'] font-extrabold text-3xl sm:text-5xl leading-tight tracking-tight text-left">
+              <h1 className="font-['Montserrat'] font-extrabold text-2xl sm:text-3xl lg:text-4xl leading-tight tracking-tight text-left max-w-xl">
                 <span className="block text-[#1B3A7A]">TU EXPERIENCIA VALE.</span>
                 <span className="block text-[#F4B400]">CONVIÉRTELA EN UN TÍTULO PROFESIONAL.</span>
               </h1>
 
               <div className="mt-6 space-y-3.5 font-['Inter'] text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl text-left">
-                <p className="text-left sm:text-justify">
+                <p className="text-left">
                   ¿Llevas años trabajando en tu profesión, pero todavía no tienes un título que respalde tus conocimientos?
                 </p>
 
-                <p className="text-left sm:text-justify">
+                <p className="text-left">
                   Tu experiencia cuenta. Todo lo que has aprendido trabajando, resolviendo problemas y enfrentando nuevos retos tiene valor.
                 </p>
 
-                <p className="text-left sm:text-justify">
+                <p className="text-left">
                   En ENLACES te ayudamos a prepararte para acreditar tus conocimientos mediante un proceso de evaluación que puede permitirte obtener tu título profesional, conforme a los requisitos y procedimientos aplicables.
                 </p>
 
-                <p className="text-left sm:text-justify">
+                <p className="text-left">
                   No tienes que empezar de cero ni dejar de trabajar para dar el siguiente paso en tu desarrollo profesional.
                 </p>
 
@@ -183,19 +183,14 @@ export default function OfertaTitulacionExperienciaLaboralPage() {
             </div>
 
             {/* Columna Derecha: Contenedor del video oficial */}
-            <div className="lg:col-span-5 relative flex flex-col items-center">
-              <span className="inline-flex items-center gap-2 rounded-full border border-[#F4B400]/50 bg-[#F4B400]/10 px-4 py-1.5 text-xs font-extrabold uppercase tracking-wider text-[#0F2755] mb-4 sm:mb-5 text-center">
-                <span className="size-2 rounded-full bg-[#F4B400]" />
-                TITULACIÓN POR EXPERIENCIA LABORAL · ACUERDO 286
-              </span>
-
-              <div className="overflow-hidden rounded-3xl shadow-2xl border-2 border-[#F4B400]/40 bg-black w-full">
+            <div className="lg:col-span-5 relative flex flex-col items-center justify-center">
+              <div className="overflow-hidden rounded-3xl shadow-2xl border-2 border-[#F4B400]/40 bg-black w-full max-w-sm mx-auto">
                 <video
                   controls
                   playsInline
                   preload="metadata"
-                  className="w-full h-auto block rounded-3xl"
-                  src="https://res.cloudinary.com/r58dzn6z/video/upload/v1795211234/PREPA_INFORMATIVO_8.9MB.mp4"
+                  className="w-full h-auto block rounded-3xl aspect-[9/16] object-cover"
+                  src="https://res.cloudinary.com/r58dzn6z/video/upload/v1795239109/LICENCIATURA_INFORMATIVO_13.8MB.mp4"
                 />
               </div>
             </div>
