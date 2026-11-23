@@ -33,7 +33,7 @@ export default function OfertaTitulacionExperienciaLaboralPage() {
       answer: "Porque este procedimiento reconoce conocimientos previamente adquiridos. No consiste en cursar una licenciatura tradicional en menos tiempo. Debes demostrar esos conocimientos a través de las evaluaciones establecidas."
     },
     {
-      question: "¿Cuánto tiempo toma el proceso de certificación?",
+      question: "¿Cuánto tiempo toma el proceso de titulación?",
       answer: "La preparación académica y la presentación de las evaluaciones pueden realizarse en un periodo aproximado de 1 a 4 meses, dependiendo de tu avance y de las fechas disponibles. Una vez acreditadas las evaluaciones y cumplidos los requisitos correspondientes, comienza el proceso de expedición del título y la cédula profesional, cuyos tiempos son adicionales y dependen de las autoridades competentes."
     },
     {
