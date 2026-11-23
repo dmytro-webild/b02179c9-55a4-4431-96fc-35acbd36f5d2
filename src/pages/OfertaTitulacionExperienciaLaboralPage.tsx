@@ -34,11 +34,11 @@ export default function OfertaTitulacionExperienciaLaboralPage() {
     },
     {
       question: "¿Cuánto tiempo toma el proceso de certificación?",
-      answer: "El periodo de preparación y evaluación suele durar entre 1 y 4 meses, tras los cuales se inicia el trámite de expedición oficial de tu documento."
+      answer: "La preparación académica y la presentación de las evaluaciones pueden realizarse en un periodo aproximado de 1 a 4 meses, dependiendo de tu avance y de las fechas disponibles. Una vez acreditadas las evaluaciones y cumplidos los requisitos correspondientes, comienza el proceso de expedición del título y la cédula profesional, cuyos tiempos son adicionales y dependen de las autoridades competentes."
     },
     {
       question: "¿Puedo realizar el proceso si trabajo a tiempo completo?",
-      answer: "Sí. Nuestro modelo está diseñado para profesionales activos. Toda la preparación y seguimiento se realiza en línea con flexibilidad total de horarios."
+      answer: "Sí. Nuestro programa está diseñado especialmente para personas que trabajan. La preparación se realiza en línea, con materiales de estudio, sesiones académicas y acompañamiento docente que te permiten organizar tu aprendizaje alrededor de tus responsabilidades laborales y familiares. Las sesiones y evaluaciones se realizan conforme a los horarios y fechas establecidos."
     },
     {
       question: "¿El título o certificado obtenido tiene validez oficial?",
@@ -46,7 +46,7 @@ export default function OfertaTitulacionExperienciaLaboralPage() {
     },
     {
       question: "¿Qué pasa si no apruebo alguna evaluación en el primer intento?",
-      answer: "Tu programa incluye oportunidades de reevaluación y acompañamiento de tutores para reforzar los aspectos requeridos antes de volver a presentar."
+      answer: "No significa que tu proceso haya terminado. El programa contempla hasta tres oportunidades de evaluación, sujetas a las condiciones y convocatorias aplicables. Si no acreditas alguna evaluación en tu primer intento, nuestro equipo académico te orientará para identificar las áreas que necesitas reforzar y prepararte para una nueva oportunidad."
     },
     {
       question: "¿Tengo que realizar trámites ante otras instituciones?",
